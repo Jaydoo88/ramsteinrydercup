@@ -1,0 +1,601 @@
+Vision
+Build an official event website for the Ramstein Ryder Cup that feels like a mix of:
+
+golf event site
+
+reunion/tradition site
+
+trip planning hub
+
+private group clubhouse
+
+This should feel like Year 1 of a long-running tradition, not a one-time trip page.
+
+Creative Website Concept
+Theme Concept
+“Founding Year / Clubhouse”
+Make the website feel like the official launch of a tradition:
+
+Founding Year: 2026
+
+“First Annual” badge
+
+Commissioner-led event
+
+Team competition energy
+
+Scottsdale desert + golf premium vibe
+
+Private-club / tournament-week feel
+
+Think:
+
+Ryder Cup-inspired structure
+
+Fantasy football commissioner organization
+
+Golf trip swagger
+
+Clean enough that spouses/significant others can use it too
+
+Recommended Site Structure (Multi-Page)
+1) Home / Landing Page
+Purpose: Hype + event identity + quick entry points
+
+What it should do
+Introduce the event
+
+Build excitement
+
+Give high-level overview
+
+Push people to key sections (Trip Details, Pricing, RSVP, Rules)
+
+Content blocks
+Hero banner (big visual + event name)
+
+“Founding Group Invite” statement
+
+Event quick facts (dates, location, format)
+
+CTA buttons:
+
+View Trip Plan
+
+See Pricing
+
+RSVP / Interest
+
+House & Rooming
+
+“Why this trip matters” / annual tradition message
+
+Preview cards for other pages (House, Golf, Rules, Timeline)
+
+Creative add-on
+“Founding Year 2026” badge
+
+“Commissioner’s Note” teaser
+
+2) Trip Overview Page
+Purpose: The main planning summary page (your flyer content expanded)
+
+This is the page someone reads if they ask:
+
+“Okay, what exactly is this trip?”
+
+Include
+Dates/location
+
+Event format (12 golfers + optional significant others)
+
+4 nights / 5 days
+
+What’s included
+
+Group structure
+
+Planning assumptions
+
+Why invites are going to core group first
+
+High-level next steps
+
+UX idea
+Use sections with icon cards and short expandable details so it reads clean on mobile.
+
+3) House & Rooming Page ✅ (Very important)
+Purpose: Sell comfort + reduce uncertainty + explain rooming fairness
+
+This page is a huge commitment driver.
+
+Include
+House overview (Primary Option A)
+
+House price baseline ($11,561 quoted using 24 guests)
+
+12-bedroom highlight
+
+Amenities (pool/patio/grill/common space/etc.)
+
+Why it works for Ryder Cup HQ
+
+Rooming plan / expectations
+
+Room assignment process
+
+“Final room assignments after deposits + headcount”
+
+House rules / etiquette preview
+
+Parking/transport notes (summary)
+
+Creative add-ons
+Interactive floor/room list card layout (even if simple placeholders)
+
+“Rooming Philosophy” box:
+
+comfort
+
+fairness
+
+advance assignments
+
+Photo gallery (house screenshots)
+
+Suggested standout copy
+12-bedroom house = major advantage for group comfort
+Gives us better rooming flexibility than a typical golf trip rental and helps support couples/private-room planning where possible.
+
+4) Pricing & Budget Page ✅ (Must be crystal clear)
+Purpose: Build trust with transparent costs
+
+This should look organized and easy to scan.
+
+Include
+Price tiers
+Golfers: $1,100
+
+Non-Golfers / Significant Others: $675
+
+Breakdowns
+Shared costs (lodging, vans, gas, Costco fund)
+
+Golf estimate (12 golfers, $400 estimate each)
+
+Cushion explanation
+
+What’s included / what’s not included
+
+Estimated vs final items (clearly labeled)
+
+Creative add-ons
+Budget cards with progress bars / breakdown visuals
+
+“Why we built a cushion” explainer callout
+
+Toggle view:
+
+Simple View (just totals)
+
+Detailed View (line items)
+
+Important messaging
+Golf cost must be labeled:
+
+Estimated golf budget (current planning estimate)
+
+Subject to final course selection / tee time pricing
+
+5) Golf Format & Competition Page ⛳
+Purpose: Make the event feel real and exciting (this page creates buy-in)
+
+This is where you build the “Ryder Cup” energy.
+
+Include
+Event format overview (Ryder Cup-style)
+
+Team concept (Team A / Team B, captains TBD)
+
+3-day golf plan (estimated)
+
+Pairings / scoring high-level overview
+
+Competition spirit + etiquette
+
+Daily recap / awards vibe
+
+“This is fun but competitive” tone
+
+Future-ready sections (placeholders for updates)
+Course lineup (TBD)
+
+Tee times (TBD)
+
+Pairings release
+
+Scoreboard (future)
+
+Team rosters (future)
+
+Creative add-ons
+“War Room” style layout
+
+Team banners/colors
+
+“Commissioner rulings are final” fun note (if your style)
+
+This page helps make people say, “I’m in.”
+
+6) Schedule & Logistics Page
+Purpose: Practical planning hub for attendees and significant others
+
+Include
+High-level trip schedule (arrival day, golf days, final day)
+
+Airport/travel notes
+
+Van transportation plan (2 vans + gas included)
+
+Check-in/check-out info (when finalized)
+
+Daily flow examples
+
+“What to expect” for golfers vs non-golfers
+
+Optional SO-friendly activity notes (shopping/spa/pool/etc. if you want)
+
+Future-ready
+Flight windows
+
+airport pickup waves
+
+driver assignments
+
+departure day logistics
+
+Creative add-on
+Use a timeline layout (Day 1 to Day 5) with icons.
+
+7) Rules & Expectations Page
+Purpose: Set standards early without sounding harsh
+
+Instead of burying rules in a doc, make a clean page with a good tone.
+
+Sections
+House respect / quiet hours
+
+Neighbor/parking awareness
+
+Group etiquette
+
+Transportation etiquette
+
+Cleanup standards
+
+Payment commitment expectations
+
+Competition conduct / sportsmanship
+
+“Have fun / don’t be the problem” tone
+
+UX idea
+Use accordion sections + downloadable full rules PDF.
+
+8) RSVP / Founding Group Page
+Purpose: Collect interest + lock the core group first
+
+This page should feel exclusive.
+
+Include
+“Founding Group Invite” message from Commissioner
+
+Why you’re inviting core group first
+
+RSVP form or interest form
+
+Fields:
+
+Name
+
+Golfer? Y/N
+
+Bringing SO? Y/N/Maybe
+
+SO name
+
+Likelihood (Definite/Likely/Maybe)
+
+Notes
+
+Optional “commitment deadline” callout
+
+“Spots are being built around founding group responses”
+
+Creative add-on
+Show 12 Golfer Spots as visual slots (not necessarily public count yet).
+
+9) Downloads / Documents Page
+Purpose: Central hub for all trip materials
+
+Include buttons/cards for:
+Flyer
+
+Rules
+
+Trip overview PDF
+
+Payment schedule (later)
+
+Room assignments (later)
+
+Itinerary (later)
+
+This keeps people from asking you to resend files constantly.
+
+10) Commissioner’s Corner Page (Creative / Optional but awesome)
+Purpose: Personal, annual-tradition vibe
+
+This is the page that gives the event personality and makes it memorable.
+
+Include
+Welcome note from Jason Dousharm (Commissioner)
+
+Vision for the Ramstein Ryder Cup
+
+“Why this trip / why now”
+
+Founding year message
+
+Future tradition goals
+
+Event updates/news posts (optional simple blog format)
+
+Why this is powerful
+It turns the site from “trip info” into an event brand.
+
+Navigation Structure (Suggested)
+Top nav (desktop):
+
+Home
+
+Trip Overview
+
+House & Rooming
+
+Pricing
+
+Golf Format
+
+Schedule & Logistics
+
+Rules
+
+RSVP
+
+Downloads
+
+Commissioner’s Corner (optional)
+
+Mobile nav:
+
+Collapsible menu
+
+Sticky CTA button: RSVP / Founding Group
+
+Creative Design Direction
+Visual identity idea
+“Desert Major Meets Private Club”
+Blend:
+
+Scottsdale desert colors
+
+golf greens
+
+premium dark accents
+
+tournament-style badges
+
+Suggested palette
+Deep green (#173A2E-ish)
+
+Sand / desert tan
+
+Cream / off-white
+
+Charcoal
+
+Gold accent
+
+Optional red/blue micro accents (Ryder Cup vibe)
+
+Graphic motifs
+scorecard lines
+
+pin flag icons
+
+fairway contours/topographic lines
+
+desert sun gradient accents
+
+“Founding Year 2026” stamp/badge
+
+Feel
+Premium, fun, masculine but polished
+
+Easy for everyone to use (including significant others)
+
+Organized, not cluttered
+
+Content Rules (Important for Developer)
+The site should support labels for planning status:
+
+Tentative
+
+Estimated
+
+TBD
+
+Pending Final Headcount
+
+Subject to Change
+
+This is essential so the site stays accurate while planning evolves.
+
+Current Content / Numbers to Use (for initial version)
+Event Basics
+First Annual Ramstein Ryder Cup
+
+Scottsdale, AZ
+
+Sept 16–20, 2026 (Tentative)
+
+12 golfers + up to 12 significant others (24 total planning model)
+
+Commissioner: Jason Dousharm
+
+House
+Large-group house option
+
+12 bedrooms
+
+House quote baseline: $11,561 (entered at 24 guests)
+
+Used as primary planning option / Ryder Cup HQ
+
+Transportation
+2 passenger vans
+
+Van rentals: $1,740.24
+
+Estimated gas: $233.32
+
+Transportation total estimate: $1,973.56
+
+House Stock-Up Fund
+$100/person x 24 = $2,400
+
+Shared Cost Summary
+Shared total: $15,934.56
+
+Shared per person (24): $663.94
+
+Golf (Estimated)
+$400 per golfer (estimated, 3 days)
+
+12 golfers = $4,800 estimated golf fund
+
+Collection Plan (with cushion)
+Golfers: $1,100
+
+Significant Others / Non-Golfers: $675
+
+Functionality Recommendations (Practical)
+Must-have
+Mobile-responsive
+
+Easy text updates
+
+Download buttons for files
+
+RSVP/contact form
+
+Clear section headings
+
+Fast loading
+
+Nice-to-have
+Photo gallery
+
+Countdown to trip
+
+Expand/collapse FAQ/rules
+
+Editable announcement banner (“Update: course selection in progress”)
+
+Password-protected pages later (for private details like room assignments/payments)
+
+Smart Future Expansion (build for annual use)
+Ask developer to build so it can later become:
+
+Yearly event archive
+
+2026 Founding Year
+
+2027, 2028, etc.
+
+Photo galleries by year
+
+Champions / trophy history
+
+Team records
+
+Commissioner updates
+
+This makes the site a true tradition platform.
+
+Deliverables to Request from Developer
+Multi-page responsive website
+
+Consistent header/footer/nav across pages
+
+Editable content blocks (easy for updates)
+
+RSVP form integration
+
+Downloads page for flyer/rules
+
+House gallery support
+
+Clean mobile navigation
+
+Version 1 launch-ready design using provided content
+
+(Optional) CMS or simple admin-editable structure for annual updates
+
+Bonus Creative Touches (Worth asking for)
+1) “Founding 12” visual section
+A row of 12 golfer slots/cards:
+
+Filled as people commit
+
+Creates urgency and exclusivity
+
+2) “Commissioner Update” banner
+Short status message at top:
+
+“Invites are live”
+
+“House option selected”
+
+“Golf course planning in progress”
+
+3) “Road to Scottsdale” timeline graphic
+Makes the planning feel like part of the event experience.
+
+Short version to tell your developer what you want (plain-English summary)
+I do not want a one-page site. I want a creative multi-page event website that feels like the official home of the Ramstein Ryder Cup and can grow into an annual tradition.
+
+It should have separate pages for:
+
+Home
+
+Trip Overview
+
+House & Rooming
+
+Pricing/Budget
+
+Golf Format
+
+Schedule/Logistics
+
+Rules
+
+RSVP
+
+Downloads
+
+(Optional) Commissioner’s Corner
+
+The site should feel polished, exciting, and organized — like a real event brand — while clearly showing which details are tentative/estimated.
