@@ -25,23 +25,23 @@ export default function Rsvp() {
           </CardDescription>
         </CardHeader>
         <CardContent className="p-10">
-          <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
+          <form action="mailto:jasondousharm@gmail.com?subject=Ramstein Ryder Cup RSVP" method="post" encType="text/plain" className="space-y-8">
             <div className="space-y-3">
               <label className="text-sm font-bold text-primary uppercase tracking-widest">Full Name</label>
-              <input type="text" className="w-full p-4 text-lg rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-secondary transition-all" placeholder="John Doe" />
+              <input name="Name" required type="text" className="w-full p-4 text-lg rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-secondary transition-all" placeholder="John Doe" />
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-3">
                 <label className="text-sm font-bold text-primary uppercase tracking-widest">Are you golfing?</label>
-                <select className="w-full p-4 text-lg rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-secondary transition-all">
+                <select name="Golfing" className="w-full p-4 text-lg rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-secondary transition-all">
                   <option>Yes, I'm playing</option>
                   <option>No, just hanging out</option>
                 </select>
               </div>
               <div className="space-y-3">
                 <label className="text-sm font-bold text-primary uppercase tracking-widest">Bringing an S.O.?</label>
-                <select className="w-full p-4 text-lg rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-secondary transition-all">
+                <select name="Bringing_SO" className="w-full p-4 text-lg rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-secondary transition-all">
                   <option>Yes (Definite)</option>
                   <option>Maybe (Need to check)</option>
                   <option>No (Flying solo)</option>
@@ -51,12 +51,12 @@ export default function Rsvp() {
 
             <div className="space-y-3">
               <label className="text-sm font-bold text-primary uppercase tracking-widest">Significant Other's Name (if applicable)</label>
-              <input type="text" className="w-full p-4 text-lg rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-secondary transition-all" placeholder="Jane Doe" />
+              <input name="SO_Name" type="text" className="w-full p-4 text-lg rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-secondary transition-all" placeholder="Jane Doe" />
             </div>
 
             <div className="space-y-3">
               <label className="text-sm font-bold text-primary uppercase tracking-widest">Likelihood of Attending</label>
-              <select className="w-full p-4 text-lg rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-secondary transition-all">
+              <select name="Likelihood" className="w-full p-4 text-lg rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-secondary transition-all">
                 <option>100% Definite - I'm in.</option>
                 <option>Likely - Checking dates/PTO.</option>
                 <option>Maybe - Need more info.</option>
@@ -65,10 +65,10 @@ export default function Rsvp() {
 
             <div className="space-y-3">
               <label className="text-sm font-bold text-primary uppercase tracking-widest">Any notes for the Commissioner?</label>
-              <textarea className="w-full p-4 text-lg rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-secondary transition-all h-32 resize-none" placeholder="Flight preferences, dietary restrictions, etc." />
+              <textarea name="Notes" className="w-full p-4 text-lg rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-secondary transition-all h-32 resize-none" placeholder="Flight preferences, dietary restrictions, etc." />
             </div>
 
-            <Button className="w-full h-16 text-xl font-bold bg-primary hover:bg-primary/90 text-primary-foreground uppercase tracking-widest mt-4 rounded-xl shadow-xl hover:shadow-2xl transition-all flex items-center justify-center gap-3">
+            <Button type="submit" className="w-full h-16 text-xl font-bold bg-primary hover:bg-primary/90 text-primary-foreground uppercase tracking-widest mt-4 rounded-xl shadow-xl hover:shadow-2xl transition-all flex items-center justify-center gap-3">
               Submit RSVP <Send className="w-5 h-5" />
             </Button>
             <p className="text-center text-sm text-muted-foreground mt-6 font-medium">
