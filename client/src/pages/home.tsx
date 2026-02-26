@@ -114,49 +114,43 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Link href="/house">
-              <a className="group block h-full">
-                <Card className="h-full hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-none bg-white">
-                  <CardContent className="p-10 flex flex-col h-full">
-                    <HomeIcon className="w-12 h-12 text-secondary mb-8 group-hover:scale-110 transition-transform" />
-                    <h3 className="font-serif font-bold text-2xl mb-4 text-primary">House & Rooming</h3>
-                    <p className="text-muted-foreground text-base mb-8 flex-grow">12-bedroom luxury HQ. Designed for comfort and fairness.</p>
-                    <div className="flex items-center text-sm font-bold text-secondary uppercase tracking-wider">
-                      Explore House <ChevronRight className="w-5 h-5 ml-2" />
-                    </div>
-                  </CardContent>
-                </Card>
-              </a>
+            <Link href="/house" className="group block h-full">
+              <Card className="h-full hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-none bg-white">
+                <CardContent className="p-10 flex flex-col h-full">
+                  <HomeIcon className="w-12 h-12 text-secondary mb-8 group-hover:scale-110 transition-transform" />
+                  <h3 className="font-serif font-bold text-2xl mb-4 text-primary">House & Rooming</h3>
+                  <p className="text-muted-foreground text-base mb-8 flex-grow">12-bedroom luxury HQ. Designed for comfort and fairness.</p>
+                  <div className="flex items-center text-sm font-bold text-secondary uppercase tracking-wider">
+                    Explore House <ChevronRight className="w-5 h-5 ml-2" />
+                  </div>
+                </CardContent>
+              </Card>
             </Link>
 
-            <Link href="/pricing">
-              <a className="group block h-full">
-                <Card className="h-full hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-none bg-white">
-                  <CardContent className="p-10 flex flex-col h-full">
-                    <Wallet className="w-12 h-12 text-secondary mb-8 group-hover:scale-110 transition-transform" />
-                    <h3 className="font-serif font-bold text-2xl mb-4 text-primary">Budget & Pricing</h3>
-                    <p className="text-muted-foreground text-base mb-8 flex-grow">Transparent costs, shared expenses, and the cushion explained.</p>
-                    <div className="flex items-center text-sm font-bold text-secondary uppercase tracking-wider">
-                      View Estimates <ChevronRight className="w-5 h-5 ml-2" />
-                    </div>
-                  </CardContent>
-                </Card>
-              </a>
+            <Link href="/pricing" className="group block h-full">
+              <Card className="h-full hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-none bg-white">
+                <CardContent className="p-10 flex flex-col h-full">
+                  <Wallet className="w-12 h-12 text-secondary mb-8 group-hover:scale-110 transition-transform" />
+                  <h3 className="font-serif font-bold text-2xl mb-4 text-primary">Budget & Pricing</h3>
+                  <p className="text-muted-foreground text-base mb-8 flex-grow">Transparent costs, shared expenses, and the cushion explained.</p>
+                  <div className="flex items-center text-sm font-bold text-secondary uppercase tracking-wider">
+                    View Estimates <ChevronRight className="w-5 h-5 ml-2" />
+                  </div>
+                </CardContent>
+              </Card>
             </Link>
 
-            <Link href="/golf">
-              <a className="group block h-full">
-                <Card className="h-full hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-none bg-white">
-                  <CardContent className="p-10 flex flex-col h-full">
-                    <Trophy className="w-12 h-12 text-secondary mb-8 group-hover:scale-110 transition-transform" />
-                    <h3 className="font-serif font-bold text-2xl mb-4 text-primary">Competition</h3>
-                    <p className="text-muted-foreground text-base mb-8 flex-grow">Team A vs Team B. Format, etiquette, and the quest for glory.</p>
-                    <div className="flex items-center text-sm font-bold text-secondary uppercase tracking-wider">
-                      See Format <ChevronRight className="w-5 h-5 ml-2" />
-                    </div>
-                  </CardContent>
-                </Card>
-              </a>
+            <Link href="/golf" className="group block h-full">
+              <Card className="h-full hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-none bg-white">
+                <CardContent className="p-10 flex flex-col h-full">
+                  <Trophy className="w-12 h-12 text-secondary mb-8 group-hover:scale-110 transition-transform" />
+                  <h3 className="font-serif font-bold text-2xl mb-4 text-primary">Competition</h3>
+                  <p className="text-muted-foreground text-base mb-8 flex-grow">Team A vs Team B. Format, etiquette, and the quest for glory.</p>
+                  <div className="flex items-center text-sm font-bold text-secondary uppercase tracking-wider">
+                    See Format <ChevronRight className="w-5 h-5 ml-2" />
+                  </div>
+                </CardContent>
+              </Card>
             </Link>
 
             <Card className="h-full border-none bg-primary text-primary-foreground shadow-xl">

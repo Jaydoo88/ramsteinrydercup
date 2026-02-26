@@ -21,25 +21,21 @@ export function Navbar() {
   return (
     <nav className="bg-primary text-primary-foreground sticky top-0 z-50 border-b border-primary/20 shadow-md">
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
-        <Link href="/">
-          <a className="flex items-center gap-3 group">
-            <div className="w-10 h-10 bg-secondary rounded-full flex items-center justify-center text-secondary-foreground font-serif font-bold text-xl group-hover:bg-secondary/90 transition-colors">
-              RR
-            </div>
-            <div className="flex flex-col">
-              <span className="font-serif font-bold text-lg leading-tight tracking-wide text-white">Ramstein Ryder Cup</span>
-              <span className="text-[10px] uppercase tracking-widest text-secondary font-bold">Founding Year 2026</span>
-            </div>
-          </a>
+        <Link href="/" className="flex items-center gap-3 group">
+          <div className="w-10 h-10 bg-secondary rounded-full flex items-center justify-center text-secondary-foreground font-serif font-bold text-xl group-hover:bg-secondary/90 transition-colors">
+            RR
+          </div>
+          <div className="flex flex-col">
+            <span className="font-serif font-bold text-lg leading-tight tracking-wide text-white">Ramstein Ryder Cup</span>
+            <span className="text-[10px] uppercase tracking-widest text-secondary font-bold">Founding Year 2026</span>
+          </div>
         </Link>
 
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-6">
           {routes.slice(1).map((route) => (
-            <Link key={route.path} href={route.path}>
-              <a className={`text-sm font-bold uppercase tracking-wider transition-colors hover:text-secondary ${location === route.path ? "text-secondary" : "text-primary-foreground/80"}`}>
-                {route.name}
-              </a>
+            <Link key={route.path} href={route.path} className={`text-sm font-bold uppercase tracking-wider transition-colors hover:text-secondary ${location === route.path ? "text-secondary" : "text-primary-foreground/80"}`}>
+              {route.name}
             </Link>
           ))}
           <Button asChild variant="secondary" className="ml-4 font-bold tracking-widest uppercase">
@@ -68,13 +64,13 @@ export function Navbar() {
                 </div>
                 <div className="flex flex-col gap-4 overflow-y-auto">
                   {routes.map((route) => (
-                    <Link key={route.path} href={route.path}>
-                      <a 
-                        onClick={() => setOpen(false)}
-                        className={`text-lg font-bold uppercase tracking-wide py-3 border-b border-primary-foreground/5 transition-colors ${location === route.path ? "text-secondary" : "text-primary-foreground/80 hover:text-white"}`}
-                      >
-                        {route.name}
-                      </a>
+                    <Link 
+                      key={route.path} 
+                      href={route.path}
+                      onClick={() => setOpen(false)}
+                      className={`text-lg font-bold uppercase tracking-wide py-3 border-b border-primary-foreground/5 transition-colors ${location === route.path ? "text-secondary" : "text-primary-foreground/80 hover:text-white"}`}
+                    >
+                      {route.name}
                     </Link>
                   ))}
                 </div>
