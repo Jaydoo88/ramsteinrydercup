@@ -69,7 +69,7 @@ export default function Rsvp() {
             <form onSubmit={handleSubmit} className="space-y-8">
               {/* === WEB3FORMS CONFIGURATION === */}
               {/* Paste your Web3Forms Access Key here in the value attribute */}
-              <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE" />
+              <input type="hidden" name="access_key" value="38e4c9ca7e5ec0f2fe5807f17569def1" />
               <input type="hidden" name="subject" value="New Ramstein Ryder Cup RSVP" />
               <input type="hidden" name="from_name" value="Ramstein Ryder Cup Website" />
               {/* ================================= */}
