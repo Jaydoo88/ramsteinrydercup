@@ -31,8 +31,8 @@ export default function Rsvp() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-20 max-w-3xl">
-      <div className="text-center mb-16">
+    <div className="container mx-auto px-4 py-20 max-w-3xl relative z-10">
+      <div className="text-center mb-16 relative z-20">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/20 text-secondary-foreground text-sm font-bold tracking-widest uppercase mb-6">
           <ShieldCheck className="w-4 h-4" />
           Invite Only
@@ -43,7 +43,7 @@ export default function Rsvp() {
         </p>
       </div>
 
-      <Card className="border-none shadow-2xl bg-white overflow-hidden rounded-[2rem]">
+      <Card className="border-none shadow-2xl bg-white overflow-hidden rounded-[2rem] relative z-30 pointer-events-auto">
         <div className="h-3 bg-secondary w-full"></div>
         <CardHeader className="bg-muted/20 border-b border-border p-10">
           <CardTitle className="text-3xl font-serif text-primary mb-3">Commitment Form</CardTitle>
