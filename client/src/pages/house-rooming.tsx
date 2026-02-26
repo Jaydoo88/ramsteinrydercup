@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import houseImage from "@/assets/images/house-scottsdale.png";
+import houseImage from "@assets/image_1772127839974.png";
 import { BedDouble, Waves, ThermometerSun, ShieldAlert, Check } from "lucide-react";
 
 export default function HouseRooming() {
