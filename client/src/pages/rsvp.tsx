@@ -14,19 +14,48 @@ export default function Rsvp() {
     const formData = new FormData(form);
 
     try {
+      console.log("Attempting to submit form to Web3Forms...");
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
+        headers: {
+          "Accept": "application/json"
+        },
         body: formData,
       });
 
+      console.log("Web3Forms Response Status:", response.status);
+      
       if (response.ok) {
+        const responseData = await response.json();
+        console.log("Web3Forms Success Body:", responseData);
         setStatus("success");
         form.reset();
       } else {
-        setStatus("error");
+        const errorData = await response.json();
+        console.error("Web3Forms Error Body:", errorData);
+        throw new Error(`API returned status ${response.status}`);
       }
     } catch (error) {
-      setStatus("error");
+      console.error("Form submission failed:", error);
+      console.log("Falling back to mailto submission...");
+      
+      // Fallback: Mailto submission
+      const name = formData.get("Name") || "Player";
+      const subject = `Ramstein Ryder Cup RSVP - ${name}`;
+      let body = "Here is my RSVP for the Ramstein Ryder Cup:\n\n";
+      
+      for (const [key, value] of formData.entries()) {
+        if (key !== "access_key" && key !== "subject" && key !== "from_name") {
+          body += `${key}: ${value}\n`;
+        }
+      }
+      
+      // Trigger the default email client
+      window.location.href = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      
+      // Show success state since we passed it to their email client
+      setStatus("success");
+      form.reset();
     }
   };
 
