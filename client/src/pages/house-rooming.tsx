@@ -52,41 +52,92 @@ export default function HouseRooming() {
                   <BedDouble className="w-7 h-7 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-xl mb-1 text-primary">12 Bedrooms</h4>
-                  <p className="text-muted-foreground font-medium uppercase tracking-wider text-xs">Maximum flexibility</p>
+                  <h4 className="font-bold text-xl mb-1 text-primary">12 Bedrooms / 8 Bathrooms</h4>
+                  <p className="text-muted-foreground font-medium uppercase tracking-wider text-xs">Space + comfort for large groups</p>
                 </div>
               </CardContent>
             </Card>
+            
             <Card className="border-none shadow-lg bg-white">
               <CardContent className="p-8 flex items-center gap-6">
                 <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
                   <Waves className="w-7 h-7 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-xl mb-1 text-primary">Pool & Patio</h4>
-                  <p className="text-muted-foreground font-medium uppercase tracking-wider text-xs">Post-round recovery</p>
+                  <h4 className="font-bold text-xl mb-1 text-primary">Resort Pool + Spa</h4>
+                  <p className="text-muted-foreground font-medium uppercase tracking-wider text-xs">All-day recovery and hangouts</p>
                 </div>
               </CardContent>
             </Card>
-            <Card className="border-none shadow-lg bg-white">
-              <CardContent className="p-8 flex items-center gap-6">
-                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
-                  <ThermometerSun className="w-7 h-7 text-primary" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-xl mb-1 text-primary">Outdoor Grill</h4>
-                  <p className="text-muted-foreground font-medium uppercase tracking-wider text-xs">Team dinners</p>
-                </div>
-              </CardContent>
-            </Card>
+            
             <Card className="border-none shadow-lg bg-white">
               <CardContent className="p-8 flex items-center gap-6">
                 <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
                   <Check className="w-7 h-7 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-xl mb-1 text-primary">Common Space</h4>
-                  <p className="text-muted-foreground font-medium uppercase tracking-wider text-xs">War room & hangouts</p>
+                  <h4 className="font-bold text-xl mb-1 text-primary">Outdoor Cabana + TV</h4>
+                  <p className="text-muted-foreground font-medium uppercase tracking-wider text-xs">Shade, lounging, and watch parties</p>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-none shadow-lg bg-white">
+              <CardContent className="p-8 flex items-center gap-6">
+                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
+                  <Check className="w-7 h-7 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-xl mb-1 text-primary">Pickleball + Basketball Courts</h4>
+                  <p className="text-muted-foreground font-medium uppercase tracking-wider text-xs">On-site games all weekend</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-none shadow-lg bg-white">
+              <CardContent className="p-8 flex items-center gap-6">
+                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
+                  <Check className="w-7 h-7 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-xl mb-1 text-primary">Sand Volleyball + Huge Yard</h4>
+                  <p className="text-muted-foreground font-medium uppercase tracking-wider text-xs">Space for the whole group</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-none shadow-lg bg-white">
+              <CardContent className="p-8 flex items-center gap-6">
+                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
+                  <Check className="w-7 h-7 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-xl mb-1 text-primary">Game Room (Billiards + Poker)</h4>
+                  <p className="text-muted-foreground font-medium uppercase tracking-wider text-xs">War room vibes after the round</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-none shadow-lg bg-white">
+              <CardContent className="p-8 flex items-center gap-6">
+                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
+                  <Check className="w-7 h-7 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-xl mb-1 text-primary">Mini Golf + Lawn Games</h4>
+                  <p className="text-muted-foreground font-medium uppercase tracking-wider text-xs">Bocce, cornhole, horseshoes</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-none shadow-lg bg-white">
+              <CardContent className="p-8 flex items-center gap-6">
+                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
+                  <Check className="w-7 h-7 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-xl mb-1 text-primary">19 TVs (Indoor + Outdoor)</h4>
+                  <p className="text-muted-foreground font-medium uppercase tracking-wider text-xs">Viewing everywhere on the property</p>
                 </div>
               </CardContent>
             </Card>
