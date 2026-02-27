@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src={heroImage} 
@@ -19,7 +19,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/20"></div>
         </div>
         
-        <div className="relative z-10 container mx-auto px-4 text-center text-white mt-12">
+        <div className="relative z-10 container mx-auto px-4 text-center text-white mt-12 md:pb-16 pb-24">
           <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-secondary text-secondary-foreground text-sm font-bold tracking-widest uppercase mb-8 shadow-xl">
             <ShieldCheck className="w-4 h-4" />
             Founding Year &bull; 2026
@@ -49,7 +49,7 @@ export default function Home() {
       {/* Quick Facts */}
       <section className="py-12 relative z-20">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto -mt-32">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto md:-mt-32 -mt-16">
             <Card className="bg-white/95 backdrop-blur-xl border-t-4 border-t-secondary shadow-2xl">
               <CardContent className="p-8 flex flex-col items-center text-center">
                 <div className="w-16 h-16 bg-primary/5 text-primary rounded-full flex items-center justify-center mb-6">
