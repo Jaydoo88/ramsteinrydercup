@@ -1,175 +1,61 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { ShieldCheck, Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
+import { useEffect } from "react";
 
 export default function Rsvp() {
-  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setStatus("submitting");
-
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-
-    try {
-      console.log("Attempting to submit form to Web3Forms...");
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Accept": "application/json"
-        },
-        body: formData,
-      });
-
-      console.log("Web3Forms Response Status:", response.status);
-      
-      if (response.ok) {
-        const responseData = await response.json();
-        console.log("Web3Forms Success Body:", responseData);
-        setStatus("success");
-        form.reset();
-      } else {
-        const errorData = await response.json();
-        console.error("Web3Forms Error Body:", errorData);
-        throw new Error(`API returned status ${response.status}`);
-      }
-    } catch (error) {
-      console.error("Form submission failed:", error);
-      console.log("Falling back to mailto submission...");
-      
-      // Fallback: Mailto submission
-      const name = formData.get("Name") || "Player";
-      const subject = `Ramstein Ryder Cup RSVP - ${name}`;
-      let body = "Here is my RSVP for the Ramstein Ryder Cup:\n\n";
-      
-      for (const [key, value] of formData.entries()) {
-        if (key !== "access_key" && key !== "subject" && key !== "from_name") {
-          body += `${key}: ${value}\n`;
-        }
-      }
-      
-      // Trigger the default email client
-      window.location.href = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      
-      // Show success state since we passed it to their email client
-      setStatus("success");
-      form.reset();
+  useEffect(() => {
+    // Add the JotForm script dynamically when the component mounts
+    const script = document.createElement("script");
+    script.src = "https://form.jotform.com/jsform/260567703433053";
+    script.type = "text/javascript";
+    script.async = true;
+    
+    const formContainer = document.getElementById("jotform-container");
+    if (formContainer) {
+      formContainer.appendChild(script);
     }
-  };
+    
+    return () => {
+      // Cleanup script if component unmounts
+      if (formContainer && formContainer.contains(script)) {
+        formContainer.removeChild(script);
+      }
+    };
+  }, []);
 
   return (
-    <div className="container mx-auto px-4 py-20 max-w-3xl relative z-10">
-      <div className="text-center mb-16 relative z-20">
+    <div className="container mx-auto px-4 py-20 max-w-4xl relative z-10">
+      <div className="text-center mb-10 relative z-20">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/20 text-secondary-foreground text-sm font-bold tracking-widest uppercase mb-6">
           <ShieldCheck className="w-4 h-4" />
           Invite Only
         </div>
         <h1 className="font-serif text-5xl md:text-6xl font-bold text-primary mb-6">Founding Group RSVP</h1>
-        <p className="text-2xl text-muted-foreground leading-relaxed">
+        <p className="text-2xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
           Spots are being built around our core group responses. Please let us know your intent so we can finalize the house and golf contracts.
         </p>
       </div>
 
-      <Card className="border-none shadow-2xl bg-white overflow-hidden rounded-[2rem] relative z-30 pointer-events-auto">
+      <div className="commitment-form-wrapper bg-white shadow-2xl rounded-[2rem] overflow-hidden border border-border/50">
         <div className="h-3 bg-secondary w-full"></div>
-        <CardHeader className="bg-muted/20 border-b border-border p-10">
-          <CardTitle className="text-3xl font-serif text-primary mb-3">Commitment Form</CardTitle>
-          <CardDescription className="text-lg font-medium text-foreground/70">
-            This helps us lock in numbers. Official deposits will be collected after the final headcount.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="p-10">
-          {status === "success" ? (
-            <div className="flex flex-col items-center justify-center py-12 text-center">
-              <CheckCircle2 className="w-20 h-20 text-secondary mb-6" />
-              <h3 className="font-serif text-3xl font-bold text-primary mb-4">Thanks, your RSVP was sent.</h3>
-              <p className="text-lg text-muted-foreground">The Commissioner will be in touch with next steps.</p>
-              <Button 
-                onClick={() => setStatus("idle")} 
-                variant="outline" 
-                className="mt-8 uppercase tracking-widest font-bold"
-              >
-                Submit another response
-              </Button>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-8">
-              {/* === WEB3FORMS CONFIGURATION === */}
-              {/* Paste your Web3Forms Access Key here in the value attribute */}
-              <input type="hidden" name="access_key" value="38e4c9ca7e5ec0f2fe5807f17569def1" />
-              <input type="hidden" name="subject" value="New Ramstein Ryder Cup RSVP" />
-              <input type="hidden" name="from_name" value="Ramstein Ryder Cup Website" />
-              {/* ================================= */}
-
-              {status === "error" && (
-                <div className="p-4 bg-destructive/10 text-destructive border border-destructive/20 rounded-xl flex items-center gap-3">
-                  <AlertCircle className="w-5 h-5 shrink-0" />
-                  <p className="font-medium">Something went wrong submitting your RSVP. Please try again or contact the Commissioner directly.</p>
-                </div>
-              )}
-
-              <div className="space-y-3">
-                <label className="text-sm font-bold text-primary uppercase tracking-widest">Full Name</label>
-                <input name="Name" required type="text" className="w-full p-4 text-lg rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-secondary transition-all" placeholder="John Doe" />
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="space-y-3">
-                  <label className="text-sm font-bold text-primary uppercase tracking-widest">Are you golfing?</label>
-                  <select name="Golfing" className="w-full p-4 text-lg rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-secondary transition-all">
-                    <option>Yes, I'm playing</option>
-                    <option>No, just hanging out</option>
-                  </select>
-                </div>
-                <div className="space-y-3">
-                  <label className="text-sm font-bold text-primary uppercase tracking-widest">Bringing an S.O.?</label>
-                  <select name="Bringing_SO" className="w-full p-4 text-lg rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-secondary transition-all">
-                    <option>Yes (Definite)</option>
-                    <option>Maybe (Need to check)</option>
-                    <option>No (Flying solo)</option>
-                  </select>
-                </div>
-              </div>
-
-              <div className="space-y-3">
-                <label className="text-sm font-bold text-primary uppercase tracking-widest">Significant Other's Name (if applicable)</label>
-                <input name="SO_Name" type="text" className="w-full p-4 text-lg rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-secondary transition-all" placeholder="Jane Doe" />
-              </div>
-
-              <div className="space-y-3">
-                <label className="text-sm font-bold text-primary uppercase tracking-widest">Likelihood of Attending</label>
-                <select name="Likelihood" className="w-full p-4 text-lg rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-secondary transition-all">
-                  <option>100% Definite - I'm in.</option>
-                  <option>Likely - Checking dates/PTO.</option>
-                  <option>Maybe - Need more info.</option>
-                </select>
-              </div>
-
-              <div className="space-y-3">
-                <label className="text-sm font-bold text-primary uppercase tracking-widest">Any notes for the Commissioner?</label>
-                <textarea name="Notes" className="w-full p-4 text-lg rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-secondary transition-all h-32 resize-none" placeholder="Flight preferences, dietary restrictions, etc." />
-              </div>
-
-              <Button 
-                type="submit" 
-                disabled={status === "submitting"}
-                className="w-full h-16 text-xl font-bold bg-primary hover:bg-primary/90 text-primary-foreground uppercase tracking-widest mt-4 rounded-xl shadow-xl hover:shadow-2xl transition-all flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed"
-              >
-                {status === "submitting" ? (
-                  <>Sending... <Loader2 className="w-5 h-5 animate-spin" /></>
-                ) : (
-                  <>Submit RSVP <Send className="w-5 h-5" /></>
-                )}
-              </Button>
-              <p className="text-center text-sm text-muted-foreground mt-6 font-medium">
-                Your response is not a binding financial contract yet, but please answer as accurately as possible.
-              </p>
-            </form>
-          )}
-        </CardContent>
-      </Card>
+        <div className="p-4 md:p-8 bg-muted/10">
+          {/* JotForm will inject its iframe here */}
+          <div id="jotform-container" className="w-full min-h-[600px]"></div>
+        </div>
+      </div>
+      
+      <style dangerouslySetInnerHTML={{ __html: `
+        .commitment-form-wrapper {
+          max-width: 900px;
+          margin: 0 auto;
+        }
+        
+        /* Ensures the iframe is responsive */
+        #jotform-container iframe {
+          width: 100% !important;
+          border: none !important;
+          border-radius: 12px;
+        }
+      `}} />
     </div>
   );
 }
