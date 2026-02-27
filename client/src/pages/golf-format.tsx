@@ -14,9 +14,11 @@ export default function GolfFormat() {
       </p>
 
       <div className="flex justify-center mb-16">
-        <Button variant="outline" className="gap-2 font-bold uppercase tracking-widest bg-white border-primary/20 hover:bg-primary/5">
-          <Download className="w-4 h-4" />
-          Download Full Rules
+        <Button asChild variant="outline" className="gap-2 font-bold uppercase tracking-widest bg-white border-primary/20 hover:bg-primary/5">
+          <a href="/docs/Ramstein-Ryder-Cup-Rules-2026.pdf" target="_blank" rel="noopener noreferrer">
+            <Download className="w-4 h-4" />
+            Download Full Rules
+          </a>
         </Button>
       </div>
       
