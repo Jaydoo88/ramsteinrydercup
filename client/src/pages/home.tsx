@@ -165,6 +165,27 @@ export default function Home() {
                 </Button>
               </CardContent>
             </Card>
+            
+            <Card className="h-full border-none shadow-xl bg-white col-span-1 md:col-span-2 lg:col-span-4 mt-8 overflow-hidden">
+              <div className="flex flex-col md:flex-row h-full">
+                <div className="w-full md:w-1/2 h-64 md:h-auto">
+                  <img 
+                    src="/images/image_1772465681898.png" 
+                    alt="Group of friends taking a selfie" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="w-full md:w-1/2 p-10 flex flex-col justify-center">
+                  <h3 className="font-serif font-bold text-3xl mb-4 text-[#C1272D]">Photo Gallery</h3>
+                  <p className="text-muted-foreground text-lg mb-8">
+                    Dust off those old photo albums! We'll be collecting photos from our time at RHS and past reunions.
+                  </p>
+                  <Button asChild variant="outline" className="w-full h-14 text-lg font-bold uppercase tracking-widest border-[#C1272D] text-[#C1272D] hover:bg-[#C1272D] hover:text-white">
+                    <Link href="/photo-gallery">View Photo Gallery</Link>
+                  </Button>
+                </div>
+              </div>
+            </Card>
           </div>
         </div>
       </section>
