@@ -17,8 +17,6 @@ import GolfFormat from "@/pages/golf-format";
 import Schedule from "@/pages/schedule";
 import Rules from "@/pages/rules";
 import Rsvp from "@/pages/rsvp";
-import PhotoGallery from "@/pages/photo-gallery";
-import UploadPhotos from "@/pages/upload-photos";
 
 function ScrollToTop() {
   const [pathname] = useLocation();
@@ -45,8 +43,6 @@ function Router() {
           <Route path="/schedule" component={Schedule} />
           <Route path="/rules" component={Rules} />
           <Route path="/rsvp" component={Rsvp} />
-          <Route path="/photo-gallery" component={PhotoGallery} />
-          <Route path="/upload-photos" component={UploadPhotos} />
           <Route component={NotFound} />
         </Switch>
       </main>

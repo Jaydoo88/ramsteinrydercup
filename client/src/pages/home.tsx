@@ -35,15 +35,12 @@ export default function Home() {
             One unforgettable desert classic.
           </p>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 flex-wrap">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <Button asChild size="lg" variant="secondary" className="w-full sm:w-auto h-16 px-10 text-xl font-bold shadow-2xl uppercase tracking-widest">
               <Link href="/rsvp">Join the Founding Group</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="w-full sm:w-auto h-16 px-10 text-xl font-bold bg-black/30 text-white border-white/30 hover:bg-black/50 hover:text-white backdrop-blur-md uppercase tracking-widest">
               <Link href="/overview">View Trip Details</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="w-full sm:w-auto h-16 px-10 text-xl font-bold bg-black/30 text-white border-white/30 hover:bg-black/50 hover:text-white backdrop-blur-md uppercase tracking-widest">
-              <Link href="/upload-photos">Upload Photos</Link>
             </Button>
           </div>
         </div>
@@ -164,27 +161,6 @@ export default function Home() {
                   <Link href="/rsvp">RSVP Now</Link>
                 </Button>
               </CardContent>
-            </Card>
-            
-            <Card className="h-full border-none shadow-xl bg-white col-span-1 md:col-span-2 lg:col-span-4 mt-8 overflow-hidden">
-              <div className="flex flex-col md:flex-row h-full">
-                <div className="w-full md:w-1/2 h-64 md:h-auto">
-                  <img 
-                    src="/images/image_1772465681898.png" 
-                    alt="Group of friends taking a selfie" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="w-full md:w-1/2 p-10 flex flex-col justify-center">
-                  <h3 className="font-serif font-bold text-3xl mb-4 text-[#C1272D]">Photo Gallery</h3>
-                  <p className="text-muted-foreground text-lg mb-8">
-                    Dust off those old photo albums! We'll be collecting photos from our time at RHS and past reunions.
-                  </p>
-                  <Button asChild variant="outline" className="w-full h-14 text-lg font-bold uppercase tracking-widest border-[#C1272D] text-[#C1272D] hover:bg-[#C1272D] hover:text-white">
-                    <Link href="/photo-gallery">View Photo Gallery</Link>
-                  </Button>
-                </div>
-              </div>
             </Card>
           </div>
         </div>
