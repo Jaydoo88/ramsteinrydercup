@@ -12,6 +12,7 @@ const routes = [
   { name: "Golf Format", path: "/golf" },
   { name: "Schedule", path: "/schedule" },
   { name: "Rules", path: "/rules" },
+  { name: "Gallery", path: "/photo-gallery" },
 ];
 
 export function Navbar() {
