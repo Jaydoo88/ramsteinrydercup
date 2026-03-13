@@ -271,7 +271,7 @@ export default function Rsvp() {
                       onChange={(e) => setSoName(e.target.value)}
                       className="w-full p-4 text-lg rounded-xl border border-input bg-white focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all shadow-sm" 
                       placeholder="Jane Doe" 
-                      required={bringingSo !== "no"}
+                      required={true}
                     />
                   </div>
                 )}
