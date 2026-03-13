@@ -11,10 +11,8 @@ export default function Rsvp() {
   const successRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (status === "success" && successRef.current) {
-      // Scroll to the success message with a slight offset
-      const y = successRef.current.getBoundingClientRect().top + window.scrollY - 150;
-      window.scrollTo({ top: y, behavior: "smooth" });
+    if (status === "success") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, [status]);
 
