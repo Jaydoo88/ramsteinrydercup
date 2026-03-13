@@ -22,7 +22,7 @@ export default function GolfFormat() {
         </Button>
       </div>
       
-      <div className="bg-white p-12 rounded-[2rem] shadow-xl border-t-8 border-primary max-w-3xl mx-auto text-left mb-20">
+      <div className="bg-white p-12 rounded-[2rem] shadow-xl border-t-8 border-primary max-w-3xl mx-auto text-left mb-12">
         <h2 className="font-serif text-3xl font-bold text-primary mb-6">Format Overview</h2>
         <ul className="space-y-6 text-lg text-foreground/80">
           <li className="flex items-start gap-4">
@@ -36,6 +36,31 @@ export default function GolfFormat() {
           <li className="flex items-start gap-4">
             <Trophy className="w-6 h-6 text-secondary shrink-0 mt-1" />
             <span>Match play scoring: 18 points per match (1 point per hole) &rarr; 54 points/day &rarr; 162 total points.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div className="bg-white p-12 rounded-[2rem] shadow-xl border-t-8 border-secondary max-w-3xl mx-auto text-left mb-20">
+        <h2 className="font-serif text-3xl font-bold text-primary mb-4">Ladies Event (Significant Others) — Optional</h2>
+        <p className="text-lg text-foreground/80 mb-6">
+          An optional women's round for significant others who want to golf. This is completely separate from the main Ryder Cup competition rounds.
+        </p>
+        <ul className="space-y-4 text-lg text-foreground/80">
+          <li className="flex items-start gap-4">
+            <div className="w-2 h-2 rounded-full bg-secondary mt-2.5 shrink-0" />
+            <span>Casual round or scramble option depending on interest</span>
+          </li>
+          <li className="flex items-start gap-4">
+            <div className="w-2 h-2 rounded-full bg-secondary mt-2.5 shrink-0" />
+            <span>Choice of 9 or 18 holes based on preference</span>
+          </li>
+          <li className="flex items-start gap-4">
+            <div className="w-2 h-2 rounded-full bg-secondary mt-2.5 shrink-0" />
+            <span>Cost is separate from the Ryder Cup golfer budget</span>
+          </li>
+          <li className="flex items-start gap-4">
+            <div className="w-2 h-2 rounded-full bg-secondary mt-2.5 shrink-0" />
+            <span>Sign-up by indicating interest on the RSVP form</span>
           </li>
         </ul>
       </div>
