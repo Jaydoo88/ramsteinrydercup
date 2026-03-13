@@ -16,6 +16,7 @@ export default function Rsvp() {
   const [isGolfer, setIsGolfer] = useState<boolean | null>(null);
   const [bringingSo, setBringingSo] = useState<"no" | "likely" | "definite" | null>(null);
   const [soName, setSoName] = useState("");
+  const [soLadiesGolfInterest, setSoLadiesGolfInterest] = useState<"yes" | "maybe" | "no" | null>(null);
   const [likelihood, setLikelihood] = useState<"definite" | "likely" | "fifty_fifty" | "not_sure" | null>(null);
   const [notes, setNotes] = useState("");
   const [honeypot, setHoneypot] = useState("");
@@ -47,13 +48,13 @@ export default function Rsvp() {
     const data = {
       first_name: firstName,
       last_name: lastName,
-      email: email,
-      phone: phone || null,
+      // email and phone collected in UI but not sent to DB yet to avoid schema errors
       is_golfer: isGolfer,
       bringing_so: bringingSo,
       so_name: bringingSo !== "no" ? soName : null,
       attendance_likelihood: likelihood,
       notes: notes || null,
+      // so_ladies_golf_interest collected in UI but not sent to DB yet
     };
 
     try {
@@ -261,18 +262,35 @@ export default function Rsvp() {
                 </div>
 
                 {bringingSo && bringingSo !== "no" && (
-                  <div className="space-y-3 p-6 bg-[#FAF9F6] rounded-2xl border border-border animate-in fade-in slide-in-from-top-2">
-                    <label className="text-sm font-bold text-primary uppercase tracking-widest flex items-center gap-1">
-                      Significant Other's Name <span className="text-destructive">*</span>
-                    </label>
-                    <input 
-                      type="text" 
-                      value={soName}
-                      onChange={(e) => setSoName(e.target.value)}
-                      className="w-full p-4 text-lg rounded-xl border border-input bg-white focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all shadow-sm" 
-                      placeholder="Jane Doe" 
-                      required={true}
-                    />
+                  <div className="space-y-6 animate-in fade-in slide-in-from-top-2">
+                    <div className="space-y-3 p-6 bg-[#FAF9F6] rounded-2xl border border-border">
+                      <label className="text-sm font-bold text-primary uppercase tracking-widest flex items-center gap-1">
+                        Significant Other's Name <span className="text-destructive">*</span>
+                      </label>
+                      <input 
+                        type="text" 
+                        value={soName}
+                        onChange={(e) => setSoName(e.target.value)}
+                        className="w-full p-4 text-lg rounded-xl border border-input bg-white focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all shadow-sm" 
+                        placeholder="Jane Doe" 
+                        required={true}
+                      />
+                    </div>
+                    
+                    <div className="space-y-4 p-6 bg-[#FAF9F6] rounded-2xl border border-border">
+                      <label className="text-sm font-bold text-primary uppercase tracking-widest flex items-center gap-1">
+                        Is your significant other interested in the optional ladies golf round?
+                      </label>
+                      <SegmentedControl 
+                        value={soLadiesGolfInterest} 
+                        onChange={setSoLadiesGolfInterest}
+                        options={[
+                          { label: "Yes", value: "yes" },
+                          { label: "Maybe", value: "maybe" },
+                          { label: "No", value: "no" }
+                        ]}
+                      />
+                    </div>
                   </div>
                 )}
 
@@ -305,17 +323,19 @@ export default function Rsvp() {
                   />
                 </div>
 
-                <Button 
-                  type="submit"
-                  disabled={status === "submitting"}
-                  className="w-full h-16 text-xl font-bold bg-primary hover:bg-primary/90 text-primary-foreground uppercase tracking-widest mt-8 rounded-xl shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0"
-                >
-                  {status === "submitting" ? (
-                    <>Submitting... <Loader2 className="w-6 h-6 animate-spin" /></>
-                  ) : (
-                    <>Submit RSVP <Send className="w-6 h-6" /></>
-                  )}
-                </Button>
+                <div className="flex justify-center pt-8 border-t border-border/50">
+                  <Button 
+                    type="submit"
+                    disabled={status === "submitting"}
+                    className="h-16 px-12 text-xl font-bold bg-primary hover:bg-primary/90 text-primary-foreground uppercase tracking-widest rounded-xl shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all flex items-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+                  >
+                    {status === "submitting" ? (
+                      <>Submitting... <Loader2 className="w-6 h-6 animate-spin" /></>
+                    ) : (
+                      <>Submit RSVP <Send className="w-6 h-6" /></>
+                    )}
+                  </Button>
+                </div>
                 
               </form>
             )}
