@@ -37,10 +37,17 @@ export default function Rsvp() {
       return;
     }
 
-    if (bringingSo !== "no" && !soName.trim()) {
-      setErrorMessage("Please provide your significant other's name.");
-      setStatus("error");
-      return;
+    if (bringingSo !== "no") {
+      if (!soName.trim()) {
+        setErrorMessage("Please provide your significant other's name.");
+        setStatus("error");
+        return;
+      }
+      if (!soLadiesGolfInterest) {
+        setErrorMessage("Please indicate your significant other's interest in the optional ladies golf round.");
+        setStatus("error");
+        return;
+      }
     }
 
     setStatus("submitting");
@@ -48,13 +55,14 @@ export default function Rsvp() {
     const data = {
       first_name: firstName,
       last_name: lastName,
-      // email and phone collected in UI but not sent to DB yet to avoid schema errors
+      email: email,
+      phone: phone || null,
       is_golfer: isGolfer,
       bringing_so: bringingSo,
       so_name: bringingSo !== "no" ? soName : null,
+      so_ladies_golf_interest: bringingSo !== "no" ? soLadiesGolfInterest : null,
       attendance_likelihood: likelihood,
       notes: notes || null,
-      // so_ladies_golf_interest collected in UI but not sent to DB yet
     };
 
     try {
@@ -76,6 +84,7 @@ export default function Rsvp() {
         setIsGolfer(null);
         setBringingSo(null);
         setSoName("");
+        setSoLadiesGolfInterest(null);
         setLikelihood(null);
         setNotes("");
       }
