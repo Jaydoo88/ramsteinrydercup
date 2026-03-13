@@ -41,7 +41,12 @@ export default function GolfFormat() {
       </div>
 
       <div className="bg-white p-12 rounded-[2rem] shadow-xl border-t-8 border-secondary max-w-3xl mx-auto text-left mb-20">
-        <h2 className="font-serif text-3xl font-bold text-primary mb-4">Ladies Event (Significant Others) — Optional</h2>
+        <div className="flex items-center gap-4 mb-4">
+          <div className="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center shrink-0">
+            <span className="text-2xl" role="img" aria-label="Female Golfer">🏌️‍♀️</span>
+          </div>
+          <h2 className="font-serif text-3xl font-bold text-primary">Ladies Event (Significant Others) — Optional</h2>
+        </div>
         <p className="text-lg text-foreground/80 mb-6">
           An optional women's round for significant others who want to golf. This is completely separate from the main Ryder Cup competition rounds.
         </p>
