@@ -1,8 +1,30 @@
+import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import houseImage from "@assets/image_1772127839974.png";
+import houseImage1 from "@assets/image_1772127839974.png";
+import houseImage2 from "@assets/image_1773444293109.png";
+import houseImage3 from "@/assets/images/house-pool_1.jpg";
+import houseImage4 from "@/assets/images/house-pool_2.jpg";
 import { BedDouble, Waves, ThermometerSun, ShieldAlert, Check } from "lucide-react";
 
+const IMAGES = [houseImage1, houseImage2, houseImage3, houseImage4];
+
 export default function HouseRooming() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    // Preload images
+    IMAGES.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % IMAGES.length);
+    }, 4500);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="container mx-auto px-4 py-20 max-w-6xl">
       <div className="mb-16 text-center max-w-4xl mx-auto">
@@ -12,10 +34,19 @@ export default function HouseRooming() {
         </p>
       </div>
 
-      <div className="rounded-[2.5rem] overflow-hidden mb-20 shadow-2xl relative border-[6px] border-white">
-        <img src={houseImage} alt="Luxury 12 Bedroom House" className="w-full h-[65vh] object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent"></div>
-        <div className="absolute bottom-0 left-0 right-0 p-10 md:p-16">
+      <div className="rounded-[2.5rem] overflow-hidden mb-20 shadow-2xl relative border-[6px] border-white h-[65vh]">
+        {IMAGES.map((src, index) => (
+          <img
+            key={src}
+            src={src}
+            alt={`Luxury 12 Bedroom House - View ${index + 1}`}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
+              index === currentImageIndex ? "opacity-100 z-10" : "opacity-0 z-0"
+            }`}
+          />
+        ))}
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent z-20"></div>
+        <div className="absolute bottom-0 left-0 right-0 p-10 md:p-16 z-30">
           <div className="inline-block px-4 py-2 bg-secondary text-secondary-foreground font-bold uppercase tracking-widest rounded-full text-sm mb-4">
             Primary Option A
           </div>
