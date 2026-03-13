@@ -21,7 +21,7 @@ export default function Rsvp() {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [isGolfer, setIsGolfer] = useState<boolean | null>(null);
+  const [isGolfer, setIsGolfer] = useState<boolean>(false);
   const [bringingSo, setBringingSo] = useState<"no" | "likely" | "definite" | null>(null);
   const [soName, setSoName] = useState("");
   const [soLadiesGolfInterest, setSoLadiesGolfInterest] = useState<"yes" | "maybe" | "no" | null>(null);
@@ -39,7 +39,7 @@ export default function Rsvp() {
       return;
     }
 
-    if (isGolfer === null || bringingSo === null || likelihood === null) {
+    if (bringingSo === null || likelihood === null) {
       setErrorMessage("Please complete all multiple-choice questions.");
       setStatus("error");
       return;
@@ -251,16 +251,20 @@ export default function Rsvp() {
                 
                 <div className="space-y-4 pt-4 border-t border-border/50">
                   <label className="text-base font-bold text-primary uppercase tracking-widest flex items-center gap-1">
-                    Are you golfing? <span className="text-destructive">*</span>
+                    Golfer Confirmation <span className="text-destructive">*</span>
                   </label>
-                  <SegmentedControl 
-                    value={isGolfer} 
-                    onChange={setIsGolfer}
-                    options={[
-                      { label: "Yes, I'm playing", value: true },
-                      { label: "No, just hanging out", value: false }
-                    ]}
-                  />
+                  <label className="flex items-start gap-3 p-4 rounded-xl border border-input hover:border-secondary/50 hover:bg-secondary/5 transition-all cursor-pointer group">
+                    <input
+                      type="checkbox"
+                      required
+                      checked={isGolfer}
+                      onChange={(e) => setIsGolfer(e.target.checked)}
+                      className="mt-1 w-5 h-5 rounded border-input text-secondary focus:ring-secondary/50 accent-secondary bg-background cursor-pointer"
+                    />
+                    <span className="text-base font-medium text-foreground group-hover:text-primary transition-colors">
+                      Yes — I'm committing as a Golfer (Playing in the Cup)
+                    </span>
+                  </label>
                 </div>
 
                 <div className="space-y-4 pt-4 border-t border-border/50">
@@ -343,8 +347,8 @@ export default function Rsvp() {
                 <div className="flex justify-center pt-8 border-t border-border/50">
                   <Button 
                     type="submit"
-                    disabled={status === "submitting"}
-                    className="h-16 px-12 text-xl font-bold bg-primary hover:bg-primary/90 text-primary-foreground uppercase tracking-widest rounded-xl shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all flex items-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+                    disabled={status === "submitting" || !isGolfer}
+                    className="h-16 px-12 text-xl font-bold bg-primary hover:bg-primary/90 text-primary-foreground uppercase tracking-widest rounded-xl shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all flex items-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
                   >
                     {status === "submitting" ? (
                       <>Submitting... <Loader2 className="w-6 h-6 animate-spin" /></>
