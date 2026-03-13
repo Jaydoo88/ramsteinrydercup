@@ -12,7 +12,7 @@ export default function PricingBudget() {
         </p>
       </div>
 
-      <div className="flex flex-col md:flex-row items-start md:items-center gap-6 p-8 bg-secondary/10 rounded-[2rem] border border-secondary/30 mb-16 shadow-lg">
+      <div className="flex flex-col md:flex-row items-start md:items-center gap-6 p-8 bg-secondary/10 rounded-[2rem] border border-secondary/30 mb-8 shadow-lg">
         <div className="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center shrink-0">
           <Users className="w-8 h-8 text-secondary" />
         </div>
@@ -21,6 +21,32 @@ export default function PricingBudget() {
           <p className="text-lg text-foreground/80 leading-relaxed">
             We will always have 12 golfers, but some golfers may come solo and some may bring a significant other. Total headcount changes the shared cost per person. <strong>More SOs attending = lower cost per golfer. Fewer SOs (more solo golfers) = higher cost per golfer.</strong> Final pricing will be confirmed once headcount is locked.
           </p>
+        </div>
+      </div>
+
+      <div className="bg-white p-8 rounded-[2rem] border border-border/50 mb-16 shadow-md relative overflow-hidden">
+        <div className="absolute left-0 top-0 bottom-0 w-2 bg-secondary"></div>
+        <div className="pl-4">
+          <h4 className="font-bold text-lg mb-4 text-primary uppercase tracking-widest">Optional Add-Ons (Not Included)</h4>
+          <h5 className="font-serif text-2xl font-bold mb-4">Ladies Golf Round (Significant Others) — <span className="text-secondary">Cost TBD</span></h5>
+          <ul className="space-y-3 text-lg text-foreground/80">
+            <li className="flex items-start gap-3">
+              <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2.5 shrink-0" /> 
+              <span>Optional tee time for significant others who want to golf (separate from Ryder Cup competition)</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2.5 shrink-0" /> 
+              <span><strong>Not included in the $675 Non-Golfer Tier</strong> (that tier is shared costs only)</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2.5 shrink-0" /> 
+              <span>Final cost depends on course choice and number of players</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2.5 shrink-0" /> 
+              <span>Sign up via RSVP interest and we'll confirm pricing before booking</span>
+            </li>
+          </ul>
         </div>
       </div>
 
