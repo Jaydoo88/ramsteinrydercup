@@ -2,11 +2,32 @@ import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import houseImage1 from "@assets/image_1772127839974.png";
 import houseImage2 from "@assets/image_1773444293109.png";
-import houseImage3 from "@/assets/images/house-pool_1.jpg";
-import houseImage4 from "@/assets/images/house-pool_2.jpg";
+import houseImage3 from "@assets/image_1773444423038.png";
+import houseImage4 from "@assets/image_1773444429502.png";
+import houseImage5 from "@assets/image_1773444439722.png";
+import houseImage6 from "@assets/image_1773444448880.png";
+import houseImage7 from "@assets/image_1773444467138.png";
+import houseImage8 from "@assets/image_1773444477203.png";
+import houseImage9 from "@assets/image_1773444489286.png";
+import houseImage10 from "@assets/image_1773444497574.png";
+import houseImage11 from "@assets/image_1773444506695.png";
+import houseImage12 from "@assets/image_1773444518322.png";
+import houseImage13 from "@assets/image_1773444538733.png";
+import houseImage14 from "@assets/image_1773444548507.png";
+import houseImage15 from "@assets/image_1773444558382.png";
+import houseImage16 from "@assets/image_1773444577807.png";
+import houseImage17 from "@assets/image_1773444594241.png";
+import houseImage18 from "@assets/image_1773444605631.png";
+import houseImage19 from "@assets/image_1773444626158.png";
+import houseImage20 from "@assets/image_1773444645489.png";
 import { BedDouble, Waves, ThermometerSun, ShieldAlert, Check } from "lucide-react";
 
-const IMAGES = [houseImage1, houseImage2, houseImage3, houseImage4];
+const IMAGES = [
+  houseImage1, houseImage2, houseImage3, houseImage4, houseImage5, 
+  houseImage6, houseImage7, houseImage8, houseImage9, houseImage10,
+  houseImage11, houseImage12, houseImage13, houseImage14, houseImage15,
+  houseImage16, houseImage17, houseImage18, houseImage19, houseImage20
+];
 
 export default function HouseRooming() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
