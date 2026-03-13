@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { supabase } from "@/lib/supabase";
 import { CheckCircle2, AlertCircle, Loader2, Send } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
@@ -7,6 +7,16 @@ import { Button } from "@/components/ui/button";
 export default function Rsvp() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const formContainerRef = useRef<HTMLDivElement>(null);
+  const successRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (status === "success" && successRef.current) {
+      // Scroll to the success message with a slight offset
+      const y = successRef.current.getBoundingClientRect().top + window.scrollY - 150;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  }, [status]);
 
   // Form State
   const [firstName, setFirstName] = useState("");
@@ -124,7 +134,7 @@ export default function Rsvp() {
   );
 
   return (
-    <div className="container mx-auto px-4 py-20 relative z-10 max-w-4xl">
+    <div className="container mx-auto px-4 py-20 relative z-10 max-w-4xl" ref={formContainerRef}>
       <div className="text-center mb-10 relative z-20">
         <h1 className="font-serif text-5xl md:text-6xl font-bold text-primary mb-6">Founding Group RSVP</h1>
         <p className="text-2xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
@@ -145,7 +155,7 @@ export default function Rsvp() {
           
           <CardContent className="p-8 md:p-12 bg-white">
             {status === "success" ? (
-              <div className="flex flex-col items-center justify-center py-16 text-center animate-in fade-in zoom-in duration-500">
+              <div ref={successRef} className="flex flex-col items-center justify-center py-16 text-center animate-in fade-in zoom-in duration-500">
                 <div className="w-24 h-24 bg-secondary/10 rounded-full flex items-center justify-center mb-8">
                   <CheckCircle2 className="w-12 h-12 text-secondary" />
                 </div>
