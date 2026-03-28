@@ -3,6 +3,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import { useState } from "react";
+import logoImage from "@assets/image0_1774735378309.png";
 
 const routes = [
   { name: "Home", path: "/" },
@@ -20,10 +21,10 @@ export function Navbar() {
 
   return (
     <nav className="bg-primary text-primary-foreground sticky top-0 z-50 border-b border-primary/20 shadow-md">
-      <div className="container mx-auto px-4 h-20 flex items-center justify-between">
+      <div className="container mx-auto px-4 h-24 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 bg-secondary rounded-full flex items-center justify-center text-secondary-foreground font-serif font-bold text-xl group-hover:bg-secondary/90 transition-colors">
-            RR
+          <div className="bg-white rounded-full p-1 shadow-sm">
+            <img src={logoImage} alt="Ramstein Ryder Cup Logo" className="h-16 w-16 object-contain" />
           </div>
           <div className="flex flex-col">
             <span className="font-serif font-bold text-lg leading-tight tracking-wide text-white">Ramstein Ryder Cup</span>
@@ -54,8 +55,8 @@ export function Navbar() {
             <SheetContent side="right" className="bg-primary border-l-primary/20 text-primary-foreground p-0">
               <div className="p-6 flex flex-col gap-6 h-full">
                 <div className="flex items-center gap-3 border-b border-primary-foreground/10 pb-6">
-                  <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-secondary-foreground font-serif font-bold text-2xl">
-                    RR
+                  <div className="bg-white rounded-full p-1 shadow-sm shrink-0">
+                    <img src={logoImage} alt="Ramstein Ryder Cup Logo" className="h-12 w-12 object-contain" />
                   </div>
                   <div>
                     <div className="font-serif font-bold text-xl">Ryder Cup</div>

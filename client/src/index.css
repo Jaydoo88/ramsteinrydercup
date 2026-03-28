@@ -36,37 +36,37 @@
 }
 
 :root {
-  /* Cream / Sand base */
+  /* Cream / Light base */
   --background: 60 20% 98%;
-  --foreground: 0 0% 20%;
+  --foreground: 212 85% 15%;
   
   --card: 0 0% 100%;
-  --card-foreground: 0 0% 20%;
+  --card-foreground: 212 85% 15%;
   
   --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 20%;
+  --popover-foreground: 212 85% 15%;
   
-  /* Deep Green */
-  --primary: 160 43% 16%;
-  --primary-foreground: 60 20% 98%;
+  /* Deep Blue */
+  --primary: 212 85% 25%;
+  --primary-foreground: 0 0% 100%;
   
-  /* Gold Accent */
-  --secondary: 43 67% 52%;
-  --secondary-foreground: 0 0% 10%;
+  /* Red Accent */
+  --secondary: 350 85% 45%;
+  --secondary-foreground: 0 0% 100%;
   
-  /* Sand / Desert Tan */
-  --muted: 38 46% 88%;
-  --muted-foreground: 0 0% 40%;
+  /* Soft Blue/Gray for muted elements */
+  --muted: 212 20% 90%;
+  --muted-foreground: 212 20% 40%;
   
-  --accent: 38 46% 88%;
-  --accent-foreground: 160 43% 16%;
+  --accent: 212 20% 90%;
+  --accent-foreground: 212 85% 25%;
   
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
   
-  --border: 38 30% 85%;
-  --input: 38 30% 85%;
-  --ring: 160 43% 16%;
+  --border: 212 20% 85%;
+  --input: 212 20% 85%;
+  --ring: 212 85% 25%;
   
   --radius: 0.5rem;
   
@@ -75,31 +75,30 @@
 }
 
 .dark {
-  /* For golf clubhouse site, dark mode is just a deep elegant green */
-  --background: 160 43% 10%;
+  --background: 212 85% 10%;
   --foreground: 60 20% 95%;
   
-  --card: 160 43% 13%;
+  --card: 212 85% 13%;
   --card-foreground: 60 20% 95%;
   
-  --popover: 160 43% 13%;
+  --popover: 212 85% 13%;
   --popover-foreground: 60 20% 95%;
   
-  --primary: 43 67% 52%; /* Gold primary in dark mode */
-  --primary-foreground: 160 43% 10%;
+  --primary: 350 85% 45%;
+  --primary-foreground: 0 0% 100%;
   
-  --secondary: 160 43% 20%;
-  --secondary-foreground: 60 20% 95%;
+  --secondary: 212 85% 25%;
+  --secondary-foreground: 0 0% 100%;
   
-  --muted: 160 43% 20%;
-  --muted-foreground: 160 20% 70%;
+  --muted: 212 40% 20%;
+  --muted-foreground: 212 20% 70%;
   
-  --accent: 160 43% 20%;
+  --accent: 212 40% 20%;
   --accent-foreground: 60 20% 95%;
   
-  --border: 160 43% 25%;
-  --input: 160 43% 25%;
-  --ring: 43 67% 52%;
+  --border: 212 40% 25%;
+  --input: 212 40% 25%;
+  --ring: 350 85% 45%;
 }
 
 @layer base {
