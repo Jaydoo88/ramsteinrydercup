@@ -89,7 +89,7 @@ export default function Rsvp() {
         setLastName("");
         setEmail("");
         setPhone("");
-        setIsGolfer(null);
+        setIsGolfer(false);
         setBringingSo(null);
         setSoName("");
         setSoLadiesGolfInterest(null);
