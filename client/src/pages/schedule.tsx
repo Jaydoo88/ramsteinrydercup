@@ -8,7 +8,7 @@ export default function Schedule() {
       </div>
       <h1 className="font-serif text-5xl md:text-6xl font-bold text-primary mb-6">Schedule & Logistics</h1>
       <p className="text-2xl text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-16">
-        Arrival windows, van assignments, and daily flow. 
+        Arrival windows, transportation planning, and daily flow. 
       </p>
       
       <div className="bg-white p-12 rounded-[2rem] shadow-xl max-w-3xl mx-auto">
