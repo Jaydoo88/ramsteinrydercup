@@ -78,12 +78,12 @@ export default function TripOverview() {
           <h2 className="font-serif text-4xl font-bold mb-10 text-white">What's Included</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              "4 nights in a luxury 12-bedroom house",
-              "2 passenger vans + estimated gas",
+              "4 nights in an 8-suite HQ house (ensuite baths)",
+              "15-passenger van rental + estimated gas",
               "House stock-up fund (Costco food/drinks)",
               "3 days of golf (estimated budget)",
               "Official Ryder Cup competition format",
-              "Couples/private-room priority where possible"
+              "Private-suite comfort (assignments after deposits)"
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
                 <CheckCircle2 className="w-6 h-6 text-secondary shrink-0 mt-0.5" />
