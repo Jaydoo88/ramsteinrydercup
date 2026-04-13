@@ -37,7 +37,7 @@ export default function Home() {
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <Button asChild size="lg" variant="secondary" className="w-full sm:w-auto h-16 px-10 text-xl font-bold shadow-2xl uppercase tracking-widest">
-              <Link href="/rsvp">Join the Founding Group</Link>
+              <a href="/pricing#payment-plan">View Payment Plan</a>
             </Button>
             <Button asChild size="lg" variant="outline" className="w-full sm:w-auto h-16 px-10 text-xl font-bold bg-black/30 text-white border-white/30 hover:bg-black/50 hover:text-white backdrop-blur-md uppercase tracking-widest">
               <Link href="/overview">View Trip Details</Link>

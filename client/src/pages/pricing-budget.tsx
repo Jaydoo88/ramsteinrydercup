@@ -154,7 +154,7 @@ export default function PricingBudget() {
         </TabsContent>
       </Tabs>
       
-      <div className="mt-16 rounded-[2.5rem] border border-border/60 bg-white shadow-[0_24px_80px_rgba(15,23,42,0.08)] overflow-hidden">
+      <div id="payment-plan" className="mt-16 scroll-mt-32 rounded-[2.5rem] border border-border/60 bg-white shadow-[0_24px_80px_rgba(15,23,42,0.08)] overflow-hidden">
         <div className="border-b border-border/60 bg-[linear-gradient(180deg,rgba(250,249,246,0.9),rgba(255,255,255,1))] px-8 py-8 md:px-10">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="flex items-start gap-4">
