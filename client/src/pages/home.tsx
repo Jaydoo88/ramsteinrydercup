@@ -7,34 +7,33 @@ import heroImage from "@/assets/images/hero-desert.png";
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Hero Section */}
       <section className="relative h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img 
-            src={heroImage} 
-            alt="Scottsdale Desert Golf Course" 
+          <img
+            src={heroImage}
+            alt="Scottsdale Desert Golf Course"
             className="w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/50 to-background mix-blend-multiply"></div>
           <div className="absolute inset-0 bg-black/20"></div>
         </div>
-        
+
         <div className="relative z-10 container mx-auto px-4 text-center text-white mt-12 md:pb-16 pb-24">
           <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-secondary text-secondary-foreground text-sm font-bold tracking-widest uppercase mb-8 shadow-xl">
             <ShieldCheck className="w-4 h-4" />
             Founding Year &bull; 2026
           </div>
-          
+
           <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl font-bold mb-6 text-white drop-shadow-2xl">
             Ramstein <br className="md:hidden" />
             <span className="text-secondary italic">Ryder Cup</span>
           </h1>
-          
+
           <p className="text-xl md:text-3xl text-white/90 max-w-3xl mx-auto mb-12 font-medium drop-shadow-lg">
-            The official launch of a tradition. 12 golfers. 4 nights. 
+            The official launch of a tradition. 8 golfers. 4 nights.
             One unforgettable desert classic.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <Button asChild size="lg" variant="secondary" className="w-full sm:w-auto h-16 px-10 text-xl font-bold shadow-2xl uppercase tracking-widest">
               <Link href="/rsvp">Join the Founding Group</Link>
@@ -46,7 +45,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Quick Facts */}
       <section className="py-12 relative z-20">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto md:-mt-32 -mt-16">
@@ -56,44 +54,42 @@ export default function Home() {
                   <CalendarDays className="w-8 h-8" />
                 </div>
                 <h3 className="font-serif font-bold text-2xl mb-2 text-primary">Sept 16–20, 2026</h3>
-                <p className="text-muted-foreground font-medium uppercase tracking-wider text-sm">Tentative Dates <br/> (4 Nights / 5 Days)</p>
+                <p className="text-muted-foreground font-medium uppercase tracking-wider text-sm">Tentative Dates <br /> (4 Nights / 5 Days)</p>
               </CardContent>
             </Card>
-            
+
             <Card className="bg-white/95 backdrop-blur-xl border-t-4 border-t-secondary shadow-2xl">
               <CardContent className="p-8 flex flex-col items-center text-center">
                 <div className="w-16 h-16 bg-primary/5 text-primary rounded-full flex items-center justify-center mb-6">
                   <MapPin className="w-8 h-8" />
                 </div>
                 <h3 className="font-serif font-bold text-2xl mb-2 text-primary">Scottsdale, AZ</h3>
-                <p className="text-muted-foreground font-medium uppercase tracking-wider text-sm">Desert Major Meets <br/> Private Club</p>
+                <p className="text-muted-foreground font-medium uppercase tracking-wider text-sm">Desert Major Meets <br /> Private Club</p>
               </CardContent>
             </Card>
-            
+
             <Card className="bg-white/95 backdrop-blur-xl border-t-4 border-t-secondary shadow-2xl">
               <CardContent className="p-8 flex flex-col items-center text-center">
                 <div className="w-16 h-16 bg-primary/5 text-primary rounded-full flex items-center justify-center mb-6">
                   <Users className="w-8 h-8" />
                 </div>
                 <h3 className="font-serif font-bold text-2xl mb-2 text-primary">The Field</h3>
-                <p className="text-muted-foreground font-medium uppercase tracking-wider text-sm">12 Golfers + <br/> Significant Others</p>
+                <p className="text-muted-foreground font-medium uppercase tracking-wider text-sm">8 golfers <br /> (Founding Group)</p>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* Commissioner's Note */}
       <section className="py-24 bg-background">
         <div className="container px-4 max-w-4xl mx-auto text-center">
           <h2 className="font-serif text-4xl md:text-5xl font-bold mb-10 text-primary">A Note from the Commissioner</h2>
           <div className="relative py-8">
             <span className="absolute top-0 left-0 md:-left-12 text-9xl text-secondary/30 font-serif leading-none">"</span>
             <p className="text-2xl md:text-3xl leading-relaxed text-foreground/90 font-serif italic relative z-10 px-6">
-              This isn't just a one-time trip. This is Year 1 of a long-running tradition. 
-              We're building an event that blends competitive golf trip swagger with the 
-              inclusive comfort of a reunion. We want the core group locked in to set the 
-              standard.
+              This isn&apos;t just a one-time trip. This is Year 1 of a long-running tradition.
+              We&apos;re building an event around an eight-man founding group, with significant others
+              planned only through RSVP so the house and golf numbers stay clean from the start.
             </p>
             <span className="absolute bottom-0 right-0 md:-right-12 text-9xl text-secondary/30 font-serif leading-none rotate-180">"</span>
           </div>
@@ -103,14 +99,37 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Feature Navigation Grid */}
       <section className="py-24 bg-muted/40 border-t border-border">
         <div className="container px-4 max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16">
             <div>
               <h2 className="font-serif text-5xl font-bold text-primary mb-4">Planning Headquarters</h2>
-              <p className="text-muted-foreground text-xl max-w-2xl">Everything you need to know about the founding year trip, from rooming to the Ryder Cup format.</p>
+              <p className="text-muted-foreground text-xl max-w-3xl">
+                Everything you need to know about Casa Luna, the founding group baseline, rooming after deposits,
+                and the Ryder Cup format.
+              </p>
             </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <Card className="border-none bg-white shadow-xl">
+              <CardContent className="p-8">
+                <p className="text-sm font-bold uppercase tracking-[0.2em] text-secondary mb-3">Rooming Plan (After Deposits)</p>
+                <p className="text-lg text-foreground/80 leading-relaxed">
+                  Assignments will be finalized after deposits are collected. Every guest suite at Casa Luna includes
+                  its own ensuite bathroom, plus the house has one extra full bath for added flexibility.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="border-none bg-white shadow-xl">
+              <CardContent className="p-8">
+                <p className="text-sm font-bold uppercase tracking-[0.2em] text-secondary mb-3">HQ Amenities</p>
+                <p className="text-lg text-foreground/80 leading-relaxed">
+                  Pool and hot tub, a putting green, a game room, and a big group kitchen with hang space built for
+                  post-round recaps and late-night stories.
+                </p>
+              </CardContent>
+            </Card>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -119,7 +138,9 @@ export default function Home() {
                 <CardContent className="p-10 flex flex-col h-full">
                   <HomeIcon className="w-12 h-12 text-secondary mb-8 group-hover:scale-110 transition-transform" />
                   <h3 className="font-serif font-bold text-2xl mb-4 text-primary">House & Rooming</h3>
-                  <p className="text-muted-foreground text-base mb-8 flex-grow">12-bedroom luxury HQ. Designed for comfort and fairness.</p>
+                  <p className="text-muted-foreground text-base mb-8 flex-grow">
+                    Casa Luna (8BR / 9BA). 8 private guest suites, each with its own ensuite bathroom.
+                  </p>
                   <div className="flex items-center text-sm font-bold text-secondary uppercase tracking-wider">
                     Explore House <ChevronRight className="w-5 h-5 ml-2" />
                   </div>
@@ -132,7 +153,12 @@ export default function Home() {
                 <CardContent className="p-10 flex flex-col h-full">
                   <Wallet className="w-12 h-12 text-secondary mb-8 group-hover:scale-110 transition-transform" />
                   <h3 className="font-serif font-bold text-2xl mb-4 text-primary">Budget & Pricing</h3>
-                  <p className="text-muted-foreground text-base mb-8 flex-grow">Transparent costs, shared expenses, and the cushion explained.</p>
+                  <p className="text-muted-foreground text-base mb-3 flex-grow">
+                    $5,025 total for 4 nights (all fees included).
+                  </p>
+                  <p className="text-sm text-muted-foreground/90 leading-relaxed mb-8">
+                    Per-person cost depends on headcount. Final numbers confirmed after deposits are collected.
+                  </p>
                   <div className="flex items-center text-sm font-bold text-secondary uppercase tracking-wider">
                     View Estimates <ChevronRight className="w-5 h-5 ml-2" />
                   </div>
