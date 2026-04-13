@@ -28,25 +28,30 @@ export default function PricingBudget() {
         <div className="absolute left-0 top-0 bottom-0 w-2 bg-secondary"></div>
         <div className="pl-4">
           <h4 className="font-bold text-lg mb-4 text-primary uppercase tracking-widest">Optional Add-Ons (Not Included)</h4>
-          <h5 className="font-serif text-2xl font-bold mb-4">Ladies Golf Round (Significant Others) — <span className="text-secondary">Cost TBD</span></h5>
+          <h5 className="font-serif text-2xl font-bold mb-4">Ladies Activities (Significant Others) — <span className="text-secondary">Cost Varies</span></h5>
           <ul className="space-y-3 text-lg text-foreground/80">
             <li className="flex items-start gap-3">
               <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2.5 shrink-0" /> 
-              <span>Optional tee time for spouses/gf who want to golf (separate from Ryder Cup competition)</span>
+              <span>Optional tee time for spouses/significant others who want to golf (separate from Ryder Cup competition)</span>
             </li>
             <li className="flex items-start gap-3">
               <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2.5 shrink-0" /> 
-              <span>Not included in shared trip costs (separate tee time cost per player)</span>
+              <span>Optional non-golf activities available for those who prefer a different experience</span>
             </li>
             <li className="flex items-start gap-3">
               <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2.5 shrink-0" /> 
-              <span>Final cost depends on course choice and number of players</span>
+              <span>Not included in shared trip costs (activities booked and paid individually)</span>
             </li>
             <li className="flex items-start gap-3">
               <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2.5 shrink-0" /> 
-              <span>Indicate interest on the RSVP form and we'll confirm pricing before booking</span>
+              <span>Final cost depends on selected activity and participation</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2.5 shrink-0" /> 
+              <span>Indicate interest on the RSVP form and details will be coordinated</span>
             </li>
           </ul>
+          <p className="mt-4 text-sm text-muted-foreground">Example option: Guided horseback trail rides in Cave Creek (scenic Sonoran Desert experience)</p>
         </div>
       </div>
 
