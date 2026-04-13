@@ -24,7 +24,7 @@ export default function TripOverview() {
             </div>
             <div>
               <h3 className="font-serif font-bold text-2xl mb-2 text-primary">Dates</h3>
-              <p className="text-muted-foreground text-lg mb-2">Sept 16–20, 2026 (Tentative)</p>
+              <p className="text-muted-foreground text-lg mb-2">Sept 16–20, 2026</p>
               <p className="text-sm text-secondary font-bold uppercase tracking-wider">4 Nights / 5 Days</p>
             </div>
           </CardContent>

@@ -31,7 +31,7 @@ export default function GolfFormat() {
           </li>
           <li className="flex items-start gap-4">
             <ShieldAlert className="w-6 h-6 text-secondary shrink-0 mt-1" />
-            <span>Three competition days (Sept 17–19 tentative) with 3 matches per day.</span>
+            <span>Three competition days (Sept 17–19) with 3 matches per day.</span>
           </li>
           <li className="flex items-start gap-4">
             <Trophy className="w-6 h-6 text-secondary shrink-0 mt-1" />
