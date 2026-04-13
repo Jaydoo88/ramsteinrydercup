@@ -88,6 +88,7 @@ export default function PricingBudget() {
                 <div className="mt-6 space-y-2 text-sm font-medium text-white/75">
                   <p>Est. Shared: ~$142 per person / night (4 nights)</p>
                   <p className="text-xs text-white/60">Includes house + vans + gas estimate + stock-up fund</p>
+                  <p className="text-xs text-white/60">Golf estimate reflects 3 days of golf</p>
                 </div>
               </CardContent>
             </Card>
