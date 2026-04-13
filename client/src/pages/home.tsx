@@ -132,15 +132,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-background">
-        <div className="container px-4 max-w-4xl mx-auto text-center">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6 text-primary">Start Here</h2>
-          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-            Home is the front door. Use the pages above to get the details that matter — trip overview,
-            house setup, pricing, competition format, schedule, rules, and RSVP.
-          </p>
-        </div>
-      </section>
 
       <section className="py-24 bg-muted/40 border-t border-border">
         <div className="container px-4 max-w-7xl mx-auto">
