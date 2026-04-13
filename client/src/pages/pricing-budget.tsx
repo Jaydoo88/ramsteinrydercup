@@ -28,7 +28,7 @@ export default function PricingBudget() {
         <div className="absolute left-0 top-0 bottom-0 w-2 bg-secondary"></div>
         <div className="pl-4">
           <h4 className="font-bold text-lg mb-4 text-primary uppercase tracking-widest">Optional Add-Ons (Not Included)</h4>
-          <h5 className="font-serif text-2xl font-bold mb-4">Ladies Activities (Significant Others) — <span className="text-secondary">Cost Varies</span></h5>
+          <h5 className="font-serif text-2xl font-bold mb-4">Optional Activities (Significant Others) — <span className="text-secondary">Cost Varies</span></h5>
           <ul className="space-y-3 text-lg text-foreground/80">
             <li className="flex items-start gap-3">
               <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2.5 shrink-0" /> 

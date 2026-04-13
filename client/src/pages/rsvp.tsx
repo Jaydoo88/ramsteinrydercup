@@ -24,7 +24,7 @@ export default function Rsvp() {
   const [isGolfer, setIsGolfer] = useState<boolean>(false);
   const [bringingSo, setBringingSo] = useState<"no" | "likely" | "definite" | null>(null);
   const [soName, setSoName] = useState("");
-  const [soLadiesGolfInterest, setSoLadiesGolfInterest] = useState<"yes" | "maybe" | "no" | null>(null);
+  const [soActivityInterests, setSoActivityInterests] = useState<string[]>([]);
   const [likelihood, setLikelihood] = useState<"definite" | "likely" | "fifty_fifty" | "not_sure" | null>(null);
   const [notes, setNotes] = useState("");
   const [honeypot, setHoneypot] = useState("");
@@ -51,11 +51,6 @@ export default function Rsvp() {
         setStatus("error");
         return;
       }
-      if (!soLadiesGolfInterest) {
-        setErrorMessage("Please indicate your significant other's interest in the optional ladies golf round.");
-        setStatus("error");
-        return;
-      }
     }
 
     setStatus("submitting");
@@ -68,7 +63,7 @@ export default function Rsvp() {
       is_golfer: isGolfer,
       bringing_so: bringingSo,
       so_name: bringingSo !== "no" ? soName : null,
-      so_ladies_golf_interest: bringingSo !== "no" ? soLadiesGolfInterest : null,
+      so_ladies_golf_interest: bringingSo !== "no" && soActivityInterests.length > 0 ? soActivityInterests.join(", ") : null,
       attendance_likelihood: likelihood,
       notes: notes || null,
     };
@@ -92,7 +87,7 @@ export default function Rsvp() {
         setIsGolfer(false);
         setBringingSo(null);
         setSoName("");
-        setSoLadiesGolfInterest(null);
+        setSoActivityInterests([]);
         setLikelihood(null);
         setNotes("");
       }
@@ -130,6 +125,14 @@ export default function Rsvp() {
       ))}
     </div>
   );
+
+  const toggleActivityInterest = (interest: string) => {
+    setSoActivityInterests((current) =>
+      current.includes(interest)
+        ? current.filter((item) => item !== interest)
+        : [...current, interest]
+    );
+  };
 
   return (
     <div className="container mx-auto px-4 py-20 relative z-10 max-w-4xl" ref={formContainerRef}>
@@ -300,17 +303,27 @@ export default function Rsvp() {
                     
                     <div className="space-y-4 p-6 bg-[#FAF9F6] rounded-2xl border border-border">
                       <label className="text-sm font-bold text-primary uppercase tracking-widest flex items-center gap-1">
-                        Is your significant other interested in the optional ladies golf round?
+                        Significant Other Activity Interest <span className="text-muted-foreground font-normal normal-case tracking-normal">(Optional)</span>
                       </label>
-                      <SegmentedControl 
-                        value={soLadiesGolfInterest} 
-                        onChange={setSoLadiesGolfInterest}
-                        options={[
-                          { label: "Yes", value: "yes" },
-                          { label: "Maybe", value: "maybe" },
-                          { label: "No", value: "no" }
-                        ]}
-                      />
+                      <div className="space-y-3">
+                        {[
+                          "Golf (Optional Ladies Round)",
+                          "Non-Golf Activity (e.g., Trail Ride / Local Experience)",
+                          "Not sure yet"
+                        ].map((option) => (
+                          <label key={option} className="flex items-start gap-3 p-4 rounded-xl border border-input bg-white hover:border-secondary/50 hover:bg-secondary/5 transition-all cursor-pointer group">
+                            <input
+                              type="checkbox"
+                              checked={soActivityInterests.includes(option)}
+                              onChange={() => toggleActivityInterest(option)}
+                              className="mt-1 w-5 h-5 rounded border-input text-secondary focus:ring-secondary/50 accent-secondary bg-background cursor-pointer"
+                            />
+                            <span className="text-base font-medium text-foreground group-hover:text-primary transition-colors">
+                              {option}
+                            </span>
+                          </label>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 )}
@@ -335,27 +348,32 @@ export default function Rsvp() {
                   <label className="text-base font-bold text-primary uppercase tracking-widest">
                     Any notes for the Commissioner?
                   </label>
-                  <p className="text-sm text-muted-foreground mb-2">Flight preferences, dietary restrictions, questions about the optional ladies round, etc.</p>
+                  <p className="text-sm text-muted-foreground mb-2">Flight preferences, dietary restrictions, or questions about optional activities (golf or non-golf)...</p>
                   <textarea 
                     value={notes}
                     onChange={(e) => setNotes(e.target.value)}
                     className="w-full p-4 text-lg rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all h-32 resize-none" 
-                    placeholder="Drop any details here..." 
+                    placeholder="Flight preferences, dietary restrictions, or questions about optional activities (golf or non-golf)..." 
                   />
                 </div>
 
-                <div className="flex justify-center pt-8 border-t border-border/50">
-                  <Button 
-                    type="submit"
-                    disabled={status === "submitting" || !isGolfer}
-                    className="h-16 px-12 text-xl font-bold bg-primary hover:bg-primary/90 text-primary-foreground uppercase tracking-widest rounded-xl shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all flex items-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
-                  >
-                    {status === "submitting" ? (
-                      <>Submitting... <Loader2 className="w-6 h-6 animate-spin" /></>
-                    ) : (
-                      <>Submit RSVP <Send className="w-6 h-6" /></>
-                    )}
-                  </Button>
+                <div className="pt-8 border-t border-border/50 space-y-4">
+                  <p className="text-sm text-muted-foreground text-center max-w-2xl mx-auto">
+                    Optional activities are not booked at this stage. We’ll confirm details and pricing after headcount is finalized.
+                  </p>
+                  <div className="flex justify-center">
+                    <Button 
+                      type="submit"
+                      disabled={status === "submitting" || !isGolfer}
+                      className="h-16 px-12 text-xl font-bold bg-primary hover:bg-primary/90 text-primary-foreground uppercase tracking-widest rounded-xl shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all flex items-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+                    >
+                      {status === "submitting" ? (
+                        <>Submitting... <Loader2 className="w-6 h-6 animate-spin" /></>
+                      ) : (
+                        <>Submit RSVP <Send className="w-6 h-6" /></>
+                      )}
+                    </Button>
+                  </div>
                 </div>
                 
               </form>
