@@ -27,15 +27,15 @@ export default function GolfFormat() {
         <ul className="space-y-6 text-lg text-foreground/80">
           <li className="flex items-start gap-4">
             <Users className="w-6 h-6 text-secondary shrink-0 mt-1" />
-            <span>Two teams of 6 golfers (Team A vs Team B), drafted on Welcome Day.</span>
+            <span>Two teams of 4 golfers (Team A vs Team B), drafted on Welcome Day.</span>
           </li>
           <li className="flex items-start gap-4">
             <ShieldAlert className="w-6 h-6 text-secondary shrink-0 mt-1" />
-            <span>Three competition days (Sept 17–19) with 3 matches per day.</span>
+            <span>Three competition days (Sept 17–19) with 2 matches per day.</span>
           </li>
           <li className="flex items-start gap-4">
             <Trophy className="w-6 h-6 text-secondary shrink-0 mt-1" />
-            <span>Match play scoring: 18 points per match (1 point per hole) &rarr; 54 points/day &rarr; 162 total points.</span>
+            <span>Match play scoring: 18 points per match (1 point per hole) &rarr; 36 points/day &rarr; 108 total points.</span>
           </li>
         </ul>
       </div>
@@ -79,7 +79,7 @@ export default function GolfFormat() {
               <AccordionTrigger className="text-left font-bold text-lg text-primary">1) Teams, Tiers & Draft</AccordionTrigger>
               <AccordionContent className="text-base text-foreground/80 leading-relaxed pt-2 pb-6">
                 <ul className="list-disc pl-6 space-y-2">
-                  <li>2A / 2B / 2C tier structure per team.</li>
+                  <li>Two teams of 4 golfers.</li>
                   <li>Commissioner assigns tiers prior to the event.</li>
                   <li>Draft takes place on Welcome Day.</li>
                 </ul>
@@ -102,8 +102,8 @@ export default function GolfFormat() {
               <AccordionContent className="text-base text-foreground/80 leading-relaxed pt-2 pb-6">
                 <ul className="list-disc pl-6 space-y-2">
                   <li>18 points available per match.</li>
-                  <li>54 points available per day.</li>
-                  <li>162 total points for the tournament.</li>
+                  <li>36 points available per day.</li>
+                  <li>108 total points for the tournament.</li>
                   <li>Hole scoring: 1 point for a win, 0.5 points for a tie, 0 points for a loss.</li>
                 </ul>
               </AccordionContent>
