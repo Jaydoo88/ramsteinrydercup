@@ -116,19 +116,20 @@ export default function PricingBudget() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-t-primary">
-                <div className="text-4xl font-bold text-primary mb-2">$11,561</div>
-                <div className="text-sm font-bold text-secondary uppercase tracking-widest mb-4">House Quote</div>
-                <p className="text-base text-foreground/70 leading-relaxed">Based on 24 guests. Primary Ryder Cup HQ luxury rental.</p>
+                <div className="text-4xl font-bold text-primary mb-2">$5,349</div>
+                <div className="text-sm font-bold text-secondary uppercase tracking-widest mb-4">House Total (All-In)</div>
+                <p className="text-base text-foreground/70 leading-relaxed">4 nights. Taxes/fees included. Paid in two installments.</p>
+                <p className="text-sm text-secondary font-bold mt-3">Pay today $2,955 • Due Sep 2 $2,394</p>
               </div>
               <div className="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-t-primary">
-                <div className="text-4xl font-bold text-primary mb-2">$1,974</div>
-                <div className="text-sm font-bold text-secondary uppercase tracking-widest mb-4">Transportation</div>
-                <p className="text-base text-foreground/70 leading-relaxed">2 passenger vans ($1,740) + Gas Estimate ($233).</p>
+                <div className="text-4xl font-bold text-primary mb-2">$2,016</div>
+                <div className="text-sm font-bold text-secondary uppercase tracking-widest mb-4">Transportation (Vans)</div>
+                <p className="text-base text-foreground/70 leading-relaxed">Two 15-passenger vans ($1,008 each) + gas estimate.</p>
               </div>
               <div className="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-t-primary">
-                <div className="text-4xl font-bold text-primary mb-2">$2,400</div>
+                <div className="text-4xl font-bold text-primary mb-2">$1,700</div>
                 <div className="text-sm font-bold text-secondary uppercase tracking-widest mb-4">Stock-up Fund</div>
-                <p className="text-base text-foreground/70 leading-relaxed">$100/person for Costco groceries, drinks, and essentials.</p>
+                <p className="text-base text-foreground/70 leading-relaxed">$100/person for Costco groceries, drinks, and essentials (17 people).</p>
               </div>
             </div>
           </div>
