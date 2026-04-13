@@ -208,7 +208,7 @@ export default function PricingBudget() {
 
           <div className="rounded-2xl border border-border bg-white p-6">
             <p className="text-sm font-bold text-secondary uppercase tracking-widest mb-4">Simple Payment Rhythm</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 text-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 text-center">
               <div className="rounded-2xl bg-muted/40 px-4 py-5">
                 <p className="text-sm text-muted-foreground">Today</p>
                 <p className="mt-2 font-semibold text-primary">House $175</p>
@@ -220,6 +220,10 @@ export default function PricingBudget() {
               <div className="rounded-2xl bg-muted/40 px-4 py-5">
                 <p className="text-sm text-muted-foreground">July 1</p>
                 <p className="mt-2 font-semibold text-primary">Stock-up $100</p>
+              </div>
+              <div className="rounded-2xl bg-muted/40 px-4 py-5">
+                <p className="text-sm text-muted-foreground">July 17</p>
+                <p className="mt-2 font-semibold text-primary">Golf $100</p>
               </div>
               <div className="rounded-2xl bg-muted/40 px-4 py-5">
                 <p className="text-sm text-muted-foreground">Aug 15</p>
