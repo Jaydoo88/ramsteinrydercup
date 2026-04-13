@@ -86,7 +86,8 @@ export default function PricingBudget() {
                   </li>
                 </ul>
                 <div className="mt-6 space-y-2 text-sm font-medium text-white/75">
-                  <p>Est. Shared: $142/night (4 nights)</p>
+                  <p>Est. Shared: ~$142 per person / night (4 nights)</p>
+                  <p className="text-xs text-white/60">Includes house + vans + gas estimate + stock-up fund</p>
                   <p>Est. Total: ~$333/day (3 golf days)</p>
                 </div>
               </CardContent>
@@ -107,8 +108,9 @@ export default function PricingBudget() {
                     <span>Cushion</span> <span>$31.45</span>
                   </li>
                 </ul>
-                <div className="mt-6 text-sm font-medium text-foreground/60">
-                  <p>Est. Shared: $142/night (4 nights)</p>
+                <div className="mt-6 space-y-2 text-sm font-medium text-foreground/60">
+                  <p>Est. Shared: ~$142 per person / night (4 nights)</p>
+                  <p className="text-xs text-foreground/50">Includes house + vans + gas estimate + stock-up fund</p>
                 </div>
               </CardContent>
             </Card>
