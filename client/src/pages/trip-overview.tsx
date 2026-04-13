@@ -37,8 +37,8 @@ export default function TripOverview() {
             </div>
             <div>
               <h3 className="font-serif font-bold text-2xl mb-2 text-primary">Location</h3>
-              <p className="text-muted-foreground text-lg mb-2">Scottsdale, Arizona</p>
-              <p className="text-sm text-secondary font-bold uppercase tracking-wider">Ryder Cup HQ Mansion</p>
+              <p className="text-muted-foreground text-lg mb-2">Scottsdale / Cave Creek, Arizona</p>
+              <p className="text-sm text-secondary font-bold uppercase tracking-wider">Ryder Cup HQ Rental</p>
             </div>
           </CardContent>
         </Card>
@@ -50,8 +50,8 @@ export default function TripOverview() {
             </div>
             <div>
               <h3 className="font-serif font-bold text-2xl mb-2 text-primary">Event Format</h3>
-              <p className="text-muted-foreground text-lg mb-2">12 Golfers (Core Group)</p>
-              <p className="text-sm text-secondary font-bold uppercase tracking-wider">+ Optional Significant Others</p>
+              <p className="text-muted-foreground text-lg mb-2">8 Golfers (Core Group)</p>
+              <p className="text-sm text-secondary font-bold uppercase tracking-wider">+ Optional Spouses/GF</p>
             </div>
           </CardContent>
         </Card>
@@ -63,8 +63,8 @@ export default function TripOverview() {
             </div>
             <div>
               <h3 className="font-serif font-bold text-2xl mb-2 text-primary">Planning Status</h3>
-              <p className="text-muted-foreground text-lg mb-2">Inviting Core Group</p>
-              <p className="text-sm text-secondary font-bold uppercase tracking-wider">Locking headcount TBD</p>
+              <p className="text-muted-foreground text-lg mb-2">Collecting Deposits</p>
+              <p className="text-sm text-secondary font-bold uppercase tracking-wider">House Booking in Progress</p>
             </div>
           </CardContent>
         </Card>
