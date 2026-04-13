@@ -164,6 +164,7 @@ export default function PricingBudget() {
             <div>
               <h4 className="font-serif font-bold text-3xl text-primary">Payment Plan & Deadlines</h4>
               <p className="text-lg text-foreground/70 mt-2">Nothing heavy upfront — $175 locks your spot, and everything else is spread out monthly leading up to the trip.</p>
+              <p className="text-sm font-medium text-secondary mt-3">Zelle payments can be sent to 760-559-6108.</p>
             </div>
           </div>
 
