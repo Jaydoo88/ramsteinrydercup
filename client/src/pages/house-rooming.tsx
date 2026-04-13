@@ -51,7 +51,7 @@ export default function HouseRooming() {
       <div className="mb-16 text-center max-w-4xl mx-auto">
         <h1 className="font-serif text-5xl md:text-6xl font-bold text-primary mb-8">House & Rooming</h1>
         <p className="text-2xl text-muted-foreground leading-relaxed">
-          Our Ryder Cup HQ. A massive 12-bedroom house that gives us better flexibility than a typical golf trip rental, supporting couples and private-room planning where possible.
+          Our Ryder Cup HQ. An 8-bedroom, 9-bath luxury rental designed for comfort, privacy, and a true golf-trip basecamp feel. Each guest suite has an ensuite bathroom, with one additional full bath in the home. Room assignments will be finalized after deposits are collected and headcount is locked.
         </p>
       </div>
 
