@@ -53,8 +53,10 @@ export default function Home() {
                 <div className="w-16 h-16 bg-primary/5 text-primary rounded-full flex items-center justify-center mb-6">
                   <CalendarDays className="w-8 h-8" />
                 </div>
-                <h3 className="font-serif font-bold text-2xl mb-2 text-primary">Sept 16–20, 2026</h3>
-                <p className="text-muted-foreground font-medium uppercase tracking-wider text-sm">Tentative Dates <br /> (4 Nights / 5 Days)</p>
+                <h3 className="font-serif font-bold text-2xl mb-2 text-primary">September 16–20, 2026</h3>
+                <p className="text-muted-foreground font-medium uppercase tracking-wider text-sm">
+                  Confirmed Event Dates <br /> Competition Days: September 17–19, 2026
+                </p>
               </CardContent>
             </Card>
 
