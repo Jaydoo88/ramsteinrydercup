@@ -154,85 +154,135 @@ export default function PricingBudget() {
         </TabsContent>
       </Tabs>
       
-      <div className="mt-16 p-10 md:p-12 bg-white rounded-[2.5rem] shadow-xl border border-secondary/20 relative overflow-hidden">
-        <div className="absolute left-0 top-0 bottom-0 w-4 bg-secondary"></div>
-        <div className="pl-4">
-          <div className="flex items-center gap-5 mb-8">
-            <div className="w-20 h-20 bg-secondary/10 rounded-full flex items-center justify-center shrink-0">
-              <AlertCircle className="w-10 h-10 text-secondary" />
+      <div className="mt-16 rounded-[2.5rem] border border-border/60 bg-white shadow-[0_24px_80px_rgba(15,23,42,0.08)] overflow-hidden">
+        <div className="border-b border-border/60 bg-[linear-gradient(180deg,rgba(250,249,246,0.9),rgba(255,255,255,1))] px-8 py-8 md:px-10">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+            <div className="flex items-start gap-4">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-secondary/10 ring-1 ring-secondary/15">
+                <AlertCircle className="h-7 w-7 text-secondary" />
+              </div>
+              <div>
+                <p className="text-sm font-bold uppercase tracking-[0.24em] text-secondary">Planning Finance</p>
+                <h4 className="mt-2 font-serif text-3xl font-bold text-primary">Payment Plan & Deadlines</h4>
+                <p className="mt-3 max-w-2xl text-lg leading-relaxed text-foreground/70">Nothing heavy upfront — $175 locks your spot, and the rest is spaced out in a clean, predictable rhythm leading up to the trip.</p>
+              </div>
             </div>
-            <div>
-              <h4 className="font-serif font-bold text-3xl text-primary">Payment Plan & Deadlines</h4>
-              <p className="text-lg text-foreground/70 mt-2">Nothing heavy upfront — $175 locks your spot, and everything else is spread out monthly leading up to the trip.</p>
-              <p className="text-sm font-medium text-secondary mt-3">Zelle payments can be sent to 760-559-6108.</p>
+            <div className="rounded-2xl border border-secondary/15 bg-secondary/5 px-5 py-4 lg:min-w-[280px]">
+              <p className="text-xs font-bold uppercase tracking-[0.22em] text-secondary">Payment Method</p>
+              <p className="mt-2 text-sm text-foreground/60">Zelle</p>
+              <p className="mt-1 text-xl font-semibold text-primary">760-559-6108</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="px-8 py-8 md:px-10 md:py-10">
+          <div className="grid grid-cols-1 gap-6 xl:grid-cols-3">
+            <div className="rounded-[1.75rem] border border-border/70 bg-white p-6 shadow-sm">
+              <p className="text-sm font-bold uppercase tracking-[0.22em] text-secondary">House · All Attendees</p>
+              <div className="mt-5 space-y-4">
+                <div className="flex items-start justify-between gap-4 border-b border-border/60 pb-4">
+                  <div>
+                    <p className="text-sm text-foreground/55">Due today</p>
+                    <p className="mt-1 text-lg font-semibold text-primary">$175 per person</p>
+                  </div>
+                  <span className="rounded-full bg-primary/5 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">Locks spot</span>
+                </div>
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <p className="text-sm text-foreground/55">Due Aug 15</p>
+                    <p className="mt-1 text-lg font-semibold text-primary">$140 per person</p>
+                  </div>
+                  <span className="text-sm text-foreground/55">Final house balance</span>
+                </div>
+                <p className="pt-2 text-sm text-muted-foreground">Per couple: $350 due today • $280 due Aug 15</p>
+              </div>
+            </div>
+
+            <div className="rounded-[1.75rem] border border-border/70 bg-white p-6 shadow-sm">
+              <p className="text-sm font-bold uppercase tracking-[0.22em] text-secondary">Golf · Golfers Only</p>
+              <div className="mt-5 space-y-4">
+                <div className="flex items-start justify-between gap-4 border-b border-border/60 pb-4">
+                  <div>
+                    <p className="text-sm text-foreground/55">Due June 17</p>
+                    <p className="mt-1 text-lg font-semibold text-primary">$100 per golfer</p>
+                  </div>
+                  <span className="text-sm text-foreground/55">Estimated</span>
+                </div>
+                <div className="flex items-start justify-between gap-4 border-b border-border/60 pb-4">
+                  <div>
+                    <p className="text-sm text-foreground/55">Due July 17</p>
+                    <p className="mt-1 text-lg font-semibold text-primary">$100 per golfer</p>
+                  </div>
+                  <span className="text-sm text-foreground/55">Estimated</span>
+                </div>
+                <div>
+                  <p className="text-sm text-foreground/55">Due Aug 17</p>
+                  <p className="mt-1 text-lg font-semibold text-primary">Remaining golf balance</p>
+                  <p className="mt-2 text-sm text-muted-foreground">Final pricing may adjust slightly based on course rates.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-[1.75rem] border border-border/70 bg-white p-6 shadow-sm">
+              <p className="text-sm font-bold uppercase tracking-[0.22em] text-secondary">Stock-up · All Attendees</p>
+              <div className="mt-5 space-y-4">
+                <div className="flex items-start justify-between gap-4 border-b border-border/60 pb-4">
+                  <div>
+                    <p className="text-sm text-foreground/55">Amount</p>
+                    <p className="mt-1 text-lg font-semibold text-primary">$100 per person</p>
+                  </div>
+                  <span className="text-sm text-foreground/55">Food + drinks</span>
+                </div>
+                <div>
+                  <p className="text-sm text-foreground/55">Due July 1</p>
+                  <p className="mt-1 text-lg font-semibold text-primary">House essentials fund</p>
+                  <p className="mt-2 text-sm text-muted-foreground">Per couple: $200 due July 1</p>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            <div className="rounded-2xl border border-border bg-[#FAF9F6] p-6">
-              <p className="text-sm font-bold text-secondary uppercase tracking-widest mb-3">House (All Attendees)</p>
-              <div className="space-y-3 text-foreground/80">
-                <p className="text-lg font-semibold text-primary">Per person: $175 due today — secures your spot</p>
-                <p className="text-lg font-semibold text-primary">Per person: $140 due August 15 — remaining house balance</p>
-                <p className="text-sm text-muted-foreground">Per couple: $350 due today • $280 due August 15</p>
+          <div className="mt-6 rounded-[1.75rem] border border-secondary/15 bg-secondary/[0.04] p-6 md:p-7">
+            <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+              <div>
+                <p className="text-sm font-bold uppercase tracking-[0.22em] text-secondary">Commitment Policy</p>
+                <p className="mt-2 text-base text-foreground/60">Clear expectations before final bookings are locked.</p>
               </div>
             </div>
-            <div className="rounded-2xl border border-border bg-[#FAF9F6] p-6">
-              <p className="text-sm font-bold text-secondary uppercase tracking-widest mb-3">Golf (Golfers Only — Estimated)</p>
-              <div className="space-y-3 text-foreground/80">
-                <p className="text-lg font-semibold text-primary">Per golfer: $100 due June 17</p>
-                <p className="text-lg font-semibold text-primary">Per golfer: $100 due July 17</p>
-                <p className="text-lg font-semibold text-primary">Per golfer: Remaining balance due August 17</p>
-                <p className="text-sm text-muted-foreground">Final pricing may adjust slightly based on course rates.</p>
-              </div>
-            </div>
-            <div className="rounded-2xl border border-border bg-[#FAF9F6] p-6">
-              <p className="text-sm font-bold text-secondary uppercase tracking-widest mb-3">House Stock-up (All Attendees)</p>
-              <div className="space-y-3 text-foreground/80">
-                <p className="text-lg font-semibold text-primary">$100 per person</p>
-                <p>Covers food, drinks, and shared house essentials.</p>
-                <p className="text-lg font-semibold text-primary">Due July 1</p>
-                <p className="text-sm text-muted-foreground">Per couple: $200 due July 1</p>
-              </div>
+            <div className="mt-5 grid grid-cols-1 gap-3 md:grid-cols-2">
+              <div className="rounded-2xl bg-white/80 px-4 py-4 text-sm text-foreground/75 ring-1 ring-border/60">Your spot is not confirmed until your first payment is received.</div>
+              <div className="rounded-2xl bg-white/80 px-4 py-4 text-sm text-foreground/75 ring-1 ring-border/60">Payments are non-refundable due to upfront booking commitments.</div>
+              <div className="rounded-2xl bg-white/80 px-4 py-4 text-sm text-foreground/75 ring-1 ring-border/60">Once committed, you are responsible for your share unless a replacement is found.</div>
+              <div className="rounded-2xl bg-white/80 px-4 py-4 text-sm text-foreground/75 ring-1 ring-border/60">Final costs may adjust slightly based on headcount and final bookings.</div>
             </div>
           </div>
 
-          <div className="rounded-2xl border border-secondary/20 bg-secondary/5 p-6 mb-8">
-            <p className="text-sm font-bold text-secondary uppercase tracking-widest mb-3">Commitment Policy</p>
-            <ul className="space-y-3 text-lg text-foreground/80">
-              <li>Your spot is not confirmed until your first payment is received.</li>
-              <li>Payments are non-refundable due to upfront booking commitments.</li>
-              <li>Once committed, you are responsible for your share unless a replacement is found.</li>
-              <li>Final costs may adjust slightly based on headcount and final bookings.</li>
-            </ul>
-          </div>
-
-          <div className="rounded-2xl border border-border bg-white p-6">
-            <p className="text-sm font-bold text-secondary uppercase tracking-widest mb-4">Simple Payment Rhythm</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 text-center">
-              <div className="rounded-2xl bg-muted/40 px-4 py-5">
+          <div className="mt-6 rounded-[1.75rem] border border-border/70 bg-[#FCFCFB] p-6">
+            <p className="text-sm font-bold uppercase tracking-[0.22em] text-secondary">Simple Payment Rhythm</p>
+            <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-6">
+              <div className="rounded-2xl border border-border/60 bg-white px-4 py-5 text-center shadow-sm">
                 <p className="text-sm text-muted-foreground">Today</p>
-                <p className="mt-2 font-semibold text-primary">House $175</p>
+                <p className="mt-2 text-lg font-semibold text-primary">House $175</p>
               </div>
-              <div className="rounded-2xl bg-muted/40 px-4 py-5">
+              <div className="rounded-2xl border border-border/60 bg-white px-4 py-5 text-center shadow-sm">
                 <p className="text-sm text-muted-foreground">June 17</p>
-                <p className="mt-2 font-semibold text-primary">Golf $100</p>
+                <p className="mt-2 text-lg font-semibold text-primary">Golf $100</p>
               </div>
-              <div className="rounded-2xl bg-muted/40 px-4 py-5">
+              <div className="rounded-2xl border border-border/60 bg-white px-4 py-5 text-center shadow-sm">
                 <p className="text-sm text-muted-foreground">July 1</p>
-                <p className="mt-2 font-semibold text-primary">Stock-up $100</p>
+                <p className="mt-2 text-lg font-semibold text-primary">Stock-up $100</p>
               </div>
-              <div className="rounded-2xl bg-muted/40 px-4 py-5">
+              <div className="rounded-2xl border border-border/60 bg-white px-4 py-5 text-center shadow-sm">
                 <p className="text-sm text-muted-foreground">July 17</p>
-                <p className="mt-2 font-semibold text-primary">Golf $100</p>
+                <p className="mt-2 text-lg font-semibold text-primary">Golf $100</p>
               </div>
-              <div className="rounded-2xl bg-muted/40 px-4 py-5">
+              <div className="rounded-2xl border border-border/60 bg-white px-4 py-5 text-center shadow-sm">
                 <p className="text-sm text-muted-foreground">Aug 15</p>
-                <p className="mt-2 font-semibold text-primary">House $140</p>
+                <p className="mt-2 text-lg font-semibold text-primary">House $140</p>
               </div>
-              <div className="rounded-2xl bg-muted/40 px-4 py-5">
+              <div className="rounded-2xl border border-border/60 bg-white px-4 py-5 text-center shadow-sm">
                 <p className="text-sm text-muted-foreground">Aug 17</p>
-                <p className="mt-2 font-semibold text-primary">Final Golf Balance</p>
+                <p className="mt-2 text-lg font-semibold text-primary">Final Golf Balance</p>
               </div>
             </div>
           </div>
