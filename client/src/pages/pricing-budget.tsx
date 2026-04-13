@@ -135,6 +135,7 @@ export default function PricingBudget() {
                 <div className="text-sm font-bold text-secondary uppercase tracking-widest mb-4">House Total (All-In)</div>
                 <p className="text-base text-foreground/70 leading-relaxed">4 nights. Taxes and fees included. Shared across all attendees.</p>
                 <p className="text-sm text-secondary font-bold mt-3">Per person: $175 due now • $140 due Aug 15</p>
+                <p className="text-xs text-muted-foreground mt-2">Per couple: $350 due now • $280 due Aug 15</p>
               </div>
               <div className="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-t-primary">
                 <div className="text-3xl font-bold text-primary mb-2">Transportation</div>
@@ -146,6 +147,7 @@ export default function PricingBudget() {
                 <div className="text-sm font-bold text-secondary uppercase tracking-widest mb-4">Stock-up Fund</div>
                 <p className="text-base text-foreground/70 leading-relaxed">$100/person for food, drinks, and shared house essentials (17 people).</p>
                 <p className="text-sm text-secondary font-bold mt-3">Due July 17 for alignment</p>
+                <p className="text-xs text-muted-foreground mt-2">Per couple: $200 due July 17</p>
               </div>
             </div>
           </div>
