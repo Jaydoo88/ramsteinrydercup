@@ -87,8 +87,7 @@ export default function HouseRooming() {
           </h3>
           <div className="bg-white rounded-3xl p-10 md:p-12 shadow-xl border-t-4 border-t-secondary mb-12">
             <p className="text-xl leading-relaxed text-foreground/80 mb-10">
-              Comfort and fairness are the top priorities. With 12 bedrooms, we have a major advantage over standard rentals. 
-              We aim to accommodate significant others with private rooms while ensuring every golfer has a comfortable stay.
+              Comfort and privacy are the priorities. With 8 private guest suites and ensuite bathrooms for every bedroom (plus one additional full bath), the house is set up for a smooth golf-trip HQ experience. Room assignments will be finalized after deposits are collected and headcount is locked.
             </p>
             <div className="flex items-center gap-5 p-6 bg-secondary/10 rounded-2xl border border-secondary/20">
               <ShieldAlert className="w-8 h-8 text-secondary shrink-0" />
@@ -202,15 +201,15 @@ export default function HouseRooming() {
             <ul className="space-y-8">
               <li className="flex flex-col border-b border-primary-foreground/10 pb-6">
                 <span className="text-sm text-primary-foreground/60 mb-2 font-bold uppercase tracking-widest">House Selection</span>
-                <span className="font-bold text-2xl text-secondary">Tentative (Option A)</span>
+                <span className="font-bold text-2xl text-secondary">Confirmed HQ</span>
               </li>
               <li className="flex flex-col border-b border-primary-foreground/10 pb-6">
                 <span className="text-sm text-primary-foreground/60 mb-2 font-bold uppercase tracking-widest">Pricing Model</span>
-                <span className="font-bold text-2xl text-white">24 Guests ($11,561)</span>
+                <span className="font-bold text-2xl text-white">17 Guests ($5,349.18)</span>
               </li>
               <li className="flex flex-col border-b border-primary-foreground/10 pb-6">
                 <span className="text-sm text-primary-foreground/60 mb-2 font-bold uppercase tracking-widest">Room Assignments</span>
-                <span className="font-bold text-2xl text-white opacity-80">Pending Headcount</span>
+                <span className="font-bold text-2xl text-white opacity-80">Pending Deposits</span>
               </li>
             </ul>
           </div>
