@@ -79,7 +79,7 @@ export default function TripOverview() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               "4 nights in an 8-suite HQ house (ensuite baths)",
-              "Shared transportation budget for airport runs, group movement, and weekend rides",
+              "Transportation planning guidance for airport and local rides",
               "House stock-up fund (Costco food/drinks)",
               "3 days of golf (estimated budget)",
               "Official Ryder Cup competition format",

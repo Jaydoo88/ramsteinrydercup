@@ -43,7 +43,7 @@ export default function Rules() {
             </li>
             <li className="flex items-start gap-4">
               <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-1" />
-              <span><strong>Parking Rules:</strong> Adhere strictly to the designated parking areas for our vans/vehicles.</span>
+              <span><strong>Parking Rules:</strong> Adhere strictly to the designated parking areas for all personal vehicles and ride pickups.</span>
             </li>
             <li className="flex items-start gap-4">
               <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-1" />
@@ -85,7 +85,7 @@ export default function Rules() {
             </li>
             <li className="flex items-start gap-4">
               <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-1" />
-              <span><strong>Shared Costs:</strong> House, vans, and stock-up funds are split evenly across all adults attending.</span>
+              <span><strong>Shared Costs:</strong> House and stock-up funds are split evenly across all adults attending. Transportation is arranged individually.</span>
             </li>
             <li className="flex items-start gap-4">
               <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-1" />

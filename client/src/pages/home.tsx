@@ -132,7 +132,7 @@ export default function Home() {
                 <CardContent className="p-10 flex flex-col h-full">
                   <Wallet className="w-12 h-12 text-secondary mb-8 group-hover:scale-110 transition-transform" />
                   <h3 className="font-serif font-bold text-2xl mb-4 text-primary">Budget & Pricing</h3>
-                  <p className="text-muted-foreground text-base mb-8 flex-grow">Transparent costs for lodging, transportation, and stock-up. Final totals confirmed after headcount + deposits.</p>
+                  <p className="text-muted-foreground text-base mb-8 flex-grow">Transparent costs for lodging and stock-up, plus separate golf and transportation planning notes.</p>
                   <div className="flex items-center text-sm font-bold text-secondary uppercase tracking-wider">
                     View Estimates <ChevronRight className="w-5 h-5 ml-2" />
                   </div>

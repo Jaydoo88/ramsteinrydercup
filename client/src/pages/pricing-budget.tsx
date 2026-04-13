@@ -76,18 +76,18 @@ export default function PricingBudget() {
                 <div className="text-6xl font-bold text-secondary mb-10">$1,000</div>
                 <ul className="space-y-4 font-medium text-lg">
                   <li className="flex justify-between border-b border-primary-foreground/20 pb-4">
-                    <span className="text-white/80">Shared Costs</span> <span className="font-bold">$485.25</span>
+                    <span className="text-white/80">Shared Costs</span> <span className="font-bold">$414.66</span>
                   </li>
                   <li className="flex justify-between border-b border-primary-foreground/20 pb-4">
                     <span className="text-white/80">Estimated Golf (Separate)</span> <span className="font-bold">$400.00</span>
                   </li>
                   <li className="flex justify-between text-secondary pt-2 font-bold text-xl">
-                    <span>Cushion</span> <span>$114.75</span>
+                    <span>Cushion</span> <span>$185.34</span>
                   </li>
                 </ul>
                 <div className="mt-6 space-y-2 text-sm font-medium text-white/75">
-                  <p>Est. Shared: ~$121 per person / night (4 nights)</p>
-                  <p className="text-xs text-white/60">Includes house + shared transportation budget + stock-up fund</p>
+                  <p>Est. Shared: ~$104 per person / night (4 nights)</p>
+                  <p className="text-xs text-white/60">Includes house + stock-up fund</p>
                   <p className="text-xs text-white/60">Golf estimate reflects 3 days of golf</p>
                 </div>
               </CardContent>
@@ -102,15 +102,15 @@ export default function PricingBudget() {
                 <div className="text-6xl font-bold text-primary mb-10">$600</div>
                 <ul className="space-y-4 font-medium text-lg text-foreground/80">
                   <li className="flex justify-between border-b border-border pb-4">
-                    <span>Shared Costs</span> <span className="text-primary font-bold">$485.25</span>
+                    <span>Shared Costs</span> <span className="text-primary font-bold">$414.66</span>
                   </li>
                   <li className="flex justify-between text-secondary pt-2 font-bold text-xl">
-                    <span>Cushion</span> <span>$114.75</span>
+                    <span>Cushion</span> <span>$185.34</span>
                   </li>
                 </ul>
                 <div className="mt-6 space-y-2 text-sm font-medium text-foreground/60">
-                  <p>Est. Shared: ~$121 per person / night (4 nights)</p>
-                  <p className="text-xs text-foreground/50">Includes house + shared transportation budget + stock-up fund</p>
+                  <p>Est. Shared: ~$104 per person / night (4 nights)</p>
+                  <p className="text-xs text-foreground/50">Includes house + stock-up fund</p>
                 </div>
               </CardContent>
             </Card>
@@ -131,10 +131,15 @@ export default function PricingBudget() {
                 <p className="text-sm text-secondary font-bold mt-3">Pay today $2,955 • Due Sep 2 $2,394</p>
               </div>
               <div className="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-t-primary">
-                <div className="text-4xl font-bold text-primary mb-2">$1,200</div>
-                <div className="text-sm font-bold text-secondary uppercase tracking-widest mb-4">Transportation (Shared Cost)</div>
-                <p className="text-base text-foreground/70 leading-relaxed">We’re budgeting a shared transportation pool for airport runs, group movement, and weekend rides. Final transportation cost depends on arrival/departure timing and ride-share surge.</p>
-                <p className="text-sm text-secondary font-bold mt-3">Estimated Transportation Budget: $1,200 total • ~$71 per person</p>
+                <div className="text-3xl font-bold text-primary mb-2">Planning Only</div>
+                <div className="text-sm font-bold text-secondary uppercase tracking-widest mb-4">Transportation</div>
+                <p className="text-base text-foreground/70 leading-relaxed">Transportation is not included in shared trip costs. Everyone will arrange their own rides (airport and local). For planning purposes, here are typical ride-share estimates.</p>
+                <div className="mt-4 text-sm text-foreground/70 space-y-2">
+                  <p className="font-bold text-secondary">Estimated Ride-Share Cost (Planning Only)</p>
+                  <p>• PHX ↔ Rental (32 miles): ~ $50–$90 each way (per car)</p>
+                  <p>• Prices vary based on demand, time of day, and vehicle size (UberX vs UberXL).</p>
+                  <p className="font-medium">Tip: Coordinating arrivals in shared rides can cut costs.</p>
+                </div>
               </div>
               <div className="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-t-primary">
                 <div className="text-4xl font-bold text-primary mb-2">$1,700</div>
