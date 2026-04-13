@@ -79,8 +79,8 @@ export default function GolfFormat() {
               <AccordionTrigger className="text-left font-bold text-lg text-primary">1) Teams, Tiers & Draft</AccordionTrigger>
               <AccordionContent className="text-base text-foreground/80 leading-relaxed pt-2 pb-6">
                 <ul className="list-disc pl-6 space-y-2">
-                  <li>Two teams of 4 golfers.</li>
-                  <li>Commissioner assigns tiers prior to the event.</li>
+                  <li>Two teams of 4 golfers, with a 1A, 1B, 1C, and 1D player on each team.</li>
+                  <li>Commissioner assigns 1A / 1B / 1C / 1D tiers prior to the event.</li>
                   <li>Draft takes place on Welcome Day.</li>
                 </ul>
               </AccordionContent>
