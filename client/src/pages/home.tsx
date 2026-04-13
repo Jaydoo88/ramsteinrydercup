@@ -119,7 +119,7 @@ export default function Home() {
                 <CardContent className="p-10 flex flex-col h-full">
                   <HomeIcon className="w-12 h-12 text-secondary mb-8 group-hover:scale-110 transition-transform" />
                   <h3 className="font-serif font-bold text-2xl mb-4 text-primary">House & Rooming</h3>
-                  <p className="text-muted-foreground text-base mb-8 flex-grow">12-bedroom luxury HQ. Designed for comfort and fairness.</p>
+                  <p className="text-muted-foreground text-base mb-8 flex-grow">8-suite HQ with ensuite baths. Rooming assignments finalized after deposits.</p>
                   <div className="flex items-center text-sm font-bold text-secondary uppercase tracking-wider">
                     Explore House <ChevronRight className="w-5 h-5 ml-2" />
                   </div>
@@ -132,7 +132,7 @@ export default function Home() {
                 <CardContent className="p-10 flex flex-col h-full">
                   <Wallet className="w-12 h-12 text-secondary mb-8 group-hover:scale-110 transition-transform" />
                   <h3 className="font-serif font-bold text-2xl mb-4 text-primary">Budget & Pricing</h3>
-                  <p className="text-muted-foreground text-base mb-8 flex-grow">Transparent costs, shared expenses, and the cushion explained.</p>
+                  <p className="text-muted-foreground text-base mb-8 flex-grow">Transparent costs for lodging, transportation, and stock-up. Final totals confirmed after headcount + deposits.</p>
                   <div className="flex items-center text-sm font-bold text-secondary uppercase tracking-wider">
                     View Estimates <ChevronRight className="w-5 h-5 ml-2" />
                   </div>
@@ -145,7 +145,7 @@ export default function Home() {
                 <CardContent className="p-10 flex flex-col h-full">
                   <Trophy className="w-12 h-12 text-secondary mb-8 group-hover:scale-110 transition-transform" />
                   <h3 className="font-serif font-bold text-2xl mb-4 text-primary">Competition</h3>
-                  <p className="text-muted-foreground text-base mb-8 flex-grow">Team A vs Team B. Format, etiquette, and the quest for glory.</p>
+                  <p className="text-muted-foreground text-base mb-8 flex-grow">Ryder Cup-style match play over 3 days. Teams, points, and rules clearly defined.</p>
                   <div className="flex items-center text-sm font-bold text-secondary uppercase tracking-wider">
                     See Format <ChevronRight className="w-5 h-5 ml-2" />
                   </div>
