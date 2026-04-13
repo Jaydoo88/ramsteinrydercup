@@ -8,7 +8,7 @@ export default function PricingBudget() {
       <div className="mb-16 text-center max-w-3xl mx-auto">
         <h1 className="font-serif text-5xl md:text-6xl font-bold text-primary mb-8">Pricing & Budget</h1>
         <p className="text-2xl text-muted-foreground leading-relaxed">
-          Transparent costs to build trust. Because our final numbers depend on how many significant others attend, we've broken down two possible scenarios.
+          Transparent costs, a simple payment rhythm, and clear deadlines so everyone knows what to expect before final bookings are locked.
         </p>
       </div>
 
@@ -133,8 +133,8 @@ export default function PricingBudget() {
               <div className="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-t-primary">
                 <div className="text-4xl font-bold text-primary mb-2">$5,349.18</div>
                 <div className="text-sm font-bold text-secondary uppercase tracking-widest mb-4">House Total (All-In)</div>
-                <p className="text-base text-foreground/70 leading-relaxed">4 nights. Taxes/fees included. Paid in two installments.</p>
-                <p className="text-sm text-secondary font-bold mt-3">Pay today $2,955 • Due Sep 2 $2,394</p>
+                <p className="text-base text-foreground/70 leading-relaxed">4 nights. Taxes and fees included. Shared across all attendees.</p>
+                <p className="text-sm text-secondary font-bold mt-3">Per person: $175 due now • $140 due Aug 15</p>
               </div>
               <div className="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-t-primary">
                 <div className="text-3xl font-bold text-primary mb-2">Transportation</div>
@@ -144,23 +144,85 @@ export default function PricingBudget() {
               <div className="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-t-primary">
                 <div className="text-4xl font-bold text-primary mb-2">$1,700</div>
                 <div className="text-sm font-bold text-secondary uppercase tracking-widest mb-4">Stock-up Fund</div>
-                <p className="text-base text-foreground/70 leading-relaxed">$100/person for Costco groceries, drinks, and essentials (17 people).</p>
+                <p className="text-base text-foreground/70 leading-relaxed">$100/person for food, drinks, and shared house essentials (17 people).</p>
+                <p className="text-sm text-secondary font-bold mt-3">Due July 17 for alignment</p>
               </div>
             </div>
           </div>
         </TabsContent>
       </Tabs>
       
-      <div className="mt-16 flex flex-col md:flex-row items-start md:items-center gap-8 p-10 bg-white rounded-[2.5rem] shadow-xl border border-secondary/20 relative overflow-hidden">
+      <div className="mt-16 p-10 md:p-12 bg-white rounded-[2.5rem] shadow-xl border border-secondary/20 relative overflow-hidden">
         <div className="absolute left-0 top-0 bottom-0 w-4 bg-secondary"></div>
-        <div className="w-20 h-20 bg-secondary/10 rounded-full flex items-center justify-center shrink-0 ml-4">
-          <AlertCircle className="w-10 h-10 text-secondary" />
-        </div>
-        <div>
-          <h4 className="font-serif font-bold text-3xl mb-4 text-primary">Why build a cushion?</h4>
-          <p className="text-xl text-foreground/80 leading-relaxed max-w-3xl">
-            The small cushion provides flexibility for unexpected costs like minor rate increases, parking, or last-minute supplies, ensuring we don't have to nickel-and-dime everyone during the trip.
-          </p>
+        <div className="pl-4">
+          <div className="flex items-center gap-5 mb-8">
+            <div className="w-20 h-20 bg-secondary/10 rounded-full flex items-center justify-center shrink-0">
+              <AlertCircle className="w-10 h-10 text-secondary" />
+            </div>
+            <div>
+              <h4 className="font-serif font-bold text-3xl text-primary">Payment Plan & Deadlines</h4>
+              <p className="text-lg text-foreground/70 mt-2">Nothing heavy upfront — $175 locks your spot, and everything else is spread out monthly leading up to the trip.</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div className="rounded-2xl border border-border bg-[#FAF9F6] p-6">
+              <p className="text-sm font-bold text-secondary uppercase tracking-widest mb-3">House (All Attendees)</p>
+              <div className="space-y-3 text-foreground/80">
+                <p className="text-lg font-semibold text-primary">$175 due now — secures your spot</p>
+                <p className="text-lg font-semibold text-primary">$140 due August 15 — remaining house balance</p>
+              </div>
+            </div>
+            <div className="rounded-2xl border border-border bg-[#FAF9F6] p-6">
+              <p className="text-sm font-bold text-secondary uppercase tracking-widest mb-3">Golf (Golfers Only — Estimated)</p>
+              <div className="space-y-3 text-foreground/80">
+                <p className="text-lg font-semibold text-primary">$100 due June 17</p>
+                <p className="text-lg font-semibold text-primary">$100 due July 17</p>
+                <p className="text-lg font-semibold text-primary">Remaining balance due August 17</p>
+                <p className="text-sm text-muted-foreground">Final pricing may adjust slightly based on course rates.</p>
+              </div>
+            </div>
+            <div className="rounded-2xl border border-border bg-[#FAF9F6] p-6">
+              <p className="text-sm font-bold text-secondary uppercase tracking-widest mb-3">House Stock-up (All Attendees)</p>
+              <div className="space-y-3 text-foreground/80">
+                <p className="text-lg font-semibold text-primary">$100 per person</p>
+                <p>Covers food, drinks, and shared house essentials.</p>
+                <p className="text-lg font-semibold text-primary">Due July 17 for alignment</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-2xl border border-secondary/20 bg-secondary/5 p-6 mb-8">
+            <p className="text-sm font-bold text-secondary uppercase tracking-widest mb-3">Commitment Policy</p>
+            <ul className="space-y-3 text-lg text-foreground/80">
+              <li>Your spot is not confirmed until your first payment is received.</li>
+              <li>Payments are non-refundable due to upfront booking commitments.</li>
+              <li>Once committed, you are responsible for your share unless a replacement is found.</li>
+              <li>Final costs may adjust slightly based on headcount and final bookings.</li>
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border border-border bg-white p-6">
+            <p className="text-sm font-bold text-secondary uppercase tracking-widest mb-3">Simple Payment Rhythm</p>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
+              <div className="rounded-xl bg-muted/40 p-4">
+                <p className="text-sm text-muted-foreground">June 17</p>
+                <p className="mt-2 font-semibold text-primary">Golf $100</p>
+              </div>
+              <div className="rounded-xl bg-muted/40 p-4">
+                <p className="text-sm text-muted-foreground">July 17</p>
+                <p className="mt-2 font-semibold text-primary">Golf $100 + Stock-up $100</p>
+              </div>
+              <div className="rounded-xl bg-muted/40 p-4">
+                <p className="text-sm text-muted-foreground">Aug 15</p>
+                <p className="mt-2 font-semibold text-primary">House $140</p>
+              </div>
+              <div className="rounded-xl bg-muted/40 p-4">
+                <p className="text-sm text-muted-foreground">Aug 17</p>
+                <p className="mt-2 font-semibold text-primary">Final Golf Balance</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
