@@ -103,8 +103,8 @@ export default function HouseRooming() {
                   <BedDouble className="w-7 h-7 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-xl mb-1 text-primary">12 Bedrooms / 8 Bathrooms</h4>
-                  <p className="text-muted-foreground font-medium uppercase tracking-wider text-xs">Space + comfort for large groups</p>
+                  <h4 className="font-bold text-xl mb-1 text-primary">8 Bedrooms / 9 Bathrooms</h4>
+                  <p className="text-muted-foreground font-medium uppercase tracking-wider text-xs">Private Suites + Ensuite Baths</p>
                 </div>
               </CardContent>
             </Card>
@@ -115,8 +115,8 @@ export default function HouseRooming() {
                   <Waves className="w-7 h-7 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-xl mb-1 text-primary">Resort Pool + Spa</h4>
-                  <p className="text-muted-foreground font-medium uppercase tracking-wider text-xs">All-day recovery and hangouts</p>
+                  <h4 className="font-bold text-xl mb-1 text-primary">Private Pool + Hot Tub</h4>
+                  <p className="text-muted-foreground font-medium uppercase tracking-wider text-xs">Post-Round Recovery & Hangouts</p>
                 </div>
               </CardContent>
             </Card>
@@ -127,8 +127,8 @@ export default function HouseRooming() {
                   <Check className="w-7 h-7 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-xl mb-1 text-primary">Outdoor Cabana + TV</h4>
-                  <p className="text-muted-foreground font-medium uppercase tracking-wider text-xs">Shade, lounging, and watch parties</p>
+                  <h4 className="font-bold text-xl mb-1 text-primary">Outdoor Grill + Patio</h4>
+                  <p className="text-muted-foreground font-medium uppercase tracking-wider text-xs">Team Dinners at HQ</p>
                 </div>
               </CardContent>
             </Card>
@@ -139,8 +139,8 @@ export default function HouseRooming() {
                   <Check className="w-7 h-7 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-xl mb-1 text-primary">Pickleball + Basketball Courts</h4>
-                  <p className="text-muted-foreground font-medium uppercase tracking-wider text-xs">On-site games all weekend</p>
+                  <h4 className="font-bold text-xl mb-1 text-primary">Game Room</h4>
+                  <p className="text-muted-foreground font-medium uppercase tracking-wider text-xs">Nightly Competition Zone</p>
                 </div>
               </CardContent>
             </Card>
@@ -151,8 +151,8 @@ export default function HouseRooming() {
                   <Check className="w-7 h-7 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-xl mb-1 text-primary">Sand Volleyball + Huge Yard</h4>
-                  <p className="text-muted-foreground font-medium uppercase tracking-wider text-xs">Space for the whole group</p>
+                  <h4 className="font-bold text-xl mb-1 text-primary">Kitchen + Full Appliances</h4>
+                  <p className="text-muted-foreground font-medium uppercase tracking-wider text-xs">Group Meals Made Easy</p>
                 </div>
               </CardContent>
             </Card>
@@ -163,8 +163,8 @@ export default function HouseRooming() {
                   <Check className="w-7 h-7 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-xl mb-1 text-primary">Game Room (Billiards + Poker)</h4>
-                  <p className="text-muted-foreground font-medium uppercase tracking-wider text-xs">War room vibes after the round</p>
+                  <h4 className="font-bold text-xl mb-1 text-primary">Free Wi-Fi</h4>
+                  <p className="text-muted-foreground font-medium uppercase tracking-wider text-xs">Streaming + Planning</p>
                 </div>
               </CardContent>
             </Card>
@@ -175,8 +175,8 @@ export default function HouseRooming() {
                   <Check className="w-7 h-7 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-xl mb-1 text-primary">Mini Golf + Lawn Games</h4>
-                  <p className="text-muted-foreground font-medium uppercase tracking-wider text-xs">Bocce, cornhole, horseshoes</p>
+                  <h4 className="font-bold text-xl mb-1 text-primary">Washer + Dryer</h4>
+                  <p className="text-muted-foreground font-medium uppercase tracking-wider text-xs">4-Night Trip Friendly</p>
                 </div>
               </CardContent>
             </Card>
@@ -187,8 +187,8 @@ export default function HouseRooming() {
                   <Check className="w-7 h-7 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-xl mb-1 text-primary">19 TVs (Indoor + Outdoor)</h4>
-                  <p className="text-muted-foreground font-medium uppercase tracking-wider text-xs">Viewing everywhere on the property</p>
+                  <h4 className="font-bold text-xl mb-1 text-primary">On-Site Parking</h4>
+                  <p className="text-muted-foreground font-medium uppercase tracking-wider text-xs">Easy Arrivals & Movement</p>
                 </div>
               </CardContent>
             </Card>
