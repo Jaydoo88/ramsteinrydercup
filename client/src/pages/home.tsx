@@ -31,7 +31,7 @@ export default function Home() {
           </h1>
           
           <p className="text-xl md:text-3xl text-white/90 max-w-3xl mx-auto mb-12 font-medium drop-shadow-lg">
-            The official launch of a tradition. 12 golfers. 4 nights. 
+            The official launch of a tradition. 8 golfers. 4 nights. 
             One unforgettable desert classic.
           </p>
           
