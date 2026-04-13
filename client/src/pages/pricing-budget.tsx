@@ -19,7 +19,7 @@ export default function PricingBudget() {
         <div>
           <h4 className="font-bold text-xl mb-2 text-primary uppercase tracking-widest">Headcount Impact</h4>
           <p className="text-lg text-foreground/80 leading-relaxed">
-            We will always have 12 golfers, but some golfers may come solo and some may bring a significant other. Total headcount changes the shared cost per person. <strong>More SOs attending = lower cost per golfer. Fewer SOs (more solo golfers) = higher cost per golfer.</strong> Final pricing will be confirmed once headcount is locked.
+            We will have 8 committed golfers, and some golfers may bring a spouse/girlfriend. Total headcount changes the shared cost per person. More spouses/gf attending = lower shared cost per person. Fewer spouses/gf = higher shared cost per person. Final pricing will be confirmed once deposits are collected and headcount is locked.
           </p>
         </div>
       </div>
@@ -32,11 +32,11 @@ export default function PricingBudget() {
           <ul className="space-y-3 text-lg text-foreground/80">
             <li className="flex items-start gap-3">
               <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2.5 shrink-0" /> 
-              <span>Optional tee time for significant others who want to golf (separate from Ryder Cup competition)</span>
+              <span>Optional tee time for spouses/gf who want to golf (separate from Ryder Cup competition)</span>
             </li>
             <li className="flex items-start gap-3">
               <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2.5 shrink-0" /> 
-              <span><strong>Not included in the $675 Non-Golfer Tier</strong> (that tier is shared costs only)</span>
+              <span>Not included in shared trip costs (separate tee time cost per player)</span>
             </li>
             <li className="flex items-start gap-3">
               <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2.5 shrink-0" /> 
@@ -44,7 +44,7 @@ export default function PricingBudget() {
             </li>
             <li className="flex items-start gap-3">
               <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2.5 shrink-0" /> 
-              <span>Sign up via RSVP interest and we'll confirm pricing before booking</span>
+              <span>Indicate interest on the RSVP form and we'll confirm pricing before booking</span>
             </li>
           </ul>
         </div>
