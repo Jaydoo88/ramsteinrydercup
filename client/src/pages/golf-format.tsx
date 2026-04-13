@@ -45,15 +45,15 @@ export default function GolfFormat() {
           <div className="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center shrink-0">
             <span className="text-2xl" role="img" aria-label="Female Golfer">🏌️‍♀️</span>
           </div>
-          <h2 className="font-serif text-3xl font-bold text-primary">Ladies Event (Significant Others) — Optional</h2>
+          <h2 className="font-serif text-3xl font-bold text-primary">Ladies Event (Significant Others) — Optional Activities</h2>
         </div>
         <p className="text-lg text-foreground/80 mb-6">
-          An optional women's round for significant others who want to golf. This is completely separate from the main Ryder Cup competition rounds.
+          An optional experience for significant others who want to participate during the trip — whether that means golfing or enjoying a non-golf activity. This is completely separate from the main Ryder Cup competition rounds.
         </p>
         <ul className="space-y-4 text-lg text-foreground/80">
           <li className="flex items-start gap-4">
             <div className="w-2 h-2 rounded-full bg-secondary mt-2.5 shrink-0" />
-            <span>Casual round or scramble option depending on interest</span>
+            <span>Casual golf round or scramble option depending on interest</span>
           </li>
           <li className="flex items-start gap-4">
             <div className="w-2 h-2 rounded-full bg-secondary mt-2.5 shrink-0" />
@@ -68,6 +68,61 @@ export default function GolfFormat() {
             <span>Sign-up by indicating interest on the RSVP form</span>
           </li>
         </ul>
+
+        <div className="my-8 h-px bg-border/80" />
+
+        <div className="space-y-5">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-primary/5 rounded-full flex items-center justify-center shrink-0">
+              <span className="text-xl" role="img" aria-label="Horseback riding">🐎</span>
+            </div>
+            <h3 className="font-serif text-2xl font-bold text-primary">Not golfing? No problem.</h3>
+          </div>
+          <p className="text-lg text-foreground/80 leading-relaxed">
+            For those who prefer a break from golf, Friday is a great opportunity to enjoy something different. One recommended option is a guided horseback trail ride in Cave Creek, offering a scenic Sonoran Desert experience and a fun alternative to the course.
+          </p>
+          <ul className="space-y-3 text-base text-foreground/65">
+            <li className="flex items-start gap-4">
+              <div className="w-2 h-2 rounded-full bg-primary/50 mt-2 shrink-0" />
+              <span>Multiple ride options available (1 hour, 1.5 hour, sunset, and longer scenic rides)</span>
+            </li>
+            <li className="flex items-start gap-4">
+              <div className="w-2 h-2 rounded-full bg-primary/50 mt-2 shrink-0" />
+              <span>Beginner-friendly with guided, walking trail rides through the Sonoran Desert</span>
+            </li>
+            <li className="flex items-start gap-4">
+              <div className="w-2 h-2 rounded-full bg-primary/50 mt-2 shrink-0" />
+              <span>Pricing typically ranges from ~$79 to $179+ per person depending on ride length</span>
+            </li>
+            <li className="flex items-start gap-4">
+              <div className="w-2 h-2 rounded-full bg-primary/50 mt-2 shrink-0" />
+              <span>1.5-hour ride is one of the most popular and best overall experiences</span>
+            </li>
+            <li className="flex items-start gap-4">
+              <div className="w-2 h-2 rounded-full bg-primary/50 mt-2 shrink-0" />
+              <span>Arrival required 30 minutes before scheduled ride time</span>
+            </li>
+            <li className="flex items-start gap-4">
+              <div className="w-2 h-2 rounded-full bg-primary/50 mt-2 shrink-0" />
+              <span>Located inside Cave Creek Regional Park (small vehicle entry fee applies)</span>
+            </li>
+            <li className="flex items-start gap-4">
+              <div className="w-2 h-2 rounded-full bg-primary/50 mt-2 shrink-0" />
+              <span>Rider weight limit: 230 lbs for safety reasons</span>
+            </li>
+            <li className="flex items-start gap-4">
+              <div className="w-2 h-2 rounded-full bg-primary/50 mt-2 shrink-0" />
+              <span>Reservations are strongly recommended to secure spots</span>
+            </li>
+          </ul>
+          <div className="pt-3">
+            <Button asChild variant="outline" className="gap-2 font-bold uppercase tracking-widest bg-white border-primary/20 hover:bg-primary/5">
+              <a href="https://www.cavecreektrailrides.com/" target="_blank" rel="noopener noreferrer">
+                View Trail Ride Option
+              </a>
+            </Button>
+          </div>
+        </div>
       </div>
 
       <div className="max-w-3xl mx-auto text-left">

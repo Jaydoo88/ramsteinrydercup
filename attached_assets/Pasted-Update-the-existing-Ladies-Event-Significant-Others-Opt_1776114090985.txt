@@ -1,0 +1,81 @@
+Update the existing “Ladies Event (Significant Others) — Optional” card.
+
+Do NOT create a new section. Keep the same design, spacing, and styling.
+
+1. Update Title
+Change to:
+
+Ladies Event (Significant Others) — Optional Activities
+
+2. Update Intro Text
+Replace with:
+
+“An optional experience for significant others who want to participate during the trip — whether that means golfing or enjoying a non-golf activity. This is completely separate from the main Ryder Cup competition rounds.”
+
+3. Keep Golf Bullet Points (unchanged style)
+Casual golf round or scramble option depending on interest
+
+Choice of 9 or 18 holes based on preference
+
+Cost is separate from the Ryder Cup golfer budget
+
+Sign-up by indicating interest on the RSVP form
+
+4. Add Divider / Spacing
+Add a subtle divider line OR extra vertical spacing under the bullets.
+
+5. Add New Section (Non-Golf Option)
+Add this subheading:
+
+Not golfing? No problem.
+
+Add this paragraph:
+
+“For those who prefer a break from golf, Friday is a great opportunity to enjoy something different. One recommended option is a guided horseback trail ride in Cave Creek, offering a scenic Sonoran Desert experience and a fun alternative to the course.”
+
+6. Add Detailed Bullet Points (THIS IS THE UPGRADE)
+Multiple ride options available (1 hour, 1.5 hour, sunset, and longer scenic rides)
+
+Beginner-friendly with guided, walking trail rides through the Sonoran Desert
+
+Pricing typically ranges from ~$79 to $179+ per person depending on ride length 
+
+1.5-hour ride is one of the most popular and best overall experiences 
+
+Arrival required 30 minutes before scheduled ride time 
+
+Located inside Cave Creek Regional Park (small vehicle entry fee applies) 
+
+Rider weight limit: 230 lbs for safety reasons 
+
+Reservations are strongly recommended to secure spots 
+
+7. Add Button
+Button text:
+
+View Trail Ride Option
+
+Link to:
+https://www.cavecreektrailrides.com/
+
+8. Design Instructions
+Keep everything inside ONE card
+
+Make the horseback section feel like a natural extension, not a new block
+
+Maintain clean spacing between sections
+
+Ensure mobile responsiveness
+
+Keep typography consistent with the rest of the site
+
+Button should align visually with your existing CTA styles
+
+💡 OPTIONAL (STRONGER VERSION)
+If you want this to feel even more premium:
+
+Tell Replit to:
+
+Add a small icon next to the horseback section (🐎 or desert icon)
+
+Slightly reduce opacity or font weight on the detail bullets so it reads as “supporting info”
