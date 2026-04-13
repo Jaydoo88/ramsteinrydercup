@@ -5,9 +5,25 @@ import houseImage2 from "@assets/1fa768ff_1776118689597.avif";
 import houseImage3 from "@assets/3bedd450_1776118707307.avif";
 import houseImage4 from "@assets/6e9ba67f_1776118723679.avif";
 import houseImage5 from "@assets/9d7409e0_1776118741103.avif";
+import houseImage6 from "@assets/52f99337_1776118802900.avif";
+import houseImage7 from "@assets/85becd66_1776118802900.avif";
+import houseImage8 from "@assets/95fd9dbe_1776118802901.avif";
+import houseImage9 from "@assets/180f38df_1776118802901.avif";
+import houseImage10 from "@assets/489b1967_1776118802901.avif";
 import { BedDouble, Waves, ThermometerSun, ShieldAlert, Check } from "lucide-react";
 
-const IMAGES = [houseImage1, houseImage2, houseImage3, houseImage4, houseImage5];
+const IMAGES = [
+  houseImage1,
+  houseImage2,
+  houseImage3,
+  houseImage4,
+  houseImage5,
+  houseImage6,
+  houseImage7,
+  houseImage8,
+  houseImage9,
+  houseImage10,
+];
 
 export default function HouseRooming() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
