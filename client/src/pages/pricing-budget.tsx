@@ -73,7 +73,7 @@ export default function PricingBudget() {
                   The Competitors
                 </div>
                 <h3 className="font-serif text-4xl font-bold mb-4">Golfer Tier</h3>
-                <div className="text-6xl font-bold text-secondary mb-10">$1,000</div>
+                <div className="text-6xl font-bold text-secondary mb-10">$814.66</div>
                 <ul className="space-y-4 font-medium text-lg">
                   <li className="flex justify-between border-b border-primary-foreground/20 pb-4">
                     <span className="text-white/80">Shared Costs</span> <span className="font-bold">$414.66</span>
@@ -82,7 +82,7 @@ export default function PricingBudget() {
                     <span className="text-white/80">Estimated Golf (Separate)</span> <span className="font-bold">$400.00</span>
                   </li>
                   <li className="flex justify-between text-secondary pt-2 font-bold text-xl">
-                    <span>Cushion</span> <span>$185.34</span>
+                    <span>Total Estimate</span> <span>$814.66</span>
                   </li>
                 </ul>
                 <div className="mt-6 space-y-2 text-sm font-medium text-white/75">
@@ -99,47 +99,42 @@ export default function PricingBudget() {
                   The Gallery
                 </div>
                 <h3 className="font-serif text-4xl font-bold text-primary mb-4">Guest Tier</h3>
-                <div className="text-6xl font-bold text-primary mb-10">$600</div>
+                <div className="text-6xl font-bold text-primary mb-10">$414.66</div>
                 <ul className="space-y-4 font-medium text-lg text-foreground/80">
                   <li className="flex justify-between border-b border-border pb-4">
                     <span>Shared Costs</span> <span className="text-primary font-bold">$414.66</span>
                   </li>
                   <li className="flex justify-between text-secondary pt-2 font-bold text-xl">
-                    <span>Cushion</span> <span>$185.34</span>
+                    <span>Golf</span> <span>Not Included</span>
                   </li>
                 </ul>
                 <div className="mt-6 space-y-2 text-sm font-medium text-foreground/60">
                   <p>Est. Shared: ~$104 per person / night (4 nights)</p>
-                  <p className="text-xs text-foreground/50">Includes house + stock-up fund</p>
+                  <p className="text-xs text-foreground/50">Includes house + stock-up fund only</p>
                 </div>
               </CardContent>
             </Card>
           </div>
 
           <div className="bg-muted/30 rounded-[2.5rem] p-10 md:p-16 border border-border/50 shadow-inner">
-            <div className="flex items-center gap-4 mb-10">
+            <div className="flex items-center gap-4 mb-4">
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
                 <PieChart className="w-8 h-8 text-primary" />
               </div>
               <h3 className="font-serif text-3xl font-bold text-primary">Shared Cost Breakdown</h3>
             </div>
+            <p className="mb-10 text-lg text-foreground/70">Shared total: $7,049.18 • $414.66 per person • ~$104 per person / night</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-t-primary">
-                <div className="text-4xl font-bold text-primary mb-2">$5,349</div>
+                <div className="text-4xl font-bold text-primary mb-2">$5,349.18</div>
                 <div className="text-sm font-bold text-secondary uppercase tracking-widest mb-4">House Total (All-In)</div>
                 <p className="text-base text-foreground/70 leading-relaxed">4 nights. Taxes/fees included. Paid in two installments.</p>
                 <p className="text-sm text-secondary font-bold mt-3">Pay today $2,955 • Due Sep 2 $2,394</p>
               </div>
               <div className="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-t-primary">
-                <div className="text-3xl font-bold text-primary mb-2">Planning Only</div>
-                <div className="text-sm font-bold text-secondary uppercase tracking-widest mb-4">Transportation</div>
-                <p className="text-base text-foreground/70 leading-relaxed">Transportation is not included in shared trip costs. Everyone will arrange their own rides (airport and local). For planning purposes, here are typical ride-share estimates.</p>
-                <div className="mt-4 text-sm text-foreground/70 space-y-2">
-                  <p className="font-bold text-secondary">Estimated Ride-Share Cost (Planning Only)</p>
-                  <p>• PHX ↔ Rental (32 miles): ~ $50–$90 each way (per car)</p>
-                  <p>• Prices vary based on demand, time of day, and vehicle size (UberX vs UberXL).</p>
-                  <p className="font-medium">Tip: Coordinating arrivals in shared rides can cut costs.</p>
-                </div>
+                <div className="text-3xl font-bold text-primary mb-2">Transportation</div>
+                <div className="text-sm font-bold text-secondary uppercase tracking-widest mb-4">Planning Note</div>
+                <p className="text-base text-foreground/70 leading-relaxed">Transportation is not included in shared trip costs. Everyone will arrange their own rides. For planning, PHX to the rental is about 32 miles, and rideshare pricing varies by time/vehicle size. We also expect several vehicles on-site, which helps reduce rideshare needs.</p>
               </div>
               <div className="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-t-primary">
                 <div className="text-4xl font-bold text-primary mb-2">$1,700</div>
