@@ -79,7 +79,7 @@ export default function PricingBudget() {
                     <span className="text-white/80">Shared Costs</span> <span className="font-bold">$568.55</span>
                   </li>
                   <li className="flex justify-between border-b border-primary-foreground/20 pb-4">
-                    <span className="text-white/80">Estimated Golf</span> <span className="font-bold">$400.00</span>
+                    <span className="text-white/80">Estimated Golf (Separate)</span> <span className="font-bold">$400.00</span>
                   </li>
                   <li className="flex justify-between text-secondary pt-2 font-bold text-xl">
                     <span>Cushion</span> <span>$31.45</span>
@@ -88,7 +88,6 @@ export default function PricingBudget() {
                 <div className="mt-6 space-y-2 text-sm font-medium text-white/75">
                   <p>Est. Shared: ~$142 per person / night (4 nights)</p>
                   <p className="text-xs text-white/60">Includes house + vans + gas estimate + stock-up fund</p>
-                  <p>Est. Total: ~$333/day (3 golf days)</p>
                 </div>
               </CardContent>
             </Card>
