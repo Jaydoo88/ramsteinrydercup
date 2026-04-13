@@ -134,8 +134,8 @@ export default function PricingBudget() {
                 <div className="text-4xl font-bold text-primary mb-2">$5,349.18</div>
                 <div className="text-sm font-bold text-secondary uppercase tracking-widest mb-4">House Total (All-In)</div>
                 <p className="text-base text-foreground/70 leading-relaxed">4 nights. Taxes and fees included. Shared across all attendees.</p>
-                <p className="text-sm text-secondary font-bold mt-3">Per person: $175 due now • $140 due Aug 15</p>
-                <p className="text-xs text-muted-foreground mt-2">Per couple: $350 due now • $280 due Aug 15</p>
+                <p className="text-sm text-secondary font-bold mt-3">Per person: $175 due today • $140 due Aug 15</p>
+                <p className="text-xs text-muted-foreground mt-2">Per couple: $350 due today • $280 due Aug 15</p>
               </div>
               <div className="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-t-primary">
                 <div className="text-3xl font-bold text-primary mb-2">Transportation</div>
@@ -146,8 +146,8 @@ export default function PricingBudget() {
                 <div className="text-4xl font-bold text-primary mb-2">$1,700</div>
                 <div className="text-sm font-bold text-secondary uppercase tracking-widest mb-4">Stock-up Fund</div>
                 <p className="text-base text-foreground/70 leading-relaxed">$100/person for food, drinks, and shared house essentials (17 people).</p>
-                <p className="text-sm text-secondary font-bold mt-3">Due July 17 for alignment</p>
-                <p className="text-xs text-muted-foreground mt-2">Per couple: $200 due July 17</p>
+                <p className="text-sm text-secondary font-bold mt-3">Due July 1</p>
+                <p className="text-xs text-muted-foreground mt-2">Per couple: $200 due July 1</p>
               </div>
             </div>
           </div>
@@ -171,8 +171,9 @@ export default function PricingBudget() {
             <div className="rounded-2xl border border-border bg-[#FAF9F6] p-6">
               <p className="text-sm font-bold text-secondary uppercase tracking-widest mb-3">House (All Attendees)</p>
               <div className="space-y-3 text-foreground/80">
-                <p className="text-lg font-semibold text-primary">Per person: $175 due now — secures your spot</p>
+                <p className="text-lg font-semibold text-primary">Per person: $175 due today — secures your spot</p>
                 <p className="text-lg font-semibold text-primary">Per person: $140 due August 15 — remaining house balance</p>
+                <p className="text-sm text-muted-foreground">Per couple: $350 due today • $280 due August 15</p>
               </div>
             </div>
             <div className="rounded-2xl border border-border bg-[#FAF9F6] p-6">
@@ -189,7 +190,8 @@ export default function PricingBudget() {
               <div className="space-y-3 text-foreground/80">
                 <p className="text-lg font-semibold text-primary">$100 per person</p>
                 <p>Covers food, drinks, and shared house essentials.</p>
-                <p className="text-lg font-semibold text-primary">Due July 17 for alignment</p>
+                <p className="text-lg font-semibold text-primary">Due July 1</p>
+                <p className="text-sm text-muted-foreground">Per couple: $200 due July 1</p>
               </div>
             </div>
           </div>
@@ -205,21 +207,25 @@ export default function PricingBudget() {
           </div>
 
           <div className="rounded-2xl border border-border bg-white p-6">
-            <p className="text-sm font-bold text-secondary uppercase tracking-widest mb-3">Simple Payment Rhythm</p>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
-              <div className="rounded-xl bg-muted/40 p-4">
+            <p className="text-sm font-bold text-secondary uppercase tracking-widest mb-4">Simple Payment Rhythm</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 text-center">
+              <div className="rounded-2xl bg-muted/40 px-4 py-5">
+                <p className="text-sm text-muted-foreground">Today</p>
+                <p className="mt-2 font-semibold text-primary">House $175</p>
+              </div>
+              <div className="rounded-2xl bg-muted/40 px-4 py-5">
                 <p className="text-sm text-muted-foreground">June 17</p>
                 <p className="mt-2 font-semibold text-primary">Golf $100</p>
               </div>
-              <div className="rounded-xl bg-muted/40 p-4">
-                <p className="text-sm text-muted-foreground">July 17</p>
-                <p className="mt-2 font-semibold text-primary">Golf $100 + Stock-up $100</p>
+              <div className="rounded-2xl bg-muted/40 px-4 py-5">
+                <p className="text-sm text-muted-foreground">July 1</p>
+                <p className="mt-2 font-semibold text-primary">Stock-up $100</p>
               </div>
-              <div className="rounded-xl bg-muted/40 p-4">
+              <div className="rounded-2xl bg-muted/40 px-4 py-5">
                 <p className="text-sm text-muted-foreground">Aug 15</p>
                 <p className="mt-2 font-semibold text-primary">House $140</p>
               </div>
-              <div className="rounded-xl bg-muted/40 p-4">
+              <div className="rounded-2xl bg-muted/40 px-4 py-5">
                 <p className="text-sm text-muted-foreground">Aug 17</p>
                 <p className="mt-2 font-semibold text-primary">Final Golf Balance</p>
               </div>
