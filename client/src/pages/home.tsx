@@ -76,7 +76,7 @@ export default function Home() {
                   <Users className="w-8 h-8" />
                 </div>
                 <h3 className="font-serif font-bold text-2xl mb-2 text-primary">The Field</h3>
-                <p className="text-muted-foreground font-medium uppercase tracking-wider text-sm">12 Golfers + <br/> Significant Others</p>
+                <p className="text-muted-foreground font-medium uppercase tracking-wider text-sm">8 Golfers + <br/> Significant Others</p>
               </CardContent>
             </Card>
           </div>
