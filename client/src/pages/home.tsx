@@ -113,26 +113,6 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-            <Card className="border-none bg-white shadow-xl">
-              <CardContent className="p-8">
-                <p className="text-sm font-bold uppercase tracking-[0.2em] text-secondary mb-3">Rooming Plan (After Deposits)</p>
-                <p className="text-lg text-foreground/80 leading-relaxed">
-                  Assignments will be finalized after deposits are collected. Every guest suite at Casa Luna includes
-                  its own ensuite bathroom, plus the house has one extra full bath for added flexibility.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="border-none bg-white shadow-xl">
-              <CardContent className="p-8">
-                <p className="text-sm font-bold uppercase tracking-[0.2em] text-secondary mb-3">HQ Amenities</p>
-                <p className="text-lg text-foreground/80 leading-relaxed">
-                  Pool and hot tub, a putting green, a game room, and a big group kitchen with hang space built for
-                  post-round recaps and late-night stories.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Link href="/house" className="group block h-full">
