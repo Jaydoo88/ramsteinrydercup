@@ -169,16 +169,16 @@ export default function PricingBudget() {
             <div className="rounded-2xl border border-border bg-[#FAF9F6] p-6">
               <p className="text-sm font-bold text-secondary uppercase tracking-widest mb-3">House (All Attendees)</p>
               <div className="space-y-3 text-foreground/80">
-                <p className="text-lg font-semibold text-primary">$175 due now — secures your spot</p>
-                <p className="text-lg font-semibold text-primary">$140 due August 15 — remaining house balance</p>
+                <p className="text-lg font-semibold text-primary">Per person: $175 due now — secures your spot</p>
+                <p className="text-lg font-semibold text-primary">Per person: $140 due August 15 — remaining house balance</p>
               </div>
             </div>
             <div className="rounded-2xl border border-border bg-[#FAF9F6] p-6">
               <p className="text-sm font-bold text-secondary uppercase tracking-widest mb-3">Golf (Golfers Only — Estimated)</p>
               <div className="space-y-3 text-foreground/80">
-                <p className="text-lg font-semibold text-primary">$100 due June 17</p>
-                <p className="text-lg font-semibold text-primary">$100 due July 17</p>
-                <p className="text-lg font-semibold text-primary">Remaining balance due August 17</p>
+                <p className="text-lg font-semibold text-primary">Per golfer: $100 due June 17</p>
+                <p className="text-lg font-semibold text-primary">Per golfer: $100 due July 17</p>
+                <p className="text-lg font-semibold text-primary">Per golfer: Remaining balance due August 17</p>
                 <p className="text-sm text-muted-foreground">Final pricing may adjust slightly based on course rates.</p>
               </div>
             </div>
