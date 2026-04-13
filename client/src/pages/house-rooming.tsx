@@ -69,13 +69,13 @@ export default function HouseRooming() {
         <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent z-20"></div>
         <div className="absolute bottom-0 left-0 right-0 p-10 md:p-16 z-30">
           <div className="inline-block px-4 py-2 bg-secondary text-secondary-foreground font-bold uppercase tracking-widest rounded-full text-sm mb-4">
-            Primary Option A
+            Confirmed HQ • 2026
           </div>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4 drop-shadow-lg">Scottsdale, AZ HQ</h2>
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4 drop-shadow-lg">Scottsdale / Cave Creek HQ</h2>
           <p className="text-white/90 text-xl font-medium flex items-center gap-3">
-            <span>$11,561 Quoted Baseline</span>
+            <span>$5,349.18 total (4 nights, all-in)</span>
             <span className="w-2 h-2 rounded-full bg-secondary"></span>
-            <span>24 Guest Model</span>
+            <span>17 Guest Model</span>
           </p>
         </div>
       </div>
