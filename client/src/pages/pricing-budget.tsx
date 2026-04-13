@@ -1,8 +1,17 @@
+import { useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { DollarSign, AlertCircle, PieChart, Users } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function PricingBudget() {
+  useEffect(() => {
+    if (window.location.hash === "#payment-plan") {
+      requestAnimationFrame(() => {
+        document.getElementById("payment-plan")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
+  }, []);
+
   return (
     <div className="container mx-auto px-4 py-20 max-w-6xl">
       <div className="mb-16 text-center max-w-3xl mx-auto">
