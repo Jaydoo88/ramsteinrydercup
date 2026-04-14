@@ -83,9 +83,12 @@ export default function Rsvp() {
 
       if (error) {
         console.error("Supabase insert error:", error, "Status:", responseStatus);
-        const friendlyMessage = error.message?.includes("check constraint")
+        const message = error.message || "";
+        const friendlyMessage = message.includes("check constraint")
           ? "There was a form mismatch while saving your RSVP. Please try again, and if it keeps happening let Jason know."
-          : error.message || "Failed to submit. Please try again.";
+          : message.includes("row-level security policy")
+            ? "The RSVP form is currently being blocked by the database permissions setup."
+            : message || "Failed to submit. Please try again.";
         setErrorMessage(friendlyMessage);
         setStatus("error");
       } else {
