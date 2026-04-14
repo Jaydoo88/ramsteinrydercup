@@ -54,6 +54,14 @@ export default function Rsvp() {
     }
 
     setStatus("submitting");
+
+    const activityInterestSummary = bringingSo !== "no" && soActivityInterests.length > 0
+      ? `Significant other activity interests: ${soActivityInterests.join(", ")}`
+      : "";
+
+    const combinedNotes = [notes.trim(), activityInterestSummary]
+      .filter(Boolean)
+      .join("\n\n");
     
     const data = {
       first_name: firstName,
@@ -63,9 +71,9 @@ export default function Rsvp() {
       is_golfer: isGolfer,
       bringing_so: bringingSo,
       so_name: bringingSo !== "no" ? soName : null,
-      so_ladies_golf_interest: bringingSo !== "no" && soActivityInterests.length > 0 ? soActivityInterests.join(", ") : null,
+      so_ladies_golf_interest: null,
       attendance_likelihood: likelihood,
-      notes: notes || null,
+      notes: combinedNotes || null,
     };
 
     try {
@@ -75,7 +83,10 @@ export default function Rsvp() {
 
       if (error) {
         console.error("Supabase insert error:", error, "Status:", responseStatus);
-        setErrorMessage(error.message || "Failed to submit. Please try again.");
+        const friendlyMessage = error.message?.includes("check constraint")
+          ? "There was a form mismatch while saving your RSVP. Please try again, and if it keeps happening let Jason know."
+          : error.message || "Failed to submit. Please try again.";
+        setErrorMessage(friendlyMessage);
         setStatus("error");
       } else {
         setStatus("success");
