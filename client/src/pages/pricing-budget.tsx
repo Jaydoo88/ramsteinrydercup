@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { DollarSign, AlertCircle, PieChart, Users } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
@@ -249,6 +250,27 @@ export default function PricingBudget() {
                 </div>
               </div>
             </div>
+          </div>
+
+          <div className="my-8 rounded-[1.75rem] border border-primary/10 bg-[linear-gradient(135deg,rgba(13,61,110,0.04),rgba(199,30,58,0.05))] p-6 md:p-8">
+            <p className="text-sm font-bold uppercase tracking-[0.22em] text-secondary">Credit Card Payment</p>
+            <p className="mt-3 text-base text-foreground/65">
+              Review the payment plan below, then click Make a Payment to submit your deposit or installment.
+            </p>
+            <div className="mt-6">
+              <Button asChild className="h-14 w-full rounded-xl bg-primary text-base font-bold uppercase tracking-widest shadow-lg shadow-primary/20 hover:bg-primary/90 md:w-auto md:px-10" data-testid="button-make-payment">
+                <a
+                  href="https://buy.stripe.com/9B600l75zgXTdax9y12VG00"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Make a Payment
+                </a>
+              </Button>
+            </div>
+            <p className="mt-5 max-w-3xl text-sm leading-relaxed text-foreground/65" data-testid="text-payment-button-note">
+              Use this button to submit your Ramstein Ryder Cup payment by credit card. Enter the amount due based on the payment plan on this page. Please use your full name, the same email each time, and note what the payment is for.
+            </p>
           </div>
 
           <div className="mt-6 rounded-[1.75rem] border border-secondary/15 bg-secondary/[0.04] p-6 md:p-7">
