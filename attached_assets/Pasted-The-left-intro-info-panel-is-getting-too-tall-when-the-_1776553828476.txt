@@ -1,0 +1,84 @@
+The left intro/info panel is getting too tall when the copy expands, and it is pushing the player cards lower than the photos beside it. This creates too much empty vertical space and makes the whole section feel unbalanced.
+
+I want this section redesigned so the left panel and the player cards feel aligned, compact, and premium.
+
+What needs to change
+
+1. Keep the player cards aligned to the top
+
+The top of the player cards should stay aligned with the top of the left panel.
+The left panel text should never force the cards to sit noticeably lower.
+
+2. Reduce the vertical expansion of the left panel
+
+Tighten spacing between paragraphs.
+Reduce excessive padding at the top and bottom.
+Shorten the divider spacing.
+Make the “Role” section sit closer to the content above it.
+
+3. Limit how much text can visually grow
+
+Use a more compact layout for the left panel copy.
+Reduce line-height slightly so the text block is tighter but still readable.
+Consider clamping some of the descriptive text to a set number of lines on desktop if needed.
+The left panel should feel like a summary card, not a long article.
+
+4. Make the whole section height feel intentional
+
+The left panel should visually match the height rhythm of the player cards.
+Avoid large blank space at the bottom of the left panel.
+If needed, make the left panel a fixed/min-height card with content vertically distributed more evenly.
+
+5. Improve the layout structure
+Use a layout where:
+
+the left panel is one column
+the player cards sit in the adjacent columns
+all columns align from the top
+cards do not get pushed down by taller neighboring content
+
+A CSS grid layout with align-items: start is probably better here than anything that is stretching based on content height.
+
+Design goal
+
+I want this section to feel:
+
+cleaner
+tighter
+more balanced
+more premium
+less stretched vertically
+
+Right now the left column is consuming too much vertical real estate and making the section look awkward.
+
+Recommended implementation ideas
+
+Please test one of these approaches:
+
+Option A — Best option
+
+Keep the left panel the same width
+Reduce text size/line-height slightly
+Tighten spacing throughout
+Move the “Role” block upward
+Make all columns top-aligned with grid/flex settings
+
+Option B
+
+Add a max-height to the left content area
+Clamp longer paragraph text
+Keep the card visually balanced without making the section taller
+
+Option C
+
+Turn the lower text into a shorter bullet-style or stacked compact format:
+Off the tee
+Approach play
+On the greens
+This would save vertical space and look sharper.
+Important
+
+Do not make the player photos smaller just to compensate.
+The goal is to fix the left text panel so the whole composition looks better.
+
+Please update this section so it looks visually balanced on desktop first, while still staying responsive on tablet/mobile.

@@ -187,34 +187,39 @@ export default function Players() {
                 <div className={`absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r ${group.accent}`} />
                 <div className="absolute right-0 top-0 hidden h-48 w-48 translate-x-10 -translate-y-10 rounded-full bg-white/45 blur-3xl md:block" />
 
-                <div className="relative grid gap-5 p-5 md:p-7 lg:grid-cols-[0.72fr_1.28fr] lg:items-start lg:gap-6 lg:p-8">
-                  <div className="flex h-full min-h-[320px] flex-col rounded-[1.6rem] border border-white/55 bg-white/72 p-5 backdrop-blur-sm md:min-h-[360px] md:p-6">
+                <div className="relative grid items-start gap-5 p-5 md:p-7 lg:grid-cols-[minmax(290px,0.68fr)_1.32fr] lg:gap-6 lg:p-8">
+                  <div className="self-start rounded-[1.6rem] border border-white/55 bg-white/72 p-4 backdrop-blur-sm md:p-5">
                     <div className="flex items-start justify-between gap-4">
                       <div>
-                        <h3 className="font-serif text-3xl font-bold text-primary md:text-[2.2rem]" data-testid={`text-tier-heading-${group.tier.toLowerCase()}`}>
+                        <h3 className="font-serif text-3xl font-bold text-primary md:text-[2.05rem]" data-testid={`text-tier-heading-${group.tier.toLowerCase()}`}>
                           {group.heading}
                         </h3>
                       </div>
-                      <div className="text-5xl font-semibold leading-none text-primary/10 md:text-6xl">{group.tier}</div>
+                      <div className="text-5xl font-semibold leading-none text-primary/10 md:text-[3.35rem]">{group.tier}</div>
                     </div>
 
-                    <div className="mt-4 max-w-md space-y-5">
-                      <p className="text-sm leading-7 text-foreground/68 md:text-base" data-testid={`text-tier-description-${group.tier.toLowerCase()}`}>
+                    <div className="mt-3 max-w-md space-y-3.5">
+                      <p className="text-[0.95rem] leading-6 text-foreground/68" data-testid={`text-tier-description-${group.tier.toLowerCase()}`}>
                         {group.description}
                       </p>
-                      <p className="text-sm leading-7 text-foreground/64 md:text-[0.97rem]">
+                      <p className="text-[0.95rem] leading-6 text-foreground/64">
                         {group.details}
                       </p>
-                      <div className="space-y-3 border-t border-primary/8 pt-5">
-                        {group.scouting.map((note) => (
-                          <p key={note} className="text-sm leading-7 text-foreground/66 md:text-[0.97rem]">
-                            {note}
-                          </p>
-                        ))}
+                      <div className="space-y-2.5 border-t border-primary/8 pt-4">
+                        {group.scouting.map((note) => {
+                          const [label, ...rest] = note.split(": ");
+
+                          return (
+                            <div key={note} className="grid grid-cols-[86px_1fr] gap-2 text-[0.92rem] leading-6 text-foreground/66">
+                              <p className="font-semibold text-primary/78">{label}</p>
+                              <p>{rest.join(": ")}</p>
+                            </div>
+                          );
+                        })}
                       </div>
                     </div>
 
-                    <div className="mt-auto pt-8 text-center">
+                    <div className="mt-5 border-t border-primary/8 pt-4 text-center">
                       <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-secondary">Role</p>
                       <p className="mt-2 text-sm font-semibold text-primary md:text-base">{group.caption}</p>
                     </div>
