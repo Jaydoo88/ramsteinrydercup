@@ -167,14 +167,7 @@ export default function Players() {
                   <div className="self-start rounded-[1.6rem] border border-white/55 bg-white/72 p-5 backdrop-blur-sm md:p-6">
                     <div className="flex items-start justify-between gap-4">
                       <div>
-                        <div
-                          className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] ${group.badge}`}
-                          data-testid={`text-tier-label-${group.tier.toLowerCase()}`}
-                        >
-                          <Icon className="h-4 w-4" />
-                          Tier {group.tier}
-                        </div>
-                        <h3 className="mt-4 font-serif text-3xl font-bold text-primary md:text-[2.2rem]" data-testid={`text-tier-heading-${group.tier.toLowerCase()}`}>
+                        <h3 className="font-serif text-3xl font-bold text-primary md:text-[2.2rem]" data-testid={`text-tier-heading-${group.tier.toLowerCase()}`}>
                           {group.heading}
                         </h3>
                       </div>
@@ -227,13 +220,18 @@ export default function Players() {
                             </div>
 
                             <div className="flex min-h-[150px] flex-col justify-between p-5">
-                              <div>
-                                <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-secondary">
-                                  Ramstein Ryder Cup · {group.heading}
-                                </p>
-                                <h4 className="mt-3 whitespace-nowrap font-serif text-[1.55rem] font-bold leading-none tracking-tight text-primary md:text-[1.75rem]" data-testid={`text-player-name-${playerSlug}`}>
-                                  {player.name}
-                                </h4>
+                              <div className="flex items-start justify-between gap-4">
+                                <div>
+                                  <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-secondary">
+                                    Ramstein Ryder Cup · {group.heading}
+                                  </p>
+                                  <h4 className="mt-3 whitespace-nowrap font-serif text-[1.55rem] font-bold leading-none tracking-tight text-primary md:text-[1.75rem]" data-testid={`text-player-name-${playerSlug}`}>
+                                    {player.name}
+                                  </h4>
+                                </div>
+                                <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br ${group.accent} text-sm font-bold text-primary shadow-sm`}>
+                                  {group.tier}
+                                </div>
                               </div>
 
                             </div>
