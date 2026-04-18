@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import bedroom1Image from "@assets/image_1776549967055.png";
 import bedroom2Image from "@assets/image_1776550007242.png";
-import roomImage3 from "@assets/Picture1_1776118874266.png";
+import bedroom3Image from "@assets/image_1776550029475.png";
 import roomImage4 from "@assets/Picture3_1776118874266.png";
 
 const ROOM_PREVIEWS = [
@@ -21,10 +21,10 @@ const ROOM_PREVIEWS = [
     description: "Bedroom #2 features a king bed, a more private single-room layout, and a clean upscale finish that fits the house perfectly.",
   },
   {
-    image: roomImage3,
-    label: "Layout Preview 3",
-    title: "Expanded sleeping configuration",
-    description: "A broader room layout preview to give the group a better feel for the available accommodations.",
+    image: bedroom3Image,
+    label: "Bedroom #3",
+    title: "King bedroom setup",
+    description: "Bedroom #3 features a king bed, relaxed seating, and a clean private-room layout with the same polished finish as the rest of the house.",
   },
   {
     image: roomImage4,
