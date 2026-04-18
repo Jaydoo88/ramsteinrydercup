@@ -134,12 +134,17 @@ export default function HouseRooming() {
               Comfort and privacy remain the priorities. With 8 private guest suites and ensuite bathrooms for every bedroom, the house is set up for a polished golf-trip HQ experience. Guests can preview rooms now, while final assignments stay flexible until everyone is on-site.
             </p>
             <div className="rounded-2xl border border-secondary/20 bg-secondary/10 p-6">
-              <div className="flex items-start gap-4">
-                <ShieldCheck className="h-8 w-8 shrink-0 text-secondary" />
-                <div>
-                  <p className="text-lg font-bold text-primary" data-testid="text-room-assignment-note-main">Room assignments will be handled on-site during the trip and are not being pre-assigned in advance.</p>
-                  <p className="mt-2 text-sm leading-relaxed text-foreground/65">This keeps the setup flexible based on final attendance, arrival timing, and overall group logistics.</p>
+              <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
+                <div className="flex items-start gap-4">
+                  <ShieldCheck className="h-8 w-8 shrink-0 text-secondary" />
+                  <div>
+                    <p className="text-lg font-bold text-primary" data-testid="text-room-assignment-note-main">The house is officially booked. Room layouts can now be viewed, but final room assignments will be made on-site at the event.</p>
+                    <p className="mt-2 text-sm leading-relaxed text-foreground/65">Rooms can now be previewed, but final placement will be determined upon arrival based on group logistics and attendance.</p>
+                  </div>
                 </div>
+                <Button asChild variant="outline" className="h-12 rounded-xl border-primary/15 px-6 text-sm font-bold uppercase tracking-widest text-primary hover:bg-primary/5" data-testid="button-view-rooms-rooming-note">
+                  <a href="#room-preview">View Rooms</a>
+                </Button>
               </div>
             </div>
           </div>
@@ -281,7 +286,7 @@ export default function HouseRooming() {
               </li>
               <li className="flex flex-col border-b border-primary-foreground/10 pb-6">
                 <span className="mb-2 text-sm font-bold uppercase tracking-widest text-primary-foreground/60">Room Assignments</span>
-                <span className="text-2xl font-bold text-white">On-Site at Check-In</span>
+                <span className="text-2xl font-bold text-white">Assigned On-Site</span>
               </li>
               <li className="flex flex-col">
                 <span className="mb-2 text-sm font-bold uppercase tracking-widest text-primary-foreground/60">Room Viewing</span>
