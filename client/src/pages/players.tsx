@@ -115,13 +115,13 @@ export default function Players() {
       <section className="border-b border-primary/10 bg-white">
         <div className="container mx-auto max-w-5xl px-4 py-16 text-center md:py-20 lg:py-24">
           <p className="text-sm font-bold uppercase tracking-[0.28em] text-secondary" data-testid="text-players-kicker">
-            Tournament Field
+            2026 Player Field
           </p>
           <h1 className="mx-auto mt-5 max-w-4xl font-serif text-5xl font-bold leading-[0.95] text-primary md:text-6xl lg:text-7xl" data-testid="text-players-title">
-            A sharper look at the roster.
+            Ramstein Ryder Cup Players
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-foreground/68 md:text-xl" data-testid="text-players-intro">
-            The inaugural Ramstein Ryder Cup field deserves something more elevated than a basic roster. This lineup now reads like a real event board — premium, competitive, and built to feel worthy of the weekend.
+            Meet the confirmed player field for the 1st Annual Ramstein Ryder Cup 2026. Player tiers are set to help shape pairings and competition throughout the event weekend.
           </p>
 
           <div className="mx-auto mt-10 max-w-4xl">
