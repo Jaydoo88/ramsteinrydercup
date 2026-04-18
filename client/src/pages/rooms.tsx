@@ -3,7 +3,7 @@ import { ArrowLeft, BedDouble, ShieldCheck, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import bedroom1Image from "@assets/image_1776549967055.png";
-import roomImage2 from "@assets/4951e4bc_1776118843654.avif";
+import bedroom2Image from "@assets/image_1776550007242.png";
 import roomImage3 from "@assets/Picture1_1776118874266.png";
 import roomImage4 from "@assets/Picture3_1776118874266.png";
 
@@ -15,10 +15,10 @@ const ROOM_PREVIEWS = [
     description: "Bedroom #1 features a spacious two-bed layout with clean finishes, warm lighting, and a comfortable shared setup for the trip.",
   },
   {
-    image: roomImage2,
-    label: "Suite Preview 2",
-    title: "Additional bedroom layout",
-    description: "A second room view showing the style, spacing, and overall setup guests can expect on-site.",
+    image: bedroom2Image,
+    label: "Bedroom #2",
+    title: "King bedroom setup",
+    description: "Bedroom #2 features a king bed, a more private single-room layout, and a clean upscale finish that fits the house perfectly.",
   },
   {
     image: roomImage3,
