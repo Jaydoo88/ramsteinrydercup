@@ -14,6 +14,7 @@ import bedroom1BathroomImage from "@assets/image_1776550382266.png";
 import bedroom2BathroomImage from "@assets/image_1776550404188.png";
 import bedroom3BathroomImage from "@assets/image_1776550421103.png";
 import bedroom4BathroomImage from "@assets/image_1776550438203.png";
+import bedroom5BathroomImage from "@assets/image_1776550460083.png";
 
 const ROOM_PREVIEWS = [
   {
@@ -57,6 +58,9 @@ const ROOM_PREVIEWS = [
     label: "Casita Bedroom #5",
     title: "King casita bedroom setup",
     description: "Casita Bedroom #5 features a king bed, a quieter detached feel, and a clean, comfortable setup for added privacy during the trip.",
+    bathroomImage: bedroom5BathroomImage,
+    bathroomLabel: "Bedroom #5 Bathroom",
+    bathroomDescription: "Single vanity and walk-in shower setup connected to Casita Bedroom #5.",
   },
   {
     image: bedroom6Image,
