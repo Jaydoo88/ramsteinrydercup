@@ -13,6 +13,7 @@ import bedroom8Image from "@assets/image_1776550179539.png";
 import bedroom1BathroomImage from "@assets/image_1776550382266.png";
 import bedroom2BathroomImage from "@assets/image_1776550404188.png";
 import bedroom3BathroomImage from "@assets/image_1776550421103.png";
+import bedroom4BathroomImage from "@assets/image_1776550438203.png";
 
 const ROOM_PREVIEWS = [
   {
@@ -47,6 +48,9 @@ const ROOM_PREVIEWS = [
     label: "Bedroom #4",
     title: "King bedroom setup",
     description: "Bedroom #4 features a king bed, a cozy lounge chair, and a polished private-room layout that matches the rest of the house.",
+    bathroomImage: bedroom4BathroomImage,
+    bathroomLabel: "Bedroom #4 Bathroom",
+    bathroomDescription: "Double vanity and enclosed shower setup connected to Bedroom #4.",
   },
   {
     image: bedroom5Image,
