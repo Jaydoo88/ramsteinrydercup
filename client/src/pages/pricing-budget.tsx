@@ -18,7 +18,7 @@ export default function PricingBudget() {
       <div className="mb-16 text-center max-w-3xl mx-auto">
         <h1 className="font-serif text-5xl md:text-6xl font-bold text-primary mb-8">Pricing & Budget</h1>
         <p className="text-2xl text-muted-foreground leading-relaxed">
-          Transparent costs, a simple payment rhythm, and clear deadlines so everyone knows what to expect before final bookings are locked.
+          With the house officially booked, payments are now being collected based on the confirmed rental total and trip planning schedule.
         </p>
       </div>
 
@@ -29,7 +29,7 @@ export default function PricingBudget() {
         <div>
           <h4 className="font-bold text-xl mb-2 text-primary uppercase tracking-widest">Headcount Impact</h4>
           <p className="text-lg text-foreground/80 leading-relaxed">
-            We will have 8 committed golfers, and some golfers may bring a spouse/girlfriend. Total headcount changes the shared cost per person. More spouses/gf attending = lower shared cost per person. Fewer spouses/gf = higher shared cost per person. Final pricing will be confirmed once deposits are collected and headcount is locked.
+            We will have 8 committed golfers, and some golfers may bring a spouse/girlfriend. Total headcount changes the shared cost per person. More spouses/gf attending = lower shared cost per person. Fewer spouses/gf = higher shared cost per person. With the house officially confirmed, shared costs are now being collected against the booked rental while final per-person totals stay tied to final attendance.
           </p>
         </div>
       </div>
@@ -174,7 +174,7 @@ export default function PricingBudget() {
               <div>
                 <p className="text-sm font-bold uppercase tracking-[0.24em] text-secondary">Planning Finance</p>
                 <h4 className="mt-2 font-serif text-3xl font-bold text-primary">Payment Plan & Deadlines</h4>
-                <p className="mt-3 max-w-2xl text-lg leading-relaxed text-foreground/70">Nothing heavy upfront — $175 locks your spot, and the rest is spaced out in a clean, predictable rhythm leading up to the trip.</p>
+                <p className="mt-3 max-w-2xl text-lg leading-relaxed text-foreground/70">With the house officially booked, payments now go toward the confirmed rental and trip planning costs in a clean, predictable rhythm leading up to the trip.</p>
               </div>
             </div>
             <div className="rounded-2xl border border-secondary/15 bg-secondary/5 px-5 py-4 lg:min-w-[280px]">
@@ -285,14 +285,14 @@ export default function PricingBudget() {
             <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
               <div>
                 <p className="text-sm font-bold uppercase tracking-[0.22em] text-secondary">Commitment Policy</p>
-                <p className="mt-2 text-base text-foreground/60">Clear expectations before final bookings are locked.</p>
+                <p className="mt-2 text-base text-foreground/60">Clear expectations now that the house is booked and confirmed.</p>
               </div>
             </div>
             <div className="mt-5 grid grid-cols-1 gap-3 md:grid-cols-2">
               <div className="rounded-2xl bg-white/80 px-4 py-4 text-sm text-foreground/75 ring-1 ring-border/60">Your spot is not confirmed until your first payment is received.</div>
-              <div className="rounded-2xl bg-white/80 px-4 py-4 text-sm text-foreground/75 ring-1 ring-border/60">Payments are non-refundable due to upfront booking commitments.</div>
+              <div className="rounded-2xl bg-white/80 px-4 py-4 text-sm text-foreground/75 ring-1 ring-border/60">Payments are non-refundable because the house is officially booked and trip costs are being collected against the confirmed rental.</div>
               <div className="rounded-2xl bg-white/80 px-4 py-4 text-sm text-foreground/75 ring-1 ring-border/60">Once committed, you are responsible for your share unless a replacement is found.</div>
-              <div className="rounded-2xl bg-white/80 px-4 py-4 text-sm text-foreground/75 ring-1 ring-border/60">Final costs may adjust slightly based on headcount and final bookings.</div>
+              <div className="rounded-2xl bg-white/80 px-4 py-4 text-sm text-foreground/75 ring-1 ring-border/60">Final costs may adjust slightly based on attendance and final golf bookings.</div>
             </div>
           </div>
 

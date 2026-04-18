@@ -63,8 +63,8 @@ export default function TripOverview() {
             </div>
             <div>
               <h3 className="font-serif font-bold text-2xl mb-2 text-primary">Planning Status</h3>
-              <p className="text-muted-foreground text-lg mb-2">Collecting Deposits</p>
-              <p className="text-sm text-secondary font-bold uppercase tracking-wider">House Booking in Progress</p>
+              <p className="text-muted-foreground text-lg mb-2">Collecting Payments</p>
+              <p className="text-sm text-secondary font-bold uppercase tracking-wider">House Booked & Confirmed</p>
             </div>
           </CardContent>
         </Card>
@@ -83,7 +83,7 @@ export default function TripOverview() {
               "House stock-up fund (Costco food/drinks)",
               "3 days of golf (estimated budget)",
               "Official Ryder Cup competition format",
-              "Private-suite comfort (assignments after deposits)"
+              "Private-suite comfort (assignments handled on-site)"
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
                 <CheckCircle2 className="w-6 h-6 text-secondary shrink-0 mt-0.5" />

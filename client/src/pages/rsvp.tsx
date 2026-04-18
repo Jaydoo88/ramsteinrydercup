@@ -139,11 +139,15 @@ export default function Rsvp() {
       <div className="text-center mb-10 relative z-20">
         <h1 className="font-serif text-5xl md:text-6xl font-bold text-primary mb-6">Founding Group RSVP</h1>
         <p className="text-2xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-          Spots are being built around our core group responses. Please let us know your intent so we can finalize the house and golf contracts.
+          The house is officially booked and confirmed. Submit your RSVP to lock in your spot and stay aligned with payment deadlines.
         </p>
       </div>
 
       <div className="max-w-3xl mx-auto">
+        <div className="mb-6 rounded-[1.5rem] border border-secondary/20 bg-secondary/10 px-6 py-5 text-center shadow-sm" data-testid="status-rsvp-house-confirmed">
+          <p className="text-sm font-bold uppercase tracking-[0.22em] text-secondary">House Status</p>
+          <p className="mt-2 text-base text-foreground/75">The house is officially booked and confirmed. Submit your RSVP to lock in your spot and stay aligned with payment deadlines.</p>
+        </div>
         <Card className="border-none shadow-2xl bg-white overflow-hidden rounded-[2rem] relative z-30 pointer-events-auto border border-border/50">
           <div className="h-3 bg-secondary w-full"></div>
 

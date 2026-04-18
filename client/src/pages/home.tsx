@@ -165,7 +165,7 @@ export default function Home() {
                 <CardContent className="p-10 flex flex-col h-full">
                   <HomeIcon className="w-12 h-12 text-secondary mb-8 group-hover:scale-110 transition-transform" />
                   <h3 className="font-serif font-bold text-2xl mb-4 text-primary">House & Rooming</h3>
-                  <p className="text-muted-foreground text-base mb-8 flex-grow">8-suite HQ with ensuite baths. Rooming assignments finalized after deposits.</p>
+                  <p className="text-muted-foreground text-base mb-8 flex-grow">House booked and confirmed. Room previews are live now, with final assignments handled on-site.</p>
                   <div className="flex items-center text-sm font-bold text-secondary uppercase tracking-wider">
                     Explore House <ChevronRight className="w-5 h-5 ml-2" />
                   </div>

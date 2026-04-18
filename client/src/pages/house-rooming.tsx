@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import houseImage1 from "@assets/0d840a77_1776118623827.avif";
 import houseImage2 from "@assets/1fa768ff_1776118689597.avif";
 import houseImage3 from "@assets/3bedd450_1776118707307.avif";
@@ -21,7 +22,7 @@ import houseImage18 from "@assets/e43707e8_1776118874265.avif";
 import houseImage19 from "@assets/Picture1_1776118874266.png";
 import houseImage20 from "@assets/Picture2_1776118874266.png";
 import houseImage21 from "@assets/Picture3_1776118874266.png";
-import { BedDouble, Waves, ThermometerSun, ShieldAlert, Check } from "lucide-react";
+import { BedDouble, Waves, Check, ShieldCheck } from "lucide-react";
 
 const IMAGES = [
   houseImage1,
@@ -46,11 +47,13 @@ const IMAGES = [
   houseImage20,
   houseImage21,
 ];
+
+const ROOM_PREVIEW_IMAGES = [houseImage4, houseImage11, houseImage19, houseImage21];
+
 export default function HouseRooming() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
-    // Preload images
     IMAGES.forEach((src) => {
       const img = new Image();
       img.src = src;
@@ -64,148 +67,200 @@ export default function HouseRooming() {
   }, []);
 
   return (
-    <div className="container mx-auto px-4 py-20 max-w-6xl">
-      <div className="mb-16 text-center max-w-4xl mx-auto">
-        <h1 className="font-serif text-5xl md:text-6xl font-bold text-primary mb-8">House & Rooming</h1>
-        <p className="text-2xl text-muted-foreground leading-relaxed">
-          Our Ryder Cup HQ. An 8-bedroom, 9-bath luxury rental designed for comfort, privacy, and a true golf-trip basecamp feel. Each guest suite has an ensuite bathroom, with one additional full bath in the home. Room assignments will be finalized after deposits are collected and headcount is locked.
+    <div className="container mx-auto max-w-6xl px-4 py-20">
+      <div className="mx-auto mb-16 max-w-4xl text-center">
+        <div className="mb-6 inline-flex items-center rounded-full bg-secondary/10 px-5 py-2 text-sm font-bold uppercase tracking-[0.24em] text-secondary" data-testid="status-house-booked-top">
+          House Booked & Confirmed
+        </div>
+        <h1 className="mb-8 font-serif text-5xl font-bold text-primary md:text-6xl">House & Rooming</h1>
+        <p className="text-2xl leading-relaxed text-muted-foreground" data-testid="text-house-rooming-intro">
+          The trip house is officially booked and confirmed. Guests can now preview the available rooms and sleeping arrangements, but final room assignments will not be made until arrival at the event. This approach allows for flexibility based on attendance, arrival times, and overall trip logistics while still giving everyone a clear look at the house setup in advance.
         </p>
       </div>
 
-      <div className="rounded-[2.5rem] overflow-hidden mb-20 shadow-2xl relative border-[6px] border-white h-[65vh]">
+      <div className="relative mb-20 h-[65vh] overflow-hidden rounded-[2.5rem] border-[6px] border-white shadow-2xl">
         {IMAGES.map((src, index) => (
           <img
             key={src}
             src={src}
-            alt={`Luxury 12 Bedroom House - View ${index + 1}`}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
-              index === currentImageIndex ? "opacity-100 z-10" : "opacity-0 z-0"
+            alt={`Ramstein Ryder Cup house view ${index + 1}`}
+            className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ease-in-out ${
+              index === currentImageIndex ? "z-10 opacity-100" : "z-0 opacity-0"
             }`}
           />
         ))}
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent z-20"></div>
-        <div className="absolute bottom-0 left-0 right-0 p-10 md:p-16 z-30">
-          <div className="inline-block px-4 py-2 bg-secondary text-secondary-foreground font-bold uppercase tracking-widest rounded-full text-sm mb-4">
-            Confirmed HQ • 2026
+        <div className="absolute inset-0 z-20 bg-gradient-to-t from-primary/90 via-primary/35 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 z-30 p-10 md:p-16">
+          <div className="mb-4 inline-block rounded-full bg-secondary px-4 py-2 text-sm font-bold uppercase tracking-widest text-secondary-foreground">
+            House Booked & Confirmed
           </div>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4 drop-shadow-lg">Scottsdale / Cave Creek HQ</h2>
-          <p className="text-white/90 text-xl font-medium flex items-center gap-3">
+          <h2 className="mb-4 font-serif text-4xl font-bold text-white drop-shadow-lg md:text-5xl">Scottsdale / Cave Creek HQ</h2>
+          <p className="flex flex-wrap items-center gap-3 text-xl font-medium text-white/90">
             <span>$5,349.18 total (4 nights, all-in)</span>
-            <span className="w-2 h-2 rounded-full bg-secondary"></span>
+            <span className="h-2 w-2 rounded-full bg-secondary"></span>
             <span>17 Guest Model</span>
           </p>
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+            <Button asChild className="h-14 rounded-xl bg-secondary px-8 text-base font-bold uppercase tracking-widest text-secondary-foreground hover:bg-secondary/90" data-testid="button-view-rooms-hero">
+              <a href="#room-preview">View Rooms</a>
+            </Button>
+            <div className="inline-flex items-center rounded-xl border border-white/20 bg-white/10 px-5 py-3 text-sm font-medium text-white/85 backdrop-blur-sm" data-testid="text-room-assignment-note-hero">
+              Final room assignments will be handled on-site during the trip.
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
-        <div className="lg:col-span-2">
-          <h3 className="font-serif text-4xl font-bold mb-8 text-primary flex items-center gap-4">
-            Rooming Philosophy
-          </h3>
-          <div className="bg-white rounded-3xl p-10 md:p-12 shadow-xl border-t-4 border-t-secondary mb-12">
-            <p className="text-xl leading-relaxed text-foreground/80 mb-10">
-              Comfort and privacy are the priorities. With 8 private guest suites and ensuite bathrooms for every bedroom (plus one additional full bath), the house is set up for a smooth golf-trip HQ experience. Room assignments will be finalized after deposits are collected and headcount is locked.
+      <div className="mb-14 rounded-[2rem] border border-secondary/20 bg-[linear-gradient(135deg,rgba(199,30,58,0.06),rgba(13,61,110,0.04))] p-8 shadow-lg md:p-10">
+        <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          <div className="max-w-3xl">
+            <p className="text-sm font-bold uppercase tracking-[0.22em] text-secondary">Room Preview</p>
+            <h3 className="mt-3 font-serif text-3xl font-bold text-primary">Our house is locked in.</h3>
+            <p className="mt-4 text-lg leading-relaxed text-foreground/75" data-testid="text-room-preview-callout">
+              Take a look at the available rooms and sleeping arrangements for the trip house. Room availability and setup are now viewable, but final room placement will be determined at check-in.
             </p>
-            <div className="flex items-center gap-5 p-6 bg-secondary/10 rounded-2xl border border-secondary/20">
-              <ShieldAlert className="w-8 h-8 text-secondary shrink-0" />
-              <span className="font-bold text-primary text-lg">Final room assignments will be made after deposits and headcount are locked.</span>
+          </div>
+          <Button asChild variant="outline" className="h-14 rounded-xl border-primary/15 px-8 text-base font-bold uppercase tracking-widest text-primary hover:bg-primary/5" data-testid="button-view-rooms-callout">
+            <a href="#room-preview">View Rooms</a>
+          </Button>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 gap-16 lg:grid-cols-3">
+        <div className="lg:col-span-2">
+          <h3 className="mb-8 flex items-center gap-4 font-serif text-4xl font-bold text-primary">Rooming Philosophy</h3>
+          <div className="mb-12 rounded-3xl border-t-4 border-t-secondary bg-white p-10 shadow-xl md:p-12">
+            <p className="mb-10 text-xl leading-relaxed text-foreground/80">
+              Comfort and privacy remain the priorities. With 8 private guest suites and ensuite bathrooms for every bedroom, the house is set up for a polished golf-trip HQ experience. Guests can preview rooms now, while final assignments stay flexible until everyone is on-site.
+            </p>
+            <div className="rounded-2xl border border-secondary/20 bg-secondary/10 p-6">
+              <div className="flex items-start gap-4">
+                <ShieldCheck className="h-8 w-8 shrink-0 text-secondary" />
+                <div>
+                  <p className="text-lg font-bold text-primary" data-testid="text-room-assignment-note-main">Room assignments will be handled on-site during the trip and are not being pre-assigned in advance.</p>
+                  <p className="mt-2 text-sm leading-relaxed text-foreground/65">This keeps the setup flexible based on final attendance, arrival timing, and overall group logistics.</p>
+                </div>
+              </div>
             </div>
           </div>
 
-          <h3 className="font-serif text-3xl font-bold mb-8 text-primary">Amenities Breakdown</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <Card className="border-none shadow-lg bg-white">
-              <CardContent className="p-8 flex items-center gap-6">
-                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
-                  <BedDouble className="w-7 h-7 text-primary" />
+          <section id="room-preview" className="scroll-mt-32">
+            <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+              <div>
+                <p className="text-sm font-bold uppercase tracking-[0.22em] text-secondary">Room Preview</p>
+                <h3 className="mt-2 font-serif text-3xl font-bold text-primary">View the room setups</h3>
+              </div>
+              <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground" data-testid="text-room-preview-note">
+                Final room assignments will be made at the event, but the room layouts and sleeping arrangements are now available to preview.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+              {ROOM_PREVIEW_IMAGES.map((src, index) => (
+                <div key={src} className="overflow-hidden rounded-[1.75rem] border border-border/60 bg-white shadow-lg" data-testid={`img-room-preview-${index + 1}`}>
+                  <img src={src} alt={`Room preview ${index + 1}`} className="h-72 w-full object-cover" />
+                  <div className="p-5">
+                    <p className="text-xs font-bold uppercase tracking-[0.22em] text-secondary">Preview {index + 1}</p>
+                    <p className="mt-2 text-base text-foreground/70">Private sleeping setup and room layout preview for the confirmed house.</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <h3 className="mb-8 mt-14 font-serif text-3xl font-bold text-primary">Amenities Breakdown</h3>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <Card className="border-none bg-white shadow-lg">
+              <CardContent className="flex items-center gap-6 p-8">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary/10">
+                  <BedDouble className="h-7 w-7 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-xl mb-1 text-primary">8 Bedrooms / 9 Bathrooms</h4>
-                  <p className="text-muted-foreground font-medium uppercase tracking-wider text-xs">Private Suites + Ensuite Baths</p>
-                </div>
-              </CardContent>
-            </Card>
-            
-            <Card className="border-none shadow-lg bg-white">
-              <CardContent className="p-8 flex items-center gap-6">
-                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
-                  <Waves className="w-7 h-7 text-primary" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-xl mb-1 text-primary">Private Pool + Hot Tub</h4>
-                  <p className="text-muted-foreground font-medium uppercase tracking-wider text-xs">Post-Round Recovery & Hangouts</p>
-                </div>
-              </CardContent>
-            </Card>
-            
-            <Card className="border-none shadow-lg bg-white">
-              <CardContent className="p-8 flex items-center gap-6">
-                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
-                  <Check className="w-7 h-7 text-primary" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-xl mb-1 text-primary">Outdoor Grill + Patio</h4>
-                  <p className="text-muted-foreground font-medium uppercase tracking-wider text-xs">Team Dinners at HQ</p>
-                </div>
-              </CardContent>
-            </Card>
-            
-            <Card className="border-none shadow-lg bg-white">
-              <CardContent className="p-8 flex items-center gap-6">
-                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
-                  <Check className="w-7 h-7 text-primary" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-xl mb-1 text-primary">Game Room</h4>
-                  <p className="text-muted-foreground font-medium uppercase tracking-wider text-xs">Nightly Competition Zone</p>
+                  <h4 className="mb-1 text-xl font-bold text-primary">8 Bedrooms / 9 Bathrooms</h4>
+                  <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Private Suites + Ensuite Baths</p>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="border-none shadow-lg bg-white">
-              <CardContent className="p-8 flex items-center gap-6">
-                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
-                  <Check className="w-7 h-7 text-primary" />
+            <Card className="border-none bg-white shadow-lg">
+              <CardContent className="flex items-center gap-6 p-8">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary/10">
+                  <Waves className="h-7 w-7 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-xl mb-1 text-primary">Kitchen + Full Appliances</h4>
-                  <p className="text-muted-foreground font-medium uppercase tracking-wider text-xs">Group Meals Made Easy</p>
+                  <h4 className="mb-1 text-xl font-bold text-primary">Private Pool + Hot Tub</h4>
+                  <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Post-Round Recovery & Hangouts</p>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="border-none shadow-lg bg-white">
-              <CardContent className="p-8 flex items-center gap-6">
-                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
-                  <Check className="w-7 h-7 text-primary" />
+            <Card className="border-none bg-white shadow-lg">
+              <CardContent className="flex items-center gap-6 p-8">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary/10">
+                  <Check className="h-7 w-7 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-xl mb-1 text-primary">Free Wi-Fi</h4>
-                  <p className="text-muted-foreground font-medium uppercase tracking-wider text-xs">Streaming + Planning</p>
+                  <h4 className="mb-1 text-xl font-bold text-primary">Outdoor Grill + Patio</h4>
+                  <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Team Dinners at HQ</p>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="border-none shadow-lg bg-white">
-              <CardContent className="p-8 flex items-center gap-6">
-                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
-                  <Check className="w-7 h-7 text-primary" />
+            <Card className="border-none bg-white shadow-lg">
+              <CardContent className="flex items-center gap-6 p-8">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary/10">
+                  <Check className="h-7 w-7 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-xl mb-1 text-primary">Washer + Dryer</h4>
-                  <p className="text-muted-foreground font-medium uppercase tracking-wider text-xs">4-Night Trip Friendly</p>
+                  <h4 className="mb-1 text-xl font-bold text-primary">Game Room</h4>
+                  <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Nightly Competition Zone</p>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="border-none shadow-lg bg-white">
-              <CardContent className="p-8 flex items-center gap-6">
-                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
-                  <Check className="w-7 h-7 text-primary" />
+            <Card className="border-none bg-white shadow-lg">
+              <CardContent className="flex items-center gap-6 p-8">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary/10">
+                  <Check className="h-7 w-7 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-xl mb-1 text-primary">On-Site Parking</h4>
-                  <p className="text-muted-foreground font-medium uppercase tracking-wider text-xs">Easy Arrivals & Movement</p>
+                  <h4 className="mb-1 text-xl font-bold text-primary">Kitchen + Full Appliances</h4>
+                  <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Group Meals Made Easy</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-none bg-white shadow-lg">
+              <CardContent className="flex items-center gap-6 p-8">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary/10">
+                  <Check className="h-7 w-7 text-primary" />
+                </div>
+                <div>
+                  <h4 className="mb-1 text-xl font-bold text-primary">Free Wi-Fi</h4>
+                  <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Streaming + Planning</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-none bg-white shadow-lg">
+              <CardContent className="flex items-center gap-6 p-8">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary/10">
+                  <Check className="h-7 w-7 text-primary" />
+                </div>
+                <div>
+                  <h4 className="mb-1 text-xl font-bold text-primary">Washer + Dryer</h4>
+                  <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">4-Night Trip Friendly</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-none bg-white shadow-lg">
+              <CardContent className="flex items-center gap-6 p-8">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary/10">
+                  <Check className="h-7 w-7 text-primary" />
+                </div>
+                <div>
+                  <h4 className="mb-1 text-xl font-bold text-primary">On-Site Parking</h4>
+                  <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Easy Arrivals & Movement</p>
                 </div>
               </CardContent>
             </Card>
@@ -213,20 +268,24 @@ export default function HouseRooming() {
         </div>
 
         <div className="lg:col-span-1">
-          <div className="bg-primary text-primary-foreground rounded-3xl p-10 sticky top-32 shadow-2xl">
-            <h3 className="font-serif text-3xl font-bold mb-8">Status Board</h3>
+          <div className="sticky top-32 rounded-3xl bg-primary p-10 text-primary-foreground shadow-2xl">
+            <h3 className="mb-8 font-serif text-3xl font-bold">Status Board</h3>
             <ul className="space-y-8">
               <li className="flex flex-col border-b border-primary-foreground/10 pb-6">
-                <span className="text-sm text-primary-foreground/60 mb-2 font-bold uppercase tracking-widest">House Selection</span>
-                <span className="font-bold text-2xl text-secondary">Confirmed HQ</span>
+                <span className="mb-2 text-sm font-bold uppercase tracking-widest text-primary-foreground/60">House Status</span>
+                <span className="text-2xl font-bold text-secondary">Booked & Confirmed</span>
               </li>
               <li className="flex flex-col border-b border-primary-foreground/10 pb-6">
-                <span className="text-sm text-primary-foreground/60 mb-2 font-bold uppercase tracking-widest">Pricing Model</span>
-                <span className="font-bold text-2xl text-white">17 Guests ($5,349.18)</span>
+                <span className="mb-2 text-sm font-bold uppercase tracking-widest text-primary-foreground/60">Pricing Model</span>
+                <span className="text-2xl font-bold text-white">17 Guests ($5,349.18)</span>
               </li>
               <li className="flex flex-col border-b border-primary-foreground/10 pb-6">
-                <span className="text-sm text-primary-foreground/60 mb-2 font-bold uppercase tracking-widest">Room Assignments</span>
-                <span className="font-bold text-2xl text-white opacity-80">Pending Deposits</span>
+                <span className="mb-2 text-sm font-bold uppercase tracking-widest text-primary-foreground/60">Room Assignments</span>
+                <span className="text-2xl font-bold text-white">On-Site at Check-In</span>
+              </li>
+              <li className="flex flex-col">
+                <span className="mb-2 text-sm font-bold uppercase tracking-widest text-primary-foreground/60">Room Viewing</span>
+                <span className="text-2xl font-bold text-white">Available Now</span>
               </li>
             </ul>
           </div>

@@ -1,0 +1,124 @@
+Update the site to reflect that the house is now officially booked. This change needs to be consistent across the site, especially on the House & Rooming page, pricing/payment language, and anywhere the house was previously described as tentative or still being finalized.
+
+Main update
+
+The house is now confirmed and booked. Update the wording across the site so it no longer sounds like we are still searching for or securing a property.
+
+Use language like:
+
+House Booked
+Official House Confirmed
+Our House Is Locked In
+Scottsdale House Confirmed
+
+Best overall wording:
+House Booked & Confirmed
+
+House & Rooming Page Updates
+
+Update the House & Rooming page so it clearly explains that:
+
+the house is officially booked
+room photos/details can now be viewed
+room assignments will not be finalized until the group arrives at the event
+
+Add a button somewhere visible on the page:
+
+View Rooms
+
+This button should link to a room gallery, room section, modal, or separate page where I can post room photos and show the room setups.
+
+Add this type of wording to the page:
+
+The house is officially booked and confirmed for the trip. Room photos and layouts are now available to view, but room assignments will not be finalized until arrival at the event. This gives us flexibility based on final attendance, arrival timing, and overall group logistics.
+
+Add a short room assignment note:
+
+Room assignments will be handled on-site during the trip and are not being pre-assigned in advance.
+
+You can also add a smaller note like:
+Room availability and setup are now viewable, but final room placement will be determined at check-in.
+
+Add a Room Viewing Section
+
+Somewhere on the House & Rooming page, add a section or callout box that says something like:
+
+Room Preview
+
+Take a look at the available rooms and sleeping arrangements for the trip house. Final room assignments will be made at the event.
+
+Add the button under it:
+
+View Rooms
+
+Pricing / Payment Page Updates
+
+Since the house is booked, update any pricing/payment wording that currently sounds tentative.
+
+Change wording like:
+
+“to lock in the house”
+“to secure the rental”
+“once the house is booked”
+
+To wording like:
+
+now that the house is booked
+with the house officially confirmed
+payments now go toward the confirmed rental and trip planning costs
+Suggested wording for payment section:
+
+With the house officially booked, payments are now being collected based on the confirmed rental total and trip planning schedule.
+
+RSVP / Commitment Page Update
+
+Add a small confidence-building line near the RSVP form or payment area:
+
+The house is officially booked and confirmed. Submit your RSVP to lock in your spot and stay aligned with payment deadlines.
+
+That makes the trip feel real and increases commitment.
+
+House Status Banner / Label
+
+If the site has any featured card, summary box, or house overview section, add a status label such as:
+
+Status: Booked & Confirmed
+
+or
+
+House Status: Locked In
+
+This should appear anywhere the house is summarized.
+
+Important wording rule across the site
+
+Remove or replace any language that suggests:
+
+the house is still tentative
+rooms are being assigned early
+sleeping arrangements are finalized already
+
+Make sure the site consistently says:
+
+house is booked
+rooms can be viewed
+assignments happen on-site
+Design direction
+
+Keep the update premium and simple. Do not overload the page.
+
+The goal is:
+
+make the house feel official
+give people a way to preview rooms
+avoid locking yourself into room assignments too early
+Recommended text block for the House & Rooming page
+
+Use this if you want one polished paragraph:
+
+The trip house is officially booked and confirmed. Guests can now preview the available rooms and sleeping arrangements, but final room assignments will not be made until arrival at the event. This approach allows for flexibility based on attendance, arrival times, and overall trip logistics while still giving everyone a clear look at the house setup in advance.
+
+Button text options
+
+Best option:
+View Rooms
