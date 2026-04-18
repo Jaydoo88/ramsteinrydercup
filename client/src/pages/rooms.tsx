@@ -9,6 +9,7 @@ import bedroom4Image from "@assets/image_1776550049382.png";
 import bedroom5Image from "@assets/image_1776550074988.png";
 import bedroom6Image from "@assets/image_1776550106544.png";
 import bedroom7Image from "@assets/image_1776550136402.png";
+import bedroom8Image from "@assets/image_1776550179539.png";
 
 const ROOM_PREVIEWS = [
   {
@@ -52,6 +53,12 @@ const ROOM_PREVIEWS = [
     label: "Casita Bedroom #7",
     title: "King casita bedroom setup",
     description: "Casita Bedroom #7 features a king bed, a clean symmetrical setup, and the same private detached feel as the other casita rooms.",
+  },
+  {
+    image: bedroom8Image,
+    label: "Casita Bedroom #8",
+    title: "Twin XL bunk room setup",
+    description: "Casita Bedroom #8 features Twin XL bunk beds in a larger shared-room layout, giving the house a flexible option for additional guests.",
   },
 ];
 
