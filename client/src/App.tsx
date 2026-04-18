@@ -16,6 +16,7 @@ import PricingBudget from "@/pages/pricing-budget";
 import GolfFormat from "@/pages/golf-format";
 import Schedule from "@/pages/schedule";
 import Rules from "@/pages/rules";
+import Players from "@/pages/players";
 import Rsvp from "@/pages/rsvp";
 
 function ScrollToTop() {
@@ -42,6 +43,7 @@ function Router() {
           <Route path="/golf" component={GolfFormat} />
           <Route path="/schedule" component={Schedule} />
           <Route path="/rules" component={Rules} />
+          <Route path="/players" component={Players} />
           <Route path="/rsvp" component={Rsvp} />
           <Route component={NotFound} />
         </Switch>

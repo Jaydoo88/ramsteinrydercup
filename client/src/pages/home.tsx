@@ -4,6 +4,13 @@ import { Card, CardContent } from "@/components/ui/card";
 import { CalendarDays, MapPin, Users, ChevronRight, ShieldCheck, Home as HomeIcon, Wallet, Trophy } from "lucide-react";
 import heroImage from "@/assets/images/hero-desert.png";
 
+const FEATURED_PLAYERS = [
+  { name: "Jason Dousharm", tier: "A" },
+  { name: "Mike Gibbons", tier: "B" },
+  { name: "Darrel Johnson", tier: "C" },
+  { name: "John Gregg", tier: "D" },
+];
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
@@ -99,6 +106,45 @@ export default function Home() {
           </div>
           <div className="mt-12 inline-block border-b-2 border-secondary pb-1">
             <p className="font-bold text-primary uppercase tracking-widest text-lg">— Jason Dousharm</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-muted/30 border-y border-border/60">
+        <div className="container px-4 max-w-7xl mx-auto">
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between mb-14">
+            <div className="max-w-2xl">
+              <p className="text-sm font-bold uppercase tracking-[0.24em] text-secondary mb-4" data-testid="text-home-players-kicker">Tournament Field</p>
+              <h2 className="font-serif text-5xl font-bold text-primary mb-4">Meet the Field</h2>
+              <p className="text-muted-foreground text-xl leading-relaxed" data-testid="text-home-players-description">A first look at the inaugural player tiers shaping the Ramstein Ryder Cup competition.</p>
+            </div>
+            <Button asChild variant="outline" className="h-14 px-8 text-base font-bold uppercase tracking-widest border-primary/15 text-primary hover:bg-primary/5 w-full md:w-auto" data-testid="button-view-all-players-top">
+              <Link href="/players">View All Players</Link>
+            </Button>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+            {FEATURED_PLAYERS.map((player) => (
+              <Card key={player.name} className="border border-border/70 bg-white shadow-lg shadow-primary/5 rounded-[1.75rem] overflow-hidden hover:-translate-y-1 hover:shadow-2xl transition-all duration-300" data-testid={`card-home-player-${player.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>
+                <CardContent className="p-7">
+                  <div className="flex items-center justify-between gap-4">
+                    <div>
+                      <p className="text-xs font-bold uppercase tracking-[0.2em] text-secondary">Tier {player.tier}</p>
+                      <h3 className="mt-4 font-serif text-2xl font-bold text-primary leading-tight">{player.name}</h3>
+                    </div>
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary text-base font-bold text-white">
+                      {player.tier}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="mt-10 flex justify-center">
+            <Button asChild className="h-14 px-10 text-base font-bold uppercase tracking-widest bg-primary hover:bg-primary/90 shadow-xl" data-testid="button-view-all-players-bottom">
+              <Link href="/players">View All Players</Link>
+            </Button>
           </div>
         </div>
       </section>
