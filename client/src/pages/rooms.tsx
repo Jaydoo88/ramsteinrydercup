@@ -10,6 +10,7 @@ import bedroom5Image from "@assets/image_1776550074988.png";
 import bedroom6Image from "@assets/image_1776550106544.png";
 import bedroom7Image from "@assets/image_1776550136402.png";
 import bedroom8Image from "@assets/image_1776550179539.png";
+import bedroom1BathroomImage from "@assets/image_1776550382266.png";
 
 const ROOM_PREVIEWS = [
   {
@@ -17,6 +18,9 @@ const ROOM_PREVIEWS = [
     label: "Bedroom #1",
     title: "Two queen bed setup",
     description: "Bedroom #1 features two queen beds, a spacious shared layout, and a polished setup designed for a comfortable stay during the trip.",
+    bathroomImage: bedroom1BathroomImage,
+    bathroomLabel: "Bedroom #1 Bathroom",
+    bathroomDescription: "Double vanity and walk-in shower setup connected to Bedroom #1.",
   },
   {
     image: bedroom2Image,
@@ -199,6 +203,28 @@ export default function Rooms() {
                   >
                     {room.description}
                   </p>
+
+                  {room.bathroomImage ? (
+                    <div className="mt-6 rounded-[1.5rem] border border-border/70 bg-muted/20 p-4">
+                      <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-secondary">
+                        {room.bathroomLabel}
+                      </p>
+                      <p
+                        className="mt-2 text-sm leading-relaxed text-foreground/65"
+                        data-testid={`text-bathroom-description-${index + 1}`}
+                      >
+                        {room.bathroomDescription}
+                      </p>
+                      <div className="mt-4 overflow-hidden rounded-[1.1rem]">
+                        <img
+                          src={room.bathroomImage}
+                          alt={room.bathroomLabel}
+                          className="h-56 w-full object-cover"
+                          data-testid={`img-bathroom-preview-${index + 1}`}
+                        />
+                      </div>
+                    </div>
+                  ) : null}
                 </CardContent>
               </Card>
             ))}
