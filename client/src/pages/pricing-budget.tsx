@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { DollarSign, AlertCircle, PieChart, Users } from "lucide-react";
+import { DollarSign, AlertCircle, ChevronRight, PieChart, Users } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function PricingBudget() {
@@ -299,25 +299,51 @@ export default function PricingBudget() {
           <div className="mt-6 rounded-[1.75rem] border border-border/70 bg-[#FCFCFB] p-6">
             <p className="text-sm font-bold uppercase tracking-[0.22em] text-secondary">Simple Payment Rhythm</p>
             <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-6">
-              <div className="rounded-2xl border border-border/60 bg-white px-4 py-5 text-center shadow-sm">
-                <p className="text-sm text-muted-foreground">Today</p>
-                <p className="mt-2 text-lg font-semibold text-primary">House $175</p>
+              <div className="relative xl:pr-4">
+                <div className="rounded-2xl border border-emerald-500 bg-emerald-600 px-4 py-5 text-center shadow-[0_16px_40px_-24px_rgba(5,150,105,0.9)]">
+                  <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/80">Collected</p>
+                  <p className="mt-2 text-sm text-white/85">Today</p>
+                  <p className="mt-2 text-lg font-semibold text-white">House $175</p>
+                </div>
+                <div className="pointer-events-none absolute right-[-0.9rem] top-1/2 hidden -translate-y-1/2 items-center justify-center xl:flex">
+                  <ChevronRight className="h-5 w-5 text-primary/35" />
+                </div>
               </div>
-              <div className="rounded-2xl border border-border/60 bg-white px-4 py-5 text-center shadow-sm">
-                <p className="text-sm text-muted-foreground">June 17</p>
-                <p className="mt-2 text-lg font-semibold text-primary">Golf $100</p>
+              <div className="relative xl:pr-4">
+                <div className="rounded-2xl border border-border/60 bg-white px-4 py-5 text-center shadow-sm">
+                  <p className="text-sm text-muted-foreground">June 17</p>
+                  <p className="mt-2 text-lg font-semibold text-primary">Golf $100</p>
+                </div>
+                <div className="pointer-events-none absolute right-[-0.9rem] top-1/2 hidden -translate-y-1/2 items-center justify-center xl:flex">
+                  <ChevronRight className="h-5 w-5 text-primary/35" />
+                </div>
               </div>
-              <div className="rounded-2xl border border-border/60 bg-white px-4 py-5 text-center shadow-sm">
-                <p className="text-sm text-muted-foreground">July 1</p>
-                <p className="mt-2 text-lg font-semibold text-primary">Stock-up $100</p>
+              <div className="relative xl:pr-4">
+                <div className="rounded-2xl border border-border/60 bg-white px-4 py-5 text-center shadow-sm">
+                  <p className="text-sm text-muted-foreground">July 1</p>
+                  <p className="mt-2 text-lg font-semibold text-primary">Stock-up $100</p>
+                </div>
+                <div className="pointer-events-none absolute right-[-0.9rem] top-1/2 hidden -translate-y-1/2 items-center justify-center xl:flex">
+                  <ChevronRight className="h-5 w-5 text-primary/35" />
+                </div>
               </div>
-              <div className="rounded-2xl border border-border/60 bg-white px-4 py-5 text-center shadow-sm">
-                <p className="text-sm text-muted-foreground">July 17</p>
-                <p className="mt-2 text-lg font-semibold text-primary">Golf $100</p>
+              <div className="relative xl:pr-4">
+                <div className="rounded-2xl border border-border/60 bg-white px-4 py-5 text-center shadow-sm">
+                  <p className="text-sm text-muted-foreground">July 17</p>
+                  <p className="mt-2 text-lg font-semibold text-primary">Golf $100</p>
+                </div>
+                <div className="pointer-events-none absolute right-[-0.9rem] top-1/2 hidden -translate-y-1/2 items-center justify-center xl:flex">
+                  <ChevronRight className="h-5 w-5 text-primary/35" />
+                </div>
               </div>
-              <div className="rounded-2xl border border-border/60 bg-white px-4 py-5 text-center shadow-sm">
-                <p className="text-sm text-muted-foreground">Aug 15</p>
-                <p className="mt-2 text-lg font-semibold text-primary">House $140</p>
+              <div className="relative xl:pr-4">
+                <div className="rounded-2xl border border-border/60 bg-white px-4 py-5 text-center shadow-sm">
+                  <p className="text-sm text-muted-foreground">Aug 15</p>
+                  <p className="mt-2 text-lg font-semibold text-primary">House $140</p>
+                </div>
+                <div className="pointer-events-none absolute right-[-0.9rem] top-1/2 hidden -translate-y-1/2 items-center justify-center xl:flex">
+                  <ChevronRight className="h-5 w-5 text-primary/35" />
+                </div>
               </div>
               <div className="rounded-2xl border border-border/60 bg-white px-4 py-5 text-center shadow-sm">
                 <p className="text-sm text-muted-foreground">Aug 17</p>
