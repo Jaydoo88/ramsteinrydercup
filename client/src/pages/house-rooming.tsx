@@ -105,7 +105,7 @@ export default function HouseRooming() {
               <a href="#room-preview">View Rooms</a>
             </Button>
             <div className="inline-flex items-center rounded-xl border border-white/20 bg-white/10 px-5 py-3 text-sm font-medium text-white/85 backdrop-blur-sm" data-testid="text-room-assignment-note-hero">
-              Final room assignments will be handled on-site during the trip.
+              Rooms are viewable now. Final assignments happen on-site at the event.
             </div>
           </div>
         </div>
@@ -131,7 +131,7 @@ export default function HouseRooming() {
           <h3 className="mb-8 flex items-center gap-4 font-serif text-4xl font-bold text-primary">Rooming Philosophy</h3>
           <div className="mb-12 rounded-3xl border-t-4 border-t-secondary bg-white p-10 shadow-xl md:p-12">
             <p className="mb-10 text-xl leading-relaxed text-foreground/80">
-              Comfort and privacy remain the priorities. With 8 private guest suites and ensuite bathrooms for every bedroom, the house is set up for a polished golf-trip HQ experience. Guests can preview rooms now, while final assignments stay flexible until everyone is on-site.
+              Comfort and privacy remain the priorities. With 8 private guest suites and ensuite bathrooms for every bedroom, the house is set up for a polished golf-trip HQ experience. Room layouts can now be viewed, and final assignments will be handled on-site at the event.
             </p>
             <div className="rounded-2xl border border-secondary/20 bg-secondary/10 p-6">
               <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
