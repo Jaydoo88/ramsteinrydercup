@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import bedroom1Image from "@assets/image_1776549967055.png";
 import bedroom2Image from "@assets/image_1776550007242.png";
 import bedroom3Image from "@assets/image_1776550029475.png";
-import roomImage4 from "@assets/Picture3_1776118874266.png";
+import bedroom4Image from "@assets/image_1776550049382.png";
 
 const ROOM_PREVIEWS = [
   {
@@ -27,10 +27,10 @@ const ROOM_PREVIEWS = [
     description: "Bedroom #3 features a king bed, relaxed seating, and a clean private-room layout with the same polished finish as the rest of the house.",
   },
   {
-    image: roomImage4,
-    label: "Layout Preview 4",
-    title: "Shared-space adjacency",
-    description: "A preview of how nearby sleeping areas connect to the rest of the house and common gathering spaces.",
+    image: bedroom4Image,
+    label: "Bedroom #4",
+    title: "King bedroom setup",
+    description: "Bedroom #4 features a king bed, a cozy lounge chair, and a polished private-room layout that matches the rest of the house.",
   },
 ];
 
