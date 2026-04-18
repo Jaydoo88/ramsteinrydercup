@@ -12,6 +12,7 @@ import bedroom7Image from "@assets/image_1776550136402.png";
 import bedroom8Image from "@assets/image_1776550179539.png";
 import bedroom1BathroomImage from "@assets/image_1776550382266.png";
 import bedroom2BathroomImage from "@assets/image_1776550404188.png";
+import bedroom3BathroomImage from "@assets/image_1776550421103.png";
 
 const ROOM_PREVIEWS = [
   {
@@ -37,6 +38,9 @@ const ROOM_PREVIEWS = [
     label: "Bedroom #3",
     title: "King bedroom setup",
     description: "Bedroom #3 features a king bed, relaxed seating, and a clean private-room layout with the same polished finish as the rest of the house.",
+    bathroomImage: bedroom3BathroomImage,
+    bathroomLabel: "Bedroom #3 Bathroom",
+    bathroomDescription: "Single vanity and walk-in shower setup connected to Bedroom #3.",
   },
   {
     image: bedroom4Image,
