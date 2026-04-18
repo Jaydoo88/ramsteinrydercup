@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import houseImage1 from "@assets/0d840a77_1776118623827.avif";
@@ -47,8 +48,6 @@ const IMAGES = [
   houseImage20,
   houseImage21,
 ];
-
-const ROOM_PREVIEW_IMAGES = [houseImage4, houseImage11, houseImage19, houseImage21];
 
 export default function HouseRooming() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -102,7 +101,7 @@ export default function HouseRooming() {
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <Button asChild className="h-14 rounded-xl bg-secondary px-8 text-base font-bold uppercase tracking-widest text-secondary-foreground hover:bg-secondary/90" data-testid="button-view-rooms-hero">
-              <a href="#room-preview">View Rooms</a>
+              <Link href="/rooms">View Rooms</Link>
             </Button>
             <div className="inline-flex items-center rounded-xl border border-white/20 bg-white/10 px-5 py-3 text-sm font-medium text-white/85 backdrop-blur-sm" data-testid="text-room-assignment-note-hero">
               Rooms are viewable now. Final assignments happen on-site at the event.
@@ -117,11 +116,11 @@ export default function HouseRooming() {
             <p className="text-sm font-bold uppercase tracking-[0.22em] text-secondary">Room Preview</p>
             <h3 className="mt-3 font-serif text-3xl font-bold text-primary">Our house is locked in.</h3>
             <p className="mt-4 text-lg leading-relaxed text-foreground/75" data-testid="text-room-preview-callout">
-              Take a look at the available rooms and sleeping arrangements for the trip house. Room availability and setup are now viewable, but final room placement will be determined at check-in.
+              Take a look at the available rooms and sleeping arrangements on the dedicated room gallery page. Room layouts are now viewable, while final placement will be determined at check-in.
             </p>
           </div>
           <Button asChild variant="outline" className="h-14 rounded-xl border-primary/15 px-8 text-base font-bold uppercase tracking-widest text-primary hover:bg-primary/5" data-testid="button-view-rooms-callout">
-            <a href="#room-preview">View Rooms</a>
+            <Link href="/rooms">View Rooms</Link>
           </Button>
         </div>
       </div>
@@ -143,34 +142,12 @@ export default function HouseRooming() {
                   </div>
                 </div>
                 <Button asChild variant="outline" className="h-12 rounded-xl border-primary/15 px-6 text-sm font-bold uppercase tracking-widest text-primary hover:bg-primary/5" data-testid="button-view-rooms-rooming-note">
-                  <a href="#room-preview">View Rooms</a>
+                  <Link href="/rooms">View Rooms</Link>
                 </Button>
               </div>
             </div>
           </div>
 
-          <section id="room-preview" className="scroll-mt-32">
-            <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
-              <div>
-                <p className="text-sm font-bold uppercase tracking-[0.22em] text-secondary">Room Preview</p>
-                <h3 className="mt-2 font-serif text-3xl font-bold text-primary">View the room setups</h3>
-              </div>
-              <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground" data-testid="text-room-preview-note">
-                Final room assignments will be made at the event, but the room layouts and sleeping arrangements are now available to preview.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-              {ROOM_PREVIEW_IMAGES.map((src, index) => (
-                <div key={src} className="overflow-hidden rounded-[1.75rem] border border-border/60 bg-white shadow-lg" data-testid={`img-room-preview-${index + 1}`}>
-                  <img src={src} alt={`Room preview ${index + 1}`} className="h-72 w-full object-cover" />
-                  <div className="p-5">
-                    <p className="text-xs font-bold uppercase tracking-[0.22em] text-secondary">Preview {index + 1}</p>
-                    <p className="mt-2 text-base text-foreground/70">Private sleeping setup and room layout preview for the confirmed house.</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
 
           <h3 className="mb-8 mt-14 font-serif text-3xl font-bold text-primary">Amenities Breakdown</h3>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
