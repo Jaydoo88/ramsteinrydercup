@@ -20,7 +20,7 @@ const PLAYER_TIERS = [
     surface: "border-amber-200/60 bg-[linear-gradient(180deg,rgba(255,251,235,0.95),rgba(255,255,255,0.9))]",
     badge: "bg-amber-500/12 text-amber-700 ring-1 ring-amber-400/30",
     icon: Trophy,
-    caption: "Pairing anchors",
+    caption: "Pairing anchors for opening matches",
     players: [
       {
         name: "Jason Dousharm",
@@ -42,7 +42,7 @@ const PLAYER_TIERS = [
     surface: "border-sky-200/60 bg-[linear-gradient(180deg,rgba(240,249,255,0.95),rgba(255,255,255,0.9))]",
     badge: "bg-sky-500/12 text-sky-700 ring-1 ring-sky-400/30",
     icon: Swords,
-    caption: "Pressure pairings",
+    caption: "Pressure pairings for swing matches",
     players: [
       {
         name: "Mike Gibbons",
@@ -63,7 +63,7 @@ const PLAYER_TIERS = [
     surface: "border-emerald-200/60 bg-[linear-gradient(180deg,rgba(236,253,245,0.95),rgba(255,255,255,0.92))]",
     badge: "bg-emerald-500/12 text-emerald-700 ring-1 ring-emerald-400/30",
     icon: Shield,
-    caption: "Steady depth",
+    caption: "Steady depth for every format",
     players: [
       {
         name: "Darrel Johnson",
@@ -85,7 +85,7 @@ const PLAYER_TIERS = [
     surface: "border-rose-200/60 bg-[linear-gradient(180deg,rgba(255,241,242,0.95),rgba(255,255,255,0.92))]",
     badge: "bg-rose-500/12 text-rose-700 ring-1 ring-rose-400/30",
     icon: Flame,
-    caption: "Point swingers",
+    caption: "Point swingers with upset potential",
     players: [
       {
         name: "John Gregg",
@@ -164,7 +164,7 @@ export default function Players() {
                 <div className="absolute right-0 top-0 hidden h-48 w-48 translate-x-10 -translate-y-10 rounded-full bg-white/45 blur-3xl md:block" />
 
                 <div className="relative grid gap-5 p-5 md:p-7 lg:grid-cols-[0.72fr_1.28fr] lg:items-start lg:gap-6 lg:p-8">
-                  <div className="self-start rounded-[1.6rem] border border-white/55 bg-white/72 p-5 backdrop-blur-sm md:p-6">
+                  <div className="flex h-full min-h-[320px] flex-col rounded-[1.6rem] border border-white/55 bg-white/72 p-5 backdrop-blur-sm md:min-h-[360px] md:p-6">
                     <div className="flex items-start justify-between gap-4">
                       <div>
                         <h3 className="font-serif text-3xl font-bold text-primary md:text-[2.2rem]" data-testid={`text-tier-heading-${group.tier.toLowerCase()}`}>
@@ -178,9 +178,9 @@ export default function Players() {
                       {group.description}
                     </p>
 
-                    <div className="mt-5">
+                    <div className="mt-auto pt-10 text-center">
                       <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-secondary">Role</p>
-                      <p className="mt-1 text-sm font-semibold text-primary md:text-base">{group.caption}</p>
+                      <p className="mt-2 text-sm font-semibold text-primary md:text-base">{group.caption}</p>
                     </div>
                   </div>
 
