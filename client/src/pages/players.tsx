@@ -200,38 +200,36 @@ export default function Players() {
                 <div className={`absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r ${group.accent}`} />
                 <div className="absolute right-0 top-0 hidden h-48 w-48 translate-x-10 -translate-y-10 rounded-full bg-white/45 blur-3xl md:block" />
 
-                <div className="relative grid gap-6 p-6 md:p-8 lg:grid-cols-[0.95fr_1.05fr] lg:gap-8 lg:p-10">
-                  <div className="flex h-full flex-col justify-between rounded-[1.75rem] border border-white/55 bg-white/70 p-6 backdrop-blur-sm">
-                    <div>
-                      <div className="flex items-start justify-between gap-4">
-                        <div>
-                          <div
-                            className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] ${group.badge}`}
-                            data-testid={`text-tier-label-${group.tier.toLowerCase()}`}
-                          >
-                            <Icon className="h-4 w-4" />
-                            Tier {group.tier}
-                          </div>
-                          <h3 className="mt-5 font-serif text-3xl font-bold text-primary md:text-4xl" data-testid={`text-tier-heading-${group.tier.toLowerCase()}`}>
-                            {group.heading}
-                          </h3>
+                <div className="relative grid gap-5 p-5 md:p-7 lg:grid-cols-[0.72fr_1.28fr] lg:items-start lg:gap-6 lg:p-8">
+                  <div className="self-start rounded-[1.6rem] border border-white/55 bg-white/72 p-5 backdrop-blur-sm md:p-6">
+                    <div className="flex items-start justify-between gap-4">
+                      <div>
+                        <div
+                          className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] ${group.badge}`}
+                          data-testid={`text-tier-label-${group.tier.toLowerCase()}`}
+                        >
+                          <Icon className="h-4 w-4" />
+                          Tier {group.tier}
                         </div>
-                        <div className="text-6xl font-semibold leading-none text-primary/10 md:text-7xl">{group.tier}</div>
+                        <h3 className="mt-4 font-serif text-3xl font-bold text-primary md:text-[2.2rem]" data-testid={`text-tier-heading-${group.tier.toLowerCase()}`}>
+                          {group.heading}
+                        </h3>
                       </div>
-
-                      <p className="mt-5 max-w-xl text-base leading-relaxed text-foreground/68" data-testid={`text-tier-description-${group.tier.toLowerCase()}`}>
-                        {group.description}
-                      </p>
+                      <div className="text-5xl font-semibold leading-none text-primary/10 md:text-6xl">{group.tier}</div>
                     </div>
 
-                    <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                      <div className="rounded-[1.4rem] border border-primary/8 bg-primary/[0.03] px-4 py-4">
-                        <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-secondary">Role</p>
-                        <p className="mt-2 text-lg font-semibold text-primary">{group.caption}</p>
+                    <p className="mt-4 max-w-md text-sm leading-7 text-foreground/68 md:text-base" data-testid={`text-tier-description-${group.tier.toLowerCase()}`}>
+                      {group.description}
+                    </p>
+
+                    <div className="mt-5 flex flex-wrap gap-3">
+                      <div className="rounded-full border border-primary/10 bg-primary/[0.03] px-4 py-2.5">
+                        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-secondary">Role</p>
+                        <p className="mt-1 text-sm font-semibold text-primary md:text-base">{group.caption}</p>
                       </div>
-                      <div className="rounded-[1.4rem] border border-primary/8 bg-primary/[0.03] px-4 py-4">
-                        <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-secondary">Tier makeup</p>
-                        <p className="mt-2 text-lg font-semibold text-primary">2-player unit</p>
+                      <div className="rounded-full border border-primary/10 bg-primary/[0.03] px-4 py-2.5">
+                        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-secondary">Tier makeup</p>
+                        <p className="mt-1 text-sm font-semibold text-primary md:text-base">2-player unit</p>
                       </div>
                     </div>
                   </div>
@@ -243,13 +241,13 @@ export default function Players() {
                       return (
                         <Card
                           key={player.name}
-                          className="overflow-hidden rounded-[1.75rem] border border-white/65 bg-white/90 shadow-[0_20px_50px_-35px_rgba(15,23,42,0.45)] transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/20 hover:shadow-[0_28px_70px_-35px_rgba(13,61,110,0.35)]"
+                          className="overflow-hidden rounded-[1.5rem] border border-white/65 bg-white/90 shadow-[0_20px_50px_-35px_rgba(15,23,42,0.45)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/20 hover:shadow-[0_28px_70px_-35px_rgba(13,61,110,0.35)]"
                           data-testid={`card-player-${playerSlug}`}
                         >
                           <CardContent className="relative p-0">
                             <div className={`h-1.5 w-full bg-gradient-to-r ${group.accent}`} />
 
-                            <div className="relative h-72 overflow-hidden bg-[linear-gradient(135deg,#0c2340,#174a7a)]">
+                            <div className="relative h-60 overflow-hidden bg-[linear-gradient(135deg,#0c2340,#174a7a)] md:h-64">
                               {player.image ? (
                                 <img
                                   src={player.image}
@@ -274,29 +272,29 @@ export default function Players() {
                               </div>
                             </div>
 
-                            <div className="flex min-h-[180px] flex-col justify-between p-6">
+                            <div className="flex min-h-[150px] flex-col justify-between p-5">
                               <div className="flex items-start justify-between gap-4">
                                 <div>
-                                  <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-secondary">
+                                  <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-secondary">
                                     {group.heading} · Player {playerIndex + 1}
                                   </p>
-                                  <h4 className="mt-4 font-serif text-3xl font-bold leading-tight text-primary" data-testid={`text-player-name-${playerSlug}`}>
+                                  <h4 className="mt-3 font-serif text-[2rem] font-bold leading-[1.02] text-primary" data-testid={`text-player-name-${playerSlug}`}>
                                     {player.name}
                                   </h4>
                                 </div>
-                                <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br ${group.accent} text-sm font-bold text-primary shadow-sm`}>
+                                <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br ${group.accent} text-sm font-bold text-primary shadow-sm`}>
                                   {group.tier}
                                 </div>
                               </div>
 
-                              <div className="mt-8 flex items-end justify-between gap-4 border-t border-border/60 pt-5">
+                              <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3 border-t border-border/60 pt-4 text-sm">
                                 <div>
-                                  <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground">Field status</p>
-                                  <p className="mt-2 text-base font-medium text-foreground/75">Confirmed competitor</p>
+                                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">Status</p>
+                                  <p className="mt-1 font-medium text-foreground/75">Confirmed</p>
                                 </div>
-                                <div className="text-right">
-                                  <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground">Flight</p>
-                                  <p className="mt-2 text-base font-semibold text-primary">{group.heading}</p>
+                                <div>
+                                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">Flight</p>
+                                  <p className="mt-1 font-semibold text-primary">{group.heading}</p>
                                 </div>
                               </div>
                             </div>
