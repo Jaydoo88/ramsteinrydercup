@@ -111,17 +111,12 @@ export default function HouseRooming() {
       </div>
 
       <div className="mb-14 rounded-[2rem] border border-secondary/20 bg-[linear-gradient(135deg,rgba(199,30,58,0.06),rgba(13,61,110,0.04))] p-8 shadow-lg md:p-10">
-        <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-          <div className="max-w-3xl">
-            <p className="text-sm font-bold uppercase tracking-[0.22em] text-secondary">Room Preview</p>
-            <h3 className="mt-3 font-serif text-3xl font-bold text-primary">Our house is locked in.</h3>
-            <p className="mt-4 text-lg leading-relaxed text-foreground/75" data-testid="text-room-preview-callout">
-              Take a look at the available rooms and sleeping arrangements on the dedicated room gallery page. Room layouts are now viewable, while final placement will be determined at check-in.
-            </p>
-          </div>
-          <Button asChild variant="outline" className="h-14 rounded-xl border-primary/15 px-8 text-base font-bold uppercase tracking-widest text-primary hover:bg-primary/5" data-testid="button-view-rooms-callout">
-            <Link href="/rooms">View Rooms</Link>
-          </Button>
+        <div className="max-w-3xl">
+          <p className="text-sm font-bold uppercase tracking-[0.22em] text-secondary">Room Preview</p>
+          <h3 className="mt-3 font-serif text-3xl font-bold text-primary">Our house is locked in.</h3>
+          <p className="mt-4 text-lg leading-relaxed text-foreground/75" data-testid="text-room-preview-callout">
+            Take a look at the available rooms and sleeping arrangements on the dedicated room gallery page. Room layouts are now viewable, while final placement will be determined at check-in.
+          </p>
         </div>
       </div>
 
