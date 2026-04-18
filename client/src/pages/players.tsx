@@ -190,10 +190,6 @@ export default function Players() {
                         <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-secondary">Role</p>
                         <p className="mt-1 text-sm font-semibold text-primary md:text-base">{group.caption}</p>
                       </div>
-                      <div className="rounded-full border border-primary/10 bg-primary/[0.03] px-4 py-2.5">
-                        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-secondary">Tier makeup</p>
-                        <p className="mt-1 text-sm font-semibold text-primary md:text-base">2-player unit</p>
-                      </div>
                     </div>
                   </div>
 
@@ -210,7 +206,7 @@ export default function Players() {
                           <CardContent className="relative p-0">
                             <div className={`h-1.5 w-full bg-gradient-to-r ${group.accent}`} />
 
-                            <div className="relative h-60 overflow-hidden bg-[linear-gradient(135deg,#0c2340,#174a7a)] md:h-64">
+                            <div className="relative h-48 overflow-hidden bg-[linear-gradient(135deg,#0c2340,#174a7a)] md:h-52">
                               {player.image ? (
                                 <img
                                   src={player.image}
@@ -241,7 +237,7 @@ export default function Players() {
                                   <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-secondary">
                                     {group.heading} · Player {playerIndex + 1}
                                   </p>
-                                  <h4 className="mt-3 font-serif text-[2rem] font-bold leading-[1.02] text-primary" data-testid={`text-player-name-${playerSlug}`}>
+                                  <h4 className="mt-3 whitespace-nowrap font-serif text-[1.55rem] font-bold leading-none tracking-tight text-primary md:text-[1.75rem]" data-testid={`text-player-name-${playerSlug}`}>
                                     {player.name}
                                   </h4>
                                 </div>
