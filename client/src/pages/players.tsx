@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Flame, Shield, Swords, Trophy } from "lucide-react";
 import jasonDousharmImage from "@assets/1665088037422_1776551209099.jpg";
+import mikeParsonsImage from "@assets/image_1776551520237.png";
 import playersHeroGolfImage from "@/assets/images/players-hero-golf.png";
 
 const PLAYER_TIERS = [
@@ -21,6 +22,7 @@ const PLAYER_TIERS = [
       },
       {
         name: "Mike Parsons",
+        image: mikeParsonsImage,
       },
     ],
   },
