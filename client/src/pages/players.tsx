@@ -4,6 +4,7 @@ import jasonDousharmImage from "@assets/1665088037422_1776551209099.jpg";
 import mikeParsonsImage from "@assets/image_1776551520237.png";
 import mikeGibbonsImage from "@assets/image_1776551618225.png";
 import robbyFullerImage from "@assets/image_1776551671402.png";
+import darrelJohnsonImage from "@assets/image_1776551693096.png";
 import allenParsonsImage from "@assets/image_1776551567816.png";
 import johnGreggImage from "@assets/image_1776551593611.png";
 import playersHeroGolfImage from "@/assets/images/players-hero-golf.png";
@@ -64,6 +65,7 @@ const PLAYER_TIERS = [
     players: [
       {
         name: "Darrel Johnson",
+        image: darrelJohnsonImage,
       },
       {
         name: "Darren Johnson",
