@@ -17,6 +17,7 @@ import bedroom4BathroomImage from "@assets/image_1776550438203.png";
 import bedroom5BathroomImage from "@assets/image_1776550460083.png";
 import bedroom6BathroomImage from "@assets/image_1776550580664.png";
 import bedroom7BathroomImage from "@assets/image_1776550499672.png";
+import bedroom8BathroomImage from "@assets/image_1776550610116.png";
 
 const ROOM_PREVIEWS = [
   {
@@ -87,6 +88,9 @@ const ROOM_PREVIEWS = [
     label: "Casita Bedroom #8",
     title: "Twin XL bunk room setup",
     description: "Casita Bedroom #8 features Twin XL bunk beds in a larger shared-room layout, giving the house a flexible option for additional guests.",
+    bathroomImage: bedroom8BathroomImage,
+    bathroomLabel: "Bedroom #8 Bathroom",
+    bathroomDescription: "Single vanity and walk-in shower setup connected to Casita Bedroom #8.",
   },
 ];
 
