@@ -159,7 +159,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-5">
             <Link href="/house" className="group block h-full">
               <Card className="h-full hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-none bg-white">
                 <CardContent className="p-10 flex flex-col h-full">
@@ -194,6 +194,19 @@ export default function Home() {
                   <p className="text-muted-foreground text-base mb-8 flex-grow">Ryder Cup-style match play over 3 days. Teams, points, and rules clearly defined.</p>
                   <div className="flex items-center text-sm font-bold text-secondary uppercase tracking-wider">
                     See Format <ChevronRight className="w-5 h-5 ml-2" />
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
+
+            <Link href="/players" className="group block h-full">
+              <Card className="h-full hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-none bg-white">
+                <CardContent className="p-10 flex flex-col h-full">
+                  <Users className="w-12 h-12 text-secondary mb-8 group-hover:scale-110 transition-transform" />
+                  <h3 className="font-serif font-bold text-2xl mb-4 text-primary">Players</h3>
+                  <p className="text-muted-foreground text-base mb-8 flex-grow">Official tournament field grouped by tier, designed to reflect the inaugural competition lineup.</p>
+                  <div className="flex items-center text-sm font-bold text-secondary uppercase tracking-wider">
+                    View Field <ChevronRight className="w-5 h-5 ml-2" />
                   </div>
                 </CardContent>
               </Card>
