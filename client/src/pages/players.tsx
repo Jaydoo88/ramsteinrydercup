@@ -112,63 +112,26 @@ function getPlayerInitials(name: string) {
 export default function Players() {
   return (
     <div className="min-h-screen bg-[linear-gradient(180deg,#f6f2ec_0%,#fbfaf8_22%,#ffffff_100%)]">
-      <section className="relative overflow-hidden border-b border-primary/10 bg-[radial-gradient(circle_at_top_left,rgba(199,30,58,0.16),transparent_30%),radial-gradient(circle_at_top_right,rgba(255,255,255,0.14),transparent_24%),linear-gradient(135deg,#07172d_0%,#0d3d6e_52%,#12345a_100%)] text-white">
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0))]" />
-        <div className="absolute left-1/2 top-0 h-[28rem] w-[28rem] -translate-x-1/2 rounded-full bg-white/6 blur-3xl" />
+      <section className="border-b border-primary/10 bg-white">
+        <div className="container mx-auto max-w-5xl px-4 py-16 text-center md:py-20 lg:py-24">
+          <p className="text-sm font-bold uppercase tracking-[0.28em] text-secondary" data-testid="text-players-kicker">
+            Tournament Field
+          </p>
+          <h1 className="mx-auto mt-5 max-w-4xl font-serif text-5xl font-bold leading-[0.95] text-primary md:text-6xl lg:text-7xl" data-testid="text-players-title">
+            A sharper look at the roster.
+          </h1>
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-foreground/68 md:text-xl" data-testid="text-players-intro">
+            The inaugural Ramstein Ryder Cup field deserves something more elevated than a basic roster. This lineup now reads like a real event board — premium, competitive, and built to feel worthy of the weekend.
+          </p>
 
-        <div className="container relative mx-auto max-w-6xl px-4 py-20 md:py-24 lg:py-28">
-          <div className="grid gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
-            <div>
-              <p className="text-sm font-bold uppercase tracking-[0.28em] text-white/70" data-testid="text-players-kicker">
-                Tournament Field
-              </p>
-              <h1 className="mt-5 max-w-4xl font-serif text-5xl font-bold leading-[0.95] text-white md:text-6xl lg:text-7xl" data-testid="text-players-title">
-                A sharper look at the roster.
-              </h1>
-              <p className="mt-6 max-w-3xl text-lg leading-relaxed text-white/78 md:text-xl" data-testid="text-players-intro">
-                The inaugural Ramstein Ryder Cup field deserves something more elevated than a basic roster. This lineup now reads like a real event board — premium, competitive, and built to feel worthy of the weekend.
-              </p>
-
-              <div className="mt-8 flex flex-wrap gap-3">
-                <div className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-white/80 backdrop-blur-sm" data-testid="status-player-format">
-                  Tiered competition
-                </div>
-                <div className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-white/80 backdrop-blur-sm" data-testid="status-player-location">
-                  Scottsdale / Cave Creek
-                </div>
-                <div className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-white/80 backdrop-blur-sm" data-testid="status-player-edition">
-                  1st annual event
-                </div>
-              </div>
-            </div>
-
-            <div className="relative">
-              <div className="absolute -left-8 top-10 hidden h-28 w-28 rounded-full bg-secondary/20 blur-3xl md:block" />
-              <div className="absolute -right-6 bottom-6 hidden h-32 w-32 rounded-full bg-white/10 blur-3xl md:block" />
-
-              <div className="relative overflow-hidden rounded-[2rem] border border-white/12 bg-white/10 shadow-[0_32px_100px_-45px_rgba(0,0,0,0.7)] backdrop-blur-sm">
-                <img
-                  src={playersHeroGolfImage}
-                  alt="Realistic golf scene for the Ramstein Ryder Cup players page"
-                  className="h-[320px] w-full object-cover md:h-[420px]"
-                  data-testid="img-players-hero-golf"
-                />
-                <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(7,23,45,0.08),rgba(7,23,45,0.14),rgba(7,23,45,0.72))]" />
-
-                <div className="absolute inset-x-0 bottom-0 flex flex-col gap-3 p-6 md:p-7">
-                  <div className="w-fit rounded-full border border-white/18 bg-black/20 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.24em] text-white/85 backdrop-blur-sm" data-testid="text-players-hero-image-badge">
-                    Desert golf atmosphere
-                  </div>
-                  <div className="max-w-xl">
-                    <p className="text-2xl font-semibold text-white md:text-3xl" data-testid="text-players-hero-image-title">
-                      Real course energy instead of filler graphics.
-                    </p>
-                    <p className="mt-2 text-sm leading-relaxed text-white/78 md:text-base" data-testid="text-players-hero-image-copy">
-                      A more cinematic, realistic visual direction that fits the tone of the event and gives the page more presence immediately.
-                    </p>
-                  </div>
-                </div>
-              </div>
+          <div className="mx-auto mt-10 max-w-4xl">
+            <div className="overflow-hidden rounded-[2rem] border border-border/60 bg-white shadow-[0_30px_80px_-35px_rgba(15,23,42,0.22)]">
+              <img
+                src={playersHeroGolfImage}
+                alt="Realistic golf scene for the Ramstein Ryder Cup players page"
+                className="mx-auto h-[300px] w-full object-cover object-center md:h-[420px]"
+                data-testid="img-players-hero-golf"
+              />
             </div>
           </div>
         </div>
