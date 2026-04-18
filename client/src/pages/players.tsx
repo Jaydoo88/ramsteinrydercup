@@ -222,8 +222,9 @@ export default function Players() {
                             <div className="flex min-h-[150px] flex-col justify-between p-5">
                               <div className="flex items-start justify-between gap-4">
                                 <div>
-                                  <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-secondary">
-                                    Ramstein Ryder Cup · {group.heading}
+                                  <p className="text-[10px] font-bold uppercase tracking-[0.22em] leading-[1.65] text-secondary">
+                                    <span className="block">Ramstein Ryder Cup •</span>
+                                    <span className="block">{group.heading}</span>
                                   </p>
                                   <h4 className="mt-3 whitespace-nowrap font-serif text-[1.55rem] font-bold leading-none tracking-tight text-primary md:text-[1.75rem]" data-testid={`text-player-name-${playerSlug}`}>
                                     {player.name}
