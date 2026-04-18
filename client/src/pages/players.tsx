@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Flame, Shield, Swords, Trophy } from "lucide-react";
 import jasonDousharmImage from "@assets/1665088037422_1776551209099.jpg";
+import playersHeroGolfImage from "@/assets/images/players-hero-golf.png";
 
 const PLAYER_TIERS = [
   {
@@ -82,21 +83,6 @@ const PLAYER_TIERS = [
   },
 ];
 
-const FIELD_FACTS = [
-  {
-    value: "8",
-    label: "Confirmed golfers",
-  },
-  {
-    value: "4",
-    label: "Competitive tiers",
-  },
-  {
-    value: "2",
-    label: "Players per tier",
-  },
-];
-
 function getPlayerSlug(name: string) {
   return name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 }
@@ -117,7 +103,7 @@ export default function Players() {
         <div className="absolute left-1/2 top-0 h-[28rem] w-[28rem] -translate-x-1/2 rounded-full bg-white/6 blur-3xl" />
 
         <div className="container relative mx-auto max-w-6xl px-4 py-20 md:py-24 lg:py-28">
-          <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
+          <div className="grid gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
             <div>
               <p className="text-sm font-bold uppercase tracking-[0.28em] text-white/70" data-testid="text-players-kicker">
                 Tournament Field
@@ -142,17 +128,33 @@ export default function Players() {
               </div>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
-              {FIELD_FACTS.map((fact, index) => (
-                <div
-                  key={fact.label}
-                  className="rounded-[1.75rem] border border-white/12 bg-white/10 p-5 shadow-[0_24px_70px_-40px_rgba(0,0,0,0.55)] backdrop-blur-md"
-                  data-testid={`card-player-stat-${index + 1}`}
-                >
-                  <p className="text-3xl font-bold text-white md:text-4xl">{fact.value}</p>
-                  <p className="mt-2 text-sm uppercase tracking-[0.18em] text-white/65">{fact.label}</p>
+            <div className="relative">
+              <div className="absolute -left-8 top-10 hidden h-28 w-28 rounded-full bg-secondary/20 blur-3xl md:block" />
+              <div className="absolute -right-6 bottom-6 hidden h-32 w-32 rounded-full bg-white/10 blur-3xl md:block" />
+
+              <div className="relative overflow-hidden rounded-[2rem] border border-white/12 bg-white/10 shadow-[0_32px_100px_-45px_rgba(0,0,0,0.7)] backdrop-blur-sm">
+                <img
+                  src={playersHeroGolfImage}
+                  alt="Realistic golf scene for the Ramstein Ryder Cup players page"
+                  className="h-[320px] w-full object-cover md:h-[420px]"
+                  data-testid="img-players-hero-golf"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(7,23,45,0.08),rgba(7,23,45,0.14),rgba(7,23,45,0.72))]" />
+
+                <div className="absolute inset-x-0 bottom-0 flex flex-col gap-3 p-6 md:p-7">
+                  <div className="w-fit rounded-full border border-white/18 bg-black/20 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.24em] text-white/85 backdrop-blur-sm" data-testid="text-players-hero-image-badge">
+                    Desert golf atmosphere
+                  </div>
+                  <div className="max-w-xl">
+                    <p className="text-2xl font-semibold text-white md:text-3xl" data-testid="text-players-hero-image-title">
+                      Real course energy instead of filler graphics.
+                    </p>
+                    <p className="mt-2 text-sm leading-relaxed text-white/78 md:text-base" data-testid="text-players-hero-image-copy">
+                      A more cinematic, realistic visual direction that fits the tone of the event and gives the page more presence immediately.
+                    </p>
+                  </div>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </div>

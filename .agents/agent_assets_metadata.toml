@@ -1,0 +1,8 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "6gVbsq_hebvJ9B8gJl6Ym"
+uri = "file://client/src/assets/images/players-hero-golf.png"
+type = "image"
+title = "Luxury Scottsdale golf hero image"
