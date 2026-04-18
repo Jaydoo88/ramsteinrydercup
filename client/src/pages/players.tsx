@@ -29,6 +29,7 @@ const PLAYER_TIERS = [
       {
         name: "Mike Parsons",
         image: mikeParsonsImage,
+        imageClassName: "object-[center_22%]",
       },
     ],
   },
@@ -71,6 +72,7 @@ const PLAYER_TIERS = [
       {
         name: "Darren Johnson",
         image: darrenJohnsonImage,
+        imageClassName: "object-[center_18%]",
       },
     ],
   },
@@ -207,7 +209,7 @@ export default function Players() {
                                 <img
                                   src={player.image}
                                   alt={player.name}
-                                  className="h-full w-full object-cover object-center"
+                                  className={`h-full w-full object-cover ${player.imageClassName ?? "object-center"}`}
                                   data-testid={`img-player-${playerSlug}`}
                                 />
                               ) : (
