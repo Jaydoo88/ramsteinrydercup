@@ -138,14 +138,12 @@ export default function Players() {
       </section>
 
       <section className="container mx-auto max-w-6xl px-4 py-16 md:py-20 lg:py-24">
-        <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-          <div>
-            <p className="text-sm font-bold uppercase tracking-[0.24em] text-secondary">Player Tiers</p>
-            <h2 className="mt-3 font-serif text-3xl font-bold text-primary md:text-5xl" data-testid="text-players-section-heading">
-              Confirmed flights for the 2026 field.
-            </h2>
-          </div>
-          <p className="max-w-2xl text-base leading-relaxed text-foreground/65" data-testid="text-players-section-copy">
+        <div className="mb-10">
+          <p className="text-sm font-bold uppercase tracking-[0.24em] text-secondary">Player Tiers</p>
+          <h2 className="mt-3 font-serif text-3xl font-bold text-primary md:text-5xl md:whitespace-nowrap" data-testid="text-players-section-heading">
+            Confirmed flights for the 2026 field.
+          </h2>
+          <p className="mt-3 max-w-3xl text-base leading-relaxed text-foreground/65" data-testid="text-players-section-copy">
             The Ramstein Ryder Cup roster is split into A, B, C, and D tiers to balance pairings and shape the competition across the weekend.
           </p>
         </div>
@@ -236,16 +234,6 @@ export default function Players() {
                                 </h4>
                               </div>
 
-                              <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3 border-t border-border/60 pt-4 text-sm">
-                                <div>
-                                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">Status</p>
-                                  <p className="mt-1 font-medium text-foreground/75">Confirmed</p>
-                                </div>
-                                <div>
-                                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">Flight</p>
-                                  <p className="mt-1 font-semibold text-primary">Tier {group.tier}</p>
-                                </div>
-                              </div>
                             </div>
                           </CardContent>
                         </Card>
