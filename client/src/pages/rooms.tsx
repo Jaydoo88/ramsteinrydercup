@@ -2,17 +2,17 @@ import { Link } from "wouter";
 import { ArrowLeft, BedDouble, ShieldCheck, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import roomImage1 from "@assets/6e9ba67f_1776118723679.avif";
+import bedroom1Image from "@assets/image_1776549967055.png";
 import roomImage2 from "@assets/4951e4bc_1776118843654.avif";
 import roomImage3 from "@assets/Picture1_1776118874266.png";
 import roomImage4 from "@assets/Picture3_1776118874266.png";
 
 const ROOM_PREVIEWS = [
   {
-    image: roomImage1,
-    label: "Suite Preview 1",
-    title: "Private guest bedroom",
-    description: "One of the private sleeping setups inside the confirmed house, designed for a comfortable four-night stay.",
+    image: bedroom1Image,
+    label: "Bedroom #1",
+    title: "Two-bed bedroom setup",
+    description: "Bedroom #1 features a spacious two-bed layout with clean finishes, warm lighting, and a comfortable shared setup for the trip.",
   },
   {
     image: roomImage2,
