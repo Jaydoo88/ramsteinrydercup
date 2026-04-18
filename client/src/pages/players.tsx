@@ -3,6 +3,7 @@ import { Flame, Shield, Swords, Trophy } from "lucide-react";
 import jasonDousharmImage from "@assets/1665088037422_1776551209099.jpg";
 import mikeParsonsImage from "@assets/image_1776551520237.png";
 import allenParsonsImage from "@assets/image_1776551567816.png";
+import johnGreggImage from "@assets/image_1776551593611.png";
 import playersHeroGolfImage from "@/assets/images/players-hero-golf.png";
 
 const PLAYER_TIERS = [
@@ -78,6 +79,7 @@ const PLAYER_TIERS = [
     players: [
       {
         name: "John Gregg",
+        image: johnGreggImage,
       },
       {
         name: "Allen Parsons",
