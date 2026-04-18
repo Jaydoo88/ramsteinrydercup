@@ -15,8 +15,8 @@ const ROOM_PREVIEWS = [
   {
     image: bedroom1Image,
     label: "Bedroom #1",
-    title: "Two-bed bedroom setup",
-    description: "Bedroom #1 features a spacious two-bed layout with clean finishes, warm lighting, and a comfortable shared setup for the trip.",
+    title: "Two queen bed setup",
+    description: "Bedroom #1 features two queen beds, a spacious shared layout, and a polished setup designed for a comfortable stay during the trip.",
   },
   {
     image: bedroom2Image,
