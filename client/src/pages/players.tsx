@@ -255,22 +255,21 @@ export default function Players() {
                               <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#081423]/90 via-[#081423]/35 to-transparent" />
                             </div>
 
-                            <div className="flex min-h-[150px] flex-col justify-between p-5">
-                              <div className="flex items-start justify-between gap-4">
+                            <div className="flex min-h-[118px] flex-col justify-start p-4 md:min-h-[126px] md:p-5">
+                              <div className="flex items-start justify-between gap-3">
                                 <div>
-                                  <p className="text-[10px] font-bold uppercase tracking-[0.22em] leading-[1.65] text-secondary">
+                                  <p className="text-[10px] font-bold uppercase tracking-[0.22em] leading-[1.55] text-secondary">
                                     <span className="block">Ramstein Ryder Cup •</span>
                                     <span className="block">{group.heading}</span>
                                   </p>
-                                  <h4 className="mt-3 whitespace-nowrap font-serif text-[1.55rem] font-bold leading-none tracking-tight text-primary md:text-[1.75rem]" data-testid={`text-player-name-${playerSlug}`}>
+                                  <h4 className="mt-2 whitespace-nowrap font-serif text-[1.55rem] font-bold leading-none tracking-tight text-primary md:text-[1.72rem]">
                                     {player.name}
                                   </h4>
                                 </div>
-                                <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br ${group.accent} text-sm font-bold text-primary shadow-sm`}>
+                                <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${group.accent} text-sm font-bold text-primary shadow-sm`}>
                                   {group.tier}
                                 </div>
                               </div>
-
                             </div>
                           </CardContent>
                         </Card>
