@@ -15,6 +15,7 @@ import bedroom2BathroomImage from "@assets/image_1776550404188.png";
 import bedroom3BathroomImage from "@assets/image_1776550421103.png";
 import bedroom4BathroomImage from "@assets/image_1776550438203.png";
 import bedroom5BathroomImage from "@assets/image_1776550460083.png";
+import bedroom6BathroomImage from "@assets/image_1776550580664.png";
 import bedroom7BathroomImage from "@assets/image_1776550499672.png";
 
 const ROOM_PREVIEWS = [
@@ -68,6 +69,9 @@ const ROOM_PREVIEWS = [
     label: "Casita Bedroom #6",
     title: "King casita bedroom setup",
     description: "Casita Bedroom #6 features a king bed, natural light, and a comfortable detached-room setup that gives guests additional privacy on-site.",
+    bathroomImage: bedroom6BathroomImage,
+    bathroomLabel: "Bedroom #6 Bathroom",
+    bathroomDescription: "Bathroom setup connected to Casita Bedroom #6.",
   },
   {
     image: bedroom7Image,
