@@ -30,8 +30,8 @@ export function Navbar() {
 
   return (
     <nav className="bg-white text-primary sticky top-0 z-50 shadow-md border-b border-primary/20">
-      <div className="container mx-auto px-4 h-24 flex items-center justify-between">
-        <div className="flex items-center gap-3 group">
+      <div className="container mx-auto flex h-24 items-center justify-between gap-4 px-4">
+        <div className="flex min-w-0 items-center gap-3 group">
           <Dialog>
             <DialogTrigger asChild>
               <button className="cursor-pointer hover:scale-105 transition-transform focus:outline-none bg-primary/5 rounded-md p-1.5">
@@ -51,20 +51,20 @@ export function Navbar() {
             </DialogContent>
           </Dialog>
           
-          <Link href="/" className="flex flex-col ml-1">
-            <span className="font-serif font-bold text-lg leading-tight tracking-wide text-primary">Ramstein Ryder Cup</span>
-            <span className="text-[10px] uppercase tracking-widest text-secondary font-bold">Founding Year 2026</span>
+          <Link href="/" className="ml-1 flex min-w-0 flex-col">
+            <span className="truncate font-serif text-base font-bold leading-tight tracking-wide text-primary xl:text-lg">Ramstein Ryder Cup</span>
+            <span className="hidden text-[10px] font-bold uppercase tracking-widest text-secondary lg:block">Founding Year 2026</span>
           </Link>
         </div>
 
         {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center gap-6">
+        <div className="hidden shrink-0 lg:flex items-center gap-4 xl:gap-6">
           {routes.slice(1).map((route) => (
-            <Link key={route.path} href={route.path} className={`text-sm font-bold uppercase tracking-wider transition-colors hover:text-secondary ${location === route.path ? "text-secondary" : "text-primary"}`}>
+            <Link key={route.path} href={route.path} className={`text-[13px] font-bold uppercase tracking-[0.14em] transition-colors hover:text-secondary xl:text-sm ${location === route.path ? "text-secondary" : "text-primary"}`}>
               {route.name}
             </Link>
           ))}
-          <Button asChild variant="secondary" className="ml-4 font-bold tracking-widest uppercase text-white bg-secondary hover:bg-secondary/90">
+          <Button asChild variant="secondary" className="ml-2 h-11 px-5 font-bold uppercase tracking-[0.16em] text-white bg-secondary hover:bg-secondary/90 xl:ml-4">
             <Link href="/rsvp">RSVP</Link>
           </Button>
         </div>
