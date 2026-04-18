@@ -16,6 +16,11 @@ const PLAYER_TIERS = [
     heading: "Alpha Flight",
     description: "Sets the tone for pairings.",
     details: "This group is built to handle the early pressure, anchor team strategy, and give the lineup a strong start in the opening sessions.",
+    scouting: [
+      "Off the tee: built for confident opening drives.",
+      "Approach play: expected to attack flags and create birdie looks.",
+      "On the greens: trusted to steady momentum with clean putts.",
+    ],
     accent: "from-amber-400 via-yellow-300 to-amber-500",
     glow: "shadow-[0_24px_80px_-30px_rgba(245,158,11,0.5)]",
     surface: "border-amber-200/60 bg-[linear-gradient(180deg,rgba(255,251,235,0.95),rgba(255,255,255,0.9))]",
@@ -39,6 +44,11 @@ const PLAYER_TIERS = [
     heading: "Pressure Line",
     description: "Applies pressure across key matches.",
     details: "This flight is expected to keep matches tight, force mistakes, and deliver points in the sessions where momentum can swing the whole Ryder Cup.",
+    scouting: [
+      "Off the tee: likely to lean on controlled, in-play drives.",
+      "Approach play: built to apply heat with makeable birdie chances.",
+      "On the greens: the putter can turn halves into points.",
+    ],
     accent: "from-sky-400 via-cyan-300 to-blue-500",
     glow: "shadow-[0_24px_80px_-30px_rgba(14,165,233,0.45)]",
     surface: "border-sky-200/60 bg-[linear-gradient(180deg,rgba(240,249,255,0.95),rgba(255,255,255,0.9))]",
@@ -61,6 +71,11 @@ const PLAYER_TIERS = [
     heading: "Steady Core",
     description: "Brings stability to every session.",
     details: "This group gives the field reliable depth, dependable pairings, and steady play that helps hold the board together from round to round.",
+    scouting: [
+      "Off the tee: likely to favor fairways over hero shots.",
+      "Approach play: dependable swings that keep pressure on opponents.",
+      "On the greens: steady putts that keep matches moving forward.",
+    ],
     accent: "from-emerald-400 via-teal-300 to-emerald-500",
     glow: "shadow-[0_24px_80px_-30px_rgba(16,185,129,0.4)]",
     surface: "border-emerald-200/60 bg-[linear-gradient(180deg,rgba(236,253,245,0.95),rgba(255,255,255,0.92))]",
@@ -84,6 +99,11 @@ const PLAYER_TIERS = [
     heading: "Wild Cards",
     description: "Capable of stealing big points.",
     details: "This flight brings upset potential, loose pressure, and the kind of unexpected point swings that can flip a Ryder Cup session fast.",
+    scouting: [
+      "Off the tee: aggressive swings can open or close a hole fast.",
+      "Approach play: high-risk looks can create surprise momentum.",
+      "On the greens: one hot putter can flip the entire match.",
+    ],
     accent: "from-violet-500 via-purple-400 to-fuchsia-500",
     glow: "shadow-[0_24px_80px_-30px_rgba(139,92,246,0.4)]",
     surface: "border-violet-200/60 bg-[linear-gradient(180deg,rgba(245,243,255,0.95),rgba(255,255,255,0.92))]",
@@ -178,16 +198,23 @@ export default function Players() {
                       <div className="text-5xl font-semibold leading-none text-primary/10 md:text-6xl">{group.tier}</div>
                     </div>
 
-                    <div className="mt-4 space-y-4 max-w-md">
+                    <div className="mt-4 max-w-md space-y-5">
                       <p className="text-sm leading-7 text-foreground/68 md:text-base" data-testid={`text-tier-description-${group.tier.toLowerCase()}`}>
                         {group.description}
                       </p>
                       <p className="text-sm leading-7 text-foreground/64 md:text-[0.97rem]">
                         {group.details}
                       </p>
+                      <div className="space-y-3 border-t border-primary/8 pt-5">
+                        {group.scouting.map((note) => (
+                          <p key={note} className="text-sm leading-7 text-foreground/66 md:text-[0.97rem]">
+                            {note}
+                          </p>
+                        ))}
+                      </div>
                     </div>
 
-                    <div className="mt-auto pt-10 text-center">
+                    <div className="mt-auto pt-8 text-center">
                       <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-secondary">Role</p>
                       <p className="mt-2 text-sm font-semibold text-primary md:text-base">{group.caption}</p>
                     </div>
