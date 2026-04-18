@@ -15,6 +15,7 @@ const PLAYER_TIERS = [
     tier: "A",
     heading: "Alpha Flight",
     description: "Sets the tone for pairings.",
+    details: "This group is built to handle the early pressure, anchor team strategy, and give the lineup a strong start in the opening sessions.",
     accent: "from-amber-400 via-yellow-300 to-amber-500",
     glow: "shadow-[0_24px_80px_-30px_rgba(245,158,11,0.5)]",
     surface: "border-amber-200/60 bg-[linear-gradient(180deg,rgba(255,251,235,0.95),rgba(255,255,255,0.9))]",
@@ -37,6 +38,7 @@ const PLAYER_TIERS = [
     tier: "B",
     heading: "Pressure Line",
     description: "Applies pressure across key matches.",
+    details: "This flight is expected to keep matches tight, force mistakes, and deliver points in the sessions where momentum can swing the whole Ryder Cup.",
     accent: "from-sky-400 via-cyan-300 to-blue-500",
     glow: "shadow-[0_24px_80px_-30px_rgba(14,165,233,0.45)]",
     surface: "border-sky-200/60 bg-[linear-gradient(180deg,rgba(240,249,255,0.95),rgba(255,255,255,0.9))]",
@@ -58,6 +60,7 @@ const PLAYER_TIERS = [
     tier: "C",
     heading: "Steady Core",
     description: "Brings stability to every session.",
+    details: "This group gives the field reliable depth, dependable pairings, and steady play that helps hold the board together from round to round.",
     accent: "from-emerald-400 via-teal-300 to-emerald-500",
     glow: "shadow-[0_24px_80px_-30px_rgba(16,185,129,0.4)]",
     surface: "border-emerald-200/60 bg-[linear-gradient(180deg,rgba(236,253,245,0.95),rgba(255,255,255,0.92))]",
@@ -80,6 +83,7 @@ const PLAYER_TIERS = [
     tier: "D",
     heading: "Wild Cards",
     description: "Capable of stealing big points.",
+    details: "This flight brings upset potential, loose pressure, and the kind of unexpected point swings that can flip a Ryder Cup session fast.",
     accent: "from-violet-500 via-purple-400 to-fuchsia-500",
     glow: "shadow-[0_24px_80px_-30px_rgba(139,92,246,0.4)]",
     surface: "border-violet-200/60 bg-[linear-gradient(180deg,rgba(245,243,255,0.95),rgba(255,255,255,0.92))]",
@@ -174,9 +178,14 @@ export default function Players() {
                       <div className="text-5xl font-semibold leading-none text-primary/10 md:text-6xl">{group.tier}</div>
                     </div>
 
-                    <p className="mt-4 max-w-md text-sm leading-7 text-foreground/68 md:text-base" data-testid={`text-tier-description-${group.tier.toLowerCase()}`}>
-                      {group.description}
-                    </p>
+                    <div className="mt-4 space-y-4 max-w-md">
+                      <p className="text-sm leading-7 text-foreground/68 md:text-base" data-testid={`text-tier-description-${group.tier.toLowerCase()}`}>
+                        {group.description}
+                      </p>
+                      <p className="text-sm leading-7 text-foreground/64 md:text-[0.97rem]">
+                        {group.details}
+                      </p>
+                    </div>
 
                     <div className="mt-auto pt-10 text-center">
                       <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-secondary">Role</p>
