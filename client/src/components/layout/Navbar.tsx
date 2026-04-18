@@ -14,14 +14,14 @@ import { useState } from "react";
 import logoImage from "@assets/image0_1774735378309.png";
 
 const routes = [
-  { name: "Home", path: "/" },
-  { name: "Trip Overview", path: "/overview" },
-  { name: "House & Rooming", path: "/house" },
-  { name: "Pricing", path: "/pricing" },
-  { name: "Golf Format", path: "/golf" },
-  { name: "Schedule", path: "/schedule" },
-  { name: "Rules", path: "/rules" },
-  { name: "Players", path: "/players" },
+  { name: "Home", shortName: "Home", path: "/" },
+  { name: "Trip Overview", shortName: "Overview", path: "/overview" },
+  { name: "House & Rooming", shortName: "House", path: "/house" },
+  { name: "Pricing", shortName: "Pricing", path: "/pricing" },
+  { name: "Golf Format", shortName: "Golf", path: "/golf" },
+  { name: "Schedule", shortName: "Schedule", path: "/schedule" },
+  { name: "Rules", shortName: "Rules", path: "/rules" },
+  { name: "Players", shortName: "Players", path: "/players" },
 ];
 
 export function Navbar() {
@@ -51,20 +51,21 @@ export function Navbar() {
             </DialogContent>
           </Dialog>
           
-          <Link href="/" className="ml-1 flex min-w-0 flex-col">
-            <span className="truncate font-serif text-base font-bold leading-tight tracking-wide text-primary xl:text-lg">Ramstein Ryder Cup</span>
-            <span className="hidden text-[10px] font-bold uppercase tracking-widest text-secondary lg:block">Founding Year 2026</span>
+          <Link href="/" className="ml-1 flex min-w-0 flex-col max-[1120px]:max-w-[170px]">
+            <span className="truncate font-serif text-sm font-bold leading-tight tracking-wide text-primary lg:text-[15px] xl:text-lg">Ramstein Ryder Cup</span>
+            <span className="hidden text-[10px] font-bold uppercase tracking-widest text-secondary xl:block">Founding Year 2026</span>
           </Link>
         </div>
 
         {/* Desktop Nav */}
-        <div className="hidden shrink-0 lg:flex items-center gap-4 xl:gap-6">
+        <div className="hidden shrink-0 lg:flex items-center gap-2 xl:gap-6">
           {routes.slice(1).map((route) => (
-            <Link key={route.path} href={route.path} className={`text-[13px] font-bold uppercase tracking-[0.14em] transition-colors hover:text-secondary xl:text-sm ${location === route.path ? "text-secondary" : "text-primary"}`}>
-              {route.name}
+            <Link key={route.path} href={route.path} className={`text-[11px] font-bold uppercase tracking-[0.12em] transition-colors hover:text-secondary xl:text-sm xl:tracking-[0.14em] ${location === route.path ? "text-secondary" : "text-primary"}`}>
+              <span className="xl:hidden">{route.shortName}</span>
+              <span className="hidden xl:inline">{route.name}</span>
             </Link>
           ))}
-          <Button asChild variant="secondary" className="ml-2 h-11 px-5 font-bold uppercase tracking-[0.16em] text-white bg-secondary hover:bg-secondary/90 xl:ml-4">
+          <Button asChild variant="secondary" className="ml-1 h-10 px-4 text-xs font-bold uppercase tracking-[0.14em] text-white bg-secondary hover:bg-secondary/90 xl:ml-4 xl:h-11 xl:px-5 xl:text-sm xl:tracking-[0.16em]">
             <Link href="/rsvp">RSVP</Link>
           </Button>
         </div>
