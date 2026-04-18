@@ -14,7 +14,7 @@ const PLAYER_TIERS = [
   {
     tier: "A",
     heading: "Alpha Flight",
-    description: "Tier A players are expected to lead pairings and set the tone in the opening Ryder Cup matches.",
+    description: "Sets the tone for pairings.",
     accent: "from-amber-400 via-yellow-300 to-amber-500",
     glow: "shadow-[0_24px_80px_-30px_rgba(245,158,11,0.5)]",
     surface: "border-amber-200/60 bg-[linear-gradient(180deg,rgba(255,251,235,0.95),rgba(255,255,255,0.9))]",
@@ -35,7 +35,7 @@ const PLAYER_TIERS = [
   {
     tier: "B",
     heading: "Pressure Line",
-    description: "Tier B gives the field balanced depth and matchup pressure across the full event weekend.",
+    description: "Applies pressure across key matches.",
     accent: "from-sky-400 via-cyan-300 to-blue-500",
     glow: "shadow-[0_24px_80px_-30px_rgba(14,165,233,0.45)]",
     surface: "border-sky-200/60 bg-[linear-gradient(180deg,rgba(240,249,255,0.95),rgba(255,255,255,0.9))]",
@@ -56,7 +56,7 @@ const PLAYER_TIERS = [
   {
     tier: "C",
     heading: "Steady Core",
-    description: "Tier C brings steady play, dependable depth, and flexibility for alternate-shot and match-play pairings.",
+    description: "Brings stability to every session.",
     accent: "from-emerald-400 via-teal-300 to-emerald-500",
     glow: "shadow-[0_24px_80px_-30px_rgba(16,185,129,0.4)]",
     surface: "border-emerald-200/60 bg-[linear-gradient(180deg,rgba(236,253,245,0.95),rgba(255,255,255,0.92))]",
@@ -77,7 +77,7 @@ const PLAYER_TIERS = [
   {
     tier: "D",
     heading: "Wild Cards",
-    description: "Tier D adds wildcard value with the ability to steal points and swing momentum in Ryder Cup play.",
+    description: "Capable of stealing big points.",
     accent: "from-rose-400 via-fuchsia-300 to-pink-500",
     glow: "shadow-[0_24px_80px_-30px_rgba(244,63,94,0.42)]",
     surface: "border-rose-200/60 bg-[linear-gradient(180deg,rgba(255,241,242,0.95),rgba(255,255,255,0.92))]",
@@ -185,16 +185,14 @@ export default function Players() {
                       {group.description}
                     </p>
 
-                    <div className="mt-5 flex flex-wrap gap-3">
-                      <div className="rounded-full border border-primary/10 bg-primary/[0.03] px-4 py-2.5">
-                        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-secondary">Role</p>
-                        <p className="mt-1 text-sm font-semibold text-primary md:text-base">{group.caption}</p>
-                      </div>
+                    <div className="mt-5">
+                      <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-secondary">Role</p>
+                      <p className="mt-1 text-sm font-semibold text-primary md:text-base">{group.caption}</p>
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                    {group.players.map((player, playerIndex) => {
+                    {group.players.map((player) => {
                       const playerSlug = getPlayerSlug(player.name);
 
                       return (
@@ -226,24 +224,16 @@ export default function Players() {
                               )}
 
                               <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#081423]/90 via-[#081423]/35 to-transparent" />
-                              <div className="absolute left-5 top-5 rounded-full border border-white/18 bg-black/20 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.22em] text-white/82 backdrop-blur-sm">
-                                Tier {group.tier}
-                              </div>
                             </div>
 
                             <div className="flex min-h-[150px] flex-col justify-between p-5">
-                              <div className="flex items-start justify-between gap-4">
-                                <div>
-                                  <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-secondary">
-                                    Ramstein Ryder Cup · Tier {group.tier}
-                                  </p>
-                                  <h4 className="mt-3 whitespace-nowrap font-serif text-[1.55rem] font-bold leading-none tracking-tight text-primary md:text-[1.75rem]" data-testid={`text-player-name-${playerSlug}`}>
-                                    {player.name}
-                                  </h4>
-                                </div>
-                                <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br ${group.accent} text-sm font-bold text-primary shadow-sm`}>
-                                  {group.tier}
-                                </div>
+                              <div>
+                                <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-secondary">
+                                  Ramstein Ryder Cup · {group.heading}
+                                </p>
+                                <h4 className="mt-3 whitespace-nowrap font-serif text-[1.55rem] font-bold leading-none tracking-tight text-primary md:text-[1.75rem]" data-testid={`text-player-name-${playerSlug}`}>
+                                  {player.name}
+                                </h4>
                               </div>
 
                               <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3 border-t border-border/60 pt-4 text-sm">
