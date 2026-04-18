@@ -257,6 +257,14 @@ export default function PricingBudget() {
             <p className="mt-3 text-base text-foreground/65">
               Review the payment plan below, then click Make a Payment to submit your deposit or installment.
             </p>
+            <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <div className="inline-flex items-center rounded-full border border-primary/10 bg-white/90 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-primary" data-testid="text-site-secure-note">
+                This site is secured with HTTPS
+              </div>
+              <div className="inline-flex items-center rounded-full border border-primary/10 bg-white/90 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-primary" data-testid="text-stripe-secure-note">
+                Payments are processed securely through Stripe
+              </div>
+            </div>
             <div className="mt-6">
               <Button asChild className="h-14 w-full rounded-xl bg-primary text-base font-bold uppercase tracking-widest shadow-lg shadow-primary/20 hover:bg-primary/90 md:w-auto md:px-10" data-testid="button-make-payment">
                 <a
