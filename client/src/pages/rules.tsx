@@ -31,39 +31,43 @@ export default function Rules() {
         </div>
 
         <div className="bg-white p-12 rounded-[2rem] shadow-xl max-w-3xl mx-auto text-left border-l-8 border-primary">
-          <h2 className="font-serif text-3xl font-bold text-primary mb-8">House Rules (Non-Negotiable)</h2>
+          <h2 className="font-serif text-3xl font-bold text-primary mb-8">House Rules (Strictly Enforced)</h2>
           <ul className="space-y-6 text-lg text-foreground/80">
             <li className="flex items-start gap-4">
               <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-1" />
-              <span><strong>Quiet Hours & Noise:</strong> Keep outdoor noise under control late at night. Complaints put our deposit at risk.</span>
+              <span><strong>Guest Limit:</strong> Only confirmed attendees are allowed on the property. No outside visitors.</span>
             </li>
             <li className="flex items-start gap-4">
               <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-1" />
-              <span><strong>No Unauthorized Guests:</strong> Only confirmed attendees are allowed on the property. No outside visitors or parties.</span>
+              <span><strong>Quiet Hours:</strong> Outdoor noise must be kept under control after 10 PM (Sun–Thurs) and 11 PM (Fri–Sat).</span>
             </li>
             <li className="flex items-start gap-4">
               <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-1" />
-              <span><strong>Parking & Ride Coordination:</strong> Follow all parking guidelines and use designated areas for vehicles and pickups.</span>
+              <span><strong>No Smoking Indoors:</strong> Smoking inside the home will result in a $500 fine.</span>
             </li>
             <li className="flex items-start gap-4">
               <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-1" />
-              <span><strong>Shared Space Responsibility:</strong> Clean up nightly. No personal items or mess left in common areas.</span>
+              <span><strong>Parking:</strong> All vehicles must be parked in designated areas. No street parking.</span>
             </li>
             <li className="flex items-start gap-4">
               <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-1" />
-              <span><strong>Trash Management:</strong> Take out trash regularly to keep the house clean and organized.</span>
+              <span><strong>Damage Responsibility:</strong> Guests are financially responsible for any damage to the property. Charges will be passed to the responsible party.</span>
             </li>
             <li className="flex items-start gap-4">
               <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-1" />
-              <span><strong>Damage Reporting:</strong> If anything breaks, report it immediately. Respect the property at all times.</span>
+              <span><strong>No Parties or Events:</strong> No unauthorized gatherings or events are permitted.</span>
             </li>
             <li className="flex items-start gap-4">
               <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-1" />
-              <span><strong>Pool & Outdoor Rules:</strong> No glass near the pool or spa — use plastic cups or cans only.</span>
+              <span><strong>Pets:</strong> Approved pets only. Owners are responsible for cleanup and any damages.</span>
             </li>
             <li className="flex items-start gap-4">
               <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-1" />
-              <span><strong>Checkout Expectations:</strong> Leave the house in good condition — trash removed, dishes handled, and spaces reset.</span>
+              <span><strong>Check-In / Check-Out:</strong> Check-in: 4 PM. Check-out: 10 AM. Late departures may result in additional fees.</span>
+            </li>
+            <li className="flex items-start gap-4">
+              <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-1" />
+              <span><strong>Cleanliness:</strong> Maintain shared spaces and avoid excessive mess. Additional cleaning fees may apply if standards are not met.</span>
             </li>
           </ul>
         </div>
