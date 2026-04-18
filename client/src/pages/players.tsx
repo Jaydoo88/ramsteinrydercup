@@ -1,54 +1,84 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Flame, Shield, Swords, Trophy } from "lucide-react";
+import jasonDousharmImage from "@assets/1665088037422_1776551209099.jpg";
 
 const PLAYER_TIERS = [
   {
     tier: "A",
     heading: "Alpha Flight",
     description: "Top-line anchors expected to shape pairings and establish the tone for the weekend.",
-    players: ["Jason Dousharm", "Mike Parsons"],
     accent: "from-amber-400 via-yellow-300 to-amber-500",
     glow: "shadow-[0_24px_80px_-30px_rgba(245,158,11,0.5)]",
     surface: "border-amber-200/60 bg-[linear-gradient(180deg,rgba(255,251,235,0.95),rgba(255,255,255,0.9))]",
     badge: "bg-amber-500/12 text-amber-700 ring-1 ring-amber-400/30",
     icon: Trophy,
     caption: "Match-setters",
+    players: [
+      {
+        name: "Jason Dousharm",
+        image: jasonDousharmImage,
+      },
+      {
+        name: "Mike Parsons",
+      },
+    ],
   },
   {
     tier: "B",
     heading: "Pressure Line",
     description: "Balanced competitors with enough shot-making to swing a session and punish weak pairings.",
-    players: ["Mike Gibbons", "Robby Fuller"],
     accent: "from-sky-400 via-cyan-300 to-blue-500",
     glow: "shadow-[0_24px_80px_-30px_rgba(14,165,233,0.45)]",
     surface: "border-sky-200/60 bg-[linear-gradient(180deg,rgba(240,249,255,0.95),rgba(255,255,255,0.9))]",
     badge: "bg-sky-500/12 text-sky-700 ring-1 ring-sky-400/30",
     icon: Swords,
     caption: "Pressure makers",
+    players: [
+      {
+        name: "Mike Gibbons",
+      },
+      {
+        name: "Robby Fuller",
+      },
+    ],
   },
   {
     tier: "C",
     heading: "Steady Core",
     description: "Reliable middle-line players who give the roster depth, consistency, and pairing flexibility.",
-    players: ["Darrel Johnson", "Darren Johnson"],
     accent: "from-emerald-400 via-teal-300 to-emerald-500",
     glow: "shadow-[0_24px_80px_-30px_rgba(16,185,129,0.4)]",
     surface: "border-emerald-200/60 bg-[linear-gradient(180deg,rgba(236,253,245,0.95),rgba(255,255,255,0.92))]",
     badge: "bg-emerald-500/12 text-emerald-700 ring-1 ring-emerald-400/30",
     icon: Shield,
     caption: "Reliable depth",
+    players: [
+      {
+        name: "Darrel Johnson",
+      },
+      {
+        name: "Darren Johnson",
+      },
+    ],
   },
   {
     tier: "D",
     heading: "Wild Cards",
     description: "Underdog energy with upset potential and the ability to change a match with momentum swings.",
-    players: ["John Gregg", "Alan Parsons"],
     accent: "from-rose-400 via-fuchsia-300 to-pink-500",
     glow: "shadow-[0_24px_80px_-30px_rgba(244,63,94,0.42)]",
     surface: "border-rose-200/60 bg-[linear-gradient(180deg,rgba(255,241,242,0.95),rgba(255,255,255,0.92))]",
     badge: "bg-rose-500/12 text-rose-700 ring-1 ring-rose-400/30",
     icon: Flame,
     caption: "Momentum swingers",
+    players: [
+      {
+        name: "John Gregg",
+      },
+      {
+        name: "Alan Parsons",
+      },
+    ],
   },
 ];
 
@@ -66,6 +96,18 @@ const FIELD_FACTS = [
     label: "Players per tier",
   },
 ];
+
+function getPlayerSlug(name: string) {
+  return name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+}
+
+function getPlayerInitials(name: string) {
+  return name
+    .split(" ")
+    .map((part) => part[0])
+    .join("")
+    .slice(0, 2);
+}
 
 export default function Players() {
   return (
@@ -125,7 +167,7 @@ export default function Players() {
             </h2>
           </div>
           <p className="max-w-2xl text-base leading-relaxed text-foreground/65" data-testid="text-players-section-copy">
-            Each tier now has its own identity, atmosphere, and visual weight so the field feels curated instead of cartoonish.
+            Every player card now has a dedicated portrait slot, so we can drop in cropped photos as you send them and build out the full field.
           </p>
         </div>
 
@@ -179,43 +221,73 @@ export default function Players() {
                   </div>
 
                   <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                    {group.players.map((player, playerIndex) => (
-                      <Card
-                        key={player}
-                        className="overflow-hidden rounded-[1.75rem] border border-white/65 bg-white/85 shadow-[0_20px_50px_-35px_rgba(15,23,42,0.45)] transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/20 hover:shadow-[0_28px_70px_-35px_rgba(13,61,110,0.35)]"
-                        data-testid={`card-player-${player.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-                      >
-                        <CardContent className="relative p-0">
-                          <div className={`h-1.5 w-full bg-gradient-to-r ${group.accent}`} />
-                          <div className="flex min-h-[220px] flex-col justify-between p-6">
-                            <div className="flex items-start justify-between gap-4">
-                              <div>
-                                <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-secondary">
-                                  Tier {group.tier} · Player {playerIndex + 1}
-                                </p>
-                                <h4 className="mt-4 font-serif text-3xl font-bold leading-tight text-primary" data-testid={`text-player-name-${player.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>
-                                  {player}
-                                </h4>
-                              </div>
-                              <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br ${group.accent} text-sm font-bold text-primary shadow-sm`}>
-                                {group.tier}
+                    {group.players.map((player, playerIndex) => {
+                      const playerSlug = getPlayerSlug(player.name);
+
+                      return (
+                        <Card
+                          key={player.name}
+                          className="overflow-hidden rounded-[1.75rem] border border-white/65 bg-white/90 shadow-[0_20px_50px_-35px_rgba(15,23,42,0.45)] transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/20 hover:shadow-[0_28px_70px_-35px_rgba(13,61,110,0.35)]"
+                          data-testid={`card-player-${playerSlug}`}
+                        >
+                          <CardContent className="relative p-0">
+                            <div className={`h-1.5 w-full bg-gradient-to-r ${group.accent}`} />
+
+                            <div className="relative h-72 overflow-hidden bg-[linear-gradient(135deg,#0c2340,#174a7a)]">
+                              {player.image ? (
+                                <img
+                                  src={player.image}
+                                  alt={player.name}
+                                  className="h-full w-full object-cover object-center"
+                                  data-testid={`img-player-${playerSlug}`}
+                                />
+                              ) : (
+                                <div
+                                  className={`flex h-full w-full items-center justify-center bg-gradient-to-br ${group.accent}`}
+                                  data-testid={`img-player-placeholder-${playerSlug}`}
+                                >
+                                  <div className="rounded-full border border-white/35 bg-white/18 px-8 py-6 text-5xl font-bold tracking-[0.16em] text-white shadow-[0_20px_50px_-25px_rgba(15,23,42,0.55)] backdrop-blur-sm">
+                                    {getPlayerInitials(player.name)}
+                                  </div>
+                                </div>
+                              )}
+
+                              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#081423]/90 via-[#081423]/35 to-transparent" />
+                              <div className="absolute left-5 top-5 rounded-full border border-white/18 bg-black/20 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.22em] text-white/82 backdrop-blur-sm">
+                                Tier {group.tier}
                               </div>
                             </div>
 
-                            <div className="mt-8 flex items-end justify-between gap-4 border-t border-border/60 pt-5">
-                              <div>
-                                <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground">Field status</p>
-                                <p className="mt-2 text-base font-medium text-foreground/75">Confirmed competitor</p>
+                            <div className="flex min-h-[180px] flex-col justify-between p-6">
+                              <div className="flex items-start justify-between gap-4">
+                                <div>
+                                  <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-secondary">
+                                    {group.heading} · Player {playerIndex + 1}
+                                  </p>
+                                  <h4 className="mt-4 font-serif text-3xl font-bold leading-tight text-primary" data-testid={`text-player-name-${playerSlug}`}>
+                                    {player.name}
+                                  </h4>
+                                </div>
+                                <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br ${group.accent} text-sm font-bold text-primary shadow-sm`}>
+                                  {group.tier}
+                                </div>
                               </div>
-                              <div className="text-right">
-                                <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground">Flight</p>
-                                <p className="mt-2 text-base font-semibold text-primary">{group.heading}</p>
+
+                              <div className="mt-8 flex items-end justify-between gap-4 border-t border-border/60 pt-5">
+                                <div>
+                                  <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground">Field status</p>
+                                  <p className="mt-2 text-base font-medium text-foreground/75">Confirmed competitor</p>
+                                </div>
+                                <div className="text-right">
+                                  <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground">Flight</p>
+                                  <p className="mt-2 text-base font-semibold text-primary">{group.heading}</p>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        </CardContent>
-                      </Card>
-                    ))}
+                          </CardContent>
+                        </Card>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
