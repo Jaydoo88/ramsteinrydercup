@@ -103,19 +103,74 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-24 bg-muted/30 border-y border-border/60">
-        <div className="container px-4 max-w-7xl mx-auto">
-          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between mb-14">
-            <div className="max-w-2xl">
-              <p className="text-sm font-bold uppercase tracking-[0.24em] text-secondary mb-4" data-testid="text-home-players-kicker">Tournament Field</p>
-              <h2 className="font-serif text-5xl font-bold text-primary mb-4">Meet the Field</h2>
-              <p className="text-muted-foreground text-xl leading-relaxed" data-testid="text-home-players-description">A first look at the inaugural player tiers shaping the Ramstein Ryder Cup competition.</p>
-            </div>
-            <Button asChild variant="outline" className="h-14 px-8 text-base font-bold uppercase tracking-widest border-primary/15 text-primary hover:bg-primary/5 w-full md:w-auto" data-testid="button-view-all-players-top">
-              <Link href="/players">View All Players</Link>
-            </Button>
-          </div>
+      <section className="relative overflow-hidden border-y border-border/60 bg-[radial-gradient(circle_at_top_left,rgba(199,30,58,0.09),transparent_32%),linear-gradient(180deg,rgba(255,255,255,0.98),rgba(245,247,250,0.92))] py-24">
+        <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(13,61,110,0.02),transparent_40%,rgba(13,61,110,0.03))]"></div>
+        <div className="container relative mx-auto max-w-7xl px-4">
+          <div className="overflow-hidden rounded-[2rem] border border-white/80 bg-white/88 shadow-[0_24px_80px_rgba(13,61,110,0.08)] backdrop-blur-xl">
+            <div className="grid gap-0 lg:grid-cols-[1.3fr_0.9fr]">
+              <div className="border-b border-border/60 p-8 md:p-12 lg:border-b-0 lg:border-r">
+                <p className="mb-4 text-sm font-bold uppercase tracking-[0.24em] text-secondary" data-testid="text-home-players-kicker">Tournament Field</p>
+                <h2 className="mb-5 font-serif text-4xl font-bold text-primary md:text-5xl">Meet the Field</h2>
+                <p className="max-w-2xl text-lg leading-relaxed text-foreground/72 md:text-xl" data-testid="text-home-players-description">
+                  Eight golfers are locked into the inaugural Ramstein Ryder Cup, with the full roster page breaking down each player by tier, profile, and scouting report before the sides are set in Arizona.
+                </p>
 
+                <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                  <div className="rounded-2xl border border-border/70 bg-muted/40 p-5" data-testid="card-field-stat-golfers">
+                    <p className="text-xs font-bold uppercase tracking-[0.22em] text-secondary">Golfers</p>
+                    <p className="mt-3 font-serif text-3xl font-bold text-primary" data-testid="text-field-stat-golfers">8 Confirmed</p>
+                    <p className="mt-2 text-sm leading-relaxed text-foreground/65">The full playing field for year one is officially in place.</p>
+                  </div>
+                  <div className="rounded-2xl border border-border/70 bg-muted/40 p-5" data-testid="card-field-stat-tiers">
+                    <p className="text-xs font-bold uppercase tracking-[0.22em] text-secondary">Format</p>
+                    <p className="mt-3 font-serif text-3xl font-bold text-primary" data-testid="text-field-stat-tiers">4 Tiers</p>
+                    <p className="mt-2 text-sm leading-relaxed text-foreground/65">Seeding buckets for the roster page, not final Ryder Cup teams.</p>
+                  </div>
+                  <div className="rounded-2xl border border-border/70 bg-muted/40 p-5" data-testid="card-field-stat-guests">
+                    <p className="text-xs font-bold uppercase tracking-[0.22em] text-secondary">Trip Model</p>
+                    <p className="mt-3 font-serif text-3xl font-bold text-primary" data-testid="text-field-stat-guests">17 Total</p>
+                    <p className="mt-2 text-sm leading-relaxed text-foreground/65">Golfers plus spouses and guests for the full Scottsdale house setup.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col justify-between bg-[linear-gradient(180deg,rgba(13,61,110,0.03),rgba(13,61,110,0.07))] p-8 md:p-12">
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.24em] text-secondary" data-testid="text-home-players-side-kicker">Roster Snapshot</p>
+                  <div className="mt-5 space-y-4 rounded-[1.75rem] border border-primary/10 bg-white/80 p-6 shadow-sm">
+                    <div className="flex items-start justify-between gap-4 border-b border-border/60 pb-4">
+                      <div>
+                        <p className="text-sm font-bold uppercase tracking-[0.18em] text-foreground/55">Top Tier</p>
+                        <p className="mt-2 font-serif text-2xl font-bold text-primary" data-testid="text-field-top-tier">Alpha Flight</p>
+                      </div>
+                      <p className="rounded-full bg-primary px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-white" data-testid="status-field-seeding">Seeded Field</p>
+                    </div>
+                    <p className="text-base leading-relaxed text-foreground/72" data-testid="text-field-roster-summary">
+                      Every player now has a dedicated scouting profile, tier placement, and photo treatment so the field feels like a real event roster instead of a placeholder list.
+                    </p>
+                    <div className="grid gap-3 text-sm text-foreground/68">
+                      <div className="flex items-center justify-between rounded-xl bg-muted/55 px-4 py-3" data-testid="row-field-detail-player-profiles">
+                        <span className="font-medium">Player profiles</span>
+                        <span className="font-bold text-primary">Live now</span>
+                      </div>
+                      <div className="flex items-center justify-between rounded-xl bg-muted/55 px-4 py-3" data-testid="row-field-detail-tier-breakdown">
+                        <span className="font-medium">Tier breakdown</span>
+                        <span className="font-bold text-primary">A through D</span>
+                      </div>
+                      <div className="flex items-center justify-between rounded-xl bg-muted/55 px-4 py-3" data-testid="row-field-detail-team-selection">
+                        <span className="font-medium">Teams</span>
+                        <span className="font-bold text-primary">Announced later</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <Button asChild variant="outline" className="mt-8 h-14 w-full border-primary/15 bg-white/90 text-base font-bold uppercase tracking-widest text-primary shadow-sm transition-all hover:-translate-y-0.5 hover:bg-white" data-testid="button-view-all-players-top">
+                  <Link href="/players">View All Players</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
