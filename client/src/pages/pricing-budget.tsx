@@ -67,14 +67,14 @@ export default function PricingBudget() {
 
       <Tabs defaultValue="scenario-a" className="w-full">
         <TabsList className="grid w-full max-w-xs mx-auto grid-cols-1 mb-12 h-14 bg-muted/50 rounded-full p-1">
-          <TabsTrigger value="scenario-a" className="rounded-full px-5 text-center text-sm font-bold leading-tight data-[state=active]:bg-white data-[state=active]:text-primary data-[state=active]:shadow-md md:text-base">
-            Based on current headcount of 15 attendees
+          <TabsTrigger value="scenario-a" className="rounded-full text-base font-bold data-[state=active]:bg-white data-[state=active]:text-primary data-[state=active]:shadow-md">
+            Scenario A: 17 People
           </TabsTrigger>
         </TabsList>
 
         <TabsContent value="scenario-a" className="mt-0">
           <div className="text-center mb-10">
-            <h2 className="font-serif text-3xl font-bold text-primary mb-3">Based on current headcount of 15 attendees</h2>
+            <h2 className="font-serif text-3xl font-bold text-primary mb-3">17-Person Model</h2>
             <p className="text-muted-foreground text-lg uppercase tracking-widest font-medium">8 Golfers + Spouses/GF</p>
           </div>
 
@@ -155,7 +155,7 @@ export default function PricingBudget() {
               <div className="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-t-primary">
                 <div className="text-4xl font-bold text-primary mb-2">$1,700</div>
                 <div className="text-sm font-bold text-secondary uppercase tracking-widest mb-4">Stock-up Fund</div>
-                <p className="text-base text-foreground/70 leading-relaxed">$100/person for food, drinks, and shared house essentials (15 attendees).</p>
+                <p className="text-base text-foreground/70 leading-relaxed">$100/person for food, drinks, and shared house essentials (17 people).</p>
                 <p className="text-sm text-secondary font-bold mt-3">Due July 1</p>
                 <p className="text-xs text-muted-foreground mt-2">Per couple: $200 due July 1</p>
               </div>
@@ -175,8 +175,6 @@ export default function PricingBudget() {
                 <p className="text-sm font-bold uppercase tracking-[0.24em] text-secondary">Planning Finance</p>
                 <h4 className="mt-2 font-serif text-3xl font-bold text-primary">Payment Plan & Deadlines</h4>
                 <p className="mt-3 max-w-2xl text-lg leading-relaxed text-foreground/70">With the house officially booked, payments now go toward the confirmed rental and trip planning costs in a clean, predictable rhythm leading up to the trip.</p>
-                <p className="mt-3 text-sm font-medium text-primary/80" data-testid="text-payment-current-headcount">Current headcount: 15 confirmed attendees</p>
-                <p className="mt-2 max-w-2xl text-sm text-foreground/60" data-testid="text-pricing-stability-note">Pricing is structured to remain stable even if final headcount changes slightly.</p>
               </div>
             </div>
             <div className="rounded-2xl border border-secondary/15 bg-secondary/5 px-5 py-4 lg:min-w-[280px]">

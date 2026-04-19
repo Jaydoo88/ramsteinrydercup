@@ -97,7 +97,7 @@ export default function HouseRooming() {
           <p className="flex flex-wrap items-center gap-3 text-xl font-medium text-white/90">
             <span>$5,349.18 total (4 nights, all-in)</span>
             <span className="h-2 w-2 rounded-full bg-secondary"></span>
-            <span>15 confirmed guests</span>
+            <span>17 Guest Model</span>
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <Button asChild className="h-14 rounded-xl bg-secondary px-8 text-base font-bold uppercase tracking-widest text-secondary-foreground hover:bg-secondary/90" data-testid="button-view-rooms-hero">

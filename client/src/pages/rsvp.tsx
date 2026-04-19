@@ -147,7 +147,6 @@ export default function Rsvp() {
         <div className="mb-6 rounded-[1.5rem] border border-secondary/20 bg-secondary/10 px-6 py-5 text-center shadow-sm" data-testid="status-rsvp-house-confirmed">
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-secondary">House Status</p>
           <p className="mt-2 text-base text-foreground/75">The house is officially booked and confirmed. Submit your RSVP to lock in your spot and stay aligned with payment deadlines.</p>
-          <p className="mt-3 text-sm font-medium text-primary/80" data-testid="text-rsvp-current-headcount">Current confirmed headcount: 15 attendees (subject to change)</p>
         </div>
         <Card className="border-none shadow-2xl bg-white overflow-hidden rounded-[2rem] relative z-30 pointer-events-auto border border-border/50">
           <div className="h-3 bg-secondary w-full"></div>
