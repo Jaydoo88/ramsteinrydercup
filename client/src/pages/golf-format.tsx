@@ -171,8 +171,9 @@ export default function GolfFormat() {
               <AccordionContent className="text-base text-foreground/80 leading-relaxed pt-2 pb-6">
                 <ul className="list-disc pl-6 space-y-2">
                   <li>No repeat partners throughout the event.</li>
-                  <li>Tier Pairing Day forces AA / BB / CC pairings.</li>
-                  <li>Like-for-like matchups are prioritized.</li>
+                  <li>Pairings follow a tier-based rotation system: AB / CD (Day 1), AD / BC (Day 2), AC / BD (Day 3).</li>
+                  <li>Each team consists of one A, B, C, and D player to ensure balanced competition.</li>
+                  <li>Like-for-like matchups are maintained across opposing teams.</li>
                   <li>Any exceptions require approval from both captains and the Commissioner.</li>
                 </ul>
               </AccordionContent>
