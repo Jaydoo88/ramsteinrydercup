@@ -161,6 +161,7 @@ export default function GolfFormat() {
                   <li>36 points available per day.</li>
                   <li>108 total points for the tournament.</li>
                   <li>Hole scoring: 1 point for a win, 0.5 points for a tie, 0 points for a loss.</li>
+                  <li>Women’s Matches: 5 bonus points available per day, awarded to the men’s team aligned with the winning women’s team.</li>
                 </ul>
               </AccordionContent>
             </AccordionItem>
