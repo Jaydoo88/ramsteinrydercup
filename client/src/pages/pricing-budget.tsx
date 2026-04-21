@@ -153,9 +153,9 @@ export default function PricingBudget() {
                 <p className="text-base text-foreground/70 leading-relaxed">Transportation is not included in shared trip costs. Everyone will arrange their own rides. For planning, PHX to the rental is about 32 miles, and rideshare pricing varies by time/vehicle size. We also expect several vehicles on-site, which helps reduce rideshare needs.</p>
               </div>
               <div className="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-t-primary">
-                <div className="text-4xl font-bold text-primary mb-2">$1,700</div>
+                <div className="text-4xl font-bold text-primary mb-2">$1,500</div>
                 <div className="text-sm font-bold text-secondary uppercase tracking-widest mb-4">Stock-up Fund</div>
-                <p className="text-base text-foreground/70 leading-relaxed">$100/person for food, drinks, and shared house essentials (17 people).</p>
+                <p className="text-base text-foreground/70 leading-relaxed">$100/person for food, drinks, and shared house essentials (15 people).</p>
                 <p className="text-sm text-secondary font-bold mt-3">Due July 1</p>
                 <p className="text-xs text-muted-foreground mt-2">Per couple: $200 due July 1</p>
               </div>
