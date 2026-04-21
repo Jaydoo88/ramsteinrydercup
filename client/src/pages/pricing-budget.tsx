@@ -143,9 +143,9 @@ export default function PricingBudget() {
               <div className="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-t-primary">
                 <div className="text-4xl font-bold text-primary mb-2">$5,349.18</div>
                 <div className="text-sm font-bold text-secondary uppercase tracking-widest mb-4">House Total (All-In)</div>
-                <p className="text-base text-foreground/70 leading-relaxed">4 nights. Taxes and fees included. Shared across all attendees.</p>
-                <p className="text-sm text-secondary font-bold mt-3">Per person: $175 due today • $140 due Aug 15</p>
-                <p className="text-xs text-muted-foreground mt-2">Per couple: $350 due today • $280 due Aug 15</p>
+                <p className="text-base text-foreground/70 leading-relaxed">4 nights. Taxes, platform fee, and booking costs included. Shared across all attendees.</p>
+                <p className="text-sm text-secondary font-bold mt-3">Per person: $175 due today • $170 due Aug 15</p>
+                <p className="text-xs text-muted-foreground mt-2">Per couple: $350 due today • $340 due Aug 15</p>
               </div>
               <div className="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-t-primary">
                 <div className="text-3xl font-bold text-primary mb-2">Transportation</div>
@@ -200,11 +200,11 @@ export default function PricingBudget() {
                 <div className="flex items-start justify-between gap-4">
                   <div>
                     <p className="text-sm text-foreground/55">Due Aug 15</p>
-                    <p className="mt-1 text-lg font-semibold text-primary">$140 per person</p>
+                    <p className="mt-1 text-lg font-semibold text-primary">$170 per person</p>
                   </div>
                   <span className="text-sm text-foreground/55">Final house balance</span>
                 </div>
-                <p className="pt-2 text-sm text-muted-foreground">Per couple: $350 due today • $280 due Aug 15</p>
+                <p className="pt-2 text-sm text-muted-foreground">Per couple: $350 due today • $340 due Aug 15</p>
               </div>
             </div>
 
@@ -339,7 +339,7 @@ export default function PricingBudget() {
               <div className="relative xl:pr-4">
                 <div className="rounded-2xl border border-border/60 bg-white px-4 py-5 text-center shadow-sm">
                   <p className="text-sm text-muted-foreground">Aug 15</p>
-                  <p className="mt-2 text-lg font-semibold text-primary">House $140</p>
+                  <p className="mt-2 text-lg font-semibold text-primary">House $170</p>
                 </div>
                 <div className="pointer-events-none absolute right-[-0.9rem] top-1/2 hidden -translate-y-1/2 items-center justify-center xl:flex">
                   <ChevronRight className="h-5 w-5 text-primary/35" />
