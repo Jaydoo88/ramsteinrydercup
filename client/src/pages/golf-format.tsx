@@ -196,8 +196,9 @@ export default function GolfFormat() {
               <AccordionContent className="text-base text-foreground/80 leading-relaxed pt-2 pb-6">
                 <ul className="list-disc pl-6 space-y-2">
                   <li>Relief rules are controlled by the captains.</li>
-                  <li>Default rule (if active): B-tier plays as 3, C-tier plays as 5.</li>
-                  <li>OB is treated as a lateral hazard (pace procedure) unless changed by captains.</li>
+                  <li>No special relief rules for OB beyond pace-of-play procedures.</li>
+                  <li>Players may take relief within one club length (left, right, or back), no closer to the hole.</li>
+                  <li>OB is treated as a lateral drop for pace of play with a 2-stroke penalty.</li>
                 </ul>
               </AccordionContent>
             </AccordionItem>
