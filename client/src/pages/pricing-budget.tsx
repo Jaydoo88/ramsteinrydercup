@@ -68,13 +68,13 @@ export default function PricingBudget() {
       <Tabs defaultValue="scenario-a" className="w-full">
         <TabsList className="grid w-full max-w-xs mx-auto grid-cols-1 mb-12 h-14 bg-muted/50 rounded-full p-1">
           <TabsTrigger value="scenario-a" className="rounded-full text-base font-bold data-[state=active]:bg-white data-[state=active]:text-primary data-[state=active]:shadow-md">
-            Scenario A: 17 People
+            Scenario A: 15 People
           </TabsTrigger>
         </TabsList>
 
         <TabsContent value="scenario-a" className="mt-0">
           <div className="text-center mb-10">
-            <h2 className="font-serif text-3xl font-bold text-primary mb-3">17-Person Model</h2>
+            <h2 className="font-serif text-3xl font-bold text-primary mb-3">15-Person Model</h2>
             <p className="text-muted-foreground text-lg uppercase tracking-widest font-medium">8 Golfers + Spouses/GF</p>
           </div>
 
