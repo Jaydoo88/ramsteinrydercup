@@ -183,9 +183,10 @@ export default function GolfFormat() {
               <AccordionTrigger className="text-left font-bold text-lg text-primary">5) Scorekeeping & Match Cards</AccordionTrigger>
               <AccordionContent className="text-base text-foreground/80 leading-relaxed pt-2 pb-6">
                 <ul className="list-disc pl-6 space-y-2">
-                  <li>The opposing team keeps your score.</li>
+                  <li>Men’s matches: The opposing team keeps your score.</li>
+                  <li>Women’s matches (Day 1 & Day 2): Each women’s team will keep their own score.</li>
                   <li>Scores must be tracked hole-by-hole.</li>
-                  <li>Both teams must verify the final match card at the end of the round.</li>
+                  <li>All match cards must be verified at the end of the round.</li>
                 </ul>
               </AccordionContent>
             </AccordionItem>
