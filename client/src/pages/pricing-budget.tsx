@@ -29,7 +29,7 @@ export default function PricingBudget() {
         <div>
           <h4 className="font-bold text-xl mb-2 text-primary uppercase tracking-widest">Headcount Impact</h4>
           <p className="text-lg text-foreground/80 leading-relaxed">
-            We will have 8 committed golfers, and some golfers may bring a spouse/girlfriend. Total headcount changes the shared cost per person. More spouses/gf attending = lower shared cost per person. Fewer spouses/gf = higher shared cost per person. With the house officially confirmed, shared costs are now being collected against the booked rental while final per-person totals stay tied to final attendance.
+            We currently have 15 confirmed attendees, including 8 golfers and significant others. Shared costs are now based on this confirmed group size and are expected to remain stable.
           </p>
         </div>
       </div>
@@ -75,7 +75,7 @@ export default function PricingBudget() {
         <TabsContent value="scenario-a" className="mt-0">
           <div className="text-center mb-10">
             <h2 className="font-serif text-3xl font-bold text-primary mb-3">15-Person Model</h2>
-            <p className="text-muted-foreground text-lg uppercase tracking-widest font-medium">8 Golfers + Spouses/GF</p>
+            <p className="text-muted-foreground text-lg uppercase tracking-widest font-medium">8 Golfers + Significant Others</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
@@ -88,22 +88,22 @@ export default function PricingBudget() {
                   The Competitors
                 </div>
                 <h3 className="font-serif text-4xl font-bold mb-4">Golfer Tier</h3>
-                <div className="text-6xl font-bold text-secondary mb-10">$814.66</div>
+                <div className="text-6xl font-bold text-secondary mb-10">$830</div>
                 <ul className="space-y-4 font-medium text-lg">
                   <li className="flex justify-between border-b border-primary-foreground/20 pb-4">
-                    <span className="text-white/80">Shared Costs</span> <span className="font-bold">$414.66</span>
+                    <span className="text-white/80">Shared Costs</span> <span className="font-bold">$430</span>
                   </li>
                   <li className="flex justify-between border-b border-primary-foreground/20 pb-4">
-                    <span className="text-white/80">Estimated Golf (Separate)</span> <span className="font-bold">$400.00</span>
+                    <span className="text-white/80">Estimated Golf (Separate)</span> <span className="font-bold">$400</span>
                   </li>
                   <li className="flex justify-between text-secondary pt-2 font-bold text-xl">
-                    <span>Total Estimate</span> <span>$814.66</span>
+                    <span>Total Estimate</span> <span>$830</span>
                   </li>
                 </ul>
                 <div className="mt-6 space-y-2 text-sm font-medium text-white/75">
-                  <p>Est. Shared: ~$104 per person / night (4 nights)</p>
+                  <p>Est. Shared: ~$108 per person / night (4 nights)</p>
                   <p className="text-xs text-white/60">Includes house + stock-up fund</p>
-                  <p className="text-xs text-white/60">Golf estimate reflects 3 days of golf</p>
+                  <p className="text-xs text-white/60">Golf estimate reflects 2 days of competition golf</p>
                 </div>
               </CardContent>
             </Card>
@@ -114,17 +114,17 @@ export default function PricingBudget() {
                   The Gallery
                 </div>
                 <h3 className="font-serif text-4xl font-bold text-primary mb-4">Guest Tier</h3>
-                <div className="text-6xl font-bold text-primary mb-10">$414.66</div>
+                <div className="text-6xl font-bold text-primary mb-10">$430</div>
                 <ul className="space-y-4 font-medium text-lg text-foreground/80">
                   <li className="flex justify-between border-b border-border pb-4">
-                    <span>Shared Costs</span> <span className="text-primary font-bold">$414.66</span>
+                    <span>Shared Costs</span> <span className="text-primary font-bold">$430</span>
                   </li>
                   <li className="flex justify-between text-secondary pt-2 font-bold text-xl">
                     <span>Golf</span> <span>Not Included</span>
                   </li>
                 </ul>
                 <div className="mt-6 space-y-2 text-sm font-medium text-foreground/60">
-                  <p>Est. Shared: ~$104 per person / night (4 nights)</p>
+                  <p>Est. Shared: ~$108 per person / night (4 nights)</p>
                   <p className="text-xs text-foreground/50">Includes house + stock-up fund only</p>
                 </div>
               </CardContent>
@@ -138,14 +138,14 @@ export default function PricingBudget() {
               </div>
               <h3 className="font-serif text-3xl font-bold text-primary">Shared Cost Breakdown</h3>
             </div>
-            <p className="mb-10 text-lg text-foreground/70">Shared total: $7,049.18 • $414.66 per person • ~$104 per person / night</p>
+            <p className="mb-10 text-lg text-foreground/70">Shared total: $6,433.76 • ~$430 per person • ~$108 per person / night</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-t-primary">
-                <div className="text-4xl font-bold text-primary mb-2">$5,349.18</div>
+                <div className="text-4xl font-bold text-primary mb-2">$4,933.76</div>
                 <div className="text-sm font-bold text-secondary uppercase tracking-widest mb-4">House Total (All-In)</div>
                 <p className="text-base text-foreground/70 leading-relaxed">4 nights. Taxes, platform fee, and booking costs included. Shared across all attendees.</p>
-                <p className="text-sm text-secondary font-bold mt-3">Per person: $175 due today • $170 due Aug 15</p>
-                <p className="text-xs text-muted-foreground mt-2">Per couple: $350 due today • $340 due Aug 15</p>
+                <p className="text-sm text-secondary font-bold mt-3">Per person: $175 paid • $155 due Aug 15</p>
+                <p className="text-xs text-muted-foreground mt-2">Per couple: $350 paid • $310 due Aug 15</p>
               </div>
               <div className="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-t-primary">
                 <div className="text-3xl font-bold text-primary mb-2">Transportation</div>
@@ -174,7 +174,7 @@ export default function PricingBudget() {
               <div>
                 <p className="text-sm font-bold uppercase tracking-[0.24em] text-secondary">Planning Finance</p>
                 <h4 className="mt-2 font-serif text-3xl font-bold text-primary">Payment Plan & Deadlines</h4>
-                <p className="mt-3 max-w-2xl text-lg leading-relaxed text-foreground/70">With the house officially booked, payments now go toward the confirmed rental and trip planning costs in a clean, predictable rhythm leading up to the trip.</p>
+                <p className="mt-3 max-w-2xl text-lg leading-relaxed text-foreground/70">With the house officially booked, payments now go toward the confirmed rental and shared trip costs in a clear, predictable timeline.</p>
               </div>
             </div>
             <div className="rounded-2xl border border-secondary/15 bg-secondary/5 px-5 py-4 lg:min-w-[280px]">
@@ -192,19 +192,19 @@ export default function PricingBudget() {
               <div className="mt-5 space-y-4">
                 <div className="flex items-start justify-between gap-4 border-b border-border/60 pb-4">
                   <div>
-                    <p className="text-sm text-foreground/55">Due today</p>
+                    <p className="text-sm text-foreground/55">Paid</p>
                     <p className="mt-1 text-lg font-semibold text-primary">$175 per person</p>
                   </div>
-                  <span className="rounded-full bg-primary/5 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">Locks spot</span>
+                  <span className="rounded-full bg-primary/5 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">Secures your spot</span>
                 </div>
                 <div className="flex items-start justify-between gap-4">
                   <div>
                     <p className="text-sm text-foreground/55">Due Aug 15</p>
-                    <p className="mt-1 text-lg font-semibold text-primary">$170 per person</p>
+                    <p className="mt-1 text-lg font-semibold text-primary">$155 per person</p>
                   </div>
                   <span className="text-sm text-foreground/55">Final house balance</span>
                 </div>
-                <p className="pt-2 text-sm text-muted-foreground">Per couple: $350 due today • $340 due Aug 15</p>
+                <p className="pt-2 text-sm text-muted-foreground">Per couple: $350 paid • $310 due Aug 15</p>
               </div>
             </div>
 
@@ -216,19 +216,17 @@ export default function PricingBudget() {
                     <p className="text-sm text-foreground/55">Due June 17</p>
                     <p className="mt-1 text-lg font-semibold text-primary">$100 per golfer</p>
                   </div>
-                  <span className="text-sm text-foreground/55">Estimated</span>
                 </div>
                 <div className="flex items-start justify-between gap-4 border-b border-border/60 pb-4">
                   <div>
                     <p className="text-sm text-foreground/55">Due July 17</p>
                     <p className="mt-1 text-lg font-semibold text-primary">$100 per golfer</p>
                   </div>
-                  <span className="text-sm text-foreground/55">Estimated</span>
                 </div>
                 <div>
                   <p className="text-sm text-foreground/55">Due Aug 17</p>
-                  <p className="mt-1 text-lg font-semibold text-primary">Remaining golf balance</p>
-                  <p className="mt-2 text-sm text-muted-foreground">Final pricing may adjust slightly based on course rates.</p>
+                  <p className="mt-1 text-lg font-semibold text-primary">Remaining balance</p>
+                  <p className="mt-2 text-sm text-muted-foreground">Final pricing will be confirmed once course rates are released (~90 days prior to the event)</p>
                 </div>
               </div>
             </div>
@@ -241,11 +239,10 @@ export default function PricingBudget() {
                     <p className="text-sm text-foreground/55">Amount</p>
                     <p className="mt-1 text-lg font-semibold text-primary">$100 per person</p>
                   </div>
-                  <span className="text-sm text-foreground/55">Food + drinks</span>
                 </div>
                 <div>
                   <p className="text-sm text-foreground/55">Due July 1</p>
-                  <p className="mt-1 text-lg font-semibold text-primary">House essentials fund</p>
+                  <p className="mt-1 text-lg font-semibold text-primary">Covers food, drinks, and shared house essentials</p>
                   <p className="mt-2 text-sm text-muted-foreground">Per couple: $200 due July 1</p>
                 </div>
               </div>
@@ -289,10 +286,9 @@ export default function PricingBudget() {
               </div>
             </div>
             <div className="mt-5 grid grid-cols-1 gap-3 md:grid-cols-2">
-              <div className="rounded-2xl bg-white/80 px-4 py-4 text-sm text-foreground/75 ring-1 ring-border/60">Your spot is not confirmed until your first payment is received.</div>
-              <div className="rounded-2xl bg-white/80 px-4 py-4 text-sm text-foreground/75 ring-1 ring-border/60">Payments are non-refundable because the house is officially booked and trip costs are being collected against the confirmed rental.</div>
-              <div className="rounded-2xl bg-white/80 px-4 py-4 text-sm text-foreground/75 ring-1 ring-border/60">Once committed, you are responsible for your share unless a replacement is found.</div>
-              <div className="rounded-2xl bg-white/80 px-4 py-4 text-sm text-foreground/75 ring-1 ring-border/60">Final costs may adjust slightly based on attendance and final golf bookings.</div>
+              <div className="rounded-2xl bg-white/80 px-4 py-4 text-sm text-foreground/75 ring-1 ring-border/60">Your spot is confirmed once your first payment is received.</div>
+              <div className="rounded-2xl bg-white/80 px-4 py-4 text-sm text-foreground/75 ring-1 ring-border/60">Payments are non-refundable as the house is booked and costs are committed.</div>
+              <div className="rounded-2xl bg-white/80 px-4 py-4 text-sm text-foreground/75 ring-1 ring-border/60">Final costs are based on 15 confirmed attendees and are expected to remain stable.</div>
             </div>
           </div>
 
@@ -339,7 +335,7 @@ export default function PricingBudget() {
               <div className="relative xl:pr-4">
                 <div className="rounded-2xl border border-border/60 bg-white px-4 py-5 text-center shadow-sm">
                   <p className="text-sm text-muted-foreground">Aug 15</p>
-                  <p className="mt-2 text-lg font-semibold text-primary">House $170</p>
+                  <p className="mt-2 text-lg font-semibold text-primary">House $155</p>
                 </div>
                 <div className="pointer-events-none absolute right-[-0.9rem] top-1/2 hidden -translate-y-1/2 items-center justify-center xl:flex">
                   <ChevronRight className="h-5 w-5 text-primary/35" />
@@ -347,7 +343,7 @@ export default function PricingBudget() {
               </div>
               <div className="rounded-2xl border border-border/60 bg-white px-4 py-5 text-center shadow-sm">
                 <p className="text-sm text-muted-foreground">Aug 17</p>
-                <p className="mt-2 text-lg font-semibold text-primary">Final Golf Balance</p>
+                <p className="mt-2 text-lg font-semibold text-primary">Remaining Balance</p>
               </div>
             </div>
           </div>
