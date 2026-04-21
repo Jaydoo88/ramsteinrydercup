@@ -145,9 +145,9 @@ export default function GolfFormat() {
               <AccordionTrigger className="text-left font-bold text-lg text-primary">2) Match Formats by Day</AccordionTrigger>
               <AccordionContent className="text-base text-foreground/80 leading-relaxed pt-2 pb-6">
                 <ul className="list-disc pl-6 space-y-2">
-                  <li>Day 1: Scramble.</li>
-                  <li>Day 2: Alternate Shot (with odd/even tee rule).</li>
-                  <li>Day 3: Best Ball.</li>
+                  <li>Day 1: 2-Man Scramble (Team Matches).</li>
+                  <li>Day 2: 2-Man Scramble (Team Matches).</li>
+                  <li>Day 3: Couples Scramble (Final Day Format).</li>
                 </ul>
               </AccordionContent>
             </AccordionItem>
