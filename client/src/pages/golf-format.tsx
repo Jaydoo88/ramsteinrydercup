@@ -135,6 +135,7 @@ export default function GolfFormat() {
               <AccordionContent className="text-base text-foreground/80 leading-relaxed pt-2 pb-6">
                 <ul className="list-disc pl-6 space-y-2">
                   <li>Two teams of 4 golfers, with a 1A, 1B, 1C, and 1D player on each team.</li>
+                  <li>Two women’s teams of 3 golfers, (Team A and Team B) will also be drafted for the event.</li>
                   <li>Commissioner assigns 1A / 1B / 1C / 1D tiers prior to the event.</li>
                   <li>Draft takes place on Welcome Day.</li>
                 </ul>
