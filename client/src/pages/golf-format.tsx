@@ -158,10 +158,12 @@ export default function GolfFormat() {
               <AccordionContent className="text-base text-foreground/80 leading-relaxed pt-2 pb-6">
                 <ul className="list-disc pl-6 space-y-2">
                   <li>18 points available per match.</li>
-                  <li>36 points available per day.</li>
-                  <li>108 total points for the tournament.</li>
+                  <li>Day 1: 2 matches, 36 points total.</li>
+                  <li>Day 2: 2 matches, 36 points total.</li>
+                  <li>Day 3: 3 matches, 54 points total.</li>
+                  <li>126 total competition points for the tournament.</li>
                   <li>Hole scoring: 1 point for a win, 0.5 points for a tie, 0 points for a loss.</li>
-                  <li>Women’s Matches: 5 bonus points available per day, awarded to the men’s team aligned with the winning women’s team.</li>
+                  <li>Women’s matches: 5 bonus points available per day on Day 1 and Day 2, awarded to the men’s team aligned with the winning women’s team.</li>
                 </ul>
               </AccordionContent>
             </AccordionItem>
