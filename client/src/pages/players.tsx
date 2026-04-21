@@ -4,7 +4,7 @@ import jasonDousharmImage from "@assets/1665088037422_1776551209099.jpg";
 import mikeParsonsImage from "@assets/image_1776551520237.png";
 import mikeGibbonsImage from "@assets/image_1776551618225.png";
 import robbyFullerImage from "@assets/654214334_10242588166511341_589448361213285726_n_1776624936484.jpg";
-import darrelJohnsonImage from "@assets/image_1776551693096.png";
+import darrelJohnsonImage from "@assets/image_1776790509801.png";
 import darrenJohnsonImage from "@assets/image_1776551781812.png";
 import allenParsonsImage from "@assets/image_1776551567816.png";
 import johnGreggImage from "@assets/image_1776551593611.png";
