@@ -10,6 +10,7 @@ import allenParsonsImage from "@assets/image_1776551567816.png";
 import johnGreggImage from "@assets/image_1776551593611.png";
 import erinBergerImage from "@assets/d2774c1a-31e8-455c-be3a-c16e38940ff0_1781902944119.png";
 import hayleyPedersenImage from "@assets/516680189_30778336861751597_10175905133059248_n_1781902787067.jpg";
+import izzyHochnerImage from "@assets/35742230_1732422556834572_369511528421916672_n_1781903286258.jpg";
 import jennyMasonImage from "@assets/7161c949-8120-4da9-9bde-d68477dc6329_1781902673901.png";
 import playersHeroGolfImage from "@/assets/images/players-hero-golf.png";
 
@@ -152,7 +153,7 @@ const LADIES_TEAMS = [
     players: [
       { name: "Gretchen Gambill" },
       { name: "Jenny Mason", image: jennyMasonImage, imageClassName: "object-[center_20%]" },
-      { name: "Izzy Hochner" },
+      { name: "Izzy Hochner", image: izzyHochnerImage, imageClassName: "object-[center_16%]" },
     ],
   },
 ];
