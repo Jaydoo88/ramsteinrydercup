@@ -9,6 +9,7 @@ import darrenJohnsonImage from "@assets/d6ad562a-1a0e-4821-9432-33da97d8ba88_178
 import allenParsonsImage from "@assets/image_1776551567816.png";
 import johnGreggImage from "@assets/image_1776551593611.png";
 import erinBergerImage from "@assets/d2774c1a-31e8-455c-be3a-c16e38940ff0_1781902944119.png";
+import gretchenGambillImage from "@assets/709d2ac4-81da-4517-9986-0721a61ff40b_1781903635578.png";
 import hayleyPedersenImage from "@assets/516680189_30778336861751597_10175905133059248_n_1781902787067.jpg";
 import izzyHochnerImage from "@assets/35742230_1732422556834572_369511528421916672_n_1781903286258.jpg";
 import jennyMasonImage from "@assets/7161c949-8120-4da9-9bde-d68477dc6329_1781902673901.png";
@@ -152,7 +153,7 @@ const LADIES_TEAMS = [
     surface: "border-violet-200/70 bg-[linear-gradient(180deg,rgba(245,243,255,0.96),rgba(255,255,255,0.92))]",
     glow: "shadow-[0_24px_80px_-30px_rgba(139,92,246,0.35)]",
     players: [
-      { name: "Gretchen Gambill" },
+      { name: "Gretchen Gambill", image: gretchenGambillImage, imageClassName: "object-[center_18%]" },
       { name: "Jenny Mason", image: jennyMasonImage, imageClassName: "object-[center_20%]" },
       { name: "Izzy Hochner", image: izzyHochnerImage, imageClassName: "object-[center_16%]" },
     ],
