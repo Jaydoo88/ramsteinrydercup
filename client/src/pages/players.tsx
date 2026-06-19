@@ -8,6 +8,7 @@ import darrelJohnsonImage from "@assets/image_1776790509801.png";
 import darrenJohnsonImage from "@assets/image_1776551781812.png";
 import allenParsonsImage from "@assets/image_1776551567816.png";
 import johnGreggImage from "@assets/image_1776551593611.png";
+import hayleyPedersenImage from "@assets/516680189_30778336861751597_10175905133059248_n_1781902787067.jpg";
 import jennyMasonImage from "@assets/7161c949-8120-4da9-9bde-d68477dc6329_1781902673901.png";
 import playersHeroGolfImage from "@/assets/images/players-hero-golf.png";
 
@@ -134,7 +135,7 @@ const LADIES_TEAMS = [
     surface: "border-rose-200/70 bg-[linear-gradient(180deg,rgba(255,241,242,0.96),rgba(255,255,255,0.92))]",
     glow: "shadow-[0_24px_80px_-30px_rgba(244,114,182,0.35)]",
     players: [
-      { name: "Hayley Pedersen" },
+      { name: "Hayley Pedersen", image: hayleyPedersenImage, imageClassName: "object-[center_24%]" },
       { name: "Erin Berger" },
       { name: "Melissa Parsons" },
     ],
