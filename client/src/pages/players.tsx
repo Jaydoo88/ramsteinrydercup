@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Flame, Shield, Swords, Trophy } from "lucide-react";
+import { Flame, Shield, Swords, Trophy, UserRound } from "lucide-react";
 import jasonDousharmImage from "@assets/1665088037422_1776551209099.jpg";
 import mikeParsonsImage from "@assets/image_1776551520237.png";
 import mikeGibbonsImage from "@assets/image_1776551618225.png";
@@ -120,6 +120,29 @@ const PLAYER_TIERS = [
         image: allenParsonsImage,
       },
     ],
+  },
+];
+
+const LADIES_TEAMS = [
+  {
+    name: "Team Pink",
+    subtitle: "3 Golfers",
+    label: "TEAM PINK",
+    badge: "TP",
+    accent: "from-rose-400 via-pink-300 to-fuchsia-400",
+    surface: "border-rose-200/70 bg-[linear-gradient(180deg,rgba(255,241,242,0.96),rgba(255,255,255,0.92))]",
+    glow: "shadow-[0_24px_80px_-30px_rgba(244,114,182,0.35)]",
+    players: ["Hayley Pedersen", "Erin Berger", "Melissa Parsons"],
+  },
+  {
+    name: "Team Purple",
+    subtitle: "3 Golfers",
+    label: "TEAM PURPLE",
+    badge: "TP",
+    accent: "from-violet-500 via-purple-400 to-fuchsia-500",
+    surface: "border-violet-200/70 bg-[linear-gradient(180deg,rgba(245,243,255,0.96),rgba(255,255,255,0.92))]",
+    glow: "shadow-[0_24px_80px_-30px_rgba(139,92,246,0.35)]",
+    players: ["Gretchen Gambill", "Jenny Mason", "Izzy Hochner"],
   },
 ];
 
@@ -285,6 +308,93 @@ export default function Players() {
               </div>
             );
           })}
+        </div>
+
+        <div className="mt-16 border-t border-primary/10 pt-16 md:pt-20">
+          <div className="mb-10">
+            <h2 className="font-serif text-3xl font-bold text-primary md:text-5xl" data-testid="text-ladies-teams-heading">
+              Ladies Teams
+            </h2>
+          </div>
+
+          <div className="space-y-8 md:space-y-10">
+            {LADIES_TEAMS.map((team) => (
+              <div
+                key={team.name}
+                className={`group relative overflow-hidden rounded-[2rem] border ${team.surface} ${team.glow}`}
+                data-testid={`section-ladies-team-${getPlayerSlug(team.name)}`}
+              >
+                <div className={`absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r ${team.accent}`} />
+                <div className="absolute right-0 top-0 hidden h-48 w-48 translate-x-10 -translate-y-10 rounded-full bg-white/45 blur-3xl md:block" />
+
+                <div className="relative p-5 md:p-7 lg:p-8">
+                  <div className="mb-5 rounded-[1.6rem] border border-white/55 bg-white/72 px-5 py-4 backdrop-blur-sm md:px-6 md:py-5">
+                    <div className="flex items-center justify-between gap-4">
+                      <div>
+                        <h3 className="font-serif text-3xl font-bold text-primary md:text-[2.05rem]" data-testid={`text-ladies-team-name-${getPlayerSlug(team.name)}`}>
+                          {team.name}
+                        </h3>
+                        <p className="mt-2 text-sm font-semibold uppercase tracking-[0.22em] text-secondary" data-testid={`text-ladies-team-subtitle-${getPlayerSlug(team.name)}`}>
+                          {team.subtitle}
+                        </p>
+                      </div>
+                      <div className={`hidden rounded-2xl bg-gradient-to-br ${team.accent} px-4 py-2 text-sm font-bold uppercase tracking-[0.18em] text-white shadow-sm md:block`}>
+                        {team.badge}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+                    {team.players.map((playerName) => {
+                      const playerSlug = getPlayerSlug(playerName);
+
+                      return (
+                        <Card
+                          key={playerName}
+                          className="overflow-hidden rounded-[1.5rem] border border-white/65 bg-white/90 shadow-[0_20px_50px_-35px_rgba(15,23,42,0.45)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/20 hover:shadow-[0_28px_70px_-35px_rgba(13,61,110,0.35)]"
+                          data-testid={`card-ladies-player-${playerSlug}`}
+                        >
+                          <CardContent className="relative p-0">
+                            <div className={`h-1.5 w-full bg-gradient-to-r ${team.accent}`} />
+
+                            <div
+                              className={`relative aspect-square overflow-hidden bg-gradient-to-br ${team.accent}`}
+                              data-testid={`img-ladies-player-placeholder-${playerSlug}`}
+                            >
+                              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.34),transparent_42%),linear-gradient(180deg,rgba(255,255,255,0.12),rgba(8,20,35,0.18))]" />
+                              <div className="relative flex h-full items-center justify-center">
+                                <div className="flex h-28 w-28 items-center justify-center rounded-full border border-white/40 bg-white/16 shadow-[0_20px_50px_-25px_rgba(15,23,42,0.55)] backdrop-blur-sm md:h-32 md:w-32">
+                                  <UserRound className="h-14 w-14 text-white/92 md:h-16 md:w-16" />
+                                </div>
+                              </div>
+                              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#081423]/88 via-[#081423]/28 to-transparent" />
+                            </div>
+
+                            <div className="flex min-h-[118px] flex-col justify-start p-4 md:min-h-[126px] md:p-5">
+                              <div className="flex items-start justify-between gap-3">
+                                <div>
+                                  <p className="text-[10px] font-bold uppercase tracking-[0.22em] leading-[1.55] text-secondary">
+                                    <span className="block">Ramstein Ryder Cup •</span>
+                                    <span className="block">{team.label}</span>
+                                  </p>
+                                  <h4 className="mt-2 font-serif text-[1.5rem] font-bold leading-none tracking-tight text-primary md:text-[1.68rem]" data-testid={`text-ladies-player-${playerSlug}`}>
+                                    {playerName}
+                                  </h4>
+                                </div>
+                                <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${team.accent} text-sm font-bold text-white shadow-sm`}>
+                                  {team.badge}
+                                </div>
+                              </div>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </div>
