@@ -5,7 +5,7 @@ import mikeParsonsImage from "@assets/image_1776551520237.png";
 import mikeGibbonsImage from "@assets/image_1776551618225.png";
 import robbyFullerImage from "@assets/654214334_10242588166511341_589448361213285726_n_1776624936484.jpg";
 import darrelJohnsonImage from "@assets/image_1776790509801.png";
-import darrenJohnsonImage from "@assets/image_1776551781812.png";
+import darrenJohnsonImage from "@assets/d6ad562a-1a0e-4821-9432-33da97d8ba88_1781903108064.png";
 import allenParsonsImage from "@assets/image_1776551567816.png";
 import johnGreggImage from "@assets/image_1776551593611.png";
 import erinBergerImage from "@assets/d2774c1a-31e8-455c-be3a-c16e38940ff0_1781902944119.png";
@@ -93,7 +93,7 @@ const PLAYER_TIERS = [
       {
         name: "Darren Johnson",
         image: darrenJohnsonImage,
-        imageClassName: "object-[center_18%]",
+        imageClassName: "object-[center_12%]",
       },
     ],
   },
