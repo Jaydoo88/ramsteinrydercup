@@ -12,6 +12,7 @@ import erinBergerImage from "@assets/d2774c1a-31e8-455c-be3a-c16e38940ff0_178190
 import hayleyPedersenImage from "@assets/516680189_30778336861751597_10175905133059248_n_1781902787067.jpg";
 import izzyHochnerImage from "@assets/35742230_1732422556834572_369511528421916672_n_1781903286258.jpg";
 import jennyMasonImage from "@assets/7161c949-8120-4da9-9bde-d68477dc6329_1781902673901.png";
+import melissaParsonsImage from "@assets/dbfc5745-7e00-493c-a83d-da3172e7e7e2_1781903347166.png";
 import playersHeroGolfImage from "@/assets/images/players-hero-golf.png";
 
 const PLAYER_TIERS = [
@@ -139,7 +140,7 @@ const LADIES_TEAMS = [
     players: [
       { name: "Hayley Pedersen", image: hayleyPedersenImage, imageClassName: "object-[center_24%]" },
       { name: "Erin Berger", image: erinBergerImage, imageClassName: "object-[center_18%]" },
-      { name: "Melissa Parsons" },
+      { name: "Melissa Parsons", image: melissaParsonsImage, imageClassName: "object-[center_18%]" },
     ],
   },
   {
