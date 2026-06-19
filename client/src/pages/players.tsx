@@ -8,6 +8,7 @@ import darrelJohnsonImage from "@assets/image_1776790509801.png";
 import darrenJohnsonImage from "@assets/image_1776551781812.png";
 import allenParsonsImage from "@assets/image_1776551567816.png";
 import johnGreggImage from "@assets/image_1776551593611.png";
+import jennyMasonImage from "@assets/7161c949-8120-4da9-9bde-d68477dc6329_1781902673901.png";
 import playersHeroGolfImage from "@/assets/images/players-hero-golf.png";
 
 const PLAYER_TIERS = [
@@ -132,7 +133,11 @@ const LADIES_TEAMS = [
     accent: "from-rose-400 via-pink-300 to-fuchsia-400",
     surface: "border-rose-200/70 bg-[linear-gradient(180deg,rgba(255,241,242,0.96),rgba(255,255,255,0.92))]",
     glow: "shadow-[0_24px_80px_-30px_rgba(244,114,182,0.35)]",
-    players: ["Hayley Pedersen", "Erin Berger", "Melissa Parsons"],
+    players: [
+      { name: "Hayley Pedersen" },
+      { name: "Erin Berger" },
+      { name: "Melissa Parsons" },
+    ],
   },
   {
     name: "Team Purple",
@@ -142,7 +147,11 @@ const LADIES_TEAMS = [
     accent: "from-violet-500 via-purple-400 to-fuchsia-500",
     surface: "border-violet-200/70 bg-[linear-gradient(180deg,rgba(245,243,255,0.96),rgba(255,255,255,0.92))]",
     glow: "shadow-[0_24px_80px_-30px_rgba(139,92,246,0.35)]",
-    players: ["Gretchen Gambill", "Jenny Mason", "Izzy Hochner"],
+    players: [
+      { name: "Gretchen Gambill" },
+      { name: "Jenny Mason", image: jennyMasonImage, imageClassName: "object-[center_20%]" },
+      { name: "Izzy Hochner" },
+    ],
   },
 ];
 
@@ -345,28 +354,39 @@ export default function Players() {
                   </div>
 
                   <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-                    {team.players.map((playerName) => {
-                      const playerSlug = getPlayerSlug(playerName);
+                    {team.players.map((player) => {
+                      const playerSlug = getPlayerSlug(player.name);
 
                       return (
                         <Card
-                          key={playerName}
+                          key={player.name}
                           className="overflow-hidden rounded-[1.5rem] border border-white/65 bg-white/90 shadow-[0_20px_50px_-35px_rgba(15,23,42,0.45)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/20 hover:shadow-[0_28px_70px_-35px_rgba(13,61,110,0.35)]"
                           data-testid={`card-ladies-player-${playerSlug}`}
                         >
                           <CardContent className="relative p-0">
                             <div className={`h-1.5 w-full bg-gradient-to-r ${team.accent}`} />
 
-                            <div
-                              className={`relative aspect-square overflow-hidden bg-gradient-to-br ${team.accent}`}
-                              data-testid={`img-ladies-player-placeholder-${playerSlug}`}
-                            >
-                              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.34),transparent_42%),linear-gradient(180deg,rgba(255,255,255,0.12),rgba(8,20,35,0.18))]" />
-                              <div className="relative flex h-full items-center justify-center">
-                                <div className="flex h-28 w-28 items-center justify-center rounded-full border border-white/40 bg-white/16 shadow-[0_20px_50px_-25px_rgba(15,23,42,0.55)] backdrop-blur-sm md:h-32 md:w-32">
-                                  <UserRound className="h-14 w-14 text-white/92 md:h-16 md:w-16" />
+                            <div className={`relative aspect-square overflow-hidden bg-gradient-to-br ${team.accent}`}>
+                              {player.image ? (
+                                <img
+                                  src={player.image}
+                                  alt={player.name}
+                                  className={`h-full w-full object-cover ${player.imageClassName ?? "object-center"}`}
+                                  data-testid={`img-ladies-player-${playerSlug}`}
+                                />
+                              ) : (
+                                <div
+                                  className={`relative h-full w-full bg-gradient-to-br ${team.accent}`}
+                                  data-testid={`img-ladies-player-placeholder-${playerSlug}`}
+                                >
+                                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.34),transparent_42%),linear-gradient(180deg,rgba(255,255,255,0.12),rgba(8,20,35,0.18))]" />
+                                  <div className="relative flex h-full items-center justify-center">
+                                    <div className="flex h-28 w-28 items-center justify-center rounded-full border border-white/40 bg-white/16 shadow-[0_20px_50px_-25px_rgba(15,23,42,0.55)] backdrop-blur-sm md:h-32 md:w-32">
+                                      <UserRound className="h-14 w-14 text-white/92 md:h-16 md:w-16" />
+                                    </div>
+                                  </div>
                                 </div>
-                              </div>
+                              )}
                               <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#081423]/88 via-[#081423]/28 to-transparent" />
                             </div>
 
@@ -378,7 +398,7 @@ export default function Players() {
                                     <span className="block">{team.label}</span>
                                   </p>
                                   <h4 className="mt-2 font-serif text-[1.5rem] font-bold leading-none tracking-tight text-primary md:text-[1.68rem]" data-testid={`text-ladies-player-${playerSlug}`}>
-                                    {playerName}
+                                    {player.name}
                                   </h4>
                                 </div>
                                 <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${team.accent} text-sm font-bold text-white shadow-sm`}>
