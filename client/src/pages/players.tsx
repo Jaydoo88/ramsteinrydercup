@@ -935,7 +935,7 @@ export default function Players() {
       </section>
 
       <Dialog open={selectedPlayer !== null} onOpenChange={(open) => !open && setSelectedPlayer(null)}>
-        <DialogContent className="max-h-[92vh] max-w-[850px] overflow-y-auto border-none bg-transparent p-0 shadow-none">
+        <DialogContent className="player-modal-scroll max-h-[92vh] max-w-[850px] overflow-y-auto border-none bg-transparent p-0 shadow-none">
           {selectedPlayer ? (
             <div
               className={`max-h-[88vh] overflow-hidden rounded-[22px] border bg-white shadow-[0_35px_100px_-40px_rgba(15,23,42,0.45)] md:max-h-[80vh] ${
@@ -1013,9 +1013,17 @@ export default function Players() {
                     ) : null}
                   </div>
                   <div className="relative z-[2] mt-6 rounded-[1.35rem] border border-primary/8 bg-[linear-gradient(180deg,rgba(247,244,239,0.78),rgba(255,255,255,0.96))] p-[22px]">
-                    <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-secondary" data-testid="text-selected-player-bio-heading">
-                      Bio
-                    </p>
+                    <div className="flex items-start justify-between gap-4">
+                      <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-secondary" data-testid="text-selected-player-bio-heading">
+                        Bio
+                      </p>
+                      <div className="flex items-center gap-2 md:hidden" data-testid="status-selected-player-bio-scroll-hint">
+                        <span className="text-[10px] font-bold uppercase tracking-[0.26em] text-[#4d6e98]">Scroll</span>
+                        <div className="flex h-12 w-[10px] items-start rounded-full bg-[#dbe4ef] p-[2px] shadow-inner">
+                          <div className="h-5 w-full rounded-full bg-[linear-gradient(180deg,#0B84FF,#0B3D91)]" />
+                        </div>
+                      </div>
+                    </div>
                     <div
                       className="mt-4 space-y-4 text-[15px] leading-[1.6] text-foreground/78 md:player-bio-scroll md:max-h-[260px] md:overflow-y-scroll md:overscroll-contain md:pr-3"
                       data-testid="text-selected-player-bio"
