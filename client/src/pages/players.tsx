@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { Trophy, UserRound } from "lucide-react";
+import { ChevronDown, ChevronUp, Trophy, UserRound, X } from "lucide-react";
 import { useState } from "react";
 import jasonDousharmImage from "@assets/1665088037422_1776551209099.jpg";
 import mikeParsonsImage from "@assets/image_1776551520237.png";
@@ -303,6 +303,7 @@ function getSelectedPlayerDetails(name: string): Omit<SelectedPlayer, "name"> | 
 
 export default function Players() {
   const [selectedPlayer, setSelectedPlayer] = useState<SelectedPlayer | null>(null);
+  const [isMobileBioExpanded, setIsMobileBioExpanded] = useState(false);
   const selectedPlayerProfile = selectedPlayer ? PLAYER_MODAL_PROFILES[selectedPlayer.name] : null;
   const selectedPlayerClassFact = selectedPlayer
     ? PLAYER_CLASS_YEARS[selectedPlayer.name] ?? selectedPlayerProfile?.facts.find((fact) => fact.toLowerCase().startsWith("class of"))
@@ -315,6 +316,7 @@ export default function Players() {
       return;
     }
 
+    setIsMobileBioExpanded(false);
     setSelectedPlayer({
       name: playerName,
       ...playerDetails,
@@ -934,11 +936,19 @@ export default function Players() {
         </div>
       </section>
 
-      <Dialog open={selectedPlayer !== null} onOpenChange={(open) => !open && setSelectedPlayer(null)}>
-        <DialogContent className="player-modal-scroll max-h-[92vh] max-w-[850px] overflow-y-auto border-none bg-transparent p-0 shadow-none">
+      <Dialog
+        open={selectedPlayer !== null}
+        onOpenChange={(open) => {
+          if (!open) {
+            setSelectedPlayer(null);
+            setIsMobileBioExpanded(false);
+          }
+        }}
+      >
+        <DialogContent className="player-modal-scroll max-h-[92vh] max-w-[850px] overflow-y-auto border-none bg-transparent p-0 shadow-none [&>button]:hidden">
           {selectedPlayer ? (
             <div
-              className={`max-h-[88vh] overflow-hidden rounded-[22px] border bg-white shadow-[0_35px_100px_-40px_rgba(15,23,42,0.45)] md:max-h-[80vh] ${
+              className={`relative max-h-[88vh] overflow-hidden rounded-[22px] border bg-white shadow-[0_35px_100px_-40px_rgba(15,23,42,0.45)] md:max-h-[80vh] ${
                 selectedPlayer.team === "blue" ? "border-sky-200/90" : "border-rose-200/90"
               }`}
             >
@@ -949,6 +959,17 @@ export default function Players() {
                     : "bg-[linear-gradient(90deg,#2f0d12,#8d1c2b)]"
                 }`}
               />
+              <button
+                type="button"
+                className="absolute right-3 top-3 z-[30] flex h-11 w-11 items-center justify-center rounded-full border border-primary/10 bg-white/96 text-primary shadow-[0_18px_38px_-18px_rgba(15,23,42,0.4)] transition-colors hover:bg-white"
+                data-testid="button-close-selected-player-modal"
+                onClick={() => {
+                  setSelectedPlayer(null);
+                  setIsMobileBioExpanded(false);
+                }}
+              >
+                <X className="h-5 w-5" />
+              </button>
               <div className="md:hidden p-4">
                 <div className="rounded-[1.55rem] border border-primary/10 bg-white/96 p-3 shadow-[0_20px_44px_-30px_rgba(15,23,42,0.22)]">
                   <div className="grid grid-cols-[112px_minmax(0,1fr)] gap-3 max-[380px]:grid-cols-[96px_minmax(0,1fr)]">
@@ -1013,26 +1034,61 @@ export default function Players() {
                   </div>
                 </div>
 
-                <div className="relative z-[2] mt-4 rounded-[1.35rem] border border-primary/8 bg-[linear-gradient(180deg,rgba(247,244,239,0.78),rgba(255,255,255,0.96))] p-4">
-                  <div className="flex items-start justify-between gap-4">
-                    <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-secondary" data-testid="text-selected-player-bio-heading">
-                      Bio
-                    </p>
-                    <div className="flex items-center gap-2" data-testid="status-selected-player-bio-scroll-hint">
-                      <span className="text-[10px] font-bold uppercase tracking-[0.26em] text-[#4d6e98]">Scroll</span>
-                      <div className="flex h-12 w-[10px] items-start rounded-full bg-[#dbe4ef] p-[2px] shadow-inner">
-                        <div className="h-5 w-full rounded-full bg-[linear-gradient(180deg,#0B84FF,#0B3D91)]" />
+                {isMobileBioExpanded ? (
+                  <div className="relative z-[2] mt-4 rounded-[1.35rem] border border-primary/8 bg-[linear-gradient(180deg,rgba(247,244,239,0.78),rgba(255,255,255,0.96))] p-4">
+                    <div className="flex items-start justify-between gap-4">
+                      <div>
+                        <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-secondary" data-testid="text-selected-player-bio-heading">
+                          Bio
+                        </p>
+                        <p className="mt-2 text-[0.74rem] font-bold uppercase tracking-[0.22em] text-[#5a7398]">
+                          Scroll to read full profile
+                        </p>
                       </div>
+                      <button
+                        type="button"
+                        className="flex items-center gap-1 rounded-full bg-primary/6 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.24em] text-primary"
+                        data-testid="button-collapse-selected-player-bio"
+                        onClick={() => setIsMobileBioExpanded(false)}
+                      >
+                        Hide
+                        <ChevronUp className="h-3.5 w-3.5" />
+                      </button>
+                    </div>
+                    <div
+                      className="player-bio-scroll mt-4 max-h-[45vh] space-y-4 overflow-y-auto overscroll-contain pr-3 text-[15px] leading-[1.6] text-foreground/78"
+                      data-testid="text-selected-player-bio"
+                    >
+                      {selectedPlayerProfile?.bio?.length ? (
+                        selectedPlayerProfile.bio.map((paragraph) => <p key={paragraph}>{paragraph}</p>)
+                      ) : (
+                        <p>Full player bio coming soon.</p>
+                      )}
                     </div>
                   </div>
-                  <div className="mt-4 space-y-4 pr-1 text-[15px] leading-[1.6] text-foreground/78" data-testid="text-selected-player-bio">
-                    {selectedPlayerProfile?.bio?.length ? (
-                      selectedPlayerProfile.bio.map((paragraph) => <p key={paragraph}>{paragraph}</p>)
-                    ) : (
-                      <p>Full player bio coming soon.</p>
-                    )}
-                  </div>
-                </div>
+                ) : (
+                  <button
+                    type="button"
+                    className="mt-4 block w-full rounded-[1.35rem] border border-primary/8 bg-[linear-gradient(180deg,rgba(247,244,239,0.78),rgba(255,255,255,0.96))] p-4 text-left shadow-[0_18px_40px_-30px_rgba(15,23,42,0.22)]"
+                    data-testid="button-open-selected-player-bio"
+                    onClick={() => setIsMobileBioExpanded(true)}
+                  >
+                    <div className="flex items-start justify-between gap-4">
+                      <div>
+                        <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-secondary" data-testid="text-selected-player-bio-heading">
+                          Bio
+                        </p>
+                        <p className="mt-3 text-sm leading-[1.6] text-foreground/72">
+                          {selectedPlayerProfile?.bio?.[0] ?? "Tap to open the full player bio."}
+                        </p>
+                      </div>
+                      <div className="flex shrink-0 items-center gap-2 rounded-full bg-primary/6 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.24em] text-primary">
+                        Open
+                        <ChevronDown className="h-3.5 w-3.5" />
+                      </div>
+                    </div>
+                  </button>
+                )}
               </div>
 
               <div className="hidden md:grid md:max-h-[calc(80vh-6px)] md:grid-cols-[34fr_66fr]">
