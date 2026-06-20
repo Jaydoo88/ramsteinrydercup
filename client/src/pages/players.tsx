@@ -192,8 +192,19 @@ type SelectedPlayer = {
   flightTitle: string;
 };
 
+const PLAYER_MODAL_PROFILES: Record<string, { bio: string[]; facts: string[] }> = {
+  "Jason Dousharm": {
+    bio: [
+      "Jason Dousharm, Ramstein Class of 1988, steps into the Ramstein Ryder Cup as the Blue Team Captain and Alpha Flight lead. A die-hard Chargers fan with Celtics, Angels, and Penguins loyalty mixed in, Jason brings a full sports fan’s energy to the weekend — competitive, loud when needed, and always ready for the next matchup.",
+      "Off the course, Jason enjoys poker, golf, and counting down the final 3½ years until retirement. On the course, he’s looking to lead from the front, keep the Blue Team focused, and prove that experience still matters when the pressure is on.",
+    ],
+    facts: ["Class of 1988", "Chargers", "Celtics", "Angels", "Penguins", "Poker", "3½ years to retirement"],
+  },
+};
+
 export default function Players() {
   const [selectedPlayer, setSelectedPlayer] = useState<SelectedPlayer | null>(null);
+  const selectedPlayerProfile = selectedPlayer ? PLAYER_MODAL_PROFILES[selectedPlayer.name] : null;
 
   return (
     <div className="min-h-screen bg-[linear-gradient(180deg,#f6f2ec_0%,#fbfaf8_22%,#ffffff_100%)]">
@@ -646,34 +657,30 @@ export default function Players() {
                   />
                   <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#081423]/80 via-[#081423]/18 to-transparent" />
                 </div>
-                <div className="relative flex min-h-[320px] flex-col justify-between p-8 md:p-10">
+                <div className="relative flex min-h-[320px] flex-col p-8 md:p-10">
                   {VETERAN_BADGE_PLAYERS.has(selectedPlayer.name) ? (
                     <img
                       src={veteranAirForceLogoImage}
                       alt="U.S. Air Force Veteran badge"
-                      className="absolute right-6 top-6 h-16 w-16 object-contain drop-shadow-[0_10px_22px_rgba(15,23,42,0.18)]"
+                      className="absolute right-6 top-6 h-14 w-14 object-contain drop-shadow-[0_10px_22px_rgba(15,23,42,0.18)]"
                       data-testid="img-selected-player-veteran-badge"
                     />
                   ) : null}
-                  <div>
-                    <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-secondary">Ramstein Ryder Cup</p>
-                    <p className="mt-4 font-serif text-[3rem] font-bold leading-[0.95] text-primary" data-testid="text-selected-player-name">
-                      {selectedPlayer.name}
-                    </p>
-                    <p className="mt-5 text-sm font-bold uppercase tracking-[0.22em] text-foreground/55" data-testid="text-selected-player-team">
-                      {selectedPlayer.team === "blue" ? "Blue Team" : "Red Team"}
-                    </p>
-                    <p className="mt-2 font-serif text-xl font-bold text-secondary" data-testid="text-selected-player-flight">
-                      {selectedPlayer.flightTitle}
-                    </p>
-                  </div>
-                  <div className="mt-8 flex items-end justify-between gap-6">
-                    <div>
-                      <p className="text-xs font-bold uppercase tracking-[0.22em] text-foreground/45">Match Slot</p>
-                      <p className="mt-2 font-serif text-2xl font-bold text-primary">{selectedPlayer.slot}</p>
+                  <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+                    <div className="pr-12 md:max-w-[420px]">
+                      <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-secondary">Ramstein Ryder Cup</p>
+                      <p className="mt-4 font-serif text-[3rem] font-bold leading-[0.95] text-primary" data-testid="text-selected-player-name">
+                        {selectedPlayer.name}
+                      </p>
+                      <p className="mt-5 text-sm font-bold uppercase tracking-[0.22em] text-foreground/55" data-testid="text-selected-player-team">
+                        {selectedPlayer.team === "blue" ? "Blue Team" : "Red Team"}
+                      </p>
+                      <p className="mt-2 font-serif text-xl font-bold text-secondary" data-testid="text-selected-player-flight">
+                        {selectedPlayer.flightTitle}
+                      </p>
                     </div>
                     <div
-                      className="flex h-[72px] w-[72px] items-center justify-center rounded-full border border-[#DDE5EF] bg-white shadow-[0_14px_30px_rgba(15,23,42,0.10)]"
+                      className="flex h-[72px] w-[72px] shrink-0 items-center justify-center rounded-full border border-[#DDE5EF] bg-white shadow-[0_14px_30px_rgba(15,23,42,0.10)]"
                       data-testid="badge-selected-player-slot"
                     >
                       <span
@@ -694,6 +701,30 @@ export default function Players() {
                         {selectedPlayer.slot}
                       </span>
                     </div>
+                  </div>
+                  <div className="mt-8 rounded-[1.5rem] border border-primary/8 bg-[linear-gradient(180deg,rgba(247,244,239,0.7),rgba(255,255,255,0.95))] p-5 md:p-6">
+                    <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-secondary" data-testid="text-selected-player-bio-heading">
+                      Bio
+                    </p>
+                    <div className="mt-4 space-y-4 text-[0.98rem] leading-7 text-foreground/78" data-testid="text-selected-player-bio">
+                      {selectedPlayerProfile?.bio?.length ? (
+                        selectedPlayerProfile.bio.map((paragraph) => <p key={paragraph}>{paragraph}</p>)
+                      ) : (
+                        <p>Full player bio coming soon.</p>
+                      )}
+                    </div>
+                    {selectedPlayerProfile?.facts?.length ? (
+                      <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-3 xl:grid-cols-4" data-testid="grid-selected-player-facts">
+                        {selectedPlayerProfile.facts.map((fact) => (
+                          <div
+                            key={fact}
+                            className="rounded-full border border-primary/10 bg-white px-3 py-2 text-center text-xs font-bold uppercase tracking-[0.14em] text-primary shadow-[0_10px_24px_-20px_rgba(15,23,42,0.35)]"
+                          >
+                            {fact}
+                          </div>
+                        ))}
+                      </div>
+                    ) : null}
                   </div>
                 </div>
               </div>
