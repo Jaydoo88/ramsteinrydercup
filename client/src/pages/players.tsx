@@ -286,23 +286,7 @@ export default function Players() {
               const slotClasses = SLOT_STYLES[flight.slot as keyof typeof SLOT_STYLES];
 
               return (
-                <div key={flight.key} className="grid gap-4 lg:grid-cols-[170px_minmax(0,1fr)_minmax(0,1fr)] lg:items-stretch">
-                  <div className="relative overflow-hidden rounded-[1.7rem] border border-primary/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(247,245,241,0.96))] px-5 py-5 shadow-[0_22px_45px_-38px_rgba(15,23,42,0.25)]">
-                    <div className="flex items-start justify-between gap-3">
-                      <div>
-                        <h3 className={`font-serif text-[1.7rem] font-bold leading-none ${flight.accentText}`} data-testid={`text-flight-title-${flight.key}`}>
-                          {flight.title}
-                        </h3>
-                        <div className="mt-4 space-y-1.5 text-[0.98rem] leading-6 text-foreground/72">
-                          {flight.description.map((line) => (
-                            <p key={line}>{line}</p>
-                          ))}
-                        </div>
-                      </div>
-                      <div className={`font-serif text-[3.1rem] font-bold leading-none ${flight.letterText}`}>{flight.slot}</div>
-                    </div>
-                  </div>
-
+                <div key={flight.key} className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_170px_minmax(0,1fr)] lg:items-stretch">
                   <div
                     className="grid min-h-[140px] overflow-hidden rounded-[1.7rem] border border-sky-200/90 bg-white shadow-[0_24px_50px_-38px_rgba(15,23,42,0.28)] md:grid-cols-[144px_1fr]"
                     data-testid={`card-flight-player-blue-${flight.key}`}
@@ -325,6 +309,22 @@ export default function Players() {
                       <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br text-base font-bold shadow-sm ${slotClasses}`}>
                         {flight.slot}
                       </div>
+                    </div>
+                  </div>
+
+                  <div className="relative h-full overflow-hidden rounded-[1.7rem] border border-primary/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(247,245,241,0.96))] px-5 py-5 shadow-[0_22px_45px_-38px_rgba(15,23,42,0.25)]">
+                    <div className="flex items-start justify-between gap-3">
+                      <div>
+                        <h3 className={`font-serif text-[1.7rem] font-bold leading-none ${flight.accentText}`} data-testid={`text-flight-title-${flight.key}`}>
+                          {flight.title}
+                        </h3>
+                        <div className="mt-4 space-y-1.5 text-[0.98rem] leading-6 text-foreground/72">
+                          {flight.description.map((line) => (
+                            <p key={line}>{line}</p>
+                          ))}
+                        </div>
+                      </div>
+                      <div className={`font-serif text-[3.1rem] font-bold leading-none ${flight.letterText}`}>{flight.slot}</div>
                     </div>
                   </div>
 
