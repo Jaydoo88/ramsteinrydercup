@@ -268,17 +268,13 @@ export default function Players() {
                           <div className="space-y-0">
                             {team.players.map((player) => {
                               const playerSlug = getPlayerSlug(player.name);
-                              const slotClasses = SLOT_STYLES[player.slot as keyof typeof SLOT_STYLES];
 
                               return (
                                 <div
                                   key={player.name}
-                                  className="grid grid-cols-[auto_1fr] items-center gap-4 border-b border-slate-200 py-3.5 last:border-b-0 last:pb-0 first:pt-0"
+                                  className="border-b border-slate-200 py-3.5 last:border-b-0 last:pb-0 first:pt-0"
                                   data-testid={`row-team-roster-${playerSlug}`}
                                 >
-                                  <div className={`flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br text-[1rem] font-bold shadow-sm ${slotClasses}`}>
-                                    {player.slot}
-                                  </div>
                                   <p
                                     className="whitespace-nowrap font-sans text-[1.22rem] font-semibold leading-none text-[#16357a] md:text-[1.28rem]"
                                     data-testid={`text-roster-player-${playerSlug}`}
@@ -319,20 +315,16 @@ export default function Players() {
                             <div className="space-y-2 md:order-1">
                               {team.players.map((player) => {
                                 const playerSlug = getPlayerSlug(player.name);
-                                const slotClasses = SLOT_STYLES[player.slot as keyof typeof SLOT_STYLES];
 
                                 return (
                                   <div
                                     key={player.name}
-                                    className="grid grid-cols-[1fr_auto] items-center gap-3 border-b border-primary/8 pb-2 last:border-b-0 last:pb-0"
+                                    className="border-b border-primary/8 pb-2 last:border-b-0 last:pb-0"
                                     data-testid={`row-team-roster-${playerSlug}`}
                                   >
-                                    <p className="whitespace-nowrap font-sans text-[1rem] font-semibold leading-none text-primary md:order-1" data-testid={`text-roster-player-${playerSlug}`}>
+                                    <p className="whitespace-nowrap font-sans text-[1rem] font-semibold leading-none text-primary" data-testid={`text-roster-player-${playerSlug}`}>
                                       {player.name}
                                     </p>
-                                    <div className={`flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br text-[13px] font-bold shadow-sm md:order-2 ${slotClasses}`}>
-                                      {player.slot}
-                                    </div>
                                   </div>
                                 );
                               })}
