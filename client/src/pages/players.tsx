@@ -228,42 +228,44 @@ export default function Players() {
               return (
                 <div key={team.name} className={index === 0 ? "order-1 mx-auto h-full w-full max-w-[420px]" : "order-3 mx-auto h-full w-full max-w-[420px]"}>
                   <div
-                    className={`h-[300px] overflow-hidden rounded-[1.9rem] border px-7 py-6 shadow-[0_24px_50px_-38px_rgba(15,23,42,0.24)] ${
+                    className={`h-[320px] rounded-[1.9rem] border px-6 py-5 shadow-[0_24px_50px_-38px_rgba(15,23,42,0.24)] ${
                       isBlueTeam ? "border-sky-500/90 bg-[#F5FAFF]" : "border-rose-300/90 bg-[#FFF5F5]"
                     }`}
                     data-testid={`card-team-roster-${getPlayerSlug(team.name)}`}
                   >
                     <div className="flex h-full flex-col items-center text-center">
-                      <img
-                        src={isBlueTeam ? blueTeamLogoImage : redTeamLogoImage}
-                        alt={`${team.name} logo`}
-                        className={`h-[90px] w-[90px] object-contain ${
-                          isBlueTeam
-                            ? "drop-shadow-[0_16px_28px_rgba(29,78,216,0.22)]"
-                            : "drop-shadow-[0_16px_28px_rgba(185,28,28,0.22)]"
-                        }`}
-                        data-testid={isBlueTeam ? "img-blue-team-logo" : "img-red-team-logo"}
-                      />
+                      <div className="shrink-0">
+                        <img
+                          src={isBlueTeam ? blueTeamLogoImage : redTeamLogoImage}
+                          alt={`${team.name} logo`}
+                          className={`mx-auto h-[84px] w-[84px] object-contain lg:h-[90px] lg:w-[90px] ${
+                            isBlueTeam
+                              ? "drop-shadow-[0_16px_28px_rgba(29,78,216,0.22)]"
+                              : "drop-shadow-[0_16px_28px_rgba(185,28,28,0.22)]"
+                          }`}
+                          data-testid={isBlueTeam ? "img-blue-team-logo" : "img-red-team-logo"}
+                        />
 
-                      <h3
-                        className={`mt-3 whitespace-nowrap font-serif font-bold leading-none ${
-                          isBlueTeam ? "text-[2.5rem] text-[#16357a]" : "text-[2.45rem] text-[#bf1020]"
-                        }`}
-                        data-testid={`text-roster-team-name-${getPlayerSlug(team.name)}`}
-                      >
-                        {team.name}
-                      </h3>
-                      <p className={`mt-3 text-[12px] font-extrabold uppercase tracking-[0.32em] ${isBlueTeam ? "text-[#c61f53]" : "text-[#bf1020]"}`}>
-                        Captain
-                      </p>
-                      <p
-                        className="mt-2 whitespace-nowrap font-serif text-[1.65rem] font-bold leading-none text-[#16357a]"
-                        data-testid={`text-roster-captain-${getPlayerSlug(team.name)}`}
-                      >
-                        {team.captain}
-                      </p>
+                        <h3
+                          className={`mt-2 whitespace-nowrap font-serif font-bold leading-none ${
+                            isBlueTeam ? "text-[2.2rem] text-[#16357a] lg:text-[2.35rem]" : "text-[2.15rem] text-[#bf1020] lg:text-[2.25rem]"
+                          }`}
+                          data-testid={`text-roster-team-name-${getPlayerSlug(team.name)}`}
+                        >
+                          {team.name}
+                        </h3>
+                        <p className={`mt-2 text-[11px] font-extrabold uppercase tracking-[0.32em] ${isBlueTeam ? "text-[#c61f53]" : "text-[#bf1020]"}`}>
+                          Captain
+                        </p>
+                        <p
+                          className="mt-1 whitespace-nowrap font-serif text-[1.45rem] font-bold leading-none text-[#16357a] lg:text-[1.55rem]"
+                          data-testid={`text-roster-captain-${getPlayerSlug(team.name)}`}
+                        >
+                          {team.captain}
+                        </p>
+                      </div>
 
-                      <div className="mt-5 w-full max-w-[320px] space-y-0 text-left">
+                      <div className="mt-4 w-full max-w-[300px] flex-1 space-y-0 text-left">
                         {team.players.map((player) => {
                           const playerSlug = getPlayerSlug(player.name);
                           const slotClasses = SLOT_STYLES[player.slot as keyof typeof SLOT_STYLES];
@@ -271,14 +273,14 @@ export default function Players() {
                           return (
                             <div
                               key={player.name}
-                              className="grid grid-cols-[40px_1fr] items-center gap-4 border-b border-slate-200 py-3 last:border-b-0 last:pb-0 first:pt-0"
+                              className="grid grid-cols-[36px_1fr] items-center gap-3 border-b border-slate-200 py-2.5 last:border-b-0 last:pb-0 first:pt-0"
                               data-testid={`row-team-roster-${playerSlug}`}
                             >
-                              <div className={`flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br text-[0.95rem] font-bold text-white shadow-sm ${slotClasses}`}>
+                              <div className={`flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br text-[0.9rem] font-bold text-white shadow-sm ${slotClasses}`}>
                                 {player.slot}
                               </div>
                               <p
-                                className="whitespace-nowrap font-sans text-[1.08rem] font-semibold leading-none text-[#16357a]"
+                                className="whitespace-nowrap font-sans text-[1rem] font-semibold leading-none text-[#16357a] lg:text-[1.05rem]"
                                 data-testid={`text-roster-player-${playerSlug}`}
                               >
                                 {player.name}
