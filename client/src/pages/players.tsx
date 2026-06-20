@@ -228,9 +228,9 @@ export default function Players() {
               return (
                 <div key={team.name} className={index === 0 ? "order-1 w-full max-w-[620px]" : "order-3 w-full max-w-[620px]"}>
                   <div
-                    className={`grid h-[245px] items-center rounded-[18px] border-2 bg-white px-[42px] py-[38px] shadow-[0_24px_45px_rgba(15,23,42,0.08)] ${
+                    className={`grid h-[245px] items-center rounded-[18px] border-2 bg-white px-[34px] py-[32px] shadow-[0_24px_45px_rgba(15,23,42,0.08)] ${
                       isBlueTeam ? "border-[#0B3D91]" : "border-[#E00022]"
-                    } ${isBlueTeam ? "grid-cols-[118px_155px_1px_210px]" : "grid-cols-[210px_1px_155px_118px]"}`}
+                    } ${isBlueTeam ? "grid-cols-[104px_176px_1px_minmax(0,1fr)]" : "grid-cols-[minmax(0,1fr)_1px_176px_104px]"}`}
                     data-testid={`card-team-roster-${getPlayerSlug(team.name)}`}
                   >
                     {isBlueTeam ? (
@@ -239,37 +239,37 @@ export default function Players() {
                           <img
                             src={blueTeamLogoImage}
                             alt="Blue Team logo"
-                            className="h-[125px] w-auto object-contain drop-shadow-[0_18px_28px_rgba(0,0,0,0.18)]"
+                            className="h-[110px] w-auto object-contain drop-shadow-[0_18px_28px_rgba(0,0,0,0.18)]"
                             data-testid="img-blue-team-logo"
                           />
                         </div>
 
-                        <div>
+                        <div className="min-w-0 pr-4">
                           <h3
                             className="whitespace-nowrap uppercase leading-none text-[#0A3A78]"
-                            style={{ fontFamily: 'Georgia, "Times New Roman", serif', fontSize: '38px', fontWeight: 700, letterSpacing: '-0.5px' }}
+                            style={{ fontFamily: 'Georgia, "Times New Roman", serif', fontSize: '31px', fontWeight: 700, letterSpacing: '-0.5px' }}
                             data-testid={`text-roster-team-name-${getPlayerSlug(team.name)}`}
                           >
                             {team.name}
                           </h3>
                           <p
-                            className="mb-[10px] mt-5 whitespace-nowrap uppercase text-[#D4001A]"
-                            style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '3px' }}
+                            className="mb-[8px] mt-4 whitespace-nowrap uppercase text-[#D4001A]"
+                            style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '2.6px' }}
                           >
                             Captain
                           </p>
                           <p
                             className="whitespace-nowrap text-[#0A3A78]"
-                            style={{ fontFamily: 'Georgia, "Times New Roman", serif', fontSize: '22px', fontWeight: 700 }}
+                            style={{ fontFamily: 'Georgia, "Times New Roman", serif', fontSize: '18px', fontWeight: 700 }}
                             data-testid={`text-roster-captain-${getPlayerSlug(team.name)}`}
                           >
                             {team.captain}
                           </p>
                         </div>
 
-                        <div className="h-[170px] w-px bg-[#DDE5EF]" />
+                        <div className="h-[158px] w-px bg-[#DDE5EF]" />
 
-                        <div>
+                        <div className="min-w-0 pl-5">
                           {team.players.map((player) => {
                             const playerSlug = getPlayerSlug(player.name);
                             const badgeClass =
@@ -284,11 +284,11 @@ export default function Players() {
                             return (
                               <div
                                 key={player.name}
-                                className="grid h-12 grid-cols-[54px_1fr] items-center border-b border-[#DDE5EF] text-[#071F4F] last:border-b-0"
-                                style={{ fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', fontSize: '19px', fontWeight: 700 }}
+                                className="grid h-[42px] grid-cols-[46px_1fr] items-center border-b border-[#DDE5EF] text-[#071F4F] last:border-b-0"
+                                style={{ fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', fontSize: '17px', fontWeight: 700 }}
                                 data-testid={`row-team-roster-${playerSlug}`}
                               >
-                                <div className={`flex h-9 w-9 items-center justify-center rounded-[9px] text-white shadow-[0_6px_12px_rgba(0,0,0,0.16)] ${badgeClass}`}>
+                                <div className={`flex h-9 w-9 items-center justify-center rounded-[9px] text-[16px] text-white shadow-[0_6px_12px_rgba(0,0,0,0.16)] ${badgeClass}`}>
                                   {player.slot}
                                 </div>
                                 <p className="whitespace-nowrap" data-testid={`text-roster-player-${playerSlug}`}>
@@ -316,11 +316,11 @@ export default function Players() {
                             return (
                               <div
                                 key={player.name}
-                                className="grid h-12 grid-cols-[54px_1fr] items-center border-b border-[#DDE5EF] text-[#071F4F] last:border-b-0"
-                                style={{ fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', fontSize: '19px', fontWeight: 700 }}
+                                className="grid h-[42px] grid-cols-[46px_1fr] items-center border-b border-[#DDE5EF] text-[#071F4F] last:border-b-0"
+                                style={{ fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', fontSize: '17px', fontWeight: 700 }}
                                 data-testid={`row-team-roster-${playerSlug}`}
                               >
-                                <div className={`flex h-9 w-9 items-center justify-center rounded-[9px] text-white shadow-[0_6px_12px_rgba(0,0,0,0.16)] ${badgeClass}`}>
+                                <div className={`flex h-9 w-9 items-center justify-center rounded-[9px] text-[16px] text-white shadow-[0_6px_12px_rgba(0,0,0,0.16)] ${badgeClass}`}>
                                   {player.slot}
                                 </div>
                                 <p className="whitespace-nowrap" data-testid={`text-roster-player-${playerSlug}`}>
@@ -331,25 +331,25 @@ export default function Players() {
                           })}
                         </div>
 
-                        <div className="h-[170px] w-px bg-[#DDE5EF]" />
+                        <div className="h-[158px] w-px bg-[#DDE5EF]" />
 
-                        <div>
+                        <div className="min-w-0 px-4">
                           <h3
                             className="whitespace-nowrap uppercase leading-none text-[#C9001F]"
-                            style={{ fontFamily: 'Georgia, "Times New Roman", serif', fontSize: '38px', fontWeight: 700, letterSpacing: '-0.5px' }}
+                            style={{ fontFamily: 'Georgia, "Times New Roman", serif', fontSize: '31px', fontWeight: 700, letterSpacing: '-0.5px' }}
                             data-testid={`text-roster-team-name-${getPlayerSlug(team.name)}`}
                           >
                             {team.name}
                           </h3>
                           <p
-                            className="mb-[10px] mt-5 whitespace-nowrap uppercase text-[#D4001A]"
-                            style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '3px' }}
+                            className="mb-[8px] mt-4 whitespace-nowrap uppercase text-[#D4001A]"
+                            style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '2.6px' }}
                           >
                             Captain
                           </p>
                           <p
-                            className="whitespace-nowrap text-[#0A3A78]"
-                            style={{ fontFamily: 'Georgia, "Times New Roman", serif', fontSize: '22px', fontWeight: 700 }}
+                            className="whitespace-nowrap text-[#C9001F]"
+                            style={{ fontFamily: 'Georgia, "Times New Roman", serif', fontSize: '18px', fontWeight: 700 }}
                             data-testid={`text-roster-captain-${getPlayerSlug(team.name)}`}
                           >
                             {team.captain}
@@ -360,7 +360,7 @@ export default function Players() {
                           <img
                             src={redTeamLogoImage}
                             alt="Red Team logo"
-                            className="h-[125px] w-auto object-contain drop-shadow-[0_18px_28px_rgba(0,0,0,0.18)]"
+                            className="h-[110px] w-auto object-contain drop-shadow-[0_18px_28px_rgba(0,0,0,0.18)]"
                             data-testid="img-red-team-logo"
                           />
                         </div>
