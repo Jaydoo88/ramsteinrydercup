@@ -17,6 +17,7 @@ import izzyHochnerImage from "@assets/35742230_1732422556834572_3695115284219166
 import jennyMasonImage from "@assets/7161c949-8120-4da9-9bde-d68477dc6329_1781902673901.png";
 import melissaParsonsImage from "@assets/dbfc5745-7e00-493c-a83d-da3172e7e7e2_1781903347166.png";
 import playersHeroGolfImage from "@/assets/images/players-hero-golf.png";
+import veteranAirForceLogoImage from "@assets/image_1781917892057.png";
 
 const SLOT_STYLES = {
   A: "from-amber-400 to-yellow-500 text-white",
@@ -57,6 +58,15 @@ const TEAM_ROSTERS = [
     ],
   },
 ] as const;
+
+const VETERAN_BADGE_PLAYERS = new Set([
+  "Jason Dousharm",
+  "Mike Parsons",
+  "Mike Gibbons",
+  "Darren Johnson",
+  "John Gregg",
+  "Darrel Johnson",
+]);
 
 const FLIGHT_MATCHUPS: Array<{
   key: string;
@@ -388,9 +398,17 @@ export default function Players() {
               return (
                 <div key={flight.key} className="mx-auto grid w-full max-w-[1160px] grid-cols-[1fr_90px_1fr] items-center gap-[18px]">
                   <div
-                    className="grid h-[170px] overflow-hidden rounded-[1.7rem] border border-sky-200/90 bg-white shadow-[0_24px_50px_-38px_rgba(15,23,42,0.28)] grid-cols-[144px_minmax(0,1fr)]"
+                    className="relative grid h-[170px] overflow-hidden rounded-[1.7rem] border border-sky-200/90 bg-white shadow-[0_24px_50px_-38px_rgba(15,23,42,0.28)] grid-cols-[144px_minmax(0,1fr)]"
                     data-testid={`card-flight-player-blue-${flight.key}`}
                   >
+                    {VETERAN_BADGE_PLAYERS.has(flight.bluePlayer.name) ? (
+                      <img
+                        src={veteranAirForceLogoImage}
+                        alt="U.S. Air Force Veteran badge"
+                        className="absolute right-3 top-3 z-10 h-12 w-12 object-contain drop-shadow-[0_8px_18px_rgba(15,23,42,0.2)]"
+                        data-testid={`img-veteran-badge-${bluePlayerSlug}`}
+                      />
+                    ) : null}
                     <div className="h-full overflow-hidden bg-[linear-gradient(135deg,#0c2340,#174a7a)]">
                       <img
                         src={flight.bluePlayer.image}
@@ -429,9 +447,17 @@ export default function Players() {
                   </div>
 
                   <div
-                    className="grid h-[170px] overflow-hidden rounded-[1.7rem] border border-rose-200/90 bg-white shadow-[0_24px_50px_-38px_rgba(15,23,42,0.28)] grid-cols-[144px_minmax(0,1fr)]"
+                    className="relative grid h-[170px] overflow-hidden rounded-[1.7rem] border border-rose-200/90 bg-white shadow-[0_24px_50px_-38px_rgba(15,23,42,0.28)] grid-cols-[144px_minmax(0,1fr)]"
                     data-testid={`card-flight-player-red-${flight.key}`}
                   >
+                    {VETERAN_BADGE_PLAYERS.has(flight.redPlayer.name) ? (
+                      <img
+                        src={veteranAirForceLogoImage}
+                        alt="U.S. Air Force Veteran badge"
+                        className="absolute right-3 top-3 z-10 h-12 w-12 object-contain drop-shadow-[0_8px_18px_rgba(15,23,42,0.2)]"
+                        data-testid={`img-veteran-badge-${redPlayerSlug}`}
+                      />
+                    ) : null}
                     <div className="h-full overflow-hidden bg-[linear-gradient(135deg,#2f0d12,#8d1c2b)]">
                       <img
                         src={flight.redPlayer.image}
