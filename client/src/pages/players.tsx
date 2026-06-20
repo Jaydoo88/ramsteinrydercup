@@ -17,7 +17,7 @@ import izzyHochnerImage from "@assets/35742230_1732422556834572_3695115284219166
 import jennyMasonImage from "@assets/7161c949-8120-4da9-9bde-d68477dc6329_1781902673901.png";
 import melissaParsonsImage from "@assets/dbfc5745-7e00-493c-a83d-da3172e7e7e2_1781903347166.png";
 import playersHeroGolfImage from "@/assets/images/players-hero-golf.png";
-import veteranAirForceLogoImage from "@assets/image_1781917892057.png";
+import veteranAirForceLogoImage from "@assets/image_1781918037931.png";
 
 const SLOT_STYLES = {
   A: "from-amber-400 to-yellow-500 text-white",
