@@ -997,19 +997,6 @@ export default function Players() {
                           {selectedPlayerClassFact}
                         </p>
                       ) : null}
-                      <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-left">
-                        <p
-                          className={`text-[0.68rem] font-bold uppercase tracking-[0.3em] ${
-                            selectedPlayer.team === "blue" ? "text-[#294c7b]" : "text-[#b4233b]"
-                          }`}
-                          data-testid="text-selected-player-team"
-                        >
-                          {selectedPlayer.team === "blue" ? "Blue Team" : "Red Team"}
-                        </p>
-                        <p className="font-serif text-[1.05rem] font-bold text-[#c73b58]" data-testid="text-selected-player-flight">
-                          {selectedPlayer.flightTitle}
-                        </p>
-                      </div>
                       <div
                         className="absolute right-0 top-0 flex h-[54px] w-[54px] items-center justify-center rounded-full border border-[#efe9de] bg-white shadow-[0_16px_28px_rgba(15,23,42,0.12)] max-[380px]:h-[48px] max-[380px]:w-[48px]"
                         data-testid="badge-selected-player-slot"
@@ -1032,6 +1019,38 @@ export default function Players() {
                           {selectedPlayer.slot}
                         </span>
                       </div>
+                    </div>
+                  </div>
+
+                  <div className="mt-3 grid grid-cols-2 gap-2.5">
+                    <div
+                      className={`rounded-[1rem] border px-3 py-2.5 ${
+                        selectedPlayer.team === "blue"
+                          ? "border-sky-100 bg-sky-50/85"
+                          : "border-rose-100 bg-rose-50/85"
+                      }`}
+                    >
+                      <p className="text-[0.58rem] font-bold uppercase tracking-[0.28em] text-foreground/45">Team</p>
+                      <p
+                        className={`mt-1 text-[0.82rem] font-bold uppercase tracking-[0.18em] ${
+                          selectedPlayer.team === "blue" ? "text-[#294c7b]" : "text-[#b4233b]"
+                        }`}
+                        data-testid="text-selected-player-team"
+                      >
+                        {selectedPlayer.team === "blue" ? "Blue Team" : "Red Team"}
+                      </p>
+                    </div>
+                    <div className="rounded-[1rem] border border-primary/8 bg-white px-3 py-2.5">
+                      <p className="text-[0.58rem] font-bold uppercase tracking-[0.28em] text-foreground/45">Flight</p>
+                      <p className="mt-1 font-serif text-[1rem] font-bold text-[#c73b58]" data-testid="text-selected-player-flight">
+                        {selectedPlayer.flightTitle}
+                      </p>
+                    </div>
+                    <div className="col-span-2 rounded-[1rem] border border-primary/8 bg-[linear-gradient(180deg,rgba(247,244,239,0.9),rgba(255,255,255,0.98))] px-3 py-3">
+                      <p className="text-[0.58rem] font-bold uppercase tracking-[0.28em] text-foreground/45">Player Card</p>
+                      <p className="mt-2 text-sm leading-[1.6] text-foreground/72" data-testid="text-selected-player-summary-mobile">
+                        {selectedPlayerProfile?.bio?.[0] ?? "Tap below to open the full player bio and read more."}
+                      </p>
                     </div>
                   </div>
                 </div>
