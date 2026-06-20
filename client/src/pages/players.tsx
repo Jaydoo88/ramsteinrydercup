@@ -436,14 +436,6 @@ export default function Players() {
                       })
                     }
                   >
-                    {VETERAN_BADGE_PLAYERS.has(flight.bluePlayer.name) ? (
-                      <img
-                        src={veteranAirForceLogoImage}
-                        alt="U.S. Air Force Veteran badge"
-                        className="absolute right-3 top-3 z-10 h-14 w-14 object-contain drop-shadow-[0_8px_18px_rgba(15,23,42,0.2)]"
-                        data-testid={`img-veteran-badge-${bluePlayerSlug}`}
-                      />
-                    ) : null}
                     <div className="h-full overflow-hidden bg-[linear-gradient(135deg,#0c2340,#174a7a)]">
                       <img
                         src={flight.bluePlayer.image}
@@ -452,8 +444,16 @@ export default function Players() {
                         data-testid={`img-flight-player-${bluePlayerSlug}`}
                       />
                     </div>
-                    <div className="flex h-full items-center p-5">
-                      <div>
+                    <div className="relative flex h-full items-center overflow-hidden p-5">
+                      {VETERAN_BADGE_PLAYERS.has(flight.bluePlayer.name) ? (
+                        <img
+                          src={veteranAirForceLogoImage}
+                          alt="U.S. Air Force Veteran badge watermark"
+                          className="pointer-events-none absolute right-7 top-1/2 z-[1] h-[150px] w-[150px] -translate-y-1/2 object-contain opacity-[0.08]"
+                          data-testid={`img-veteran-watermark-${bluePlayerSlug}`}
+                        />
+                      ) : null}
+                      <div className="relative z-[2]">
                         <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-secondary">Ramstein Ryder Cup</p>
                         <p className="mt-3 whitespace-nowrap font-serif text-[1.9rem] font-bold leading-none text-primary md:text-[2.15rem]" data-testid={`text-flight-player-${bluePlayerSlug}`}>
                           {flight.bluePlayer.name}
@@ -496,14 +496,6 @@ export default function Players() {
                       })
                     }
                   >
-                    {VETERAN_BADGE_PLAYERS.has(flight.redPlayer.name) ? (
-                      <img
-                        src={veteranAirForceLogoImage}
-                        alt="U.S. Air Force Veteran badge"
-                        className="absolute right-3 top-3 z-10 h-14 w-14 object-contain drop-shadow-[0_8px_18px_rgba(15,23,42,0.2)]"
-                        data-testid={`img-veteran-badge-${redPlayerSlug}`}
-                      />
-                    ) : null}
                     <div className="h-full overflow-hidden bg-[linear-gradient(135deg,#2f0d12,#8d1c2b)]">
                       <img
                         src={flight.redPlayer.image}
@@ -512,8 +504,16 @@ export default function Players() {
                         data-testid={`img-flight-player-${redPlayerSlug}`}
                       />
                     </div>
-                    <div className="flex h-full items-center p-5">
-                      <div>
+                    <div className="relative flex h-full items-center overflow-hidden p-5">
+                      {VETERAN_BADGE_PLAYERS.has(flight.redPlayer.name) ? (
+                        <img
+                          src={veteranAirForceLogoImage}
+                          alt="U.S. Air Force Veteran badge watermark"
+                          className="pointer-events-none absolute right-7 top-1/2 z-[1] h-[150px] w-[150px] -translate-y-1/2 object-contain opacity-[0.08]"
+                          data-testid={`img-veteran-watermark-${redPlayerSlug}`}
+                        />
+                      ) : null}
+                      <div className="relative z-[2]">
                         <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-secondary">Ramstein Ryder Cup</p>
                         <p className="mt-3 whitespace-nowrap font-serif text-[1.9rem] font-bold leading-none text-primary md:text-[2.15rem]" data-testid={`text-flight-player-${redPlayerSlug}`}>
                           {flight.redPlayer.name}
