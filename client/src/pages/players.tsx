@@ -302,7 +302,7 @@ export default function Players() {
                     <div className="flex items-center justify-between gap-4 p-5">
                       <div>
                         <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-secondary">Ramstein Ryder Cup</p>
-                        <p className="mt-3 font-serif text-[1.9rem] font-bold leading-none text-primary md:text-[2.15rem]" data-testid={`text-flight-player-${bluePlayerSlug}`}>
+                        <p className="mt-3 whitespace-nowrap font-serif text-[1.9rem] font-bold leading-none text-primary md:text-[2.15rem]" data-testid={`text-flight-player-${bluePlayerSlug}`}>
                           {flight.bluePlayer.name}
                         </p>
                       </div>
@@ -343,7 +343,7 @@ export default function Players() {
                     <div className="flex items-center justify-between gap-4 p-5">
                       <div>
                         <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-secondary">Ramstein Ryder Cup</p>
-                        <p className="mt-3 font-serif text-[1.9rem] font-bold leading-none text-primary md:text-[2.15rem]" data-testid={`text-flight-player-${redPlayerSlug}`}>
+                        <p className="mt-3 whitespace-nowrap font-serif text-[1.9rem] font-bold leading-none text-primary md:text-[2.15rem]" data-testid={`text-flight-player-${redPlayerSlug}`}>
                           {flight.redPlayer.name}
                         </p>
                       </div>
