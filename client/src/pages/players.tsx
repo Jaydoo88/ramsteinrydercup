@@ -78,7 +78,7 @@ const PLAYER_CLASS_YEARS: Record<string, string> = {
   "Darren Johnson": "Class of 1987",
   "Darrel Johnson": "Class of 1990",
   "John Gregg": "Class of 1988",
-  "Allen Parsons": "Class of 1986",
+  "Allen Parsons": "Class of 1985",
 };
 
 const FLIGHT_MATCHUPS: Array<{
