@@ -253,6 +253,13 @@ const PLAYER_MODAL_PROFILES: Record<string, { bio: string[]; facts: string[] }> 
     ],
     facts: [],
   },
+  "Allen Parsons": {
+    bio: [
+      "Allen Parsons brings experience, competitiveness, and plenty of stories to the Ramstein Ryder Cup. As the oldest player in the field, Allen proves that age is just another number when it comes to competition. A die-hard Patriots and Celtics fan, he loves spending time with family, friends, and his children, who remain at the center of his world. When he's not on the golf course, Allen can often be found competing in dart leagues, where his superb accuracy and competitive nature have made him a formidable opponent.",
+      "Off the course, Allen enjoys spending time at the lake and never misses an opportunity to watch his boys play hockey. Whether he's cheering from the stands, relaxing on the water, or sharing laughs with friends and family, he brings a positive energy wherever he goes. This Ryder Cup weekend, Allen will be bringing veteran experience, steady nerves, and a competitive edge that reminds everyone why he's still one of the toughest competitors around.",
+    ],
+    facts: [],
+  },
 };
 
 export default function Players() {
