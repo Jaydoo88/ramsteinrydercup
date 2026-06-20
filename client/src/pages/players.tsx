@@ -239,6 +239,13 @@ const PLAYER_MODAL_PROFILES: Record<string, { bio: string[]; facts: string[] }> 
     ],
     facts: [],
   },
+  "Darrel Johnson": {
+    bio: [
+      "Darrel Johnson brings a laid-back country spirit to the Ramstein Ryder Cup. A retired Air Force officer and loyal Buffalo Bills fan, he proudly cheers on Josh Allen every chance he gets and never misses an opportunity to support his beloved Penguins. A country boy at heart, Darrel enjoys simple pleasures, great company, and making memories wherever life takes him. He’s also a proud member of 7220sports.com and has recently added baseball umpiring to his growing list of hobbies.",
+      "Off the course, Darrel and his wife have fully embraced the travel lifestyle, even selling their home to live and explore the country in their fifth wheel. Whether it’s attending Frontier Days, traveling around the world, or spending time with family, Darrel makes the most of every adventure. He’s especially proud of his two successful children, including his son Andrew, a graduate of the University of Wyoming who earned his pilot’s license and is on his way to becoming a fighter pilot. This Ryder Cup weekend, Darrel will be bringing his positive attitude, life experience, and adventurous spirit to every match he plays.",
+    ],
+    facts: [],
+  },
   "John Gregg": {
     bio: [
       "John Gregg brings determination and resilience to the Ramstein Ryder Cup. An Air Force veteran, retired law enforcement officer, and devoted Pittsburgh Steelers fan, John spent many years serving with the Lubbock and Henderson Police Departments, including time as a motorcycle officer. His career was built on discipline, service, and staying calm under pressure — qualities that still show up every time he steps onto the golf course.",
