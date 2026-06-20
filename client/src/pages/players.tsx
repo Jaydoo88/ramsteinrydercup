@@ -384,7 +384,6 @@ export default function Players() {
             {FLIGHT_MATCHUPS.map((flight) => {
               const bluePlayerSlug = getPlayerSlug(flight.bluePlayer.name);
               const redPlayerSlug = getPlayerSlug(flight.redPlayer.name);
-              const slotClasses = SLOT_STYLES[flight.slot as keyof typeof SLOT_STYLES];
 
               return (
                 <div key={flight.key} className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_170px_minmax(0,1fr)] lg:items-stretch">
@@ -400,15 +399,12 @@ export default function Players() {
                         data-testid={`img-flight-player-${bluePlayerSlug}`}
                       />
                     </div>
-                    <div className="flex items-center justify-between gap-4 p-5">
+                    <div className="flex items-center p-5">
                       <div>
                         <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-secondary">Ramstein Ryder Cup</p>
                         <p className="mt-3 whitespace-nowrap font-serif text-[1.9rem] font-bold leading-none text-primary md:text-[2.15rem]" data-testid={`text-flight-player-${bluePlayerSlug}`}>
                           {flight.bluePlayer.name}
                         </p>
-                      </div>
-                      <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br text-base font-bold shadow-sm ${slotClasses}`}>
-                        {flight.slot}
                       </div>
                     </div>
                   </div>
@@ -441,15 +437,12 @@ export default function Players() {
                         data-testid={`img-flight-player-${redPlayerSlug}`}
                       />
                     </div>
-                    <div className="flex items-center justify-between gap-4 p-5">
+                    <div className="flex items-center p-5">
                       <div>
                         <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-secondary">Ramstein Ryder Cup</p>
                         <p className="mt-3 whitespace-nowrap font-serif text-[1.9rem] font-bold leading-none text-primary md:text-[2.15rem]" data-testid={`text-flight-player-${redPlayerSlug}`}>
                           {flight.redPlayer.name}
                         </p>
-                      </div>
-                      <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br text-base font-bold shadow-sm ${slotClasses}`}>
-                        {flight.slot}
                       </div>
                     </div>
                   </div>
