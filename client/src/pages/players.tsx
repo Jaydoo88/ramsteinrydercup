@@ -935,10 +935,10 @@ export default function Players() {
       </section>
 
       <Dialog open={selectedPlayer !== null} onOpenChange={(open) => !open && setSelectedPlayer(null)}>
-        <DialogContent className="max-w-[850px] border-none bg-transparent p-0 shadow-none">
+        <DialogContent className="max-h-[92vh] max-w-[850px] overflow-y-auto border-none bg-transparent p-0 shadow-none">
           {selectedPlayer ? (
             <div
-              className={`max-h-[80vh] overflow-hidden rounded-[22px] border bg-white shadow-[0_35px_100px_-40px_rgba(15,23,42,0.45)] ${
+              className={`max-h-[88vh] overflow-hidden rounded-[22px] border bg-white shadow-[0_35px_100px_-40px_rgba(15,23,42,0.45)] md:max-h-[80vh] ${
                 selectedPlayer.team === "blue" ? "border-sky-200/90" : "border-rose-200/90"
               }`}
             >
@@ -949,7 +949,7 @@ export default function Players() {
                     : "bg-[linear-gradient(90deg,#2f0d12,#8d1c2b)]"
                 }`}
               />
-              <div className="grid max-h-[calc(80vh-6px)] md:grid-cols-[34fr_66fr]">
+              <div className="grid md:max-h-[calc(80vh-6px)] md:grid-cols-[34fr_66fr]">
                 <div className="relative overflow-hidden">
                   <img
                     src={selectedPlayer.image}
