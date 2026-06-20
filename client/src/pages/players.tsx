@@ -405,7 +405,7 @@ export default function Players() {
                       <img
                         src={veteranAirForceLogoImage}
                         alt="U.S. Air Force Veteran badge"
-                        className="absolute right-3 top-3 z-10 h-12 w-12 object-contain drop-shadow-[0_8px_18px_rgba(15,23,42,0.2)]"
+                        className="absolute right-3 top-3 z-10 h-12 w-12 object-contain opacity-60 drop-shadow-[0_8px_18px_rgba(15,23,42,0.2)]"
                         data-testid={`img-veteran-badge-${bluePlayerSlug}`}
                       />
                     ) : null}
@@ -454,7 +454,7 @@ export default function Players() {
                       <img
                         src={veteranAirForceLogoImage}
                         alt="U.S. Air Force Veteran badge"
-                        className="absolute right-3 top-3 z-10 h-12 w-12 object-contain drop-shadow-[0_8px_18px_rgba(15,23,42,0.2)]"
+                        className="absolute right-3 top-3 z-10 h-12 w-12 object-contain opacity-60 drop-shadow-[0_8px_18px_rgba(15,23,42,0.2)]"
                         data-testid={`img-veteran-badge-${redPlayerSlug}`}
                       />
                     ) : null}
