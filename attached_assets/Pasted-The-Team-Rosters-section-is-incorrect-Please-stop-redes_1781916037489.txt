@@ -1,0 +1,137 @@
+The Team Rosters section is incorrect. Please stop redesigning it.
+
+I do NOT want a new design. I only want this section fixed.
+
+The issue is that text is wrapping, columns are collapsing, and elements are moving around.
+
+Build BOTH cards using a FIXED 3-column layout and do not improvise.
+
+BLUE TEAM CARD
+
+Use this exact structure:
+
+LEFT COLUMN = Logo
+
+MIDDLE COLUMN = Team Information
+
+RIGHT COLUMN = Player List
+
+Blue Team card must look like this:
+
+Large Blue Shield logo
+Blue Team
+CAPTAIN
+Jason Dousharm
+A Jason Dousharm
+B Mike Gibbons
+C Darren Johnson
+D John Gregg
+
+The order must be:
+
+Logo | Team Info | Player List
+
+RED TEAM CARD
+
+Use this exact structure:
+
+LEFT COLUMN = Player List
+
+MIDDLE COLUMN = Team Information
+
+RIGHT COLUMN = Logo
+
+Red Team card must look like this:
+
+A Mike Parsons
+B Robby Fuller
+C Darrel Johnson
+D Allen Parsons
+Red Team
+CAPTAIN
+Mike Parsons
+Large Red Shield logo
+
+The order must be:
+
+Player List | Team Info | Logo
+
+FIXED COLUMN WIDTHS (VERY IMPORTANT)
+
+Blue Team:
+
+Logo = 150px
+
+Team Info = 250px
+
+Player List = 280px
+
+Red Team:
+
+Player List = 280px
+
+Team Info = 250px
+
+Logo = 150px
+
+DO NOT auto-size columns.
+
+DO NOT allow columns to shrink.
+
+DO NOT use percentages.
+
+TEXT RULES
+
+These must NEVER wrap to multiple lines:
+
+Blue Team
+
+Red Team
+
+Jason Dousharm
+
+Mike Parsons
+
+Do NOT stack words vertically.
+
+Do NOT let text overflow outside the card.
+
+Do NOT let player names get cut off.
+
+SHIELD LOGOS
+
+Increase both logos.
+
+Make them approximately 110px tall.
+
+The logos should be a major visual element.
+
+Do not use tiny logos.
+
+BACKGROUNDS
+
+Blue Team background:
+
+#F5FAFF
+
+Red Team background:
+
+#FFF5F5
+
+Keep the blue and red borders.
+
+KEEP THESE EXACTLY THE SAME
+
+Do NOT move the VS circle.
+
+Do NOT change fonts.
+
+Do NOT change player names.
+
+Do NOT redesign the page.
+
+Do NOT touch the Ladies Teams section.
+
+The ONLY goal is to make the Blue Team and Red Team cards balanced, symmetrical, and readable.
+
+Please do not improvise. Use the exact structure above.
