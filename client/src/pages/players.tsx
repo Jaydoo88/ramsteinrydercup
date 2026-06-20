@@ -225,6 +225,13 @@ const PLAYER_MODAL_PROFILES: Record<string, { bio: string[]; facts: string[] }> 
     ],
     facts: [],
   },
+  "John Gregg": {
+    bio: [
+      "John Gregg brings determination and resilience to the Ramstein Ryder Cup. An Air Force veteran, retired law enforcement officer, and devoted Pittsburgh Steelers fan, John spent many years serving with the Lubbock and Henderson Police Departments, including time as a motorcycle officer. His career was built on discipline, service, and staying calm under pressure — qualities that still show up every time he steps onto the golf course.",
+      "Off the course, John enjoys spending time with his five beautiful children and his beloved dogs. Although he recently underwent back surgery, there was never any doubt he would be ready for Ryder Cup weekend, because sitting on the sidelines simply isn’t his style. Looking ahead, he plans to spend more time traveling throughout Asia and enjoying retirement to the fullest. This Ryder Cup weekend, John will be bringing his toughness, sense of humor, and unwavering commitment to his team, proving that a little back surgery isn't going to slow him down.",
+    ],
+    facts: [],
+  },
 };
 
 export default function Players() {
