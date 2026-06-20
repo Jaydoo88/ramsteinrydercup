@@ -221,75 +221,123 @@ export default function Players() {
             </div>
           </div>
 
-          <div className="relative mt-8 grid gap-4 lg:grid-cols-[420px_72px_420px] lg:items-center lg:justify-center lg:gap-0">
+          <div className="relative mt-8 grid gap-4 lg:grid-cols-[480px_72px_480px] lg:items-center lg:justify-center lg:gap-0">
             {TEAM_ROSTERS.map((team, index) => {
               const isBlueTeam = team.name === "Blue Team";
 
               return (
-                <div key={team.name} className={index === 0 ? "order-1 mx-auto h-full w-full max-w-[420px]" : "order-3 mx-auto h-full w-full max-w-[420px]"}>
+                <div key={team.name} className={index === 0 ? "order-1 mx-auto h-full w-full max-w-[480px]" : "order-3 mx-auto h-full w-full max-w-[480px]"}>
                   <div
-                    className={`h-[280px] overflow-hidden rounded-[1.9rem] border px-6 py-[18px] shadow-[0_24px_50px_-38px_rgba(15,23,42,0.24)] ${
-                      isBlueTeam ? "border-sky-500/90 bg-[#F5FAFF]" : "border-rose-300/90 bg-[#FFF5F5]"
+                    className={`h-[198px] overflow-hidden rounded-[1.6rem] border shadow-[0_24px_50px_-38px_rgba(15,23,42,0.2)] ${
+                      isBlueTeam ? "border-sky-700/85 bg-[#F5FAFF]" : "border-rose-500/60 bg-[#FFF5F5]"
                     }`}
                     data-testid={`card-team-roster-${getPlayerSlug(team.name)}`}
                   >
-                    <div className="grid h-full grid-rows-[auto_1fr] items-start">
-                      <div className="mb-3 text-center">
-                        <img
-                          src={isBlueTeam ? blueTeamLogoImage : redTeamLogoImage}
-                          alt={`${team.name} logo`}
-                          className={`mx-auto mb-2 h-[75px] w-[75px] object-contain ${
-                            isBlueTeam
-                              ? "drop-shadow-[0_16px_28px_rgba(29,78,216,0.22)]"
-                              : "drop-shadow-[0_16px_28px_rgba(185,28,28,0.22)]"
-                          }`}
-                          data-testid={isBlueTeam ? "img-blue-team-logo" : "img-red-team-logo"}
-                        />
+                    {isBlueTeam ? (
+                      <div className="grid h-full grid-cols-[110px_150px_1fr] items-center px-4">
+                        <div className="flex justify-center">
+                          <img
+                            src={blueTeamLogoImage}
+                            alt="Blue Team logo"
+                            className="h-[92px] w-[92px] object-contain drop-shadow-[0_16px_28px_rgba(29,78,216,0.22)]"
+                            data-testid="img-blue-team-logo"
+                          />
+                        </div>
 
-                        <h3
-                          className={`m-0 whitespace-nowrap font-serif font-bold leading-none ${
-                            isBlueTeam ? "text-[2rem] text-[#16357a] lg:text-[2.1rem]" : "text-[1.95rem] text-[#bf1020] lg:text-[2.05rem]"
-                          }`}
-                          data-testid={`text-roster-team-name-${getPlayerSlug(team.name)}`}
-                        >
-                          {team.name}
-                        </h3>
-                        <p className={`mt-[6px] text-[10px] font-extrabold uppercase tracking-[0.32em] ${isBlueTeam ? "text-[#c61f53]" : "text-[#bf1020]"}`}>
-                          Captain
-                        </p>
-                        <p
-                          className="mt-1 mb-[10px] whitespace-nowrap font-serif text-[1.28rem] font-bold leading-none text-[#16357a] lg:text-[1.34rem]"
-                          data-testid={`text-roster-captain-${getPlayerSlug(team.name)}`}
-                        >
-                          {team.captain}
-                        </p>
-                      </div>
+                        <div className="border-l border-slate-200 pl-4">
+                          <h3
+                            className="whitespace-nowrap font-serif text-[1.05rem] font-bold uppercase leading-none tracking-[0.01em] text-[#16357a] md:text-[1.15rem] lg:text-[1.75rem]"
+                            data-testid={`text-roster-team-name-${getPlayerSlug(team.name)}`}
+                          >
+                            {team.name}
+                          </h3>
+                          <p className="mt-3 text-[10px] font-medium uppercase tracking-[0.06em] text-primary">Captain</p>
+                          <p
+                            className="mt-2 whitespace-nowrap font-serif text-[1.15rem] font-bold leading-none text-primary md:text-[1.2rem] lg:text-[1.18rem]"
+                            data-testid={`text-roster-captain-${getPlayerSlug(team.name)}`}
+                          >
+                            {team.captain}
+                          </p>
+                        </div>
 
-                      <div className="mx-auto w-[80%] text-left">
-                        {team.players.map((player) => {
-                          const playerSlug = getPlayerSlug(player.name);
-                          const slotClasses = SLOT_STYLES[player.slot as keyof typeof SLOT_STYLES];
+                        <div className="border-l border-slate-200 pl-4 pr-2">
+                          {team.players.map((player) => {
+                            const playerSlug = getPlayerSlug(player.name);
+                            const slotClasses = SLOT_STYLES[player.slot as keyof typeof SLOT_STYLES];
 
-                          return (
-                            <div
-                              key={player.name}
-                              className="grid min-h-[38px] grid-cols-[44px_1fr] items-center gap-3 border-t border-slate-200"
-                              data-testid={`row-team-roster-${playerSlug}`}
-                            >
-                              <div className={`flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br text-[0.82rem] font-bold text-white shadow-sm ${slotClasses}`}>
-                                {player.slot}
-                              </div>
-                              <p
-                                className="whitespace-nowrap font-sans text-[0.95rem] font-semibold leading-none text-[#16357a] lg:text-[1rem]"
-                                data-testid={`text-roster-player-${playerSlug}`}
+                            return (
+                              <div
+                                key={player.name}
+                                className="grid grid-cols-[34px_1fr] items-center gap-4 border-b border-slate-200 py-2.5 last:border-b-0 last:pb-0 first:pt-0"
+                                data-testid={`row-team-roster-${playerSlug}`}
                               >
-                                {player.name}
-                              </p>
-                            </div>
-                          );
-                        })}
+                                <div className={`flex h-[30px] w-[30px] items-center justify-center rounded-lg bg-gradient-to-br text-[0.78rem] font-bold text-white shadow-sm ${slotClasses}`}>
+                                  {player.slot}
+                                </div>
+                                <p
+                                  className="whitespace-nowrap font-sans text-[0.95rem] font-semibold leading-none text-[#16357a] lg:text-[0.98rem]"
+                                  data-testid={`text-roster-player-${playerSlug}`}
+                                >
+                                  {player.name}
+                                </p>
+                              </div>
+                            );
+                          })}
+                        </div>
                       </div>
-                    </div>
+                    ) : (
+                      <div className="grid h-full grid-cols-[1fr_150px_110px] items-center px-4">
+                        <div className="pr-4">
+                          {team.players.map((player) => {
+                            const playerSlug = getPlayerSlug(player.name);
+                            const slotClasses = SLOT_STYLES[player.slot as keyof typeof SLOT_STYLES];
+
+                            return (
+                              <div
+                                key={player.name}
+                                className="grid grid-cols-[34px_1fr] items-center gap-4 border-b border-slate-200 py-2.5 last:border-b-0 last:pb-0 first:pt-0"
+                                data-testid={`row-team-roster-${playerSlug}`}
+                              >
+                                <div className={`flex h-[30px] w-[30px] items-center justify-center rounded-lg bg-gradient-to-br text-[0.78rem] font-bold text-white shadow-sm ${slotClasses}`}>
+                                  {player.slot}
+                                </div>
+                                <p
+                                  className="whitespace-nowrap font-sans text-[0.95rem] font-semibold leading-none text-[#16357a] lg:text-[0.98rem]"
+                                  data-testid={`text-roster-player-${playerSlug}`}
+                                >
+                                  {player.name}
+                                </p>
+                              </div>
+                            );
+                          })}
+                        </div>
+
+                        <div className="border-l border-slate-200 pl-4">
+                          <h3
+                            className="whitespace-nowrap font-serif text-[1.05rem] font-bold uppercase leading-none tracking-[0.01em] text-[#b2142a] md:text-[1.15rem] lg:text-[1.75rem]"
+                            data-testid={`text-roster-team-name-${getPlayerSlug(team.name)}`}
+                          >
+                            {team.name}
+                          </h3>
+                          <p className="mt-3 text-[10px] font-medium uppercase tracking-[0.06em] text-primary">Captain</p>
+                          <p
+                            className="mt-2 whitespace-nowrap font-serif text-[1.15rem] font-bold leading-none text-[#b2142a] md:text-[1.2rem] lg:text-[1.18rem]"
+                            data-testid={`text-roster-captain-${getPlayerSlug(team.name)}`}
+                          >
+                            {team.captain}
+                          </p>
+                        </div>
+
+                        <div className="flex justify-center border-l border-slate-200 pl-4">
+                          <img
+                            src={redTeamLogoImage}
+                            alt="Red Team logo"
+                            className="h-[92px] w-[92px] object-contain drop-shadow-[0_16px_28px_rgba(185,28,28,0.22)]"
+                            data-testid="img-red-team-logo"
+                          />
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               );
