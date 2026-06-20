@@ -215,11 +215,11 @@ export default function Players() {
             </div>
           </div>
 
-          <div className="relative mt-8 grid gap-4 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:items-start lg:gap-4">
+          <div className="relative mt-8 grid gap-4 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:items-stretch lg:gap-4">
             {TEAM_ROSTERS.map((team, index) => (
-              <div key={team.name} className={index === 0 ? "order-1" : "order-3"}>
+              <div key={team.name} className={index === 0 ? "order-1 h-full" : "order-3 h-full"}>
                 <div
-                  className={`relative overflow-hidden rounded-[1.9rem] border bg-white ${team.border} shadow-[0_26px_60px_-42px_rgba(15,23,42,0.3)]`}
+                  className={`relative h-full min-h-[332px] overflow-hidden rounded-[1.9rem] border bg-white ${team.border} shadow-[0_26px_60px_-42px_rgba(15,23,42,0.3)]`}
                   data-testid={`card-team-roster-${getPlayerSlug(team.name)}`}
                 >
                   <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${team.accentLine}`} />
@@ -235,11 +235,11 @@ export default function Players() {
                     </div>
 
                     <div className={team.layout === "right" ? "md:order-1 md:text-right" : ""}>
-                      <h3 className={`font-serif text-[2rem] font-bold leading-none md:text-[2.2rem] ${team.accentText}`} data-testid={`text-roster-team-name-${getPlayerSlug(team.name)}`}>
+                      <h3 className={`whitespace-nowrap font-serif text-[2rem] font-bold leading-none md:text-[2.2rem] ${team.accentText}`} data-testid={`text-roster-team-name-${getPlayerSlug(team.name)}`}>
                         {team.name}
                       </h3>
                       <p className="mt-4 text-[10px] font-bold uppercase tracking-[0.24em] text-secondary">Captain</p>
-                      <p className="mt-1 font-serif text-[1.45rem] font-bold leading-none text-primary md:text-[1.65rem]" data-testid={`text-roster-captain-${getPlayerSlug(team.name)}`}>
+                      <p className="mt-1 whitespace-nowrap font-serif text-[1.45rem] font-bold leading-none text-primary md:text-[1.65rem]" data-testid={`text-roster-captain-${getPlayerSlug(team.name)}`}>
                         {team.captain}
                       </p>
 
@@ -257,7 +257,7 @@ export default function Players() {
                               <div className={`flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br text-sm font-bold shadow-sm ${slotClasses} ${team.layout === "right" ? "md:order-2" : ""}`}>
                                 {player.slot}
                               </div>
-                              <p className={`font-sans text-[1.05rem] font-semibold leading-none text-primary md:text-[1.18rem] ${team.layout === "right" ? "md:order-1" : ""}`} data-testid={`text-roster-player-${playerSlug}`}>
+                              <p className={`whitespace-nowrap font-sans text-[1.05rem] font-semibold leading-none text-primary md:text-[1.18rem] ${team.layout === "right" ? "md:order-1" : ""}`} data-testid={`text-roster-player-${playerSlug}`}>
                                 {player.name}
                               </p>
                             </div>
