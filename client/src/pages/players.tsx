@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Shield, Trophy, UserRound } from "lucide-react";
+import { Shield, Star, Trophy, UserRound } from "lucide-react";
 import jasonDousharmImage from "@assets/1665088037422_1776551209099.jpg";
 import mikeParsonsImage from "@assets/image_1776551520237.png";
 import mikeGibbonsImage from "@assets/image_1776551618225.png";
@@ -219,54 +219,65 @@ export default function Players() {
             </div>
           </div>
 
-          <div className="relative mt-8 grid gap-4 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:items-stretch lg:gap-4">
+          <div className="relative mt-8 grid gap-4 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:items-center lg:gap-4">
             {TEAM_ROSTERS.map((team, index) => (
               <div key={team.name} className={index === 0 ? "order-1 h-full" : "order-3 h-full"}>
                 <div
-                  className={`relative h-full min-h-[332px] overflow-hidden rounded-[1.9rem] border bg-white ${team.border} shadow-[0_26px_60px_-42px_rgba(15,23,42,0.3)]`}
+                  className={`relative h-full min-h-[214px] overflow-hidden rounded-[1.9rem] border bg-white ${team.border} shadow-[0_24px_50px_-38px_rgba(15,23,42,0.24)]`}
                   data-testid={`card-team-roster-${getPlayerSlug(team.name)}`}
                 >
-                  <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${team.accentLine}`} />
+                  <div className={`absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r ${team.accentLine}`} />
 
-                  <div className={`grid gap-5 p-5 md:grid-cols-[116px_1fr] md:p-6 ${team.layout === "right" ? "md:grid-cols-[1fr_116px]" : ""}`}>
+                  <div className={`grid h-full gap-5 p-5 md:grid-cols-[92px_1fr] md:p-6 ${team.layout === "right" ? "md:grid-cols-[1fr_92px]" : ""}`}>
                     <div className={team.layout === "right" ? "md:order-2" : ""}>
-                      <div className={`mx-auto flex h-[120px] w-[86px] items-center justify-center rounded-[1.7rem] bg-gradient-to-b ${team.crest} text-white shadow-[0_22px_50px_-26px_rgba(15,23,42,0.45)]`}>
-                        <div className="relative flex h-full w-full items-center justify-center">
-                          <Shield className="absolute inset-0 h-full w-full p-2 opacity-18" />
-                          <Trophy className="relative h-9 w-9" />
+                      <div className="mx-auto flex items-start justify-center">
+                        <div className={`relative h-[104px] w-[74px] text-white drop-shadow-[0_16px_28px_rgba(15,23,42,0.28)]`}>
+                          <div
+                            className={`absolute inset-0 bg-gradient-to-b ${team.crest}`}
+                            style={{ clipPath: "polygon(50% 0%, 92% 8%, 92% 58%, 50% 100%, 8% 58%, 8% 8%)" }}
+                          />
+                          <Shield className="absolute inset-0 h-full w-full p-1.5 opacity-20" />
+                          <Trophy className="absolute left-1/2 top-[24px] h-8 w-8 -translate-x-1/2" />
+                          <div className="absolute left-1/2 top-[58px] h-[2px] w-8 -translate-x-1/2 rotate-45 rounded-full bg-white/95" />
+                          <div className="absolute left-1/2 top-[58px] h-[2px] w-8 -translate-x-1/2 -rotate-45 rounded-full bg-white/95" />
+                          <Star className="absolute bottom-[13px] left-1/2 h-3.5 w-3.5 -translate-x-1/2 fill-white text-white" />
                         </div>
                       </div>
                     </div>
 
                     <div className={team.layout === "right" ? "md:order-1 md:text-right" : ""}>
-                      <h3 className={`whitespace-nowrap font-serif text-[2rem] font-bold leading-none md:text-[2.2rem] ${team.accentText}`} data-testid={`text-roster-team-name-${getPlayerSlug(team.name)}`}>
-                        {team.name}
-                      </h3>
-                      <p className="mt-4 text-[10px] font-bold uppercase tracking-[0.24em] text-secondary">Captain</p>
-                      <p className="mt-1 whitespace-nowrap font-serif text-[1.45rem] font-bold leading-none text-primary md:text-[1.65rem]" data-testid={`text-roster-captain-${getPlayerSlug(team.name)}`}>
-                        {team.captain}
-                      </p>
+                      <div className={`grid gap-5 ${team.layout === "right" ? "md:grid-cols-[1fr_184px] md:items-start" : "md:grid-cols-[184px_1fr] md:items-start"}`}>
+                        <div className={team.layout === "right" ? "md:order-2" : ""}>
+                          <h3 className={`whitespace-nowrap font-serif text-[1.95rem] font-bold leading-[0.95] md:text-[2.15rem] ${team.accentText}`} data-testid={`text-roster-team-name-${getPlayerSlug(team.name)}`}>
+                            {team.name}
+                          </h3>
+                          <p className="mt-4 text-[10px] font-bold uppercase tracking-[0.24em] text-secondary">Captain</p>
+                          <p className="mt-1 whitespace-nowrap font-serif text-[1.05rem] font-bold leading-none text-primary md:text-[1.1rem]" data-testid={`text-roster-captain-${getPlayerSlug(team.name)}`}>
+                            {team.captain}
+                          </p>
+                        </div>
 
-                      <div className="mt-5 space-y-2.5">
-                        {team.players.map((player) => {
-                          const playerSlug = getPlayerSlug(player.name);
-                          const slotClasses = SLOT_STYLES[player.slot as keyof typeof SLOT_STYLES];
+                        <div className={`space-y-2 ${team.layout === "right" ? "md:order-1" : ""}`}>
+                          {team.players.map((player) => {
+                            const playerSlug = getPlayerSlug(player.name);
+                            const slotClasses = SLOT_STYLES[player.slot as keyof typeof SLOT_STYLES];
 
-                          return (
-                            <div
-                              key={player.name}
-                              className={`grid grid-cols-[auto_1fr] items-center gap-3 border-b border-primary/8 pb-2.5 last:border-b-0 last:pb-0 ${team.layout === "right" ? "md:grid-cols-[1fr_auto]" : ""}`}
-                              data-testid={`row-team-roster-${playerSlug}`}
-                            >
-                              <div className={`flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br text-sm font-bold shadow-sm ${slotClasses} ${team.layout === "right" ? "md:order-2" : ""}`}>
-                                {player.slot}
+                            return (
+                              <div
+                                key={player.name}
+                                className={`grid grid-cols-[auto_1fr] items-center gap-3 border-b border-primary/8 pb-2 last:border-b-0 last:pb-0 ${team.layout === "right" ? "md:grid-cols-[1fr_auto]" : ""}`}
+                                data-testid={`row-team-roster-${playerSlug}`}
+                              >
+                                <div className={`flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br text-[13px] font-bold shadow-sm ${slotClasses} ${team.layout === "right" ? "md:order-2" : ""}`}>
+                                  {player.slot}
+                                </div>
+                                <p className={`whitespace-nowrap font-sans text-[1rem] font-semibold leading-none text-primary ${team.layout === "right" ? "md:order-1" : ""}`} data-testid={`text-roster-player-${playerSlug}`}>
+                                  {player.name}
+                                </p>
                               </div>
-                              <p className={`whitespace-nowrap font-sans text-[1.05rem] font-semibold leading-none text-primary md:text-[1.18rem] ${team.layout === "right" ? "md:order-1" : ""}`} data-testid={`text-roster-player-${playerSlug}`}>
-                                {player.name}
-                              </p>
-                            </div>
-                          );
-                        })}
+                            );
+                          })}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -275,8 +286,8 @@ export default function Players() {
             ))}
 
             <div className="order-2 flex items-center justify-center lg:px-1">
-              <div className="flex h-20 w-20 items-center justify-center rounded-full border border-primary/10 bg-white text-center shadow-[0_20px_50px_-35px_rgba(15,23,42,0.35)]">
-                <span className="font-serif text-3xl font-bold tracking-tight text-primary" data-testid="text-team-rosters-vs">
+              <div className="flex h-[72px] w-[72px] items-center justify-center rounded-full border border-primary/10 bg-white text-center shadow-[0_20px_50px_-35px_rgba(15,23,42,0.35)]">
+                <span className="font-serif text-[2rem] font-bold tracking-tight text-primary" data-testid="text-team-rosters-vs">
                   VS
                 </span>
               </div>
