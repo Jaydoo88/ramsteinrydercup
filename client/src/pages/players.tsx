@@ -627,10 +627,10 @@ export default function Players() {
       </section>
 
       <Dialog open={selectedPlayer !== null} onOpenChange={(open) => !open && setSelectedPlayer(null)}>
-        <DialogContent className="max-w-3xl border-none bg-transparent p-0 shadow-none">
+        <DialogContent className="max-w-[850px] border-none bg-transparent p-0 shadow-none">
           {selectedPlayer ? (
             <div
-              className={`overflow-hidden rounded-[2rem] border bg-white shadow-[0_35px_100px_-40px_rgba(15,23,42,0.45)] ${
+              className={`max-h-[80vh] overflow-hidden rounded-[22px] border bg-white shadow-[0_35px_100px_-40px_rgba(15,23,42,0.45)] ${
                 selectedPlayer.team === "blue" ? "border-sky-200/90" : "border-rose-200/90"
               }`}
             >
@@ -641,23 +641,16 @@ export default function Players() {
                     : "bg-[linear-gradient(90deg,#2f0d12,#8d1c2b)]"
                 }`}
               />
-              <div className="grid md:grid-cols-[280px_minmax(0,1fr)]">
-                <div
-                  className={`relative overflow-hidden ${
-                    selectedPlayer.team === "blue"
-                      ? "bg-[linear-gradient(135deg,#0c2340,#174a7a)]"
-                      : "bg-[linear-gradient(135deg,#2f0d12,#8d1c2b)]"
-                  }`}
-                >
+              <div className="grid max-h-[calc(80vh-6px)] md:grid-cols-[34fr_66fr]">
+                <div className="relative overflow-hidden">
                   <img
                     src={selectedPlayer.image}
                     alt={selectedPlayer.name}
-                    className={`h-[320px] w-full object-cover ${selectedPlayer.imageClassName ?? "object-center"}`}
+                    className={`h-[280px] w-full object-cover md:h-full ${selectedPlayer.imageClassName ?? "object-center"}`}
                     data-testid="img-selected-player-modal"
                   />
-                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#081423]/80 via-[#081423]/18 to-transparent" />
                 </div>
-                <div className="relative flex min-h-[320px] flex-col overflow-hidden p-8 md:p-10">
+                <div className="relative flex min-h-0 flex-col overflow-hidden p-6 md:p-8">
                   {VETERAN_BADGE_PLAYERS.has(selectedPlayer.name) ? (
                     <img
                       src={veteranAirForceLogoImage}
@@ -666,10 +659,10 @@ export default function Players() {
                       data-testid="img-selected-player-veteran-watermark"
                     />
                   ) : null}
-                  <div className="relative z-[2] flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
-                    <div className="pr-12 md:max-w-[420px]">
+                  <div className="relative z-[2] flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
+                    <div className="md:max-w-[420px]">
                       <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-secondary">Ramstein Ryder Cup</p>
-                      <p className="mt-4 font-serif text-[3rem] font-bold leading-[0.95] text-primary" data-testid="text-selected-player-name">
+                      <p className="mt-4 font-serif text-[2.5rem] font-bold leading-[0.95] text-primary md:text-[3rem]" data-testid="text-selected-player-name">
                         {selectedPlayer.name}
                       </p>
                       <p className="mt-5 text-sm font-bold uppercase tracking-[0.22em] text-foreground/55" data-testid="text-selected-player-team">
@@ -702,29 +695,20 @@ export default function Players() {
                       </span>
                     </div>
                   </div>
-                  <div className="relative z-[2] mt-8 rounded-[1.5rem] border border-primary/8 bg-[linear-gradient(180deg,rgba(247,244,239,0.7),rgba(255,255,255,0.95))] p-5 md:p-6">
+                  <div className="relative z-[2] mt-6 rounded-[1.35rem] border border-primary/8 bg-[linear-gradient(180deg,rgba(247,244,239,0.78),rgba(255,255,255,0.96))] p-[22px]">
                     <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-secondary" data-testid="text-selected-player-bio-heading">
                       Bio
                     </p>
-                    <div className="mt-4 space-y-4 text-[0.98rem] leading-7 text-foreground/78" data-testid="text-selected-player-bio">
+                    <div
+                      className="mt-4 max-h-[260px] space-y-4 overflow-y-auto pr-2 text-[15px] leading-[1.6] text-foreground/78"
+                      data-testid="text-selected-player-bio"
+                    >
                       {selectedPlayerProfile?.bio?.length ? (
                         selectedPlayerProfile.bio.map((paragraph) => <p key={paragraph}>{paragraph}</p>)
                       ) : (
                         <p>Full player bio coming soon.</p>
                       )}
                     </div>
-                    {selectedPlayerProfile?.facts?.length ? (
-                      <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-3 xl:grid-cols-4" data-testid="grid-selected-player-facts">
-                        {selectedPlayerProfile.facts.map((fact) => (
-                          <div
-                            key={fact}
-                            className="rounded-full border border-primary/10 bg-white px-3 py-2 text-center text-xs font-bold uppercase tracking-[0.14em] text-primary shadow-[0_10px_24px_-20px_rgba(15,23,42,0.35)]"
-                          >
-                            {fact}
-                          </div>
-                        ))}
-                      </div>
-                    ) : null}
                   </div>
                 </div>
               </div>
