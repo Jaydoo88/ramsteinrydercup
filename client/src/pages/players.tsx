@@ -253,7 +253,7 @@ export default function Players() {
                             {team.name}
                           </h3>
                           <p
-                            className="mb-[6px] mt-3 whitespace-nowrap uppercase text-[#D4001A]"
+                            className="mb-[6px] mt-3 whitespace-nowrap uppercase text-[#0A3A78]"
                             style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2.6px' }}
                           >
                             Captain
