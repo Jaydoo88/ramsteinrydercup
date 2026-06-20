@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Shield, Star, Trophy, UserRound } from "lucide-react";
 import jasonDousharmImage from "@assets/1665088037422_1776551209099.jpg";
 import mikeParsonsImage from "@assets/image_1776551520237.png";
+import blueTeamLogoImage from "@assets/image_1781915164301.png";
 import mikeGibbonsImage from "@assets/image_1776551618225.png";
 import robbyFullerImage from "@assets/654214334_10242588166511341_589448361213285726_n_1776624936484.jpg";
 import darrelJohnsonImage from "@assets/image_1776790509801.png";
@@ -231,17 +232,26 @@ export default function Players() {
                   <div className={`grid h-full gap-5 p-5 md:grid-cols-[92px_1fr] md:p-6 ${team.layout === "right" ? "md:grid-cols-[1fr_92px]" : ""}`}>
                     <div className={team.layout === "right" ? "md:order-2" : ""}>
                       <div className="mx-auto flex items-start justify-center">
-                        <div className={`relative h-[104px] w-[74px] text-white drop-shadow-[0_16px_28px_rgba(15,23,42,0.28)]`}>
-                          <div
-                            className={`absolute inset-0 bg-gradient-to-b ${team.crest}`}
-                            style={{ clipPath: "polygon(50% 0%, 92% 8%, 92% 58%, 50% 100%, 8% 58%, 8% 8%)" }}
+                        {team.name === "Blue Team" ? (
+                          <img
+                            src={blueTeamLogoImage}
+                            alt="Blue Team logo"
+                            className="h-[112px] w-[112px] object-contain drop-shadow-[0_16px_28px_rgba(15,23,42,0.22)]"
+                            data-testid="img-blue-team-logo"
                           />
-                          <Shield className="absolute inset-0 h-full w-full p-1.5 opacity-20" />
-                          <Trophy className="absolute left-1/2 top-[24px] h-8 w-8 -translate-x-1/2" />
-                          <div className="absolute left-1/2 top-[58px] h-[2px] w-8 -translate-x-1/2 rotate-45 rounded-full bg-white/95" />
-                          <div className="absolute left-1/2 top-[58px] h-[2px] w-8 -translate-x-1/2 -rotate-45 rounded-full bg-white/95" />
-                          <Star className="absolute bottom-[13px] left-1/2 h-3.5 w-3.5 -translate-x-1/2 fill-white text-white" />
-                        </div>
+                        ) : (
+                          <div className={`relative h-[104px] w-[74px] text-white drop-shadow-[0_16px_28px_rgba(15,23,42,0.28)]`}>
+                            <div
+                              className={`absolute inset-0 bg-gradient-to-b ${team.crest}`}
+                              style={{ clipPath: "polygon(50% 0%, 92% 8%, 92% 58%, 50% 100%, 8% 58%, 8% 8%)" }}
+                            />
+                            <Shield className="absolute inset-0 h-full w-full p-1.5 opacity-20" />
+                            <Trophy className="absolute left-1/2 top-[24px] h-8 w-8 -translate-x-1/2" />
+                            <div className="absolute left-1/2 top-[58px] h-[2px] w-8 -translate-x-1/2 rotate-45 rounded-full bg-white/95" />
+                            <div className="absolute left-1/2 top-[58px] h-[2px] w-8 -translate-x-1/2 -rotate-45 rounded-full bg-white/95" />
+                            <Star className="absolute bottom-[13px] left-1/2 h-3.5 w-3.5 -translate-x-1/2 fill-white text-white" />
+                          </div>
+                        )}
                       </div>
                     </div>
 
