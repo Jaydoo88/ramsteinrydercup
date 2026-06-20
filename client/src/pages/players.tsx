@@ -659,31 +659,37 @@ export default function Players() {
                       data-testid="img-selected-player-veteran-watermark"
                     />
                   ) : null}
-                  <div className="relative z-[2] flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
-                    <div className="md:max-w-[420px]">
+                  <div className="relative z-[2] pr-16 md:pr-20">
+                    <div className="md:max-w-[460px]">
                       <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-secondary">Ramstein Ryder Cup</p>
-                      <p className="mt-4 font-serif text-[2.5rem] font-bold leading-[0.95] text-primary md:text-[3rem]" data-testid="text-selected-player-name">
+                      <p
+                        className="mt-3 font-serif text-[2.6rem] font-bold leading-[0.9] text-[#163d74] md:text-[3.35rem]"
+                        data-testid="text-selected-player-name"
+                      >
                         {selectedPlayer.name}
                       </p>
-                      <p className="mt-5 text-sm font-bold uppercase tracking-[0.22em] text-foreground/55" data-testid="text-selected-player-team">
+                      <p
+                        className="mt-5 text-[0.82rem] font-bold uppercase tracking-[0.42em] text-[#5c7091]"
+                        data-testid="text-selected-player-team"
+                      >
                         {selectedPlayer.team === "blue" ? "Blue Team" : "Red Team"}
                       </p>
-                      <p className="mt-2 font-serif text-xl font-bold text-secondary" data-testid="text-selected-player-flight">
+                      <p className="mt-3 font-serif text-[1.9rem] font-bold text-[#c73b58]" data-testid="text-selected-player-flight">
                         {selectedPlayer.flightTitle}
                       </p>
                     </div>
                     <div
-                      className="flex h-[72px] w-[72px] shrink-0 items-center justify-center rounded-full border border-[#DDE5EF] bg-white shadow-[0_14px_30px_rgba(15,23,42,0.10)]"
+                      className="absolute right-0 top-0 flex h-[76px] w-[76px] items-center justify-center rounded-full border border-[#efe9de] bg-white shadow-[0_18px_38px_rgba(15,23,42,0.12)] md:right-1 md:top-[-10px]"
                       data-testid="badge-selected-player-slot"
                     >
                       <span
                         style={{
                           fontFamily: 'Georgia, "Times New Roman", serif',
-                          fontSize: '34px',
+                          fontSize: '36px',
                           fontWeight: 700,
                           color:
                             selectedPlayer.slot === 'A'
-                              ? '#F5A800'
+                              ? '#D9A11F'
                               : selectedPlayer.slot === 'B'
                                 ? '#0B84FF'
                                 : selectedPlayer.slot === 'C'
