@@ -221,16 +221,16 @@ export default function Players() {
             </div>
           </div>
 
-          <div className="relative mx-auto mt-8 flex max-w-[1450px] flex-col items-center justify-center gap-4 lg:flex-row lg:gap-16">
+          <div className="mx-auto mt-8 grid w-full max-w-[1160px] items-center gap-6 lg:grid-cols-[1fr_72px_1fr]">
             {TEAM_ROSTERS.map((team, index) => {
               const isBlueTeam = team.name === "Blue Team";
 
               return (
-                <div key={team.name} className={index === 0 ? "order-1 w-full max-w-[700px]" : "order-3 w-full max-w-[700px]"}>
+                <div key={team.name} className={index === 0 ? "order-1 flex justify-center lg:justify-end" : "order-3 flex justify-center lg:justify-start"}>
                   <div
-                    className={`grid h-[230px] box-border items-center gap-x-[18px] overflow-hidden rounded-[18px] border-2 px-6 py-6 shadow-[0_24px_45px_rgba(15,23,42,0.08)] ${
-                      isBlueTeam ? "border-[#0B3D91] bg-[#F5FAFF]" : "border-[#E00022] bg-[#FFF5F5]"
-                    } ${isBlueTeam ? "grid-cols-[100px_230px_1px_300px]" : "grid-cols-[300px_1px_230px_100px]"}`}
+                    className={`grid h-[230px] w-full max-w-[520px] box-border items-center overflow-hidden rounded-[18px] border-2 px-4 py-5 shadow-[0_24px_45px_rgba(15,23,42,0.08)] ${
+                      isBlueTeam ? "border-[#0B3D91] bg-[#F5FAFF] grid-cols-[70px_180px_220px]" : "border-[#E00022] bg-[#FFF5F5] grid-cols-[220px_180px_70px]"
+                    }`}
                     data-testid={`card-team-roster-${getPlayerSlug(team.name)}`}
                   >
                     {isBlueTeam ? (
@@ -239,22 +239,22 @@ export default function Players() {
                           <img
                             src={blueTeamLogoImage}
                             alt="Blue Team logo"
-                            className="h-20 w-auto object-contain drop-shadow-[0_18px_28px_rgba(0,0,0,0.18)]"
+                            className="h-[55px] w-auto object-contain drop-shadow-[0_18px_28px_rgba(0,0,0,0.18)]"
                             data-testid="img-blue-team-logo"
                           />
                         </div>
 
-                        <div className="flex h-full min-w-0 flex-col justify-center">
+                        <div className="flex h-full min-w-0 flex-col justify-center pr-4">
                           <h3
-                            className="whitespace-nowrap overflow-visible uppercase leading-none text-[#0A3A78]"
-                            style={{ fontFamily: 'Georgia, "Times New Roman", serif', fontSize: '30px', fontWeight: 700, lineHeight: 1, letterSpacing: '-0.5px' }}
+                            className="whitespace-nowrap uppercase leading-none text-[#0A3A78]"
+                            style={{ fontFamily: 'Georgia, "Times New Roman", serif', fontSize: '26px', fontWeight: 700, lineHeight: 1 }}
                             data-testid={`text-roster-team-name-${getPlayerSlug(team.name)}`}
                           >
                             {team.name}
                           </h3>
                           <p
-                            className="mb-[8px] mt-4 whitespace-nowrap uppercase text-[#D4001A]"
-                            style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '2.6px' }}
+                            className="mb-[6px] mt-3 whitespace-nowrap uppercase text-[#D4001A]"
+                            style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2.6px' }}
                           >
                             Captain
                           </p>
@@ -267,9 +267,7 @@ export default function Players() {
                           </p>
                         </div>
 
-                        <div className="h-[154px] w-px bg-[#DDE5EF]" />
-
-                        <div className="min-w-0">
+                        <div className="min-w-0 border-l border-[#DDE5EF] pl-4">
                           {team.players.map((player) => {
                             const playerSlug = getPlayerSlug(player.name);
                             const badgeClass =
@@ -284,11 +282,11 @@ export default function Players() {
                             return (
                               <div
                                 key={player.name}
-                                className="grid h-[42px] grid-cols-[46px_1fr] items-center border-b border-[#DDE5EF] text-[#071F4F] last:border-b-0"
-                                style={{ fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', fontSize: '17px', fontWeight: 700 }}
+                                className="grid h-[38px] grid-cols-[40px_1fr] items-center border-b border-[#DDE5EF] text-[#071F4F] last:border-b-0"
+                                style={{ fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', fontSize: '15px', fontWeight: 700 }}
                                 data-testid={`row-team-roster-${playerSlug}`}
                               >
-                                <div className={`flex h-9 w-9 items-center justify-center rounded-[9px] text-[16px] text-white shadow-[0_6px_12px_rgba(0,0,0,0.16)] ${badgeClass}`}>
+                                <div className={`flex h-8 w-8 items-center justify-center rounded-[9px] text-[15px] text-white shadow-[0_6px_12px_rgba(0,0,0,0.16)] ${badgeClass}`}>
                                   {player.slot}
                                 </div>
                                 <p className="whitespace-nowrap" data-testid={`text-roster-player-${playerSlug}`}>
@@ -301,7 +299,7 @@ export default function Players() {
                       </>
                     ) : (
                       <>
-                        <div className="min-w-0">
+                        <div className="min-w-0 border-r border-[#DDE5EF] pr-4">
                           {team.players.map((player) => {
                             const playerSlug = getPlayerSlug(player.name);
                             const badgeClass =
@@ -316,11 +314,11 @@ export default function Players() {
                             return (
                               <div
                                 key={player.name}
-                                className="grid h-[42px] grid-cols-[46px_1fr] items-center border-b border-[#DDE5EF] text-[#071F4F] last:border-b-0"
-                                style={{ fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', fontSize: '17px', fontWeight: 700 }}
+                                className="grid h-[38px] grid-cols-[40px_1fr] items-center border-b border-[#DDE5EF] text-[#071F4F] last:border-b-0"
+                                style={{ fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', fontSize: '15px', fontWeight: 700 }}
                                 data-testid={`row-team-roster-${playerSlug}`}
                               >
-                                <div className={`flex h-9 w-9 items-center justify-center rounded-[9px] text-[16px] text-white shadow-[0_6px_12px_rgba(0,0,0,0.16)] ${badgeClass}`}>
+                                <div className={`flex h-8 w-8 items-center justify-center rounded-[9px] text-[15px] text-white shadow-[0_6px_12px_rgba(0,0,0,0.16)] ${badgeClass}`}>
                                   {player.slot}
                                 </div>
                                 <p className="whitespace-nowrap" data-testid={`text-roster-player-${playerSlug}`}>
@@ -331,19 +329,17 @@ export default function Players() {
                           })}
                         </div>
 
-                        <div className="h-[154px] w-px bg-[#DDE5EF]" />
-
-                        <div className="flex h-full min-w-0 flex-col justify-center">
+                        <div className="flex h-full min-w-0 flex-col justify-center px-4">
                           <h3
-                            className="whitespace-nowrap overflow-visible uppercase leading-none text-[#C9001F]"
-                            style={{ fontFamily: 'Georgia, "Times New Roman", serif', fontSize: '30px', fontWeight: 700, lineHeight: 1, letterSpacing: '-0.5px' }}
+                            className="whitespace-nowrap uppercase leading-none text-[#C9001F]"
+                            style={{ fontFamily: 'Georgia, "Times New Roman", serif', fontSize: '26px', fontWeight: 700, lineHeight: 1 }}
                             data-testid={`text-roster-team-name-${getPlayerSlug(team.name)}`}
                           >
                             {team.name}
                           </h3>
                           <p
-                            className="mb-[8px] mt-4 whitespace-nowrap uppercase text-[#D4001A]"
-                            style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '2.6px' }}
+                            className="mb-[6px] mt-3 whitespace-nowrap uppercase text-[#D4001A]"
+                            style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2.6px' }}
                           >
                             Captain
                           </p>
@@ -360,7 +356,7 @@ export default function Players() {
                           <img
                             src={redTeamLogoImage}
                             alt="Red Team logo"
-                            className="h-20 w-auto object-contain drop-shadow-[0_18px_28px_rgba(0,0,0,0.18)]"
+                            className="h-[55px] w-auto object-contain drop-shadow-[0_18px_28px_rgba(0,0,0,0.18)]"
                             data-testid="img-red-team-logo"
                           />
                         </div>
@@ -371,8 +367,8 @@ export default function Players() {
               );
             })}
 
-            <div className="order-2 flex items-center justify-center lg:absolute lg:left-1/2 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2">
-              <div className="flex h-[74px] w-[74px] items-center justify-center rounded-full border border-[#DDE5EF] bg-white shadow-[0_14px_30px_rgba(15,23,42,0.12)]">
+            <div className="order-2 flex items-center justify-center">
+              <div className="flex h-[72px] w-[72px] items-center justify-center rounded-full border border-[#DDE5EF] bg-white shadow-[0_14px_30px_rgba(15,23,42,0.12)]">
                 <span
                   className="text-[#0A3A78]"
                   style={{ fontFamily: 'Georgia, "Times New Roman", serif', fontSize: '34px', fontWeight: 700 }}
