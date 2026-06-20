@@ -218,6 +218,13 @@ const PLAYER_MODAL_PROFILES: Record<string, { bio: string[]; facts: string[] }> 
     ],
     facts: [],
   },
+  "Darren Johnson": {
+    bio: [
+      "Darren Johnson arrives at the Ramstein Ryder Cup with decades of experience and plenty of stories to share. An Air Force veteran and recently retired after an incredible 37-year federal career, Darren is a loyal Buffalo Bills and Guardians fan who never misses an opportunity to catch a game. A NASCAR enthusiast at heart, he has transformed his garage into the ultimate man cave — a place where sports, laughter, and good company are always welcome.",
+      "Off the course, Darren is looking forward to the next chapter of life, spending more time traveling in his new travel trailer and making memories with his family, especially his children. Known to many as a true K9 Extraordinaire, Darren built a remarkable career around service, dedication, and leadership. This Ryder Cup weekend, he’ll be bringing that same steady presence, competitive spirit, and veteran experience to every match he plays.",
+    ],
+    facts: [],
+  },
 };
 
 export default function Players() {
