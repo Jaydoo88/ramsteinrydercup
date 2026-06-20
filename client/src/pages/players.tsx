@@ -226,11 +226,11 @@ export default function Players() {
               const isBlueTeam = team.name === "Blue Team";
 
               return (
-                <div key={team.name} className={index === 0 ? "order-1 w-full max-w-[620px]" : "order-3 w-full max-w-[620px]"}>
+                <div key={team.name} className={index === 0 ? "order-1 w-full max-w-[700px]" : "order-3 w-full max-w-[700px]"}>
                   <div
-                    className={`grid h-[245px] items-center rounded-[18px] border-2 bg-white px-[34px] py-[32px] shadow-[0_24px_45px_rgba(15,23,42,0.08)] ${
-                      isBlueTeam ? "border-[#0B3D91]" : "border-[#E00022]"
-                    } ${isBlueTeam ? "grid-cols-[104px_176px_1px_minmax(0,1fr)]" : "grid-cols-[minmax(0,1fr)_1px_176px_104px]"}`}
+                    className={`grid h-[230px] box-border items-center gap-x-[18px] overflow-hidden rounded-[18px] border-2 px-6 py-6 shadow-[0_24px_45px_rgba(15,23,42,0.08)] ${
+                      isBlueTeam ? "border-[#0B3D91] bg-[#F5FAFF]" : "border-[#E00022] bg-[#FFF5F5]"
+                    } ${isBlueTeam ? "grid-cols-[100px_230px_1px_300px]" : "grid-cols-[300px_1px_230px_100px]"}`}
                     data-testid={`card-team-roster-${getPlayerSlug(team.name)}`}
                   >
                     {isBlueTeam ? (
@@ -239,15 +239,15 @@ export default function Players() {
                           <img
                             src={blueTeamLogoImage}
                             alt="Blue Team logo"
-                            className="h-[110px] w-auto object-contain drop-shadow-[0_18px_28px_rgba(0,0,0,0.18)]"
+                            className="h-20 w-auto object-contain drop-shadow-[0_18px_28px_rgba(0,0,0,0.18)]"
                             data-testid="img-blue-team-logo"
                           />
                         </div>
 
-                        <div className="flex h-full min-w-0 flex-col justify-center pl-1 pr-6">
+                        <div className="flex h-full min-w-0 flex-col justify-center">
                           <h3
-                            className="whitespace-nowrap uppercase leading-none text-[#0A3A78]"
-                            style={{ fontFamily: 'Georgia, "Times New Roman", serif', fontSize: '31px', fontWeight: 700, letterSpacing: '-0.5px' }}
+                            className="whitespace-nowrap overflow-visible uppercase leading-none text-[#0A3A78]"
+                            style={{ fontFamily: 'Georgia, "Times New Roman", serif', fontSize: '30px', fontWeight: 700, lineHeight: 1, letterSpacing: '-0.5px' }}
                             data-testid={`text-roster-team-name-${getPlayerSlug(team.name)}`}
                           >
                             {team.name}
@@ -267,9 +267,9 @@ export default function Players() {
                           </p>
                         </div>
 
-                        <div className="h-[158px] w-px bg-[#DDE5EF]" />
+                        <div className="h-[154px] w-px bg-[#DDE5EF]" />
 
-                        <div className="min-w-0 pl-5">
+                        <div className="min-w-0">
                           {team.players.map((player) => {
                             const playerSlug = getPlayerSlug(player.name);
                             const badgeClass =
@@ -301,7 +301,7 @@ export default function Players() {
                       </>
                     ) : (
                       <>
-                        <div>
+                        <div className="min-w-0">
                           {team.players.map((player) => {
                             const playerSlug = getPlayerSlug(player.name);
                             const badgeClass =
@@ -331,12 +331,12 @@ export default function Players() {
                           })}
                         </div>
 
-                        <div className="h-[158px] w-px bg-[#DDE5EF]" />
+                        <div className="h-[154px] w-px bg-[#DDE5EF]" />
 
-                        <div className="min-w-0 px-4">
+                        <div className="flex h-full min-w-0 flex-col justify-center">
                           <h3
-                            className="whitespace-nowrap uppercase leading-none text-[#C9001F]"
-                            style={{ fontFamily: 'Georgia, "Times New Roman", serif', fontSize: '31px', fontWeight: 700, letterSpacing: '-0.5px' }}
+                            className="whitespace-nowrap overflow-visible uppercase leading-none text-[#C9001F]"
+                            style={{ fontFamily: 'Georgia, "Times New Roman", serif', fontSize: '30px', fontWeight: 700, lineHeight: 1, letterSpacing: '-0.5px' }}
                             data-testid={`text-roster-team-name-${getPlayerSlug(team.name)}`}
                           >
                             {team.name}
@@ -360,7 +360,7 @@ export default function Players() {
                           <img
                             src={redTeamLogoImage}
                             alt="Red Team logo"
-                            className="h-[110px] w-auto object-contain drop-shadow-[0_18px_28px_rgba(0,0,0,0.18)]"
+                            className="h-20 w-auto object-contain drop-shadow-[0_18px_28px_rgba(0,0,0,0.18)]"
                             data-testid="img-red-team-logo"
                           />
                         </div>
