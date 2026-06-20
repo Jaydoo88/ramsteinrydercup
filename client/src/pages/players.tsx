@@ -999,7 +999,9 @@ export default function Players() {
                       ) : null}
                       <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-left">
                         <p
-                          className="text-[0.68rem] font-bold uppercase tracking-[0.3em] text-[#294c7b]"
+                          className={`text-[0.68rem] font-bold uppercase tracking-[0.3em] ${
+                            selectedPlayer.team === "blue" ? "text-[#294c7b]" : "text-[#b4233b]"
+                          }`}
                           data-testid="text-selected-player-team"
                         >
                           {selectedPlayer.team === "blue" ? "Blue Team" : "Red Team"}
