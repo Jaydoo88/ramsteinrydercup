@@ -1,5 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Trophy, UserRound } from "lucide-react";
+import { useState } from "react";
 import jasonDousharmImage from "@assets/1665088037422_1776551209099.jpg";
 import mikeParsonsImage from "@assets/image_1776551520237.png";
 import blueTeamLogoImage from "@assets/image_1781915164301.png";
@@ -181,7 +183,18 @@ function getPlayerSlug(name: string) {
   return name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 }
 
+type SelectedPlayer = {
+  name: string;
+  image: string;
+  imageClassName?: string;
+  slot: keyof typeof SLOT_STYLES;
+  team: "blue" | "red";
+  flightTitle: string;
+};
+
 export default function Players() {
+  const [selectedPlayer, setSelectedPlayer] = useState<SelectedPlayer | null>(null);
+
   return (
     <div className="min-h-screen bg-[linear-gradient(180deg,#f6f2ec_0%,#fbfaf8_22%,#ffffff_100%)]">
       <section className="border-b border-primary/10 bg-white">
@@ -397,9 +410,20 @@ export default function Players() {
 
               return (
                 <div key={flight.key} className="mx-auto grid w-full max-w-[1160px] grid-cols-[1fr_90px_1fr] items-center gap-[18px]">
-                  <div
-                    className="relative grid h-[170px] overflow-hidden rounded-[1.7rem] border border-sky-200/90 bg-white shadow-[0_24px_50px_-38px_rgba(15,23,42,0.28)] grid-cols-[144px_minmax(0,1fr)]"
+                  <button
+                    type="button"
+                    className="relative grid h-[170px] overflow-hidden rounded-[1.7rem] border border-sky-200/90 bg-white text-left shadow-[0_24px_50px_-38px_rgba(15,23,42,0.28)] transition-transform duration-200 hover:-translate-y-0.5 grid-cols-[144px_minmax(0,1fr)]"
                     data-testid={`card-flight-player-blue-${flight.key}`}
+                    onClick={() =>
+                      setSelectedPlayer({
+                        name: flight.bluePlayer.name,
+                        image: flight.bluePlayer.image,
+                        imageClassName: flight.bluePlayer.imageClassName,
+                        slot: flight.slot,
+                        team: "blue",
+                        flightTitle: flight.title,
+                      })
+                    }
                   >
                     {VETERAN_BADGE_PLAYERS.has(flight.bluePlayer.name) ? (
                       <img
@@ -425,7 +449,7 @@ export default function Players() {
                         </p>
                       </div>
                     </div>
-                  </div>
+                  </button>
 
                   <div className="flex items-center justify-center">
                     <div
@@ -446,9 +470,20 @@ export default function Players() {
                     </div>
                   </div>
 
-                  <div
-                    className="relative grid h-[170px] overflow-hidden rounded-[1.7rem] border border-rose-200/90 bg-white shadow-[0_24px_50px_-38px_rgba(15,23,42,0.28)] grid-cols-[144px_minmax(0,1fr)]"
+                  <button
+                    type="button"
+                    className="relative grid h-[170px] overflow-hidden rounded-[1.7rem] border border-rose-200/90 bg-white text-left shadow-[0_24px_50px_-38px_rgba(15,23,42,0.28)] transition-transform duration-200 hover:-translate-y-0.5 grid-cols-[144px_minmax(0,1fr)]"
                     data-testid={`card-flight-player-red-${flight.key}`}
+                    onClick={() =>
+                      setSelectedPlayer({
+                        name: flight.redPlayer.name,
+                        image: flight.redPlayer.image,
+                        imageClassName: flight.redPlayer.imageClassName,
+                        slot: flight.slot,
+                        team: "red",
+                        flightTitle: flight.title,
+                      })
+                    }
                   >
                     {VETERAN_BADGE_PLAYERS.has(flight.redPlayer.name) ? (
                       <img
@@ -474,7 +509,7 @@ export default function Players() {
                         </p>
                       </div>
                     </div>
-                  </div>
+                  </button>
                 </div>
               );
             })}
@@ -579,6 +614,93 @@ export default function Players() {
           </div>
         </div>
       </section>
+
+      <Dialog open={selectedPlayer !== null} onOpenChange={(open) => !open && setSelectedPlayer(null)}>
+        <DialogContent className="max-w-3xl border-none bg-transparent p-0 shadow-none">
+          {selectedPlayer ? (
+            <div
+              className={`overflow-hidden rounded-[2rem] border bg-white shadow-[0_35px_100px_-40px_rgba(15,23,42,0.45)] ${
+                selectedPlayer.team === "blue" ? "border-sky-200/90" : "border-rose-200/90"
+              }`}
+            >
+              <div
+                className={`h-1.5 w-full ${
+                  selectedPlayer.team === "blue"
+                    ? "bg-[linear-gradient(90deg,#0c2340,#174a7a)]"
+                    : "bg-[linear-gradient(90deg,#2f0d12,#8d1c2b)]"
+                }`}
+              />
+              <div className="grid md:grid-cols-[280px_minmax(0,1fr)]">
+                <div
+                  className={`relative overflow-hidden ${
+                    selectedPlayer.team === "blue"
+                      ? "bg-[linear-gradient(135deg,#0c2340,#174a7a)]"
+                      : "bg-[linear-gradient(135deg,#2f0d12,#8d1c2b)]"
+                  }`}
+                >
+                  <img
+                    src={selectedPlayer.image}
+                    alt={selectedPlayer.name}
+                    className={`h-[320px] w-full object-cover ${selectedPlayer.imageClassName ?? "object-center"}`}
+                    data-testid="img-selected-player-modal"
+                  />
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#081423]/80 via-[#081423]/18 to-transparent" />
+                </div>
+                <div className="relative flex min-h-[320px] flex-col justify-between p-8 md:p-10">
+                  {VETERAN_BADGE_PLAYERS.has(selectedPlayer.name) ? (
+                    <img
+                      src={veteranAirForceLogoImage}
+                      alt="U.S. Air Force Veteran badge"
+                      className="absolute right-6 top-6 h-16 w-16 object-contain drop-shadow-[0_10px_22px_rgba(15,23,42,0.18)]"
+                      data-testid="img-selected-player-veteran-badge"
+                    />
+                  ) : null}
+                  <div>
+                    <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-secondary">Ramstein Ryder Cup</p>
+                    <p className="mt-4 font-serif text-[3rem] font-bold leading-[0.95] text-primary" data-testid="text-selected-player-name">
+                      {selectedPlayer.name}
+                    </p>
+                    <p className="mt-5 text-sm font-bold uppercase tracking-[0.22em] text-foreground/55" data-testid="text-selected-player-team">
+                      {selectedPlayer.team === "blue" ? "Blue Team" : "Red Team"}
+                    </p>
+                    <p className="mt-2 font-serif text-xl font-bold text-secondary" data-testid="text-selected-player-flight">
+                      {selectedPlayer.flightTitle}
+                    </p>
+                  </div>
+                  <div className="mt-8 flex items-end justify-between gap-6">
+                    <div>
+                      <p className="text-xs font-bold uppercase tracking-[0.22em] text-foreground/45">Match Slot</p>
+                      <p className="mt-2 font-serif text-2xl font-bold text-primary">{selectedPlayer.slot}</p>
+                    </div>
+                    <div
+                      className="flex h-[72px] w-[72px] items-center justify-center rounded-full border border-[#DDE5EF] bg-white shadow-[0_14px_30px_rgba(15,23,42,0.10)]"
+                      data-testid="badge-selected-player-slot"
+                    >
+                      <span
+                        style={{
+                          fontFamily: 'Georgia, "Times New Roman", serif',
+                          fontSize: '34px',
+                          fontWeight: 700,
+                          color:
+                            selectedPlayer.slot === 'A'
+                              ? '#F5A800'
+                              : selectedPlayer.slot === 'B'
+                                ? '#0B84FF'
+                                : selectedPlayer.slot === 'C'
+                                  ? '#18A957'
+                                  : '#EF123E',
+                        }}
+                      >
+                        {selectedPlayer.slot}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ) : null}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
