@@ -409,19 +409,13 @@ export default function Players() {
                     </div>
                   </div>
 
-                  <div className="relative h-full overflow-hidden rounded-[1.7rem] border border-primary/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(247,245,241,0.96))] px-5 py-5 shadow-[0_22px_45px_-38px_rgba(15,23,42,0.25)]">
-                    <div className="flex items-start justify-between gap-3">
-                      <div>
-                        <h3 className={`font-serif text-[1.7rem] font-bold leading-none ${flight.accentText}`} data-testid={`text-flight-title-${flight.key}`}>
-                          {flight.title}
-                        </h3>
-                        <div className="mt-4 space-y-1.5 text-[0.98rem] leading-6 text-foreground/72">
-                          {flight.description.map((line) => (
-                            <p key={line}>{line}</p>
-                          ))}
-                        </div>
-                      </div>
-                      <div className={`font-serif text-[3.1rem] font-bold leading-none ${flight.letterText}`}>{flight.slot}</div>
+                  <div className="relative flex h-full items-center justify-center overflow-hidden rounded-[1.7rem] border border-primary/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(247,245,241,0.96))] px-5 py-5 shadow-[0_22px_45px_-38px_rgba(15,23,42,0.25)]">
+                    <div
+                      className="font-serif text-[90px] font-bold leading-none opacity-15"
+                      style={{ color: flight.slot === 'A' ? '#F5A800' : flight.slot === 'B' ? '#0B84FF' : flight.slot === 'C' ? '#18A957' : '#EF123E' }}
+                      data-testid={`text-flight-letter-${flight.key}`}
+                    >
+                      {flight.slot}
                     </div>
                   </div>
 
