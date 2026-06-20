@@ -225,6 +225,13 @@ const PLAYER_MODAL_PROFILES: Record<string, { bio: string[]; facts: string[] }> 
     ],
     facts: [],
   },
+  "Robby Fuller": {
+    bio: [
+      "Robby Fuller brings an entrepreneurial spirit and quick wit to the Ramstein Ryder Cup. Having spent most of his life building businesses and working for himself, Robby now enjoys full-time retirement after an accident at work changed the course of his life. A talented athlete since his younger days, he was a standout high school baseball player whose pitching made life difficult for opposing hitters. Today, he’s known for having one of the best short games around the greens and never misses an opportunity to keep his fellow golfers on their toes.",
+      "Off the course, Robby enjoys riding his motorcycle, spending time with family, and golfing two to three times a week whenever he can. He recently moved back to Las Vegas to be closer to his parents and is enjoying life at a slower pace. Having also just purchased his dream car, Robby is making the most of retirement and the freedom that comes with it. This Ryder Cup weekend, he’ll be bringing his sharp sense of humor, competitive edge, and steady short game to help his team find success.",
+    ],
+    facts: [],
+  },
   "Darren Johnson": {
     bio: [
       "Darren Johnson arrives at the Ramstein Ryder Cup with decades of experience and plenty of stories to share. An Air Force veteran and recently retired after an incredible 37-year federal career, Darren is a loyal Buffalo Bills and Guardians fan who never misses an opportunity to catch a game. A NASCAR enthusiast at heart, he has transformed his garage into the ultimate man cave — a place where sports, laughter, and good company are always welcome.",
