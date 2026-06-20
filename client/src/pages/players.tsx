@@ -651,14 +651,6 @@ export default function Players() {
                   />
                 </div>
                 <div className="relative flex min-h-0 flex-col overflow-hidden p-6 md:p-8">
-                  {VETERAN_BADGE_PLAYERS.has(selectedPlayer.name) ? (
-                    <img
-                      src={veteranAirForceLogoImage}
-                      alt="U.S. Air Force Veteran badge watermark"
-                      className="pointer-events-none absolute bottom-6 right-6 z-0 h-[200px] w-[200px] object-contain opacity-10"
-                      data-testid="img-selected-player-veteran-watermark"
-                    />
-                  ) : null}
                   <div className="relative z-[2] pr-16 md:pr-20">
                     <div className="md:max-w-[460px]">
                       <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-secondary">Ramstein Ryder Cup</p>
