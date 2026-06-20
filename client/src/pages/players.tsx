@@ -216,7 +216,9 @@ const PLAYER_MODAL_PROFILES: Record<string, { bio: string[]; facts: string[] }> 
 export default function Players() {
   const [selectedPlayer, setSelectedPlayer] = useState<SelectedPlayer | null>(null);
   const selectedPlayerProfile = selectedPlayer ? PLAYER_MODAL_PROFILES[selectedPlayer.name] : null;
-  const selectedPlayerClassFact = selectedPlayerProfile?.facts.find((fact) => fact.toLowerCase().startsWith("class of"));
+  const selectedPlayerClassFact = selectedPlayer
+    ? PLAYER_CLASS_YEARS[selectedPlayer.name] ?? selectedPlayerProfile?.facts.find((fact) => fact.toLowerCase().startsWith("class of"))
+    : null;
 
   return (
     <div className="min-h-screen bg-[linear-gradient(180deg,#f6f2ec_0%,#fbfaf8_22%,#ffffff_100%)]">
@@ -688,26 +690,6 @@ export default function Players() {
                       >
                         {selectedPlayer.name}
                       </p>
-                      <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-center md:text-left">
-                        <p
-                          className="text-[0.78rem] font-bold uppercase tracking-[0.42em] text-[#294c7b]"
-                          data-testid="text-selected-player-team"
-                        >
-                          {selectedPlayer.team === "blue" ? "Blue Team" : "Red Team"}
-                        </p>
-                        <span className="hidden h-4 w-px bg-[#d7ddea] md:block" aria-hidden="true" />
-                        <p className="font-serif text-[1.45rem] font-bold text-[#c73b58]" data-testid="text-selected-player-flight">
-                          {selectedPlayer.flightTitle}
-                        </p>
-                        {selectedPlayerClassFact ? (
-                          <>
-                            <span className="hidden h-4 w-px bg-[#d7ddea] md:block" aria-hidden="true" />
-                            <p className="text-[0.78rem] font-bold uppercase tracking-[0.42em] text-[#294c7b]" data-testid="text-selected-player-class">
-                              {selectedPlayerClassFact}
-                            </p>
-                          </>
-                        ) : null}
-                      </div>
                     </div>
                     <div
                       className="absolute right-0 top-0 flex h-[76px] w-[76px] items-center justify-center rounded-full border border-[#efe9de] bg-white shadow-[0_18px_38px_rgba(15,23,42,0.12)] md:right-1 md:top-[-10px]"
@@ -731,6 +713,26 @@ export default function Players() {
                         {selectedPlayer.slot}
                       </span>
                     </div>
+                  </div>
+                  <div className="relative z-[2] mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-center">
+                    <p
+                      className="text-[0.78rem] font-bold uppercase tracking-[0.42em] text-[#294c7b]"
+                      data-testid="text-selected-player-team"
+                    >
+                      {selectedPlayer.team === "blue" ? "Blue Team" : "Red Team"}
+                    </p>
+                    <span className="hidden h-4 w-px bg-[#d7ddea] md:block" aria-hidden="true" />
+                    <p className="font-serif text-[1.45rem] font-bold text-[#c73b58]" data-testid="text-selected-player-flight">
+                      {selectedPlayer.flightTitle}
+                    </p>
+                    {selectedPlayerClassFact ? (
+                      <>
+                        <span className="hidden h-4 w-px bg-[#d7ddea] md:block" aria-hidden="true" />
+                        <p className="text-[0.78rem] font-bold uppercase tracking-[0.42em] text-[#294c7b]" data-testid="text-selected-player-class">
+                          {selectedPlayerClassFact}
+                        </p>
+                      </>
+                    ) : null}
                   </div>
                   <div className="relative z-[2] mt-6 rounded-[1.35rem] border border-primary/8 bg-[linear-gradient(180deg,rgba(247,244,239,0.78),rgba(255,255,255,0.96))] p-[22px]">
                     <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-secondary" data-testid="text-selected-player-bio-heading">
