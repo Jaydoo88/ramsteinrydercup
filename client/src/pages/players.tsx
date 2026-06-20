@@ -70,6 +70,17 @@ const VETERAN_BADGE_PLAYERS = new Set([
   "Darrel Johnson",
 ]);
 
+const PLAYER_CLASS_YEARS: Record<string, string> = {
+  "Jason Dousharm": "Class of 1988",
+  "Mike Parsons": "Class of 1987",
+  "Mike Gibbons": "Class of 1987",
+  "Robby Fuller": "Class of 1988",
+  "Darren Johnson": "Class of 1987",
+  "Darrel Johnson": "Class of 1990",
+  "John Gregg": "Class of 1988",
+  "Allen Parsons": "Class of 1986",
+};
+
 const FLIGHT_MATCHUPS: Array<{
   key: string;
   title: string;
@@ -459,6 +470,14 @@ export default function Players() {
                         <p className="mt-3 whitespace-nowrap font-serif text-[1.9rem] font-bold leading-none text-primary md:text-[2.15rem]" data-testid={`text-flight-player-${bluePlayerSlug}`}>
                           {flight.bluePlayer.name}
                         </p>
+                        {PLAYER_CLASS_YEARS[flight.bluePlayer.name] ? (
+                          <p
+                            className="mt-2 text-[0.72rem] font-bold uppercase tracking-[0.28em] text-foreground/55"
+                            data-testid={`text-flight-player-class-${bluePlayerSlug}`}
+                          >
+                            {PLAYER_CLASS_YEARS[flight.bluePlayer.name]}
+                          </p>
+                        ) : null}
                       </div>
                     </div>
                   </button>
@@ -519,6 +538,14 @@ export default function Players() {
                         <p className="mt-3 whitespace-nowrap font-serif text-[1.9rem] font-bold leading-none text-primary md:text-[2.15rem]" data-testid={`text-flight-player-${redPlayerSlug}`}>
                           {flight.redPlayer.name}
                         </p>
+                        {PLAYER_CLASS_YEARS[flight.redPlayer.name] ? (
+                          <p
+                            className="mt-2 text-[0.72rem] font-bold uppercase tracking-[0.28em] text-foreground/55"
+                            data-testid={`text-flight-player-class-${redPlayerSlug}`}
+                          >
+                            {PLAYER_CLASS_YEARS[flight.redPlayer.name]}
+                          </p>
+                        ) : null}
                       </div>
                     </div>
                   </button>
