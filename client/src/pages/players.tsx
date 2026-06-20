@@ -450,7 +450,7 @@ export default function Players() {
                         <img
                           src={veteranAirForceLogoImage}
                           alt="U.S. Air Force Veteran badge watermark"
-                          className="pointer-events-none absolute right-7 top-1/2 z-[1] h-[150px] w-[150px] -translate-y-1/2 object-contain opacity-[0.08]"
+                          className="pointer-events-none absolute left-1/2 top-1/2 z-[1] h-[150px] w-[150px] -translate-x-1/2 -translate-y-1/2 object-contain opacity-[0.08]"
                           data-testid={`img-veteran-watermark-${bluePlayerSlug}`}
                         />
                       ) : null}
@@ -510,7 +510,7 @@ export default function Players() {
                         <img
                           src={veteranAirForceLogoImage}
                           alt="U.S. Air Force Veteran badge watermark"
-                          className="pointer-events-none absolute right-7 top-1/2 z-[1] h-[150px] w-[150px] -translate-y-1/2 object-contain opacity-[0.08]"
+                          className="pointer-events-none absolute left-1/2 top-1/2 z-[1] h-[150px] w-[150px] -translate-x-1/2 -translate-y-1/2 object-contain opacity-[0.08]"
                           data-testid={`img-veteran-watermark-${redPlayerSlug}`}
                         />
                       ) : null}
