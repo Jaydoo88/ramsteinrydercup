@@ -386,9 +386,9 @@ export default function Players() {
               const redPlayerSlug = getPlayerSlug(flight.redPlayer.name);
 
               return (
-                <div key={flight.key} className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_170px_minmax(0,1fr)] lg:items-stretch">
+                <div key={flight.key} className="mx-auto grid w-full max-w-[1160px] grid-cols-[1fr_90px_1fr] items-center gap-[18px]">
                   <div
-                    className="grid min-h-[140px] overflow-hidden rounded-[1.7rem] border border-sky-200/90 bg-white shadow-[0_24px_50px_-38px_rgba(15,23,42,0.28)] md:grid-cols-[144px_1fr]"
+                    className="grid h-[170px] overflow-hidden rounded-[1.7rem] border border-sky-200/90 bg-white shadow-[0_24px_50px_-38px_rgba(15,23,42,0.28)] grid-cols-[144px_minmax(0,1fr)]"
                     data-testid={`card-flight-player-blue-${flight.key}`}
                   >
                     <div className="h-full overflow-hidden bg-[linear-gradient(135deg,#0c2340,#174a7a)]">
@@ -399,7 +399,7 @@ export default function Players() {
                         data-testid={`img-flight-player-${bluePlayerSlug}`}
                       />
                     </div>
-                    <div className="flex items-center p-5">
+                    <div className="flex h-full items-center p-5">
                       <div>
                         <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-secondary">Ramstein Ryder Cup</p>
                         <p className="mt-3 whitespace-nowrap font-serif text-[1.9rem] font-bold leading-none text-primary md:text-[2.15rem]" data-testid={`text-flight-player-${bluePlayerSlug}`}>
@@ -409,18 +409,27 @@ export default function Players() {
                     </div>
                   </div>
 
-                  <div className="relative flex h-full items-center justify-center overflow-hidden rounded-[1.7rem] border border-primary/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(247,245,241,0.96))] px-5 py-5 shadow-[0_22px_45px_-38px_rgba(15,23,42,0.25)]">
+                  <div className="flex items-center justify-center">
                     <div
-                      className="font-serif text-[90px] font-bold leading-none opacity-15"
-                      style={{ color: flight.slot === 'A' ? '#F5A800' : flight.slot === 'B' ? '#0B84FF' : flight.slot === 'C' ? '#18A957' : '#EF123E' }}
-                      data-testid={`text-flight-letter-${flight.key}`}
+                      className="flex h-[74px] w-[74px] items-center justify-center rounded-full border border-[#DDE5EF] bg-white shadow-[0_14px_30px_rgba(15,23,42,0.10)]"
+                      data-testid={`badge-flight-letter-${flight.key}`}
                     >
-                      {flight.slot}
+                      <span
+                        className="leading-none"
+                        style={{
+                          fontFamily: 'Georgia, "Times New Roman", serif',
+                          fontSize: '34px',
+                          fontWeight: 700,
+                          color: flight.slot === 'A' ? '#F5A800' : flight.slot === 'B' ? '#0B84FF' : flight.slot === 'C' ? '#18A957' : '#EF123E',
+                        }}
+                      >
+                        {flight.slot}
+                      </span>
                     </div>
                   </div>
 
                   <div
-                    className="grid min-h-[140px] overflow-hidden rounded-[1.7rem] border border-rose-200/90 bg-white shadow-[0_24px_50px_-38px_rgba(15,23,42,0.28)] md:grid-cols-[144px_1fr]"
+                    className="grid h-[170px] overflow-hidden rounded-[1.7rem] border border-rose-200/90 bg-white shadow-[0_24px_50px_-38px_rgba(15,23,42,0.28)] grid-cols-[144px_minmax(0,1fr)]"
                     data-testid={`card-flight-player-red-${flight.key}`}
                   >
                     <div className="h-full overflow-hidden bg-[linear-gradient(135deg,#2f0d12,#8d1c2b)]">
@@ -431,7 +440,7 @@ export default function Players() {
                         data-testid={`img-flight-player-${redPlayerSlug}`}
                       />
                     </div>
-                    <div className="flex items-center p-5">
+                    <div className="flex h-full items-center p-5">
                       <div>
                         <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-secondary">Ramstein Ryder Cup</p>
                         <p className="mt-3 whitespace-nowrap font-serif text-[1.9rem] font-bold leading-none text-primary md:text-[2.15rem]" data-testid={`text-flight-player-${redPlayerSlug}`}>
