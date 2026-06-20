@@ -262,12 +262,64 @@ const PLAYER_MODAL_PROFILES: Record<string, { bio: string[]; facts: string[] }> 
   },
 };
 
+function getRosterBadgeClass(slot: keyof typeof SLOT_STYLES) {
+  switch (slot) {
+    case "A":
+      return "bg-[#F5A800]";
+    case "B":
+      return "bg-[#0B84FF]";
+    case "C":
+      return "bg-[#18A957]";
+    default:
+      return "bg-[#EF123E]";
+  }
+}
+
+function getSelectedPlayerDetails(name: string): Omit<SelectedPlayer, "name"> | null {
+  for (const flight of FLIGHT_MATCHUPS) {
+    if (flight.bluePlayer.name === name) {
+      return {
+        image: flight.bluePlayer.image,
+        imageClassName: flight.bluePlayer.imageClassName,
+        slot: flight.slot,
+        team: "blue",
+        flightTitle: flight.title,
+      };
+    }
+
+    if (flight.redPlayer.name === name) {
+      return {
+        image: flight.redPlayer.image,
+        imageClassName: flight.redPlayer.imageClassName,
+        slot: flight.slot,
+        team: "red",
+        flightTitle: flight.title,
+      };
+    }
+  }
+
+  return null;
+}
+
 export default function Players() {
   const [selectedPlayer, setSelectedPlayer] = useState<SelectedPlayer | null>(null);
   const selectedPlayerProfile = selectedPlayer ? PLAYER_MODAL_PROFILES[selectedPlayer.name] : null;
   const selectedPlayerClassFact = selectedPlayer
     ? PLAYER_CLASS_YEARS[selectedPlayer.name] ?? selectedPlayerProfile?.facts.find((fact) => fact.toLowerCase().startsWith("class of"))
     : null;
+
+  const openPlayerFromRoster = (playerName: string) => {
+    const playerDetails = getSelectedPlayerDetails(playerName);
+
+    if (!playerDetails) {
+      return;
+    }
+
+    setSelectedPlayer({
+      name: playerName,
+      ...playerDetails,
+    });
+  };
 
   return (
     <div className="min-h-screen bg-[linear-gradient(180deg,#f6f2ec_0%,#fbfaf8_22%,#ffffff_100%)]">
@@ -318,7 +370,7 @@ export default function Players() {
             </div>
           </div>
 
-          <div className="mx-auto mt-8 grid w-full max-w-[1160px] items-center gap-6 lg:grid-cols-[1fr_72px_1fr]">
+          <div className="mx-auto mt-8 hidden w-full max-w-[1160px] items-center gap-6 min-[769px]:grid lg:grid-cols-[1fr_72px_1fr]">
             {TEAM_ROSTERS.map((team, index) => {
               const isBlueTeam = team.name === "Blue Team";
 
@@ -367,21 +419,16 @@ export default function Players() {
                         <div className="min-w-0 border-l border-[#DDE5EF] pl-4">
                           {team.players.map((player) => {
                             const playerSlug = getPlayerSlug(player.name);
-                            const badgeClass =
-                              player.slot === "A"
-                                ? "bg-[#F5A800]"
-                                : player.slot === "B"
-                                  ? "bg-[#0B84FF]"
-                                  : player.slot === "C"
-                                    ? "bg-[#18A957]"
-                                    : "bg-[#EF123E]";
+                            const badgeClass = getRosterBadgeClass(player.slot);
 
                             return (
-                              <div
+                              <button
                                 key={player.name}
-                                className="grid h-[38px] grid-cols-[40px_1fr] items-center border-b border-[#DDE5EF] text-[#071F4F] last:border-b-0"
+                                type="button"
+                                className="grid h-[38px] w-full grid-cols-[40px_1fr] items-center border-b border-[#DDE5EF] bg-transparent p-0 text-left text-[#071F4F] last:border-b-0"
                                 style={{ fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', fontSize: '15px', fontWeight: 700 }}
                                 data-testid={`row-team-roster-${playerSlug}`}
+                                onClick={() => openPlayerFromRoster(player.name)}
                               >
                                 <div className={`flex h-8 w-8 items-center justify-center rounded-[9px] text-[15px] text-white shadow-[0_6px_12px_rgba(0,0,0,0.16)] ${badgeClass}`}>
                                   {player.slot}
@@ -389,7 +436,7 @@ export default function Players() {
                                 <p className="whitespace-nowrap" data-testid={`text-roster-player-${playerSlug}`}>
                                   {player.name}
                                 </p>
-                              </div>
+                              </button>
                             );
                           })}
                         </div>
@@ -399,21 +446,16 @@ export default function Players() {
                         <div className="min-w-0 border-r border-[#DDE5EF] pr-4">
                           {team.players.map((player) => {
                             const playerSlug = getPlayerSlug(player.name);
-                            const badgeClass =
-                              player.slot === "A"
-                                ? "bg-[#F5A800]"
-                                : player.slot === "B"
-                                  ? "bg-[#0B84FF]"
-                                  : player.slot === "C"
-                                    ? "bg-[#18A957]"
-                                    : "bg-[#EF123E]";
+                            const badgeClass = getRosterBadgeClass(player.slot);
 
                             return (
-                              <div
+                              <button
                                 key={player.name}
-                                className="grid h-[38px] grid-cols-[40px_1fr] items-center border-b border-[#DDE5EF] text-[#071F4F] last:border-b-0"
+                                type="button"
+                                className="grid h-[38px] w-full grid-cols-[40px_1fr] items-center border-b border-[#DDE5EF] bg-transparent p-0 text-left text-[#071F4F] last:border-b-0"
                                 style={{ fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', fontSize: '15px', fontWeight: 700 }}
                                 data-testid={`row-team-roster-${playerSlug}`}
+                                onClick={() => openPlayerFromRoster(player.name)}
                               >
                                 <div className={`flex h-8 w-8 items-center justify-center rounded-[9px] text-[15px] text-white shadow-[0_6px_12px_rgba(0,0,0,0.16)] ${badgeClass}`}>
                                   {player.slot}
@@ -421,7 +463,7 @@ export default function Players() {
                                 <p className="whitespace-nowrap" data-testid={`text-roster-player-${playerSlug}`}>
                                   {player.name}
                                 </p>
-                              </div>
+                              </button>
                             );
                           })}
                         </div>
@@ -477,7 +519,99 @@ export default function Players() {
             </div>
           </div>
 
-          <div className="mt-5 space-y-4">
+          <div className="mx-auto mt-8 grid w-full max-w-[640px] gap-5 min-[769px]:hidden">
+            {TEAM_ROSTERS.map((team, index) => {
+              const isBlueTeam = team.name === "Blue Team";
+              const logoImage = isBlueTeam ? blueTeamLogoImage : redTeamLogoImage;
+              const cardSurface = isBlueTeam ? "border-[#0B3D91] bg-[#F5FAFF]" : "border-[#E00022] bg-[#FFF5F5]";
+              const headingText = isBlueTeam ? "text-[#0A3A78]" : "text-[#C9001F]";
+
+              return (
+                <div key={team.name} className="contents">
+                  <div
+                    className={`relative overflow-hidden rounded-[1.75rem] border-[1.5px] ${cardSurface} px-5 py-5 shadow-[0_24px_50px_-34px_rgba(15,23,42,0.24)] max-[480px]:rounded-[1.5rem] max-[480px]:px-4 max-[480px]:py-4`}
+                    data-testid={`card-team-roster-mobile-${getPlayerSlug(team.name)}`}
+                  >
+                    <div className={`absolute inset-x-0 top-0 h-1.5 ${isBlueTeam ? "bg-[linear-gradient(90deg,#0B84FF,#0B3D91)]" : "bg-[linear-gradient(90deg,#FF5A76,#E00022)]"}`} />
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="min-w-0">
+                        <p className={`text-[0.7rem] font-bold uppercase tracking-[0.32em] ${headingText} opacity-70 max-[480px]:text-[0.64rem]`}>
+                          Team Roster
+                        </p>
+                        <h3
+                          className={`mt-2 font-serif text-[1.95rem] font-bold leading-none ${headingText} max-[480px]:text-[1.7rem]`}
+                          data-testid={`text-roster-team-name-mobile-${getPlayerSlug(team.name)}`}
+                        >
+                          {team.name}
+                        </h3>
+                        <p className={`mt-4 text-[0.68rem] font-bold uppercase tracking-[0.3em] ${headingText} opacity-70 max-[480px]:mt-3 max-[480px]:text-[0.62rem]`}>
+                          Captain
+                        </p>
+                        <p
+                          className={`mt-1 font-serif text-[1.14rem] font-bold leading-tight ${headingText} max-[480px]:text-[1.02rem]`}
+                          data-testid={`text-roster-captain-mobile-${getPlayerSlug(team.name)}`}
+                        >
+                          {team.captain}
+                        </p>
+                      </div>
+
+                      <div className={`flex h-[68px] w-[68px] shrink-0 items-center justify-center rounded-[1.2rem] ${isBlueTeam ? "bg-[linear-gradient(135deg,#0d3f82,#1256a9)]" : "bg-[linear-gradient(135deg,#bb0f27,#e01032)]"} shadow-[0_20px_32px_-22px_rgba(15,23,42,0.45)] max-[480px]:h-[60px] max-[480px]:w-[60px] max-[480px]:rounded-[1rem]`}>
+                        <img
+                          src={logoImage}
+                          alt={`${team.name} logo`}
+                          className="h-[42px] w-[42px] object-contain drop-shadow-[0_10px_18px_rgba(0,0,0,0.22)] max-[480px]:h-[36px] max-[480px]:w-[36px]"
+                          data-testid={`img-team-logo-mobile-${getPlayerSlug(team.name)}`}
+                        />
+                      </div>
+                    </div>
+
+                    <div className="mt-5 space-y-2.5 max-[480px]:mt-4 max-[480px]:space-y-2">
+                      {team.players.map((player) => {
+                        const playerSlug = getPlayerSlug(player.name);
+                        const badgeClass = getRosterBadgeClass(player.slot);
+
+                        return (
+                          <button
+                            key={player.name}
+                            type="button"
+                            className="flex w-full items-center gap-3 rounded-[1.1rem] border border-white/70 bg-white/88 px-3 py-2.5 text-left shadow-[0_16px_32px_-28px_rgba(15,23,42,0.38)] transition-all duration-200 active:scale-[0.99] max-[480px]:gap-2.5 max-[480px]:rounded-[1rem] max-[480px]:px-2.5 max-[480px]:py-2"
+                            data-testid={`row-team-roster-mobile-${playerSlug}`}
+                            onClick={() => openPlayerFromRoster(player.name)}
+                          >
+                            <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-[0.95rem] text-[1.05rem] font-bold text-white shadow-[0_10px_20px_rgba(0,0,0,0.16)] ${badgeClass} max-[480px]:h-11 max-[480px]:w-11 max-[480px]:text-[0.98rem]`}>
+                              {player.slot}
+                            </div>
+                            <p
+                              className="min-w-0 truncate text-[1.03rem] font-bold leading-tight text-[#071F4F] max-[480px]:text-[0.94rem]"
+                              data-testid={`text-roster-player-mobile-${playerSlug}`}
+                            >
+                              {player.name}
+                            </p>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {index === 0 ? (
+                    <div className="flex items-center justify-center">
+                      <div className="flex h-[70px] w-[70px] items-center justify-center rounded-full border border-[#DDE5EF] bg-white shadow-[0_16px_34px_rgba(15,23,42,0.12)] max-[480px]:h-[62px] max-[480px]:w-[62px]">
+                        <span
+                          className="text-[#0A3A78]"
+                          style={{ fontFamily: 'Georgia, "Times New Roman", serif', fontSize: '24px', fontWeight: 700 }}
+                          data-testid="text-team-rosters-vs-mobile"
+                        >
+                          VS
+                        </span>
+                      </div>
+                    </div>
+                  ) : null}
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="mt-5 hidden space-y-4 min-[769px]:block">
             {FLIGHT_MATCHUPS.map((flight) => {
               const bluePlayerSlug = getPlayerSlug(flight.bluePlayer.name);
               const redPlayerSlug = getPlayerSlug(flight.redPlayer.name);
@@ -599,6 +733,101 @@ export default function Players() {
                         ) : null}
                       </div>
                     </div>
+                  </button>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="mt-4 space-y-3 min-[769px]:hidden">
+            {FLIGHT_MATCHUPS.map((flight) => {
+              const bluePlayerSlug = getPlayerSlug(flight.bluePlayer.name);
+              const redPlayerSlug = getPlayerSlug(flight.redPlayer.name);
+
+              return (
+                <div
+                  key={flight.key}
+                  className="mx-auto grid w-full max-w-[640px] grid-cols-[minmax(0,1fr)_60px_minmax(0,1fr)] items-center gap-2.5 max-[480px]:grid-cols-[minmax(0,1fr)_54px_minmax(0,1fr)] max-[480px]:gap-2"
+                >
+                  <button
+                    type="button"
+                    className="flex min-h-[118px] min-w-0 flex-col items-center justify-center gap-2 rounded-[1.6rem] border border-sky-200/90 bg-white px-2 py-3 text-center shadow-[0_20px_44px_-34px_rgba(15,23,42,0.32)] transition-transform duration-200 active:scale-[0.99] max-[480px]:min-h-[108px] max-[480px]:rounded-[1.35rem] max-[480px]:py-2.5"
+                    data-testid={`card-flight-player-blue-mobile-${flight.key}`}
+                    onClick={() =>
+                      setSelectedPlayer({
+                        name: flight.bluePlayer.name,
+                        image: flight.bluePlayer.image,
+                        imageClassName: flight.bluePlayer.imageClassName,
+                        slot: flight.slot,
+                        team: "blue",
+                        flightTitle: flight.title,
+                      })
+                    }
+                  >
+                    <div className="h-[85px] w-[85px] overflow-hidden rounded-full border-[4px] border-sky-100 bg-[linear-gradient(135deg,#0c2340,#174a7a)] shadow-[0_18px_30px_-24px_rgba(15,23,42,0.45)] max-[480px]:h-[76px] max-[480px]:w-[76px]">
+                      <img
+                        src={flight.bluePlayer.image}
+                        alt={flight.bluePlayer.name}
+                        className={`h-full w-full object-cover ${flight.bluePlayer.imageClassName ?? "object-center"}`}
+                        data-testid={`img-flight-player-mobile-${bluePlayerSlug}`}
+                      />
+                    </div>
+                    <p
+                      className="line-clamp-2 min-h-[2.2rem] px-1 font-serif text-[1rem] font-bold leading-[1.1] text-primary max-[480px]:min-h-[2rem] max-[480px]:text-[0.9rem]"
+                      data-testid={`text-flight-player-mobile-${bluePlayerSlug}`}
+                    >
+                      {flight.bluePlayer.name}
+                    </p>
+                  </button>
+
+                  <div className="flex items-center justify-center">
+                    <div
+                      className="flex h-[60px] w-[60px] items-center justify-center rounded-full border border-[#DDE5EF] bg-white shadow-[0_14px_24px_rgba(15,23,42,0.10)] max-[480px]:h-[54px] max-[480px]:w-[54px]"
+                      data-testid={`badge-flight-letter-mobile-${flight.key}`}
+                    >
+                      <span
+                        className="leading-none"
+                        style={{
+                          fontFamily: 'Georgia, "Times New Roman", serif',
+                          fontSize: '28px',
+                          fontWeight: 700,
+                          color: flight.slot === 'A' ? '#F5A800' : flight.slot === 'B' ? '#0B84FF' : flight.slot === 'C' ? '#18A957' : '#EF123E',
+                        }}
+                      >
+                        {flight.slot}
+                      </span>
+                    </div>
+                  </div>
+
+                  <button
+                    type="button"
+                    className="flex min-h-[118px] min-w-0 flex-col items-center justify-center gap-2 rounded-[1.6rem] border border-rose-200/90 bg-white px-2 py-3 text-center shadow-[0_20px_44px_-34px_rgba(15,23,42,0.32)] transition-transform duration-200 active:scale-[0.99] max-[480px]:min-h-[108px] max-[480px]:rounded-[1.35rem] max-[480px]:py-2.5"
+                    data-testid={`card-flight-player-red-mobile-${flight.key}`}
+                    onClick={() =>
+                      setSelectedPlayer({
+                        name: flight.redPlayer.name,
+                        image: flight.redPlayer.image,
+                        imageClassName: flight.redPlayer.imageClassName,
+                        slot: flight.slot,
+                        team: "red",
+                        flightTitle: flight.title,
+                      })
+                    }
+                  >
+                    <div className="h-[85px] w-[85px] overflow-hidden rounded-full border-[4px] border-rose-100 bg-[linear-gradient(135deg,#2f0d12,#8d1c2b)] shadow-[0_18px_30px_-24px_rgba(15,23,42,0.45)] max-[480px]:h-[76px] max-[480px]:w-[76px]">
+                      <img
+                        src={flight.redPlayer.image}
+                        alt={flight.redPlayer.name}
+                        className={`h-full w-full object-cover ${flight.redPlayer.imageClassName ?? "object-center"}`}
+                        data-testid={`img-flight-player-mobile-${redPlayerSlug}`}
+                      />
+                    </div>
+                    <p
+                      className="line-clamp-2 min-h-[2.2rem] px-1 font-serif text-[1rem] font-bold leading-[1.1] text-primary max-[480px]:min-h-[2rem] max-[480px]:text-[0.9rem]"
+                      data-testid={`text-flight-player-mobile-${redPlayerSlug}`}
+                    >
+                      {flight.redPlayer.name}
+                    </p>
                   </button>
                 </div>
               );

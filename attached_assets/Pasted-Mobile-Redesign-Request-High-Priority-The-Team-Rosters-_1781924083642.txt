@@ -1,0 +1,160 @@
+Mobile Redesign Request (High Priority)
+
+The Team Rosters page is not displaying correctly on mobile devices. Do not simply scale down the desktop design. Build a dedicated mobile layout.
+
+1. Team cards should stack vertically
+
+The Blue Team and Red Team roster cards are too wide and are being cut off.
+
+Desktop: Keep current side-by-side layout.
+
+Mobile (768px and below):
+
+Blue Team full width
+VS badge
+Red Team full width
+
+Remove all horizontal overflow.
+
+Example:
+
+BLUE TEAM
+Captain: Jason Dousharm
+
+A  Jason Dousharm
+B  Mike Gibbons
+C  Darren Johnson
+D  John Gregg
+
+      VS
+
+RED TEAM
+Captain: Mike Parsons
+
+A  Mike Parsons
+B  Darrel Johnson
+C  Robby Fuller
+D  Allen Parsons
+2. Do NOT split names into a second column
+
+Currently the flight letters and names are being cut off.
+
+Instead:
+
+[A] Jason Dousharm
+[B] Mike Gibbons
+[C] Darren Johnson
+[D] John Gregg
+
+Requirements:
+
+48px colored badge
+16-18px font
+Entire row clickable
+No vertical divider
+3. Reduce excessive whitespace
+
+Current cards are much too tall.
+
+Reduce:
+
+padding: 40px → 20px
+margin-bottom: 40px → 20px
+
+Target:
+
+Blue Team card = 250-300px tall
+Red Team card = 250-300px tall
+4. Make the VS circle smaller
+
+Current:
+
+100px
+
+Change to:
+
+70px x 70px
+
+Font:
+
+24px
+
+Center it between both cards.
+
+5. Redesign the player matchup section
+
+The photo comparison section is too tall and wastes space.
+
+Instead of this:
+
+Photo
+
+    A
+
+Photo
+
+Use a compact card.
+
+Example:
+
+[Jason]  A  [Mike]
+
+[Darren] B [Darrel]
+
+[John]   C [Robby]
+
+[Allen]  D [Mike]
+
+Requirements:
+
+Photos = 85px x 85px
+Circular
+Flight letter = 60px circle
+Everything centered
+
+This should reduce the section height by 50%.
+
+6. Fix header sizing
+
+Mobile header is oversized.
+
+Requirements:
+
+Logo: 60px
+Title: 24px
+Navbar icon: 28px
+Header height: 85px
+7. Add true mobile breakpoints
+
+Create dedicated breakpoints.
+
+@media (max-width: 768px)
+
+@media (max-width: 480px)
+
+At 768px:
+
+Stack team cards
+Remove multi-column layouts
+
+At 480px:
+
+Reduce font sizes by 10%
+Reduce image sizes
+Reduce padding
+Overall Goal
+
+Do NOT shrink the desktop version.
+
+Create a dedicated mobile experience that feels like a sports app.
+
+Priorities:
+
+No horizontal scrolling.
+No cut-off names.
+Team cards stack vertically.
+Compact player matchups.
+Reduce overall page height by 40-50%.
+Everything should fit naturally on an iPhone screen.
+
+Reference style: ESPN app / Ryder Cup app / PGA Tour mobile experience.

@@ -30,12 +30,12 @@ export function Navbar() {
 
   return (
     <nav className="bg-white text-primary sticky top-0 z-50 shadow-md border-b border-primary/20">
-      <div className="container mx-auto flex h-24 items-center justify-between gap-4 px-4">
+      <div className="container mx-auto flex h-[85px] items-center justify-between gap-4 px-4 lg:h-24">
         <div className="flex min-w-0 items-center gap-3 group">
           <Dialog>
             <DialogTrigger asChild>
-              <button className="cursor-pointer hover:scale-105 transition-transform focus:outline-none bg-primary/5 rounded-md p-1.5">
-                <img src={logoImage} alt="Ramstein Ryder Cup Logo" className="h-16 w-16 object-contain" />
+              <button className="cursor-pointer rounded-md bg-primary/5 p-1 transition-transform hover:scale-105 focus:outline-none max-[768px]:p-0.5">
+                <img src={logoImage} alt="Ramstein Ryder Cup Logo" className="h-[60px] w-[60px] object-contain lg:h-16 lg:w-16" />
               </button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-md bg-white">
@@ -51,8 +51,8 @@ export function Navbar() {
             </DialogContent>
           </Dialog>
           
-          <Link href="/" className="ml-1 flex min-w-0 flex-col max-[1120px]:max-w-[170px]">
-            <span className="truncate font-serif text-sm font-bold leading-tight tracking-wide text-primary lg:text-[15px] xl:text-lg">Ramstein Ryder Cup</span>
+          <Link href="/" className="ml-1 flex min-w-0 flex-col max-[1120px]:max-w-[170px] max-[768px]:max-w-[220px]">
+            <span className="truncate font-serif text-sm font-bold leading-tight tracking-wide text-primary max-[768px]:text-[24px] max-[768px]:leading-none lg:text-[15px] xl:text-lg">Ramstein Ryder Cup</span>
             <span className="hidden text-[10px] font-bold uppercase tracking-widest text-secondary xl:block">Founding Year 2026</span>
           </Link>
         </div>
@@ -74,8 +74,8 @@ export function Navbar() {
         <div className="lg:hidden">
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="text-primary hover:bg-primary/10 hover:text-secondary">
-                <Menu className="h-6 w-6" />
+              <Button variant="ghost" size="icon" className="h-11 w-11 text-primary hover:bg-primary/10 hover:text-secondary max-[768px]:h-12 max-[768px]:w-12">
+                <Menu className="h-7 w-7 max-[768px]:h-7 max-[768px]:w-7" />
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="bg-white border-l-primary/20 text-primary p-0">
