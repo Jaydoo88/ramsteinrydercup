@@ -949,7 +949,93 @@ export default function Players() {
                     : "bg-[linear-gradient(90deg,#2f0d12,#8d1c2b)]"
                 }`}
               />
-              <div className="grid md:max-h-[calc(80vh-6px)] md:grid-cols-[34fr_66fr]">
+              <div className="md:hidden p-4">
+                <div className="rounded-[1.55rem] border border-primary/10 bg-white/96 p-3 shadow-[0_20px_44px_-30px_rgba(15,23,42,0.22)]">
+                  <div className="grid grid-cols-[112px_minmax(0,1fr)] gap-3 max-[380px]:grid-cols-[96px_minmax(0,1fr)]">
+                    <div className="overflow-hidden rounded-[1.1rem] bg-[linear-gradient(135deg,#0c2340,#174a7a)] max-[380px]:rounded-[0.95rem]">
+                      <img
+                        src={selectedPlayer.image}
+                        alt={selectedPlayer.name}
+                        className={`h-[132px] w-full object-cover max-[380px]:h-[118px] ${selectedPlayer.imageClassName ?? "object-center"}`}
+                        data-testid="img-selected-player-modal"
+                      />
+                    </div>
+
+                    <div className="relative min-w-0 pr-14 max-[380px]:pr-12">
+                      <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-secondary">
+                        Ramstein Ryder Cup
+                      </p>
+                      <p
+                        className="mt-2 font-serif text-[1.9rem] font-bold leading-[0.95] text-[#163d74] max-[380px]:text-[1.65rem]"
+                        data-testid="text-selected-player-name"
+                      >
+                        {selectedPlayer.name}
+                      </p>
+                      {selectedPlayerClassFact ? (
+                        <p className="mt-2 text-[0.72rem] font-bold uppercase tracking-[0.34em] text-[#5a7398]" data-testid="text-selected-player-class">
+                          {selectedPlayerClassFact}
+                        </p>
+                      ) : null}
+                      <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-left">
+                        <p
+                          className="text-[0.68rem] font-bold uppercase tracking-[0.3em] text-[#294c7b]"
+                          data-testid="text-selected-player-team"
+                        >
+                          {selectedPlayer.team === "blue" ? "Blue Team" : "Red Team"}
+                        </p>
+                        <p className="font-serif text-[1.05rem] font-bold text-[#c73b58]" data-testid="text-selected-player-flight">
+                          {selectedPlayer.flightTitle}
+                        </p>
+                      </div>
+                      <div
+                        className="absolute right-0 top-0 flex h-[54px] w-[54px] items-center justify-center rounded-full border border-[#efe9de] bg-white shadow-[0_16px_28px_rgba(15,23,42,0.12)] max-[380px]:h-[48px] max-[380px]:w-[48px]"
+                        data-testid="badge-selected-player-slot"
+                      >
+                        <span
+                          style={{
+                            fontFamily: 'Georgia, "Times New Roman", serif',
+                            fontSize: '28px',
+                            fontWeight: 700,
+                            color:
+                              selectedPlayer.slot === 'A'
+                                ? '#D9A11F'
+                                : selectedPlayer.slot === 'B'
+                                  ? '#0B84FF'
+                                  : selectedPlayer.slot === 'C'
+                                    ? '#18A957'
+                                    : '#EF123E',
+                          }}
+                        >
+                          {selectedPlayer.slot}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="relative z-[2] mt-4 rounded-[1.35rem] border border-primary/8 bg-[linear-gradient(180deg,rgba(247,244,239,0.78),rgba(255,255,255,0.96))] p-4">
+                  <div className="flex items-start justify-between gap-4">
+                    <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-secondary" data-testid="text-selected-player-bio-heading">
+                      Bio
+                    </p>
+                    <div className="flex items-center gap-2" data-testid="status-selected-player-bio-scroll-hint">
+                      <span className="text-[10px] font-bold uppercase tracking-[0.26em] text-[#4d6e98]">Scroll</span>
+                      <div className="flex h-12 w-[10px] items-start rounded-full bg-[#dbe4ef] p-[2px] shadow-inner">
+                        <div className="h-5 w-full rounded-full bg-[linear-gradient(180deg,#0B84FF,#0B3D91)]" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="mt-4 space-y-4 pr-1 text-[15px] leading-[1.6] text-foreground/78" data-testid="text-selected-player-bio">
+                    {selectedPlayerProfile?.bio?.length ? (
+                      selectedPlayerProfile.bio.map((paragraph) => <p key={paragraph}>{paragraph}</p>)
+                    ) : (
+                      <p>Full player bio coming soon.</p>
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              <div className="hidden md:grid md:max-h-[calc(80vh-6px)] md:grid-cols-[34fr_66fr]">
                 <div className="relative overflow-hidden">
                   <img
                     src={selectedPlayer.image}
@@ -1017,15 +1103,9 @@ export default function Players() {
                       <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-secondary" data-testid="text-selected-player-bio-heading">
                         Bio
                       </p>
-                      <div className="flex items-center gap-2 md:hidden" data-testid="status-selected-player-bio-scroll-hint">
-                        <span className="text-[10px] font-bold uppercase tracking-[0.26em] text-[#4d6e98]">Scroll</span>
-                        <div className="flex h-12 w-[10px] items-start rounded-full bg-[#dbe4ef] p-[2px] shadow-inner">
-                          <div className="h-5 w-full rounded-full bg-[linear-gradient(180deg,#0B84FF,#0B3D91)]" />
-                        </div>
-                      </div>
                     </div>
                     <div
-                      className="mt-4 space-y-4 text-[15px] leading-[1.6] text-foreground/78 md:player-bio-scroll md:max-h-[260px] md:overflow-y-scroll md:overscroll-contain md:pr-3"
+                      className="mt-4 player-bio-scroll max-h-[260px] space-y-4 overflow-y-scroll overscroll-contain pr-3 text-[15px] leading-[1.6] text-foreground/78"
                       data-testid="text-selected-player-bio"
                     >
                       {selectedPlayerProfile?.bio?.length ? (
