@@ -1,5 +1,13 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Shield, Trophy, UserRound } from "lucide-react";
+import jasonDousharmImage from "@assets/1665088037422_1776551209099.jpg";
+import mikeParsonsImage from "@assets/image_1776551520237.png";
+import mikeGibbonsImage from "@assets/image_1776551618225.png";
+import robbyFullerImage from "@assets/654214334_10242588166511341_589448361213285726_n_1776624936484.jpg";
+import darrelJohnsonImage from "@assets/image_1776790509801.png";
+import darrenJohnsonImage from "@assets/d6ad562a-1a0e-4821-9432-33da97d8ba88_1781903108064.png";
+import allenParsonsImage from "@assets/image_1776551567816.png";
+import johnGreggImage from "@assets/image_1776551593611.png";
 import erinBergerImage from "@assets/d2774c1a-31e8-455c-be3a-c16e38940ff0_1781902944119.png";
 import gretchenGambillImage from "@assets/709d2ac4-81da-4517-9986-0721a61ff40b_1781903635578.png";
 import hayleyPedersenImage from "@assets/516680189_30778336861751597_10175905133059248_n_1781902787067.jpg";
@@ -19,13 +27,11 @@ const TEAM_ROSTERS = [
   {
     name: "Blue Team",
     captain: "Jason Dousharm",
-    accent: "from-sky-500 via-blue-500 to-indigo-500",
-    badgeSurface: "from-[#0b3b7a] via-[#0d56aa] to-[#123f7d]",
-    border: "border-sky-200/80",
-    rowBorder: "border-sky-100/90",
-    rowSurface: "bg-[linear-gradient(180deg,rgba(239,246,255,0.7),rgba(255,255,255,0.98))]",
-    glow: "shadow-[0_30px_90px_-42px_rgba(14,79,168,0.34)]",
-    headingColor: "text-[#123a74]",
+    border: "border-sky-300/90",
+    accentText: "text-[#123f7d]",
+    accentLine: "from-sky-500 via-blue-500 to-indigo-500",
+    crest: "from-[#0d3f82] via-[#1256a9] to-[#0d3f82]",
+    layout: "left",
     players: [
       { slot: "A", name: "Jason Dousharm" },
       { slot: "B", name: "Mike Gibbons" },
@@ -36,13 +42,11 @@ const TEAM_ROSTERS = [
   {
     name: "Red Team",
     captain: "Mike Parsons",
-    accent: "from-rose-500 via-red-500 to-rose-500",
-    badgeSurface: "from-[#b30821] via-[#d70f2f] to-[#b60b23]",
-    border: "border-rose-200/80",
-    rowBorder: "border-rose-100/90",
-    rowSurface: "bg-[linear-gradient(180deg,rgba(255,241,242,0.72),rgba(255,255,255,0.98))]",
-    glow: "shadow-[0_30px_90px_-42px_rgba(225,29,72,0.28)]",
-    headingColor: "text-[#a41429]",
+    border: "border-rose-300/90",
+    accentText: "text-[#b2142a]",
+    accentLine: "from-rose-500 via-red-500 to-rose-500",
+    crest: "from-[#bb0f27] via-[#e01032] to-[#bb0f27]",
+    layout: "right",
     players: [
       { slot: "A", name: "Mike Parsons" },
       { slot: "B", name: "Robby Fuller" },
@@ -50,7 +54,86 @@ const TEAM_ROSTERS = [
       { slot: "D", name: "Allen Parsons" },
     ],
   },
-];
+] as const;
+
+const FLIGHT_MATCHUPS: Array<{
+  key: string;
+  title: string;
+  slot: keyof typeof SLOT_STYLES;
+  accentText: string;
+  letterText: string;
+  description: string[];
+  bluePlayer: { name: string; image: string; imageClassName?: string };
+  redPlayer: { name: string; image: string; imageClassName?: string };
+}> = [
+  {
+    key: "alpha",
+    title: "Alpha Flight",
+    slot: "A",
+    accentText: "text-amber-500",
+    letterText: "text-amber-300/70",
+    description: ["Top-tier players.", "Set the tone."],
+    bluePlayer: {
+      name: "Jason Dousharm",
+      image: jasonDousharmImage,
+    },
+    redPlayer: {
+      name: "Mike Parsons",
+      image: mikeParsonsImage,
+      imageClassName: "object-[center_22%]",
+    },
+  },
+  {
+    key: "pressure",
+    title: "Pressure Line",
+    slot: "B",
+    accentText: "text-sky-500",
+    letterText: "text-sky-300/70",
+    description: ["Bring the pressure.", "Create opportunities."],
+    bluePlayer: {
+      name: "Mike Gibbons",
+      image: mikeGibbonsImage,
+    },
+    redPlayer: {
+      name: "Robby Fuller",
+      image: robbyFullerImage,
+    },
+  },
+  {
+    key: "steady",
+    title: "Steady Core",
+    slot: "C",
+    accentText: "text-emerald-600",
+    letterText: "text-emerald-300/70",
+    description: ["Reliable and consistent.", "Keep the momentum."],
+    bluePlayer: {
+      name: "Darren Johnson",
+      image: darrenJohnsonImage,
+      imageClassName: "object-[center_12%]",
+    },
+    redPlayer: {
+      name: "Darrel Johnson",
+      image: darrelJohnsonImage,
+    },
+  },
+  {
+    key: "wild",
+    title: "Wild Cards",
+    slot: "D",
+    accentText: "text-rose-600",
+    letterText: "text-rose-300/70",
+    description: ["Upside and unpredictability.", "Game changers."],
+    bluePlayer: {
+      name: "John Gregg",
+      image: johnGreggImage,
+    },
+    redPlayer: {
+      name: "Allen Parsons",
+      image: allenParsonsImage,
+    },
+  },
+] as const;
+
 const LADIES_TEAMS = [
   {
     name: "Team Pink",
@@ -80,7 +163,7 @@ const LADIES_TEAMS = [
       { name: "Izzy Hochner", image: izzyHochnerImage, imageClassName: "object-[center_16%]" },
     ],
   },
-];
+] as const;
 
 function getPlayerSlug(name: string) {
   return name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
@@ -114,88 +197,164 @@ export default function Players() {
         </div>
       </section>
 
-      <section className="container mx-auto max-w-6xl px-4 py-16 md:py-20 lg:py-24">
-        <div className="mx-auto max-w-4xl text-center">
-          <div className="inline-flex items-center gap-3 rounded-full border border-amber-200/70 bg-white/80 px-5 py-2 shadow-[0_18px_40px_-28px_rgba(15,23,42,0.35)] backdrop-blur-sm">
-            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-amber-50 text-amber-500">
-              <Trophy className="h-5 w-5" />
-            </div>
-            <div className="text-left">
-              <p className="text-[10px] font-bold uppercase tracking-[0.26em] text-secondary">Ramstein Ryder Cup</p>
-              <p className="font-serif text-xl font-bold text-primary md:text-2xl" data-testid="text-team-rosters-heading">
-                TEAM ROSTERS
-              </p>
+      <section className="container mx-auto max-w-7xl px-4 py-16 md:py-20 lg:py-24">
+        <div className="rounded-[2.5rem] border border-primary/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(249,248,246,0.96))] p-4 shadow-[0_38px_120px_-55px_rgba(15,23,42,0.28)] md:p-6 lg:p-8">
+          <div className="mx-auto max-w-4xl text-center">
+            <div className="inline-flex items-center gap-3">
+              <div className="flex h-14 w-14 items-center justify-center rounded-full bg-amber-50 text-amber-500 shadow-[0_16px_40px_-28px_rgba(15,23,42,0.35)]">
+                <Trophy className="h-7 w-7" />
+              </div>
+              <div className="text-left">
+                <h2 className="font-serif text-[2.1rem] font-bold leading-none text-primary md:text-[3rem]" data-testid="text-team-rosters-heading">
+                  TEAM ROSTERS
+                </h2>
+                <p className="mt-1 text-[11px] font-bold uppercase tracking-[0.34em] text-secondary" data-testid="text-team-rosters-subtitle">
+                  RAMSTEIN RYDER CUP
+                </p>
+              </div>
             </div>
           </div>
-          <p className="mt-5 text-sm font-semibold uppercase tracking-[0.24em] text-secondary" data-testid="text-team-rosters-subtitle">
-            RAMSTEIN RYDER CUP
-          </p>
-        </div>
 
-        <div className="relative mt-10 grid gap-5 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:items-stretch lg:gap-6">
-          {TEAM_ROSTERS.map((team, index) => (
-            <div key={team.name} className={index === 0 ? "order-1" : "order-3"}>
-              <div
-                className={`relative flex h-full min-h-[560px] flex-col overflow-hidden rounded-[2rem] border bg-white/94 ${team.border} ${team.glow}`}
-                data-testid={`card-team-roster-${getPlayerSlug(team.name)}`}
-              >
-                <div className={`absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r ${team.accent}`} />
-                <div className="absolute right-0 top-0 hidden h-40 w-40 translate-x-10 -translate-y-10 rounded-full bg-white/55 blur-3xl md:block" />
+          <div className="relative mt-8 grid gap-4 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:items-start lg:gap-4">
+            {TEAM_ROSTERS.map((team, index) => (
+              <div key={team.name} className={index === 0 ? "order-1" : "order-3"}>
+                <div
+                  className={`relative overflow-hidden rounded-[1.9rem] border bg-white ${team.border} shadow-[0_26px_60px_-42px_rgba(15,23,42,0.3)]`}
+                  data-testid={`card-team-roster-${getPlayerSlug(team.name)}`}
+                >
+                  <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${team.accentLine}`} />
 
-                <div className="relative flex h-full flex-col p-6 md:p-8">
-                  <div className="rounded-[1.7rem] border border-white/75 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(249,248,246,0.95))] p-6 shadow-[0_18px_45px_-32px_rgba(15,23,42,0.35)] md:p-7">
-                    <div className="flex items-center gap-4">
-                      <div className={`relative flex h-[88px] w-[72px] shrink-0 items-center justify-center rounded-[1.4rem] bg-gradient-to-b ${team.badgeSurface} text-white shadow-[0_20px_45px_-25px_rgba(15,23,42,0.45)]`}>
-                        <Shield className="absolute inset-0 h-full w-full p-2 opacity-20" />
-                        <Trophy className="relative h-8 w-8" />
-                      </div>
-                      <div>
-                        <p className="text-[10px] font-bold uppercase tracking-[0.26em] text-secondary">Lineup Announcement</p>
-                        <h3 className={`mt-2 font-serif text-[2.2rem] font-bold leading-none md:text-[2.5rem] ${team.headingColor}`} data-testid={`text-roster-team-name-${getPlayerSlug(team.name)}`}>
-                          {team.name}
-                        </h3>
-                        <div className="mt-5 space-y-1.5">
-                          <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-secondary">Captain</p>
-                          <p className="font-serif text-[1.55rem] font-bold leading-none text-primary md:text-[1.8rem]" data-testid={`text-roster-captain-${getPlayerSlug(team.name)}`}>
-                            {team.captain}
-                          </p>
+                  <div className={`grid gap-5 p-5 md:grid-cols-[116px_1fr] md:p-6 ${team.layout === "right" ? "md:grid-cols-[1fr_116px]" : ""}`}>
+                    <div className={team.layout === "right" ? "md:order-2" : ""}>
+                      <div className={`mx-auto flex h-[120px] w-[86px] items-center justify-center rounded-[1.7rem] bg-gradient-to-b ${team.crest} text-white shadow-[0_22px_50px_-26px_rgba(15,23,42,0.45)]`}>
+                        <div className="relative flex h-full w-full items-center justify-center">
+                          <Shield className="absolute inset-0 h-full w-full p-2 opacity-18" />
+                          <Trophy className="relative h-9 w-9" />
                         </div>
+                      </div>
+                    </div>
+
+                    <div className={team.layout === "right" ? "md:order-1 md:text-right" : ""}>
+                      <h3 className={`font-serif text-[2rem] font-bold leading-none md:text-[2.2rem] ${team.accentText}`} data-testid={`text-roster-team-name-${getPlayerSlug(team.name)}`}>
+                        {team.name}
+                      </h3>
+                      <p className="mt-4 text-[10px] font-bold uppercase tracking-[0.24em] text-secondary">Captain</p>
+                      <p className="mt-1 font-serif text-[1.45rem] font-bold leading-none text-primary md:text-[1.65rem]" data-testid={`text-roster-captain-${getPlayerSlug(team.name)}`}>
+                        {team.captain}
+                      </p>
+
+                      <div className="mt-5 space-y-2.5">
+                        {team.players.map((player) => {
+                          const playerSlug = getPlayerSlug(player.name);
+                          const slotClasses = SLOT_STYLES[player.slot as keyof typeof SLOT_STYLES];
+
+                          return (
+                            <div
+                              key={player.name}
+                              className={`grid grid-cols-[auto_1fr] items-center gap-3 border-b border-primary/8 pb-2.5 last:border-b-0 last:pb-0 ${team.layout === "right" ? "md:grid-cols-[1fr_auto]" : ""}`}
+                              data-testid={`row-team-roster-${playerSlug}`}
+                            >
+                              <div className={`flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br text-sm font-bold shadow-sm ${slotClasses} ${team.layout === "right" ? "md:order-2" : ""}`}>
+                                {player.slot}
+                              </div>
+                              <p className={`font-sans text-[1.05rem] font-semibold leading-none text-primary md:text-[1.18rem] ${team.layout === "right" ? "md:order-1" : ""}`} data-testid={`text-roster-player-${playerSlug}`}>
+                                {player.name}
+                              </p>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+
+            <div className="order-2 flex items-center justify-center lg:px-1">
+              <div className="flex h-20 w-20 items-center justify-center rounded-full border border-primary/10 bg-white text-center shadow-[0_20px_50px_-35px_rgba(15,23,42,0.35)]">
+                <span className="font-serif text-3xl font-bold tracking-tight text-primary" data-testid="text-team-rosters-vs">
+                  VS
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-5 space-y-4">
+            {FLIGHT_MATCHUPS.map((flight) => {
+              const bluePlayerSlug = getPlayerSlug(flight.bluePlayer.name);
+              const redPlayerSlug = getPlayerSlug(flight.redPlayer.name);
+              const slotClasses = SLOT_STYLES[flight.slot as keyof typeof SLOT_STYLES];
+
+              return (
+                <div key={flight.key} className="grid gap-4 lg:grid-cols-[170px_minmax(0,1fr)_minmax(0,1fr)] lg:items-stretch">
+                  <div className="relative overflow-hidden rounded-[1.7rem] border border-primary/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(247,245,241,0.96))] px-5 py-5 shadow-[0_22px_45px_-38px_rgba(15,23,42,0.25)]">
+                    <div className="flex items-start justify-between gap-3">
+                      <div>
+                        <h3 className={`font-serif text-[1.7rem] font-bold leading-none ${flight.accentText}`} data-testid={`text-flight-title-${flight.key}`}>
+                          {flight.title}
+                        </h3>
+                        <div className="mt-4 space-y-1.5 text-[0.98rem] leading-6 text-foreground/72">
+                          {flight.description.map((line) => (
+                            <p key={line}>{line}</p>
+                          ))}
+                        </div>
+                      </div>
+                      <div className={`font-serif text-[3.1rem] font-bold leading-none ${flight.letterText}`}>{flight.slot}</div>
+                    </div>
+                  </div>
+
+                  <div
+                    className="grid min-h-[140px] overflow-hidden rounded-[1.7rem] border border-sky-200/90 bg-white shadow-[0_24px_50px_-38px_rgba(15,23,42,0.28)] md:grid-cols-[144px_1fr]"
+                    data-testid={`card-flight-player-blue-${flight.key}`}
+                  >
+                    <div className="h-full overflow-hidden bg-[linear-gradient(135deg,#0c2340,#174a7a)]">
+                      <img
+                        src={flight.bluePlayer.image}
+                        alt={flight.bluePlayer.name}
+                        className={`h-full w-full object-cover ${flight.bluePlayer.imageClassName ?? "object-center"}`}
+                        data-testid={`img-flight-player-${bluePlayerSlug}`}
+                      />
+                    </div>
+                    <div className="flex items-center justify-between gap-4 p-5">
+                      <div>
+                        <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-secondary">Ramstein Ryder Cup</p>
+                        <p className="mt-3 font-serif text-[1.9rem] font-bold leading-none text-primary md:text-[2.15rem]" data-testid={`text-flight-player-${bluePlayerSlug}`}>
+                          {flight.bluePlayer.name}
+                        </p>
+                      </div>
+                      <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br text-base font-bold shadow-sm ${slotClasses}`}>
+                        {flight.slot}
                       </div>
                     </div>
                   </div>
 
-                  <div className="mt-6 flex-1 space-y-4">
-                    {team.players.map((player) => {
-                      const playerSlug = getPlayerSlug(player.name);
-                      const slotClasses = SLOT_STYLES[player.slot as keyof typeof SLOT_STYLES];
-
-                      return (
-                        <div
-                          key={player.name}
-                          className={`grid min-h-[86px] grid-cols-[auto_1fr] items-center gap-4 rounded-[1.45rem] border p-4 md:min-h-[92px] md:p-5 ${team.rowBorder} ${team.rowSurface}`}
-                          data-testid={`row-roster-player-${playerSlug}`}
-                        >
-                          <div className={`flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br text-base font-bold shadow-sm ${slotClasses}`}>
-                            {player.slot}
-                          </div>
-                          <p className="font-serif text-[1.45rem] font-bold leading-[1.1] text-primary md:text-[1.7rem]" data-testid={`text-roster-player-${playerSlug}`}>
-                            {player.name}
-                          </p>
-                        </div>
-                      );
-                    })}
+                  <div
+                    className="grid min-h-[140px] overflow-hidden rounded-[1.7rem] border border-rose-200/90 bg-white shadow-[0_24px_50px_-38px_rgba(15,23,42,0.28)] md:grid-cols-[144px_1fr]"
+                    data-testid={`card-flight-player-red-${flight.key}`}
+                  >
+                    <div className="h-full overflow-hidden bg-[linear-gradient(135deg,#2f0d12,#8d1c2b)]">
+                      <img
+                        src={flight.redPlayer.image}
+                        alt={flight.redPlayer.name}
+                        className={`h-full w-full object-cover ${flight.redPlayer.imageClassName ?? "object-center"}`}
+                        data-testid={`img-flight-player-${redPlayerSlug}`}
+                      />
+                    </div>
+                    <div className="flex items-center justify-between gap-4 p-5">
+                      <div>
+                        <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-secondary">Ramstein Ryder Cup</p>
+                        <p className="mt-3 font-serif text-[1.9rem] font-bold leading-none text-primary md:text-[2.15rem]" data-testid={`text-flight-player-${redPlayerSlug}`}>
+                          {flight.redPlayer.name}
+                        </p>
+                      </div>
+                      <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br text-base font-bold shadow-sm ${slotClasses}`}>
+                        {flight.slot}
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          ))}
-
-          <div className="order-2 flex items-center justify-center lg:px-1">
-            <div className="flex h-20 w-20 items-center justify-center rounded-full border border-primary/10 bg-white text-center shadow-[0_20px_50px_-35px_rgba(15,23,42,0.35)]">
-              <span className="font-serif text-3xl font-bold tracking-tight text-primary" data-testid="text-team-rosters-vs">
-                VS
-              </span>
-            </div>
+              );
+            })}
           </div>
         </div>
 
