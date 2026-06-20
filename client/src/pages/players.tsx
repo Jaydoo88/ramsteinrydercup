@@ -353,15 +353,15 @@ export default function Players() {
       <section className="container mx-auto max-w-7xl px-4 py-16 md:py-20 lg:py-24">
         <div className="rounded-[2.5rem] border border-primary/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(249,248,246,0.96))] p-4 shadow-[0_38px_120px_-55px_rgba(15,23,42,0.28)] md:p-6 lg:p-8">
           <div className="mx-auto max-w-4xl text-center">
-            <div className="inline-flex items-start gap-4 md:gap-5">
+            <div className="inline-flex flex-col items-center gap-4 text-center md:flex-row md:items-center md:justify-center md:gap-5">
               <div className="flex h-16 w-16 items-center justify-center rounded-full bg-amber-50 text-amber-500 shadow-[0_16px_40px_-28px_rgba(15,23,42,0.28)] md:h-[4.5rem] md:w-[4.5rem]">
                 <Trophy className="h-8 w-8 md:h-9 md:w-9" />
               </div>
-              <div className="text-left">
+              <div className="flex flex-col items-center text-center">
                 <h2 className="whitespace-nowrap font-serif text-[2.15rem] font-bold leading-none tracking-[0.02em] text-primary md:text-[3.15rem]" data-testid="text-team-rosters-heading">
                   TEAM ROSTERS
                 </h2>
-                <div className="mt-2 flex items-center gap-3 md:gap-4">
+                <div className="mt-2 flex items-center justify-center gap-3 md:gap-4">
                   <div className="h-px w-9 bg-amber-300 md:w-14" />
                   <p className="whitespace-nowrap text-[11px] font-bold uppercase tracking-[0.34em] text-secondary" data-testid="text-team-rosters-subtitle">
                     RAMSTEIN RYDER CUP
