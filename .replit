@@ -37,13 +37,13 @@ args = "Start application"
 name = "Start application"
 author = "agent"
 
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "pkill -f \"vite dev --port 5000\" || true; pkill -f \"vite dev --host 0.0.0.0 --port 5000\" || true; npm run dev:client -- --host 0.0.0.0 --port 5000"
-waitForPort = 5000
-
 [workflows.workflow.metadata]
 outputType = "webview"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run dev:client"
+waitForPort = 5000
 
 [agent]
 stack = "MOCKUP_JS"
