@@ -206,7 +206,7 @@ type SelectedPlayer = {
 const PLAYER_MODAL_PROFILES: Record<string, { bio: string[]; facts: string[] }> = {
   "Jason Dousharm": {
     bio: [
-      "Jason Dousharm, Ramstein Class of 1988, steps into the Ramstein Ryder Cup as the Blue Team Captain and Alpha Flight lead. A die-hard Chargers fan with Celtics, Angels, and Penguins loyalty mixed in, Jason brings a full sports fan’s energy to the weekend — competitive, loud when needed, and always ready for the next matchup.",
+      "Jason Dousharm steps into the Ramstein Ryder Cup as the Blue Team Captain and Alpha Flight lead. A die-hard Chargers fan with Celtics, Angels, and Penguins loyalty mixed in, Jason brings a full sports fan’s energy to the weekend — competitive, loud when needed, and always ready for the next matchup.",
       "Off the course, Jason enjoys poker, golf, and counting down the final 3½ years until retirement. On the course, he’s looking to lead from the front, keep the Blue Team focused, and prove that experience still matters when the pressure is on.",
     ],
     facts: ["Class of 1988", "Chargers", "Celtics", "Angels", "Penguins", "Poker", "3½ years to retirement"],
