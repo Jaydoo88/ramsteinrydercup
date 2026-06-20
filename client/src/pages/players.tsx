@@ -218,6 +218,13 @@ const PLAYER_MODAL_PROFILES: Record<string, { bio: string[]; facts: string[] }> 
     ],
     facts: [],
   },
+  "Mike Parsons": {
+    bio: [
+      "Mike Parsons steps into the Ramstein Ryder Cup as the Red Team Captain, bringing a relaxed confidence and competitive spirit to the weekend. An Air Force veteran who continued serving as a government contractor after retirement, Mike is a loyal Celtics and Patriots fan who enjoys staying active and finding every opportunity to get onto a golf course. Known by many as “UTZ,” he has earned a reputation as a deadly three-point shooter and can often be found putting on a show long before the competition officially begins.",
+      "Off the course, Mike enjoys traveling and making time to visit his two daughters whenever possible. An avid golfer, he’s especially dangerous on the driving range, where his smooth swing has become part of his reputation. Whether he’s planning his next adventure, talking sports, or spending time with family, Mike brings a laid-back attitude and steady leadership wherever he goes. This Ryder Cup weekend, he’ll be looking to guide the Red Team, keep everyone loose, and prove that great captains know when to lead and when to let their game do the talking.",
+    ],
+    facts: [],
+  },
   "Darren Johnson": {
     bio: [
       "Darren Johnson arrives at the Ramstein Ryder Cup with decades of experience and plenty of stories to share. An Air Force veteran and recently retired after an incredible 37-year federal career, Darren is a loyal Buffalo Bills and Guardians fan who never misses an opportunity to catch a game. A NASCAR enthusiast at heart, he has transformed his garage into the ultimate man cave — a place where sports, laughter, and good company are always welcome.",
