@@ -1017,7 +1017,7 @@ export default function Players() {
                       Bio
                     </p>
                     <div
-                      className="player-bio-scroll mt-4 max-h-[260px] space-y-4 overflow-y-scroll overscroll-contain pr-3 text-[15px] leading-[1.6] text-foreground/78 touch-pan-y"
+                      className="mt-4 space-y-4 text-[15px] leading-[1.6] text-foreground/78 md:player-bio-scroll md:max-h-[260px] md:overflow-y-scroll md:overscroll-contain md:pr-3"
                       data-testid="text-selected-player-bio"
                     >
                       {selectedPlayerProfile?.bio?.length ? (
