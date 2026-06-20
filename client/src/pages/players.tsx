@@ -657,16 +657,16 @@ export default function Players() {
                   />
                   <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#081423]/80 via-[#081423]/18 to-transparent" />
                 </div>
-                <div className="relative flex min-h-[320px] flex-col p-8 md:p-10">
+                <div className="relative flex min-h-[320px] flex-col overflow-hidden p-8 md:p-10">
                   {VETERAN_BADGE_PLAYERS.has(selectedPlayer.name) ? (
                     <img
                       src={veteranAirForceLogoImage}
-                      alt="U.S. Air Force Veteran badge"
-                      className="absolute right-6 top-6 h-14 w-14 object-contain drop-shadow-[0_10px_22px_rgba(15,23,42,0.18)]"
-                      data-testid="img-selected-player-veteran-badge"
+                      alt="U.S. Air Force Veteran badge watermark"
+                      className="pointer-events-none absolute bottom-6 right-6 z-0 h-[200px] w-[200px] object-contain opacity-10"
+                      data-testid="img-selected-player-veteran-watermark"
                     />
                   ) : null}
-                  <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+                  <div className="relative z-[2] flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
                     <div className="pr-12 md:max-w-[420px]">
                       <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-secondary">Ramstein Ryder Cup</p>
                       <p className="mt-4 font-serif text-[3rem] font-bold leading-[0.95] text-primary" data-testid="text-selected-player-name">
@@ -702,7 +702,7 @@ export default function Players() {
                       </span>
                     </div>
                   </div>
-                  <div className="mt-8 rounded-[1.5rem] border border-primary/8 bg-[linear-gradient(180deg,rgba(247,244,239,0.7),rgba(255,255,255,0.95))] p-5 md:p-6">
+                  <div className="relative z-[2] mt-8 rounded-[1.5rem] border border-primary/8 bg-[linear-gradient(180deg,rgba(247,244,239,0.7),rgba(255,255,255,0.95))] p-5 md:p-6">
                     <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-secondary" data-testid="text-selected-player-bio-heading">
                       Bio
                     </p>
