@@ -211,6 +211,13 @@ const PLAYER_MODAL_PROFILES: Record<string, { bio: string[]; facts: string[] }> 
     ],
     facts: ["Class of 1988", "Chargers", "Celtics", "Angels", "Penguins", "Poker", "3½ years to retirement"],
   },
+  "Mike Gibbons": {
+    bio: [
+      "Mike Gibbons brings a strategist’s mindset to the Ramstein Ryder Cup. A loyal fan of the Dallas Cowboys, Lakers, and Guardians, Mike never misses an opportunity to talk sports, analyze a matchup, or place a well-thought-out wager. His competitive nature extends beyond the game itself, as he has built a career and a reputation around investing and helping others plan for their financial future.",
+      "Off the course, Mike enjoys spending time with his family, especially his grandchildren, who are at the center of everything he does. Whether he’s discussing markets, breaking down sports predictions, or sharing stories with family, Mike always brings a calm confidence and steady presence. This Ryder Cup weekend, he’ll be looking to combine preparation, experience, and a little sports-betting magic to help lead his team to victory.",
+    ],
+    facts: [],
+  },
 };
 
 export default function Players() {
