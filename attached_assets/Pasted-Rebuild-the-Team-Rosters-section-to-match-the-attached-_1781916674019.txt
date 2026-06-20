@@ -1,0 +1,164 @@
+Rebuild the Team Rosters section to match the attached screenshot exactly.
+
+Do not improvise. Do not use the previous stacked version. The goal is a wide horizontal matchup card layout.
+
+SECTION LAYOUT
+- Outer section max-width: 1450px
+- Centered on page
+- Display: flex
+- Direction: row
+- Align-items: center
+- Justify-content: center
+- Gap between Blue card and Red card: 64px
+- Position the VS circle centered between both cards
+
+TEAM CARD SIZE
+Each card:
+- Width: 620px
+- Height: 245px
+- Border-radius: 18px
+- Background: #FFFFFF
+- Box-shadow: 0 24px 45px rgba(15, 23, 42, 0.08)
+- Padding: 38px 42px
+- Display: grid
+- Align-items: center
+
+BLUE TEAM CARD
+- Border: 2px solid #0B3D91
+- Grid columns: 150px 250px 1fr
+- Column 1: blue shield logo
+- Column 2: team name/captain
+- Column 3: player list
+
+RED TEAM CARD
+- Border: 2px solid #E00022
+- Grid columns: 1fr 250px 150px
+- Column 1: player list
+- Column 2: team name/captain
+- Column 3: red shield logo
+
+SHIELD LOGOS
+- Size: 125px tall
+- Width: auto
+- Centered vertically
+- Drop shadow: 0 18px 28px rgba(0,0,0,0.18)
+- Use the blue shield for Blue Team
+- Use the red shield for Red Team
+
+TEAM INFO
+Team name:
+- Font family: Georgia, "Times New Roman", serif
+- Font size: 38px
+- Font weight: 700
+- Letter spacing: -0.5px
+- Line height: 1
+- White-space: nowrap
+
+Blue Team title color:
+#0A3A78
+
+Red Team title color:
+#C9001F
+
+Captain label:
+- Text: CAPTAIN
+- Font size: 13px
+- Font weight: 700
+- Letter spacing: 3px
+- Text-transform: uppercase
+- Color: #D4001A
+- Margin-top: 20px
+- Margin-bottom: 10px
+
+Captain name:
+- Font family: Georgia, "Times New Roman", serif
+- Font size: 22px
+- Font weight: 700
+- Color: #0A3A78
+- White-space: nowrap
+
+PLAYER LIST
+Player list rows:
+- Display: grid
+- Grid-template-columns: 54px 1fr
+- Align-items: center
+- Height: 48px
+- Border-bottom: 1px solid #DDE5EF
+- Font family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif
+- Font size: 19px
+- Font weight: 700
+- Color: #071F4F
+- White-space: nowrap
+
+Remove the border-bottom on the last row.
+
+BADGES
+All badges:
+- Width: 36px
+- Height: 36px
+- Border-radius: 9px
+- Display: flex
+- Align-items: center
+- Justify-content: center
+- Color: white
+- Font-weight: 800
+- Font-size: 18px
+- Box-shadow: 0 6px 12px rgba(0,0,0,0.16)
+
+Badge colors:
+A = #F5A800
+B = #0B84FF
+C = #18A957
+D = #EF123E
+
+DIVIDERS
+Add a vertical divider between team info and player list:
+- Width: 1px
+- Background: #DDE5EF
+- Height: 170px
+
+For Blue Team:
+Logo | Team Info | Divider | Player List
+
+For Red Team:
+Player List | Divider | Team Info | Logo
+
+VS CIRCLE
+- Width: 74px
+- Height: 74px
+- Border-radius: 999px
+- Background: white
+- Border: 1px solid #DDE5EF
+- Box-shadow: 0 14px 30px rgba(15, 23, 42, 0.12)
+- Font family: Georgia, "Times New Roman", serif
+- Font size: 34px
+- Font-weight: 700
+- Color: #0A3A78
+- Display: flex
+- Align-items: center
+- Justify-content: center
+- Position visually centered between the two cards
+
+CONTENT
+Blue Team:
+Captain: Jason Dousharm
+A Jason Dousharm
+B Mike Gibbons
+C Darren Johnson
+D John Gregg
+
+Red Team:
+Captain: Mike Parsons
+A Mike Parsons
+B Robby Fuller
+C Darrel Johnson
+D Allen Parsons
+
+IMPORTANT
+- Do not stack the team card content vertically.
+- Do not make the logos tiny.
+- Do not allow names to wrap.
+- Do not allow text to overflow.
+- Do not change the Ladies Teams section.
+- Do not change the player cards below yet.
+- Match the attached screenshot as closely as possible.

@@ -221,90 +221,109 @@ export default function Players() {
             </div>
           </div>
 
-          <div className="relative mt-8 grid gap-4 lg:grid-cols-[480px_72px_480px] lg:items-center lg:justify-center lg:gap-0">
+          <div className="relative mx-auto mt-8 flex max-w-[1450px] flex-col items-center justify-center gap-4 lg:flex-row lg:gap-16">
             {TEAM_ROSTERS.map((team, index) => {
               const isBlueTeam = team.name === "Blue Team";
 
               return (
-                <div key={team.name} className={index === 0 ? "order-1 mx-auto h-full w-full max-w-[480px]" : "order-3 mx-auto h-full w-full max-w-[480px]"}>
+                <div key={team.name} className={index === 0 ? "order-1 w-full max-w-[620px]" : "order-3 w-full max-w-[620px]"}>
                   <div
-                    className={`h-[198px] overflow-hidden rounded-[1.6rem] border shadow-[0_24px_50px_-38px_rgba(15,23,42,0.2)] ${
-                      isBlueTeam ? "border-sky-700/85 bg-[#F5FAFF]" : "border-rose-500/60 bg-[#FFF5F5]"
-                    }`}
+                    className={`grid h-[245px] items-center rounded-[18px] border-2 bg-white px-[42px] py-[38px] shadow-[0_24px_45px_rgba(15,23,42,0.08)] ${
+                      isBlueTeam ? "border-[#0B3D91]" : "border-[#E00022]"
+                    } ${isBlueTeam ? "grid-cols-[118px_155px_1px_210px]" : "grid-cols-[210px_1px_155px_118px]"}`}
                     data-testid={`card-team-roster-${getPlayerSlug(team.name)}`}
                   >
                     {isBlueTeam ? (
-                      <div className="grid h-full grid-cols-[110px_150px_1fr] items-center px-4">
-                        <div className="flex justify-center">
+                      <>
+                        <div className="flex items-center justify-center">
                           <img
                             src={blueTeamLogoImage}
                             alt="Blue Team logo"
-                            className="h-[92px] w-[92px] object-contain drop-shadow-[0_16px_28px_rgba(29,78,216,0.22)]"
+                            className="h-[125px] w-auto object-contain drop-shadow-[0_18px_28px_rgba(0,0,0,0.18)]"
                             data-testid="img-blue-team-logo"
                           />
                         </div>
 
-                        <div className="border-l border-slate-200 pl-4">
+                        <div>
                           <h3
-                            className="whitespace-nowrap font-serif text-[1.05rem] font-bold uppercase leading-none tracking-[0.01em] text-[#16357a] md:text-[1.15rem] lg:text-[1.75rem]"
+                            className="whitespace-nowrap uppercase leading-none text-[#0A3A78]"
+                            style={{ fontFamily: 'Georgia, "Times New Roman", serif', fontSize: '38px', fontWeight: 700, letterSpacing: '-0.5px' }}
                             data-testid={`text-roster-team-name-${getPlayerSlug(team.name)}`}
                           >
                             {team.name}
                           </h3>
-                          <p className="mt-3 text-[10px] font-medium uppercase tracking-[0.06em] text-primary">Captain</p>
                           <p
-                            className="mt-2 whitespace-nowrap font-serif text-[1.15rem] font-bold leading-none text-primary md:text-[1.2rem] lg:text-[1.18rem]"
+                            className="mb-[10px] mt-5 whitespace-nowrap uppercase text-[#D4001A]"
+                            style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '3px' }}
+                          >
+                            Captain
+                          </p>
+                          <p
+                            className="whitespace-nowrap text-[#0A3A78]"
+                            style={{ fontFamily: 'Georgia, "Times New Roman", serif', fontSize: '22px', fontWeight: 700 }}
                             data-testid={`text-roster-captain-${getPlayerSlug(team.name)}`}
                           >
                             {team.captain}
                           </p>
                         </div>
 
-                        <div className="border-l border-slate-200 pl-4 pr-2">
+                        <div className="h-[170px] w-px bg-[#DDE5EF]" />
+
+                        <div>
                           {team.players.map((player) => {
                             const playerSlug = getPlayerSlug(player.name);
-                            const slotClasses = SLOT_STYLES[player.slot as keyof typeof SLOT_STYLES];
+                            const badgeClass =
+                              player.slot === "A"
+                                ? "bg-[#F5A800]"
+                                : player.slot === "B"
+                                  ? "bg-[#0B84FF]"
+                                  : player.slot === "C"
+                                    ? "bg-[#18A957]"
+                                    : "bg-[#EF123E]";
 
                             return (
                               <div
                                 key={player.name}
-                                className="grid grid-cols-[34px_1fr] items-center gap-4 border-b border-slate-200 py-2.5 last:border-b-0 last:pb-0 first:pt-0"
+                                className="grid h-12 grid-cols-[54px_1fr] items-center border-b border-[#DDE5EF] text-[#071F4F] last:border-b-0"
+                                style={{ fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', fontSize: '19px', fontWeight: 700 }}
                                 data-testid={`row-team-roster-${playerSlug}`}
                               >
-                                <div className={`flex h-[30px] w-[30px] items-center justify-center rounded-lg bg-gradient-to-br text-[0.78rem] font-bold text-white shadow-sm ${slotClasses}`}>
+                                <div className={`flex h-9 w-9 items-center justify-center rounded-[9px] text-white shadow-[0_6px_12px_rgba(0,0,0,0.16)] ${badgeClass}`}>
                                   {player.slot}
                                 </div>
-                                <p
-                                  className="whitespace-nowrap font-sans text-[0.95rem] font-semibold leading-none text-[#16357a] lg:text-[0.98rem]"
-                                  data-testid={`text-roster-player-${playerSlug}`}
-                                >
+                                <p className="whitespace-nowrap" data-testid={`text-roster-player-${playerSlug}`}>
                                   {player.name}
                                 </p>
                               </div>
                             );
                           })}
                         </div>
-                      </div>
+                      </>
                     ) : (
-                      <div className="grid h-full grid-cols-[1fr_150px_110px] items-center px-4">
-                        <div className="pr-4">
+                      <>
+                        <div>
                           {team.players.map((player) => {
                             const playerSlug = getPlayerSlug(player.name);
-                            const slotClasses = SLOT_STYLES[player.slot as keyof typeof SLOT_STYLES];
+                            const badgeClass =
+                              player.slot === "A"
+                                ? "bg-[#F5A800]"
+                                : player.slot === "B"
+                                  ? "bg-[#0B84FF]"
+                                  : player.slot === "C"
+                                    ? "bg-[#18A957]"
+                                    : "bg-[#EF123E]";
 
                             return (
                               <div
                                 key={player.name}
-                                className="grid grid-cols-[34px_1fr] items-center gap-4 border-b border-slate-200 py-2.5 last:border-b-0 last:pb-0 first:pt-0"
+                                className="grid h-12 grid-cols-[54px_1fr] items-center border-b border-[#DDE5EF] text-[#071F4F] last:border-b-0"
+                                style={{ fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', fontSize: '19px', fontWeight: 700 }}
                                 data-testid={`row-team-roster-${playerSlug}`}
                               >
-                                <div className={`flex h-[30px] w-[30px] items-center justify-center rounded-lg bg-gradient-to-br text-[0.78rem] font-bold text-white shadow-sm ${slotClasses}`}>
+                                <div className={`flex h-9 w-9 items-center justify-center rounded-[9px] text-white shadow-[0_6px_12px_rgba(0,0,0,0.16)] ${badgeClass}`}>
                                   {player.slot}
                                 </div>
-                                <p
-                                  className="whitespace-nowrap font-sans text-[0.95rem] font-semibold leading-none text-[#16357a] lg:text-[0.98rem]"
-                                  data-testid={`text-roster-player-${playerSlug}`}
-                                >
+                                <p className="whitespace-nowrap" data-testid={`text-roster-player-${playerSlug}`}>
                                   {player.name}
                                 </p>
                               </div>
@@ -312,40 +331,53 @@ export default function Players() {
                           })}
                         </div>
 
-                        <div className="border-l border-slate-200 pl-4">
+                        <div className="h-[170px] w-px bg-[#DDE5EF]" />
+
+                        <div>
                           <h3
-                            className="whitespace-nowrap font-serif text-[1.05rem] font-bold uppercase leading-none tracking-[0.01em] text-[#b2142a] md:text-[1.15rem] lg:text-[1.75rem]"
+                            className="whitespace-nowrap uppercase leading-none text-[#C9001F]"
+                            style={{ fontFamily: 'Georgia, "Times New Roman", serif', fontSize: '38px', fontWeight: 700, letterSpacing: '-0.5px' }}
                             data-testid={`text-roster-team-name-${getPlayerSlug(team.name)}`}
                           >
                             {team.name}
                           </h3>
-                          <p className="mt-3 text-[10px] font-medium uppercase tracking-[0.06em] text-primary">Captain</p>
                           <p
-                            className="mt-2 whitespace-nowrap font-serif text-[1.15rem] font-bold leading-none text-[#b2142a] md:text-[1.2rem] lg:text-[1.18rem]"
+                            className="mb-[10px] mt-5 whitespace-nowrap uppercase text-[#D4001A]"
+                            style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '3px' }}
+                          >
+                            Captain
+                          </p>
+                          <p
+                            className="whitespace-nowrap text-[#0A3A78]"
+                            style={{ fontFamily: 'Georgia, "Times New Roman", serif', fontSize: '22px', fontWeight: 700 }}
                             data-testid={`text-roster-captain-${getPlayerSlug(team.name)}`}
                           >
                             {team.captain}
                           </p>
                         </div>
 
-                        <div className="flex justify-center border-l border-slate-200 pl-4">
+                        <div className="flex items-center justify-center">
                           <img
                             src={redTeamLogoImage}
                             alt="Red Team logo"
-                            className="h-[92px] w-[92px] object-contain drop-shadow-[0_16px_28px_rgba(185,28,28,0.22)]"
+                            className="h-[125px] w-auto object-contain drop-shadow-[0_18px_28px_rgba(0,0,0,0.18)]"
                             data-testid="img-red-team-logo"
                           />
                         </div>
-                      </div>
+                      </>
                     )}
                   </div>
                 </div>
               );
             })}
 
-            <div className="order-2 flex items-center justify-center lg:px-1">
-              <div className="flex h-[72px] w-[72px] items-center justify-center rounded-full border border-primary/10 bg-white text-center shadow-[0_20px_50px_-35px_rgba(15,23,42,0.35)]">
-                <span className="font-serif text-[2rem] font-bold tracking-tight text-primary" data-testid="text-team-rosters-vs">
+            <div className="order-2 flex items-center justify-center lg:absolute lg:left-1/2 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2">
+              <div className="flex h-[74px] w-[74px] items-center justify-center rounded-full border border-[#DDE5EF] bg-white shadow-[0_14px_30px_rgba(15,23,42,0.12)]">
+                <span
+                  className="text-[#0A3A78]"
+                  style={{ fontFamily: 'Georgia, "Times New Roman", serif', fontSize: '34px', fontWeight: 700 }}
+                  data-testid="text-team-rosters-vs"
+                >
                   VS
                 </span>
               </div>
