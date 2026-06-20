@@ -244,7 +244,7 @@ export default function Players() {
                           />
                         </div>
 
-                        <div className="min-w-0 pr-4">
+                        <div className="flex h-full min-w-0 flex-col justify-center pl-1 pr-6">
                           <h3
                             className="whitespace-nowrap uppercase leading-none text-[#0A3A78]"
                             style={{ fontFamily: 'Georgia, "Times New Roman", serif', fontSize: '31px', fontWeight: 700, letterSpacing: '-0.5px' }}
