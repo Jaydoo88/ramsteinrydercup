@@ -1,13 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Shield, Trophy, UserRound } from "lucide-react";
-import jasonDousharmImage from "@assets/1665088037422_1776551209099.jpg";
-import mikeParsonsImage from "@assets/image_1776551520237.png";
-import mikeGibbonsImage from "@assets/image_1776551618225.png";
-import robbyFullerImage from "@assets/654214334_10242588166511341_589448361213285726_n_1776624936484.jpg";
-import darrelJohnsonImage from "@assets/image_1776790509801.png";
-import darrenJohnsonImage from "@assets/d6ad562a-1a0e-4821-9432-33da97d8ba88_1781903108064.png";
-import allenParsonsImage from "@assets/image_1776551567816.png";
-import johnGreggImage from "@assets/image_1776551593611.png";
 import erinBergerImage from "@assets/d2774c1a-31e8-455c-be3a-c16e38940ff0_1781902944119.png";
 import gretchenGambillImage from "@assets/709d2ac4-81da-4517-9986-0721a61ff40b_1781903635578.png";
 import hayleyPedersenImage from "@assets/516680189_30778336861751597_10175905133059248_n_1781902787067.jpg";
@@ -26,76 +18,39 @@ const SLOT_STYLES = {
 const TEAM_ROSTERS = [
   {
     name: "Blue Team",
-    label: "RAMSTEIN RYDER CUP",
     captain: "Jason Dousharm",
-    layout: "left",
     accent: "from-sky-500 via-blue-500 to-indigo-500",
     badgeSurface: "from-[#0b3b7a] via-[#0d56aa] to-[#123f7d]",
     border: "border-sky-200/80",
     rowBorder: "border-sky-100/90",
+    rowSurface: "bg-[linear-gradient(180deg,rgba(239,246,255,0.7),rgba(255,255,255,0.98))]",
     glow: "shadow-[0_30px_90px_-42px_rgba(14,79,168,0.34)]",
     headingColor: "text-[#123a74]",
     players: [
-      {
-        slot: "A",
-        name: "Jason Dousharm",
-        image: jasonDousharmImage,
-      },
-      {
-        slot: "B",
-        name: "Mike Gibbons",
-        image: mikeGibbonsImage,
-      },
-      {
-        slot: "C",
-        name: "Darren Johnson",
-        image: darrenJohnsonImage,
-        imageClassName: "object-[center_12%]",
-      },
-      {
-        slot: "D",
-        name: "John Gregg",
-        image: johnGreggImage,
-      },
+      { slot: "A", name: "Jason Dousharm" },
+      { slot: "B", name: "Mike Gibbons" },
+      { slot: "C", name: "Darren Johnson" },
+      { slot: "D", name: "John Gregg" },
     ],
   },
   {
     name: "Red Team",
-    label: "RAMSTEIN RYDER CUP",
     captain: "Mike Parsons",
-    layout: "right",
     accent: "from-rose-500 via-red-500 to-rose-500",
     badgeSurface: "from-[#b30821] via-[#d70f2f] to-[#b60b23]",
     border: "border-rose-200/80",
     rowBorder: "border-rose-100/90",
+    rowSurface: "bg-[linear-gradient(180deg,rgba(255,241,242,0.72),rgba(255,255,255,0.98))]",
     glow: "shadow-[0_30px_90px_-42px_rgba(225,29,72,0.28)]",
     headingColor: "text-[#a41429]",
     players: [
-      {
-        slot: "A",
-        name: "Mike Parsons",
-        image: mikeParsonsImage,
-        imageClassName: "object-[center_22%]",
-      },
-      {
-        slot: "B",
-        name: "Robby Fuller",
-        image: robbyFullerImage,
-      },
-      {
-        slot: "C",
-        name: "Darrel Johnson",
-        image: darrelJohnsonImage,
-      },
-      {
-        slot: "D",
-        name: "Allen Parsons",
-        image: allenParsonsImage,
-      },
+      { slot: "A", name: "Mike Parsons" },
+      { slot: "B", name: "Robby Fuller" },
+      { slot: "C", name: "Darrel Johnson" },
+      { slot: "D", name: "Allen Parsons" },
     ],
   },
 ];
-
 const LADIES_TEAMS = [
   {
     name: "Team Pink",
@@ -181,37 +136,27 @@ export default function Players() {
           {TEAM_ROSTERS.map((team, index) => (
             <div key={team.name} className={index === 0 ? "order-1" : "order-3"}>
               <div
-                className={`relative flex h-full flex-col overflow-hidden rounded-[2rem] border bg-white/92 ${team.border} ${team.glow}`}
+                className={`relative flex h-full min-h-[560px] flex-col overflow-hidden rounded-[2rem] border bg-white/94 ${team.border} ${team.glow}`}
                 data-testid={`card-team-roster-${getPlayerSlug(team.name)}`}
               >
                 <div className={`absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r ${team.accent}`} />
                 <div className="absolute right-0 top-0 hidden h-40 w-40 translate-x-10 -translate-y-10 rounded-full bg-white/55 blur-3xl md:block" />
 
-                <div
-                  className={`relative grid gap-6 p-5 md:p-7 ${
-                    team.layout === "right"
-                      ? "md:grid-cols-[1fr_minmax(180px,0.72fr)]"
-                      : "md:grid-cols-[minmax(180px,0.72fr)_1fr]"
-                  }`}
-                >
-                  <div
-                    className={`rounded-[1.6rem] border border-white/70 bg-[linear-gradient(180deg,rgba(255,255,255,0.95),rgba(249,248,246,0.92))] p-5 shadow-[0_18px_45px_-32px_rgba(15,23,42,0.35)] ${
-                      team.layout === "right" ? "md:order-2 md:text-right" : ""
-                    }`}
-                  >
-                    <div className={`flex items-center gap-4 ${team.layout === "right" ? "md:flex-row-reverse" : ""}`}>
+                <div className="relative flex h-full flex-col p-6 md:p-8">
+                  <div className="rounded-[1.7rem] border border-white/75 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(249,248,246,0.95))] p-6 shadow-[0_18px_45px_-32px_rgba(15,23,42,0.35)] md:p-7">
+                    <div className="flex items-center gap-4">
                       <div className={`relative flex h-[88px] w-[72px] shrink-0 items-center justify-center rounded-[1.4rem] bg-gradient-to-b ${team.badgeSurface} text-white shadow-[0_20px_45px_-25px_rgba(15,23,42,0.45)]`}>
                         <Shield className="absolute inset-0 h-full w-full p-2 opacity-20" />
                         <Trophy className="relative h-8 w-8" />
                       </div>
                       <div>
-                        <p className="text-[10px] font-bold uppercase tracking-[0.26em] text-secondary">{team.label}</p>
-                        <h3 className={`mt-2 font-serif text-[2rem] font-bold leading-none ${team.headingColor}`} data-testid={`text-roster-team-name-${getPlayerSlug(team.name)}`}>
+                        <p className="text-[10px] font-bold uppercase tracking-[0.26em] text-secondary">Lineup Announcement</p>
+                        <h3 className={`mt-2 font-serif text-[2.2rem] font-bold leading-none md:text-[2.5rem] ${team.headingColor}`} data-testid={`text-roster-team-name-${getPlayerSlug(team.name)}`}>
                           {team.name}
                         </h3>
-                        <div className="mt-4 space-y-1.5">
+                        <div className="mt-5 space-y-1.5">
                           <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-secondary">Captain</p>
-                          <p className="text-lg font-semibold text-primary" data-testid={`text-roster-captain-${getPlayerSlug(team.name)}`}>
+                          <p className="font-serif text-[1.55rem] font-bold leading-none text-primary md:text-[1.8rem]" data-testid={`text-roster-captain-${getPlayerSlug(team.name)}`}>
                             {team.captain}
                           </p>
                         </div>
@@ -219,7 +164,7 @@ export default function Players() {
                     </div>
                   </div>
 
-                  <div className={`space-y-3 ${team.layout === "right" ? "md:order-1" : ""}`}>
+                  <div className="mt-6 flex-1 space-y-4">
                     {team.players.map((player) => {
                       const playerSlug = getPlayerSlug(player.name);
                       const slotClasses = SLOT_STYLES[player.slot as keyof typeof SLOT_STYLES];
@@ -227,26 +172,15 @@ export default function Players() {
                       return (
                         <div
                           key={player.name}
-                          className={`grid min-h-[88px] grid-cols-[auto_60px_1fr] items-center gap-3 rounded-[1.45rem] border bg-white/92 p-3 shadow-[0_16px_40px_-30px_rgba(15,23,42,0.3)] ${team.rowBorder}`}
+                          className={`grid min-h-[86px] grid-cols-[auto_1fr] items-center gap-4 rounded-[1.45rem] border p-4 md:min-h-[92px] md:p-5 ${team.rowBorder} ${team.rowSurface}`}
                           data-testid={`row-roster-player-${playerSlug}`}
                         >
-                          <div className={`flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br text-sm font-bold shadow-sm ${slotClasses}`}>
+                          <div className={`flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br text-base font-bold shadow-sm ${slotClasses}`}>
                             {player.slot}
                           </div>
-                          <div className="h-14 w-14 overflow-hidden rounded-[1rem] border border-primary/10 bg-[linear-gradient(135deg,#0c2340,#174a7a)]">
-                            <img
-                              src={player.image}
-                              alt={player.name}
-                              className={`h-full w-full object-cover ${player.imageClassName ?? "object-center"}`}
-                              data-testid={`img-roster-player-${playerSlug}`}
-                            />
-                          </div>
-                          <div className="min-w-0">
-                            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-secondary">{team.label}</p>
-                            <p className="mt-1 truncate font-serif text-[1.35rem] font-bold leading-none text-primary md:text-[1.5rem]" data-testid={`text-roster-player-${playerSlug}`}>
-                              {player.name}
-                            </p>
-                          </div>
+                          <p className="font-serif text-[1.45rem] font-bold leading-[1.1] text-primary md:text-[1.7rem]" data-testid={`text-roster-player-${playerSlug}`}>
+                            {player.name}
+                          </p>
                         </div>
                       );
                     })}
