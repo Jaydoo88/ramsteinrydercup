@@ -9,7 +9,7 @@ import redTeamLogoImage from "@assets/image_1781915411373.png";
 import mikeGibbonsImage from "@assets/image_1776551618225.png";
 import robbyFullerImage from "@assets/654214334_10242588166511341_589448361213285726_n_1776624936484.jpg";
 import darrelJohnsonImage from "@assets/image_1776790509801.png";
-import darrenJohnsonImage from "@assets/image_1782150780316.png";
+import darrenJohnsonImage from "@assets/e2ab610d-62d3-406f-975c-463864f2d59b_1782151366778.png";
 import allenParsonsImage from "@assets/image_1776551567816.png";
 import johnGreggImage from "@assets/image_1776551593611.png";
 import erinBergerImage from "@assets/d2774c1a-31e8-455c-be3a-c16e38940ff0_1781902944119.png";
