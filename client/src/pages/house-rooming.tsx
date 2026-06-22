@@ -51,19 +51,20 @@ const IMAGES = [
 
 export default function HouseRooming() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const currentImage = IMAGES[currentImageIndex];
 
   useEffect(() => {
-    IMAGES.forEach((src) => {
-      const img = new Image();
-      img.src = src;
-    });
-
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % IMAGES.length);
     }, 4500);
 
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    const nextImage = new Image();
+    nextImage.src = IMAGES[(currentImageIndex + 1) % IMAGES.length];
+  }, [currentImageIndex]);
 
   return (
     <div className="container mx-auto max-w-6xl px-4 py-20">
@@ -78,16 +79,15 @@ export default function HouseRooming() {
       </div>
 
       <div className="relative mb-20 h-[65vh] overflow-hidden rounded-[2.5rem] border-[6px] border-white shadow-2xl">
-        {IMAGES.map((src, index) => (
-          <img
-            key={src}
-            src={src}
-            alt={`Ramstein Ryder Cup house view ${index + 1}`}
-            className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ease-in-out ${
-              index === currentImageIndex ? "z-10 opacity-100" : "z-0 opacity-0"
-            }`}
-          />
-        ))}
+        <img
+          key={currentImage}
+          src={currentImage}
+          alt={`Ramstein Ryder Cup house view ${currentImageIndex + 1}`}
+          className="absolute inset-0 h-full w-full object-cover"
+          decoding="async"
+          fetchPriority="high"
+          data-testid="img-house-hero-carousel"
+        />
         <div className="absolute inset-0 z-20 bg-gradient-to-t from-primary/90 via-primary/35 to-transparent"></div>
         <div className="absolute bottom-0 left-0 right-0 z-30 p-10 md:p-16">
           <div className="mb-4 inline-block rounded-full bg-secondary px-4 py-2 text-sm font-bold uppercase tracking-widest text-secondary-foreground">

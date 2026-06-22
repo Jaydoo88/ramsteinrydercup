@@ -218,6 +218,8 @@ export default function Rooms() {
                     src={room.image}
                     alt={room.title}
                     className="h-80 w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <CardContent className="p-6">
@@ -248,6 +250,8 @@ export default function Rooms() {
                           src={room.bathroomImage}
                           alt={room.bathroomLabel}
                           className="h-56 w-full object-cover"
+                          loading="lazy"
+                          decoding="async"
                           data-testid={`img-bathroom-preview-${index + 1}`}
                         />
                       </div>

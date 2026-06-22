@@ -43,7 +43,7 @@ export function Navbar() {
                 <DialogTitle className="font-serif text-2xl text-primary text-center">Design Credit</DialogTitle>
               </DialogHeader>
               <div className="flex flex-col items-center justify-center p-6 text-center space-y-6">
-                <img src={logoImage} alt="Ramstein Ryder Cup Logo" className="h-32 w-32 object-contain bg-primary/5 p-2 rounded-lg" />
+                <img src={logoImage} alt="Ramstein Ryder Cup Logo" className="h-32 w-32 object-contain bg-primary/5 p-2 rounded-lg" loading="lazy" decoding="async" />
                 <DialogDescription className="text-lg text-foreground/80 leading-relaxed">
                   A special shoutout to <strong className="text-primary font-bold">Darrel Johnson</strong> for creating the official Ramstein Ryder Cup logo.
                 </DialogDescription>
