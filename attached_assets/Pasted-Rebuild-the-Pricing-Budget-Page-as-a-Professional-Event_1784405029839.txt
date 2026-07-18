@@ -1,0 +1,293 @@
+Rebuild the Pricing & Budget Page as a Professional Event Page
+
+Please redesign the existing Pricing & Budget page for the Ramstein Ryder Cup.
+
+Do not use a large collection of separate cards. The page should look like a polished event-planning and payment information page, not a dashboard.
+
+Keep the existing Ramstein Ryder Cup navigation, footer, branding, colors, fonts, button styles, and responsive behavior.
+
+Do not modify any unrelated pages.
+
+Overall Page Structure
+
+Use a clean, editorial-style layout with:
+
+A strong page heading
+A short introductory paragraph
+Clearly separated content sections
+Thin dividers between major sections
+Clean tables for financial information
+Only one or two highlighted callout boxes
+Consistent spacing and alignment
+Plenty of white space
+
+Avoid placing every individual cost or deadline inside its own card.
+
+Page Header
+Pricing & Budget
+
+Use this introductory text:
+
+With the house officially booked and the golf courses reserved, the trip costs and payment schedule are now confirmed.
+
+Advance payments are only being collected for the house and stock-up fund. Golf fees will be paid individually at the golf courses during the trip.
+
+Trip Overview
+
+Create a simple summary row near the top of the page.
+
+Display:
+
+15 Confirmed Attendees
+8 golfers plus spouses and significant others
+
+4-Night Stay
+
+Shared Cost per Person
+$430
+
+Estimated Golf Total
+$274 plus tax
+
+This should be one clean horizontal summary section, not four separate large cards.
+
+On mobile, stack the information neatly.
+
+Shared Trip Costs
+
+Use a professional two-column layout on desktop.
+
+The left side should contain the house information.
+
+The right side should contain the stock-up information.
+
+Do not use separate floating cards. Use section headings, clean text, and subtle dividing lines.
+
+House Rental
+
+Total House Cost: $4,933.76
+
+Four-night rental including taxes, platform fees, and booking costs. The cost is shared among all confirmed attendees.
+
+Per Person
+Payment	Amount	Status
+Initial House Payment	$175	Collected
+Remaining House Balance	$155	Due August 15
+Total House Cost per Person	$330	
+Per Couple
+Payment	Amount	Status
+Initial House Payment	$350	Collected
+Remaining House Balance	$310	Due August 15
+Total House Cost per Couple	$660	
+Stock-Up Fund
+
+Total Stock-Up Fund: $1,500
+
+The stock-up fund covers shared groceries, drinks, snacks, paper products, and other house essentials for all 15 attendees.
+
+Participant Type	Amount	Due Date
+Per Person	$100	August 1
+Per Couple	$200	August 1
+Simple Payment Rhythm
+
+Keep the existing Simple Payment Rhythm section, but simplify it to three milestones.
+
+Do not use oversized cards.
+
+Create a clean horizontal timeline using small milestone blocks connected by a thin line.
+
+The final timeline should be:
+
+Collected
+House Payment
+$175
+
+→
+
+August 1
+Stock-Up Fund
+$100
+
+→
+
+August 15
+Remaining House Balance
+$155
+
+The first milestone may remain green to show that it has been collected.
+
+Remove:
+
+June 17 Golf $100
+July 17 Golf $100
+August 17 Remaining Balance
+All advance golf-payment milestones
+
+On mobile, convert the timeline into a clean vertical layout.
+
+Golf Fees
+
+Use a clean section with a short introductory paragraph and one table.
+
+Golf Fees — Paid at the Courses
+
+No advance golf payment is required. The tee times were secured using a personal credit card, but each golfer will pay their own fees at the golf courses.
+
+Date	Golf Course	Tee Times	Fee
+September 17	Dove Valley Ranch Golf Club	11:06 AM, 11:15 AM, 11:24 AM	$115 plus tax
+September 18	Dove Valley Ranch Golf Club	11:06 AM, 11:15 AM, 11:24 AM	$115 plus tax
+September 19	Bellair Golf Park	11:00 AM, 11:09 AM, 11:18 AM	$44 plus tax
+	Weekend Golf Total		$274 plus tax
+
+Below the table, add these notes:
+
+Daylene will receive one complimentary cart at Dove Valley Ranch on Thursday and Friday.
+Daylene’s cart fee at Bellair Golf Park will be $15 plus tax.
+Daylene’s estimated weekend total is $289 plus applicable taxes.
+
+Do not place each course inside a separate large card.
+
+Golf Cancellation Policy
+
+Use one prominent but professional callout box.
+
+Golf Cancellation Policy
+
+Anyone who will not be golfing on a scheduled day must provide at least 48 hours’ notice.
+
+If less than 48 hours’ notice is provided, the golfer may still be responsible for the full green fee because the tee times are being held with a personal credit card.
+
+Please communicate any changes as early as possible so the course can be notified before the cancellation deadline.
+
+Make 48 hours’ notice visually prominent.
+
+Transportation
+
+Use a regular page section, not a card.
+
+Transportation
+
+Transportation is not included in the shared trip costs.
+
+Most attendees will arrange their own transportation or coordinate rides with others in the group.
+
+For the Saturday round at Bellair Golf Park, the group plans to use Lyft or Uber instead of driving individual vehicles because the course is approximately 17.5 miles away.
+
+Optional Activities
+
+Use a regular page section with a short list.
+
+Optional Activities
+
+Optional activities are not included in the shared trip costs and will be booked and paid individually.
+
+Possible options include:
+
+Optional golf for spouses or significant others outside the Ryder Cup competition
+Non-golf activities for guests
+Guided horseback trail rides in Cave Creek
+Other activities selected by individual participants
+
+Participants may indicate their interests through the RSVP form so plans can be coordinated.
+
+Payment Information
+
+Create a clean two-column section.
+
+The left side should contain Zelle information.
+
+The right side should contain credit-card information.
+
+Use subtle headings and borders rather than large cards.
+
+Zelle
+
+760-559-6108
+
+Use Zelle for:
+
+Stock-up payment
+Remaining house balance
+
+Ask participants to include their full name and payment purpose.
+
+Examples:
+
+Jason Smith — Stock-Up
+Jason Smith — House Balance
+Credit Card Payment
+
+Keep the existing Stripe payment section and existing Make a Payment button.
+
+Use this wording:
+
+Use the payment button to pay the remaining house balance or stock-up fund by credit card.
+
+Enter the correct amount based on the payment schedule shown on this page. Use the same full name and email address for every payment, and clearly note what the payment is for.
+
+Add this visible note:
+
+Do not use the payment button for golf fees. Golfers will pay at the courses.
+
+Keep the existing HTTPS and Stripe security information.
+
+Do not break or replace the current Stripe functionality.
+
+Commitment Policy
+
+Use a simple final section with a divider above it.
+
+Commitment Policy
+
+The vacation home has been booked based on the confirmed group size.
+
+A participant’s spot is confirmed once the initial house payment has been received.
+House payments and shared trip payments are non-refundable because the rental and group expenses have already been committed.
+The stock-up payment is due August 1.
+The remaining house balance is due August 15.
+Golf fees are paid individually at the golf courses.
+Golf cancellations require at least 48 hours’ notice.
+Late golf cancellations may still result in a charge because the tee times are secured with a personal credit card.
+Remove Outdated Information
+
+Completely remove all references to:
+
+June 17 golf payment
+July 17 golf payment
+August 17 golf balance
+Golf deposits
+Golf installments
+$400 estimated golf
+$830 golfer total
+July 1 stock-up deadline
+Scenario A
+15-Person Model
+Final golf pricing still being unknown
+
+Make sure no hidden, repeated, or mobile-only version of the outdated information remains.
+
+Design Direction
+
+The finished page should feel like a professional tournament information page.
+
+Use:
+
+Strong headings
+Clean tables
+Thin section dividers
+Restrained accent colors
+One highlighted cancellation-policy box
+One compact payment timeline
+Clear payment buttons
+Generous white space
+
+Avoid:
+
+A dashboard appearance
+Too many floating cards
+Oversized icons
+Repetitive pricing boxes
+Decorative elements that compete with the information
+Large blocks of centered text
+
+Ensure the page is fully responsive on desktop, tablet, and mobile.
