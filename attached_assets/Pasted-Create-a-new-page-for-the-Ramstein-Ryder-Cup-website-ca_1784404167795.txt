@@ -1,0 +1,189 @@
+Create a new page for the Ramstein Ryder Cup website called:
+
+Golf Guide
+
+Add a new navigation button labeled:
+
+Golf Guide
+
+Place the new navigation button in the main website navigation and make sure it matches the existing navigation buttons in size, color, spacing, font, hover effect, and mobile behavior.
+
+The Golf Guide button should open the new Golf Guide page.
+
+Keep the same website header, navigation, colors, fonts, footer, background style, spacing, and overall Ramstein Ryder Cup branding already used throughout the site.
+
+Do not redesign the rest of the website.
+
+PAGE TITLE
+
+2026 Ramstein Ryder Cup Golf Guide
+
+SUBTITLE
+
+Course information, tee times, green fees, and transportation details for the 2026 Ramstein Ryder Cup.
+
+INTRODUCTION
+
+The 2026 Ramstein Ryder Cup will be played at two Arizona golf courses. The Thursday and Friday rounds will be held at Dove Valley Ranch Golf Club, located only two miles from the host location. The Saturday finale will be played at Bellair Golf Park.
+
+Create a polished and mobile-friendly layout with one large course card or section for each golf course.
+
+COURSE ONE
+
+Dove Valley Ranch Golf Club
+
+Dates:
+
+Thursday, September 17, 2026
+
+Friday, September 18, 2026
+
+Course description:
+
+Dove Valley Ranch Golf Club will host the opening two rounds of the 2026 Ramstein Ryder Cup. Located only two miles away, it is the closest and most affordable full-size golf course for the group. Its convenient location allows the players to spend less time traveling and more time enjoying the tournament.
+
+Course details:
+
+Distance: 2 miles
+
+Estimated drive time: Approximately 5 minutes
+
+Course type: 18-hole golf course
+
+Green fee: $115 plus tax per golfer, per day
+
+Daylene cart: One golf cart will be provided for Daylene at no additional charge on both days.
+
+Tee times for both Thursday and Friday:
+
+11:06 AM
+
+11:15 AM
+
+11:24 AM
+
+Add a website button labeled:
+
+Visit Dove Valley Ranch Website
+
+Link it to:
+
+https://www.dovevalleyranch.com/
+
+Open the course website in a new browser tab.
+
+COURSE TWO
+
+Bellair Golf Park
+
+Date:
+
+Saturday, September 19, 2026
+
+Course description:
+
+The final round of the 2026 Ramstein Ryder Cup will be played at Bellair Golf Park. Bellair is an executive golf course that should provide a fun and competitive setting for the final matches of the weekend.
+
+Course details:
+
+Distance: 17.5 miles
+
+Course type: Executive golf course
+
+Green fee: $44 plus tax per golfer
+
+Daylene cart fee: $15 plus tax
+
+Tee times:
+
+11:00 AM
+
+11:09 AM
+
+11:18 AM
+
+TRANSPORTATION
+
+Add a clearly visible transportation notice inside the Bellair Golf Park section:
+
+Because Bellair Golf Park is approximately 17.5 miles away, the group plans to use Lyft or Uber instead of driving individual vehicles to the course.
+
+Add a website button labeled:
+
+Visit Bellair Golf Park Website
+
+Link it to:
+
+https://www.bellairgolfpark.com/
+
+Open the course website in a new browser tab.
+
+WEEKEND COST SUMMARY
+
+Add a clean cost summary section near the bottom of the page.
+
+Use the following information:
+
+Thursday, September 17
+
+Dove Valley Ranch Golf Club
+
+$115 plus tax
+
+Friday, September 18
+
+Dove Valley Ranch Golf Club
+
+$115 plus tax
+
+Saturday, September 19
+
+Bellair Golf Park
+
+$44 plus tax
+
+Standard golfer weekend total:
+
+$274 plus applicable taxes
+
+Daylene weekend total:
+
+$289 plus applicable taxes
+
+Daylene’s total includes the $15 Bellair cart fee. Her Dove Valley Ranch cart is complimentary on both Thursday and Friday.
+
+DESIGN REQUIREMENTS
+
+Use a clean, professional golf-tournament design.
+
+Match the existing Ramstein Ryder Cup website.
+
+Use responsive cards or sections that display properly on desktop, tablet, and mobile.
+
+Make the tee times easy to scan.
+
+Make the prices prominent but not oversized.
+
+Use icons only if they match the existing website style.
+
+Include clear labels for:
+
+Dates
+
+Tee Times
+
+Green Fees
+
+Distance
+
+Transportation
+
+Course Website
+
+Use consistent spacing and alignment throughout the page.
+
+Do not invent course details, amenities, driving times, addresses, or additional fees that were not provided.
+
+Do not change any existing website pages except for adding the Golf Guide navigation link.
+
+Make sure the new page is connected to the existing routing system and can be opened from the main navigation.

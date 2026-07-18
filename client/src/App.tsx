@@ -14,6 +14,7 @@ import TripOverview from "@/pages/trip-overview";
 import HouseRooming from "@/pages/house-rooming";
 import PricingBudget from "@/pages/pricing-budget";
 import GolfFormat from "@/pages/golf-format";
+import GolfGuide from "@/pages/golf-guide";
 import Schedule from "@/pages/schedule";
 import Rules from "@/pages/rules";
 import Players from "@/pages/players";
@@ -42,6 +43,7 @@ function Router() {
           <Route path="/house" component={HouseRooming} />
           <Route path="/pricing" component={PricingBudget} />
           <Route path="/golf" component={GolfFormat} />
+          <Route path="/golf-guide" component={GolfGuide} />
           <Route path="/schedule" component={Schedule} />
           <Route path="/rules" component={Rules} />
           <Route path="/players" component={Players} />
