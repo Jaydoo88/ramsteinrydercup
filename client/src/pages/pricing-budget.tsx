@@ -377,7 +377,6 @@ export default function PricingBudget() {
           <div className="mt-6 space-y-3 text-sm leading-relaxed text-foreground/72">
             <p data-testid="text-daylene-dove-note">Daylene will receive one complimentary cart at Dove Valley Ranch on Thursday and Friday.</p>
             <p data-testid="text-daylene-bellair-note">Daylene’s cart fee at Bellair Golf Park will be $15 plus tax.</p>
-            <p data-testid="text-daylene-weekend-total-note">Daylene’s estimated weekend total is $289 plus applicable taxes.</p>
           </div>
         </section>
 
