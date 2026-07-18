@@ -19,6 +19,7 @@ const COURSES = [
     teeTimes: ["11:06 AM", "11:15 AM", "11:24 AM"],
     websiteLabel: "Visit Dove Valley Ranch Website",
     websiteHref: "https://www.dovevalleyranch.com/",
+    transportationNotice: null,
     accent: "border-sky-200/80",
     glow: "from-sky-500/12 via-white to-white",
     badge: "bg-sky-50 text-[#123f7d]",
