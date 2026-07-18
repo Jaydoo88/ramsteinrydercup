@@ -488,14 +488,11 @@ export default function PricingBudget() {
             <section className="rounded-[1.8rem] border border-primary/10 bg-white px-6 py-7 shadow-[0_18px_55px_-45px_rgba(15,23,42,0.35)] md:px-8" data-testid="section-credit-card-payment">
               <p className="text-sm font-bold uppercase tracking-[0.24em] text-secondary">Credit Card Payment</p>
               <p className="mt-4 text-base leading-relaxed text-foreground/68" data-testid="text-credit-card-description">
-                Use the payment button to pay the remaining house balance or stock-up fund by credit card.
+                Use the secure Stripe payment button to pay the stock-up fund or remaining house balance by credit card.
               </p>
               <p className="mt-3 text-base leading-relaxed text-foreground/68" data-testid="text-credit-card-description-detail">
-                Enter the correct amount based on the payment schedule shown on this page. Use the same full name and email address for every payment, and clearly note what the payment is for.
+                Please enter the correct amount based on the payment schedule, use the same full name and email address for every payment, and clearly identify what the payment is for.
               </p>
-              <div className="mt-5 rounded-[1.4rem] border border-amber-200 bg-amber-50/70 px-5 py-4 text-sm font-semibold leading-relaxed text-[#9a5b00]" data-testid="text-no-golf-payment-note">
-                Do not use the payment button for golf fees. Golfers will pay at the courses.
-              </div>
               <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <div className="inline-flex items-center rounded-full border border-primary/10 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-primary" data-testid="text-site-secure-note">
                   This site is secured with HTTPS
@@ -506,10 +503,13 @@ export default function PricingBudget() {
               </div>
               <div className="mt-6">
                 <Button asChild className="h-14 w-full rounded-xl bg-primary text-base font-bold uppercase tracking-[0.18em] shadow-lg shadow-primary/15 hover:bg-primary/90 md:w-auto md:px-10" data-testid="button-make-payment">
-                  <a href="https://buy.stripe.com/9B600l75zgXTdax9y12VG00" target="_blank" rel="noreferrer">
+                  <a href="https://buy.stripe.com/9B600l75zgXTdax9y12VG00" target="_blank" rel="noopener noreferrer">
                     Make a Payment
                   </a>
                 </Button>
+              </div>
+              <div className="mt-4 rounded-[1.4rem] border border-amber-200 bg-amber-50/70 px-5 py-4 text-sm font-semibold leading-relaxed text-[#9a5b00]" data-testid="text-no-golf-payment-note">
+                Do not use this payment option for golf fees. Golfers will pay directly at the golf courses.
               </div>
             </section>
           </div>
