@@ -14,7 +14,7 @@ const COURSES = [
       { label: "Estimated drive time", value: "Approximately 5 minutes" },
       { label: "Course type", value: "18-hole golf course" },
       { label: "Green fee", value: "$115 plus tax per golfer, per day" },
-      { label: "Daylene cart", value: "One golf cart will be provided for Daylene at no additional charge on both days." },
+      { label: "Daylene rider", value: "Daylene may ride along at no additional charge on both days." },
     ],
     teeTimes: ["11:06 AM", "11:15 AM", "11:24 AM"],
     websiteLabel: "Visit Dove Valley Ranch Website",
@@ -37,7 +37,7 @@ const COURSES = [
       { label: "Distance", value: "17.5 miles" },
       { label: "Course type", value: "Executive golf course" },
       { label: "Green fee", value: "$44 plus tax per golfer" },
-      { label: "Daylene cart fee", value: "$15 plus tax" },
+      { label: "Daylene rider fee", value: "$15 plus tax" },
     ],
     teeTimes: ["11:00 AM", "11:09 AM", "11:18 AM"],
     websiteLabel: "Visit Bellair Golf Park Website",
@@ -227,7 +227,7 @@ export default function GolfGuide() {
               Tournament golf costs at a glance
             </h2>
             <p className="mt-4 max-w-3xl text-base leading-relaxed text-white/78" data-testid="text-weekend-cost-subtitle">
-              A clean breakdown of each competition day plus the full weekend total for standard golfers and Daylene.
+              A clean breakdown of each competition day plus the full weekend total for standard golfers and Daylene as a rider.
             </p>
           </div>
 
@@ -257,13 +257,13 @@ export default function GolfGuide() {
               </div>
 
               <div className="rounded-[1.7rem] border border-secondary/18 bg-[linear-gradient(135deg,rgba(255,247,249,0.98),rgba(255,255,255,0.96))] p-6 shadow-[0_18px_38px_-30px_rgba(15,23,42,0.22)]" data-testid="card-daylene-total">
-                <p className="text-[0.72rem] font-bold uppercase tracking-[0.28em] text-secondary">Daylene Weekend Total</p>
+                <p className="text-[0.72rem] font-bold uppercase tracking-[0.28em] text-secondary">Daylene Rider Weekend Total</p>
                 <p className="mt-4 font-serif text-4xl font-bold text-primary" data-testid="text-daylene-total">
-                  $289
+                  $15
                 </p>
                 <p className="mt-2 text-base text-foreground/65">plus applicable taxes</p>
                 <p className="mt-4 text-sm leading-relaxed text-foreground/68" data-testid="text-daylene-total-note">
-                  Daylene’s total includes the $15 Bellair cart fee. Her Dove Valley Ranch cart is complimentary on both Thursday and Friday.
+                  Daylene is attending as a rider only. Her Bellair rider fee is $15 plus tax, and her Dove Valley Ranch ride-along access is complimentary on both Thursday and Friday.
                 </p>
               </div>
             </div>
