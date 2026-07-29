@@ -324,7 +324,7 @@ export default function GolfGuide() {
                         <p className={`text-[0.72rem] font-bold uppercase tracking-[0.22em] ${matchup.teamA.tone}`}>{matchup.teamA.name}</p>
                         <div className="mt-1 space-y-0.5">
                           {matchup.teamA.players.split(" & ").map((player) => (
-                            <p key={player} className="whitespace-nowrap text-sm font-semibold leading-snug text-foreground/80">{player}</p>
+                            <p key={player} className={`whitespace-nowrap text-sm font-semibold leading-snug ${matchup.teamA.tone}`}>{player}</p>
                           ))}
                         </div>
                       </div>
@@ -333,7 +333,7 @@ export default function GolfGuide() {
                         <p className={`text-[0.72rem] font-bold uppercase tracking-[0.22em] ${matchup.teamB.tone}`}>{matchup.teamB.name}</p>
                         <div className="mt-1 space-y-0.5">
                           {matchup.teamB.players.split(" & ").map((player) => (
-                            <p key={player} className="whitespace-nowrap text-sm font-semibold leading-snug text-foreground/80">{player}</p>
+                            <p key={player} className={`whitespace-nowrap text-sm font-semibold leading-snug ${matchup.teamB.tone}`}>{player}</p>
                           ))}
                         </div>
                       </div>
