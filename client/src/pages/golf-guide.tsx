@@ -52,6 +52,53 @@ const COURSES = [
   },
 ] as const;
 
+const MATCHUP_DAYS = [
+  {
+    date: "Thursday, September 17",
+    course: "Dove Valley Ranch Golf Club",
+    slug: "sept-17",
+    matchups: [
+      {
+        time: "11:06 AM",
+        teamA: { name: "Team Red", players: "Mike Parason & Robby Fuller", tone: "text-[#c71e3a]" },
+        teamB: { name: "Team Blue", players: "Jason Dousharm & Mike Gibbons", tone: "text-[#123f7d]" },
+      },
+      {
+        time: "11:15 AM",
+        teamA: { name: "Team Red", players: "Darryl Johnson & Allen Parsons", tone: "text-[#c71e3a]" },
+        teamB: { name: "Team Blue", players: "Darren Johnson & John Gregg", tone: "text-[#123f7d]" },
+      },
+      {
+        time: "11:24 AM",
+        teamA: { name: "Team Pink", players: "Hayley Pedersen & Erin Berger", tone: "text-[#d5488f]" },
+        teamB: { name: "Team Purple", players: "Gretchen Gambill & Izzy Hochner", tone: "text-[#6d3fb0]" },
+      },
+    ],
+  },
+  {
+    date: "Friday, September 18",
+    course: "Dove Valley Ranch Golf Club",
+    slug: "sept-18",
+    matchups: [
+      {
+        time: "11:06 AM",
+        teamA: { name: "Team Red", players: "Darryl Johnson & Allen Parsons", tone: "text-[#c71e3a]" },
+        teamB: { name: "Team Blue", players: "Darren Johnson & John Gregg", tone: "text-[#123f7d]" },
+      },
+      {
+        time: "11:15 AM",
+        teamA: { name: "Team Red", players: "Mike Parason & Robby Fuller", tone: "text-[#c71e3a]" },
+        teamB: { name: "Team Blue", players: "Jason Dousharm & Mike Gibbons", tone: "text-[#123f7d]" },
+      },
+      {
+        time: "11:24 AM",
+        teamA: { name: "Team Pink", players: "Hayley Pedersen & Erin Berger", tone: "text-[#d5488f]" },
+        teamB: { name: "Team Purple", players: "Gretchen Gambill & Izzy Hochner", tone: "text-[#6d3fb0]" },
+      },
+    ],
+  },
+] as const;
+
 const WEEKEND_COSTS = [
   {
     date: "Thursday, September 17",
@@ -216,6 +263,56 @@ export default function GolfGuide() {
               </article>
             );
           })}
+        </div>
+      </section>
+
+      <section className="container mx-auto max-w-6xl px-4 pb-16" data-testid="section-tee-time-matchups">
+        <div className="mb-8 text-center">
+          <p className="text-sm font-bold uppercase tracking-[0.28em] text-secondary" data-testid="text-matchups-kicker">
+            Dove Valley Ranch Pairings
+          </p>
+          <h2 className="mt-3 font-serif text-4xl font-bold text-primary md:text-5xl" data-testid="text-matchups-title">
+            Tee Time Matchups
+          </h2>
+        </div>
+        <div className="grid gap-8 lg:grid-cols-2">
+          {MATCHUP_DAYS.map((day) => (
+            <div
+              key={day.slug}
+              className="overflow-hidden rounded-[2rem] border border-primary/10 bg-white shadow-[0_28px_70px_-50px_rgba(15,23,42,0.32)]"
+              data-testid={`card-matchups-${day.slug}`}
+            >
+              <div className="border-b border-primary/8 bg-[linear-gradient(135deg,rgba(11,61,145,0.95),rgba(8,31,79,0.98))] px-6 py-6 text-white">
+                <p className="text-[0.72rem] font-bold uppercase tracking-[0.28em] text-secondary/90">{day.course}</p>
+                <p className="mt-2 font-serif text-3xl font-bold" data-testid={`text-matchups-date-${day.slug}`}>{day.date}</p>
+              </div>
+              <div className="grid gap-4 p-6">
+                {day.matchups.map((matchup, index) => (
+                  <div
+                    key={matchup.time}
+                    className="rounded-[1.4rem] border border-primary/8 bg-[linear-gradient(135deg,rgba(247,244,239,0.82),rgba(255,255,255,0.98))] p-5"
+                    data-testid={`card-matchup-${day.slug}-${index + 1}`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="text-[0.7rem] font-bold uppercase tracking-[0.24em] text-foreground/45">Tee Time {index + 1}</span>
+                      <span className="font-serif text-xl font-bold text-primary">{matchup.time}</span>
+                    </div>
+                    <div className="mt-4 grid grid-cols-[1fr_auto_1fr] items-center gap-3">
+                      <div>
+                        <p className={`text-[0.72rem] font-bold uppercase tracking-[0.22em] ${matchup.teamA.tone}`}>{matchup.teamA.name}</p>
+                        <p className="mt-1 text-sm font-semibold leading-snug text-foreground/80">{matchup.teamA.players}</p>
+                      </div>
+                      <span className="rounded-full bg-primary/5 px-3 py-1 text-[0.68rem] font-bold uppercase tracking-[0.2em] text-primary">vs</span>
+                      <div className="text-right">
+                        <p className={`text-[0.72rem] font-bold uppercase tracking-[0.22em] ${matchup.teamB.tone}`}>{matchup.teamB.name}</p>
+                        <p className="mt-1 text-sm font-semibold leading-snug text-foreground/80">{matchup.teamB.players}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
