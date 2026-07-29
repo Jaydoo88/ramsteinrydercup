@@ -74,6 +74,7 @@ const MATCHUP_DAYS = [
         teamB: { name: "Team Purple", players: "Gretchen Gambill & Izzy Hochner", tone: "text-[#6d3fb0]" },
       },
     ],
+    note: "On September 17, Hayley & Erin will be playing for Team Blue and Gretchen & Izzy will be playing for Team Red.",
   },
   {
     date: "Friday, September 18",
@@ -96,6 +97,7 @@ const MATCHUP_DAYS = [
         teamB: { name: "Team Purple", players: "Gretchen Gambill & Izzy Hochner", tone: "text-[#6d3fb0]" },
       },
     ],
+    note: "On September 18, Hayley & Erin will be playing for Team Red and Gretchen & Izzy will be playing for Team Blue.",
   },
   {
     date: "Saturday, September 19",
@@ -118,6 +120,7 @@ const MATCHUP_DAYS = [
         teamB: { name: "Couple 6", players: "To be determined", tone: "text-[#c71e3a]" },
       },
     ],
+    note: "Robby and John will team up with a couple.",
   },
 ] as const;
 
@@ -340,6 +343,11 @@ export default function GolfGuide() {
                     </div>
                   </div>
                 ))}
+                {day.note ? (
+                  <p className="mt-1 rounded-[1.2rem] border border-primary/8 bg-muted/30 px-4 py-3 text-sm italic leading-relaxed text-foreground/65" data-testid={`text-matchups-note-${day.slug}`}>
+                    {day.note}
+                  </p>
+                ) : null}
               </div>
             </div>
           ))}
