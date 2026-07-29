@@ -97,6 +97,28 @@ const MATCHUP_DAYS = [
       },
     ],
   },
+  {
+    date: "Saturday, September 19",
+    course: "Bellair Golf Park",
+    slug: "sept-19",
+    matchups: [
+      {
+        time: "11:00 AM",
+        teamA: { name: "Couple 1", players: "To be determined", tone: "text-[#123f7d]" },
+        teamB: { name: "Couple 2", players: "To be determined", tone: "text-[#c71e3a]" },
+      },
+      {
+        time: "11:09 AM",
+        teamA: { name: "Couple 3", players: "To be determined", tone: "text-[#123f7d]" },
+        teamB: { name: "Couple 4", players: "To be determined", tone: "text-[#c71e3a]" },
+      },
+      {
+        time: "11:18 AM",
+        teamA: { name: "Couple 5", players: "To be determined", tone: "text-[#123f7d]" },
+        teamB: { name: "Couple 6", players: "To be determined", tone: "text-[#c71e3a]" },
+      },
+    ],
+  },
 ] as const;
 
 const WEEKEND_COSTS = [
@@ -269,7 +291,7 @@ export default function GolfGuide() {
       <section className="container mx-auto max-w-6xl px-4 pb-16" data-testid="section-tee-time-matchups">
         <div className="mb-8 text-center">
           <p className="text-sm font-bold uppercase tracking-[0.28em] text-secondary" data-testid="text-matchups-kicker">
-            Dove Valley Ranch Pairings
+            Weekend Pairings
           </p>
           <h2 className="mt-3 font-serif text-4xl font-bold text-primary md:text-5xl" data-testid="text-matchups-title">
             Tee Time Matchups
