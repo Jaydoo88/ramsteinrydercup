@@ -322,12 +322,20 @@ export default function GolfGuide() {
                     <div className="mt-4 grid grid-cols-[1fr_auto_1fr] items-center gap-3">
                       <div>
                         <p className={`text-[0.72rem] font-bold uppercase tracking-[0.22em] ${matchup.teamA.tone}`}>{matchup.teamA.name}</p>
-                        <p className="mt-1 text-sm font-semibold leading-snug text-foreground/80">{matchup.teamA.players}</p>
+                        <div className="mt-1 space-y-0.5">
+                          {matchup.teamA.players.split(" & ").map((player) => (
+                            <p key={player} className="whitespace-nowrap text-sm font-semibold leading-snug text-foreground/80">{player}</p>
+                          ))}
+                        </div>
                       </div>
                       <span className="rounded-full bg-primary/5 px-3 py-1 text-[0.68rem] font-bold uppercase tracking-[0.2em] text-primary">vs</span>
                       <div className="text-right">
                         <p className={`text-[0.72rem] font-bold uppercase tracking-[0.22em] ${matchup.teamB.tone}`}>{matchup.teamB.name}</p>
-                        <p className="mt-1 text-sm font-semibold leading-snug text-foreground/80">{matchup.teamB.players}</p>
+                        <div className="mt-1 space-y-0.5">
+                          {matchup.teamB.players.split(" & ").map((player) => (
+                            <p key={player} className="whitespace-nowrap text-sm font-semibold leading-snug text-foreground/80">{player}</p>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
