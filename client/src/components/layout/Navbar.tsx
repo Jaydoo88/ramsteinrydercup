@@ -20,7 +20,7 @@ const routes = [
   { name: "Pricing", shortName: "Pricing", path: "/pricing" },
   { name: "Golf Format", shortName: "Golf", path: "/golf" },
   { name: "Golf Guide", shortName: "Guide", path: "/golf-guide" },
-  { name: "Schedule", shortName: "Schedule", path: "/schedule" },
+  { name: "Travel Schedule", shortName: "Travel", path: "/schedule" },
   { name: "Rules", shortName: "Rules", path: "/rules" },
   { name: "Players", shortName: "Players", path: "/players" },
 ];
