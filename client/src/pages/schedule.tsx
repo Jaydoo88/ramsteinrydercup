@@ -8,6 +8,19 @@ type Traveler = {
 
 const TRAVELERS: Traveler[] = [
   {
+    name: "Mike Gibbons & Izzy Hochner",
+    arrival: {
+      date: "Tuesday, September 15",
+      time: "6:45 PM",
+      details: "Arriving at Phoenix Sky Harbor International Airport (PHX)",
+    },
+    departure: {
+      date: "Saturday, September 19",
+      time: "11:45 AM",
+      details: "Departing from Phoenix Sky Harbor International Airport (PHX)",
+    },
+  },
+  {
     name: "Darren Johnson & Gretchen Gambill",
     arrival: {
       date: "Wednesday, September 16",
@@ -17,6 +30,19 @@ const TRAVELERS: Traveler[] = [
     departure: {
       date: "Monday, September 21",
       time: "9:30 AM",
+      details: "Departing from Phoenix Sky Harbor International Airport (PHX)",
+    },
+  },
+  {
+    name: "Daylene Koch",
+    arrival: {
+      date: "Wednesday, September 16",
+      time: "12:20 PM",
+      details: "Arriving at Phoenix Sky Harbor International Airport (PHX)",
+    },
+    departure: {
+      date: "Saturday, September 19",
+      time: "1:55 PM",
       details: "Departing from Phoenix Sky Harbor International Airport (PHX)",
     },
   },
