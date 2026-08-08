@@ -15,7 +15,7 @@ const TRAVELERS: Traveler[] = [
       details: "Arriving at Phoenix Sky Harbor International Airport (PHX)",
     },
     departure: {
-      date: "Saturday, September 19",
+      date: "Sunday, September 20",
       time: "11:45 AM",
       details: "Departing from Phoenix Sky Harbor International Airport (PHX)",
     },
@@ -41,7 +41,7 @@ const TRAVELERS: Traveler[] = [
       details: "Arriving at Phoenix Sky Harbor International Airport (PHX)",
     },
     departure: {
-      date: "Saturday, September 19",
+      date: "Sunday, September 20",
       time: "1:55 PM",
       details: "Departing from Phoenix Sky Harbor International Airport (PHX)",
     },
